@@ -1,0 +1,50 @@
+body {
+  font-family:  Arial, Helvetica, sans-serif;
+  background-color: #fefefe;
+  color: #222;
+}
+
+h1.title {
+	color:  #00BA70;
+}
+
+h1 {
+	color: #00BA70;
+	font-weight: bold;
+}
+
+h2 {
+	color: #0028a5;
+	font-weight: bold;
+}
+
+h3 {
+	color: #dc6027;
+}
+
+a:link {
+  color: #91c34a;
+  font-size: 0.8em;
+}
+
+a:visited {
+  color: #91c34a;
+  font-size: 0.9em;
+}
+
+span.newthought { font-variant: normal;
+                  color: #dc6027;
+                  font-weight: bold;
+                  font-size: 1em; }
+                  
+
+.sidenote, .marginnote { float: right;
+                         clear: right;
+                         margin-right: -60%;
+                         width: 50%;
+                         margin-top: 0;
+                         margin-bottom: 1rem;
+                         font-size: 1.5rem;
+                         line-height: 1.3;
+                         vertical-align: baseline;
+                         position: relative; }
