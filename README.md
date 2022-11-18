@@ -2,13 +2,14 @@
 
 ## Modifications and hints
 
+- [ ] Adding filename before every session under episodes, which helps find the original Rmd easily. eg. `041-2-primer: 1. Primer on academic publishing` in [Episode 4](https://crsuzh.github.io/BORS/04-QualityCriteriaForGoodResearch/index.html)
 - [ ] using **bold** instead newthought chunck
 - [ ] define figure size using `{: height="50px"}` instead `{height=50px}`
-- [ ] define path of a figure, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
+- [ ] define path of a figure or file, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
  
 ## Errors
 
-- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to pdf or xlsx)
+- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to a pdf or an xlsx)
 
 --- 
 
