@@ -335,21 +335,27 @@ K Baggerly and K Coombes https://projecteuclid.org/journals/annals-of-applied-st
 
 # 023in-classtask
 
-## Task 1
-
-We will discuss the homework submissions.
-
-## Task 2
-
-We will play the Dilemma game with the dilemmas selected in this [slide deck]({{ page.root }}/files/docs/02/023-DilemmaGame.pdf), choosing our prefered answers on Klicker.
-
-## Task 3
-
-Pick one dilemma and discuss your choice of answer with your neighbor.
-
-## Task 4
-
-Write down your dilemma and discuss your choice of answer in about 150 words, provide a word count and **submit as a pdf in the next step**.  Your submission will be checked by staff.
+>## In-class tasks
+>
+>>## Task 1
+>>We will discuss the homework submissions.
+>{: .checklist}
+>
+>
+>>## Task 2
+>>We will play the Dilemma game with the dilemmas selected in this [slide deck]({{ page.root }}/files/docs/02/023-DilemmaGame.pdf), choosing our prefered answers on Klicker.
+>{: .checklist}
+>
+>
+>>## Task 3
+>>Pick one dilemma and discuss your choice of answer with your neighbor. 
+>{: .checklist}
+>
+>
+>>## Task 4
+>>Write down your dilemma and discuss your choice of answer in about 150 words, provide a word count >>and **submit as a pdf in the next step**.  Your submission will be checked by staff.
+>{: .checklist}
+{: .challenge}
 
 
 

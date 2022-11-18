@@ -8,11 +8,23 @@
 - [ ] define figure size using `{: height="50px"}` instead `{height=50px}`
 - [ ] define path of a figure or file, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
  
+
+
 ### Errors & Questions
 
 - [ ] 042homework: `[Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md)` doesn't work (it works when link to a `.pdf`, an `.xlsx` or a `.R` file)
 - [ ] Episode 6: There is no `061-3.Rmd` in Gitlab, is it right?
 
+
+### Progress
+
+- [x] Week 1 Open and reproducible science: general reasons and approaches
+- [x] Week 2 Scientific Integrity, Open Science and Reproducibility
+- [x] Week 3 Reproducibility and Data
+- [x] Week 4 Quality criteria for good research
+- [x] Week 5 Tools for collaboration
+- [ ] Week 6 Reproducible notebooks for data analysis
+- [ ] Week 7 Visualization
 --- 
 
 # FIXME Lesson title

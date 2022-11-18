@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Week 6 - Reproducible notebooks for data analysis"
+title: "Week 6 Reproducible notebooks for data analysis"
 teaching: 0
 exercises: 0
 questions: 
