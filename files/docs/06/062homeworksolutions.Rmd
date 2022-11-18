@@ -1,0 +1,140 @@
+---
+title: "Week 06 Reproducible data analysis"
+subtitle: "Open and reproducible science: general reasons and approaches"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+show_results <- TRUE
+hide_results <- function(input, show=TRUE){
+  if(show){
+    return(input)
+  } else{
+    return("")
+  }
+}
+```
+
+```{r, echo=FALSE}
+library(palmerpenguins)
+```
+
+
+# Homework solutions
+
+## Part 1 - Preparation
+
+### Step 1 
+
+Source: Palmer Station Antarctica LTER and K. Gorman. 2020. 
+URLs: https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f , https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689 , https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
+
+### Step 2
+
+```{r, results='asis'}
+numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
+df <- data.frame(Column_Name = names(numericcols)[numericcols],
+           Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
+           Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+           row.names = NULL
+)
+knitr::kable(df)
+```
+
+
+## Part 2 - Data analysis
+
+### Exercise 2.1
+```{r, include=show_results}
+result_exercise_1 <- dim(penguins)[1]
+```
+
+Number of rows: `r hide_results(result_exercise_1, show_results)`
+
+### Exercise 2.2
+```{r, include=show_results}
+result_exercise_2 <- min(penguins$year)
+```
+
+First year of records: `r hide_results(result_exercise_2, show_results)`
+
+### Exercise 2.3
+```{r, include=show_results}
+result_exercise_3 <- sum(penguins$species == "Adelie")
+```
+
+Number of Adelie penguins: `r hide_results(result_exercise_3, show_results)`
+
+### Exercise 2.4
+```{r, include=show_results}
+result_exercise_4 <- sum(is.na(penguins))
+```
+
+Total number of missing values (NA's): `r hide_results(result_exercise_4, show_results)`
+
+### Exercise 2.5
+```{r, include=show_results}
+result_exercise_5 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+```
+
+Number of complete rows (rows with no missing values, i.e. NA's): `r hide_results(result_exercise_5, show_results)`
+
+### Exercise 2.6
+```{r, include=show_results}
+result_exercise_6 <- unique(penguins$island[penguins$species == "Gentoo"]);
+```
+
+Name of islands where the Gentoo penguins were found: `r hide_results(result_exercise_6, show_results)`
+
+### Exercise 2.7
+```{r, include=show_results}
+result_exercise_7 <- sum(penguins$species == "Adelie" & penguins$island == "Dream")/
+  sum(penguins$island == "Dream")
+```
+
+
+Proportion of Adelie penguins on Dream island: `r hide_results(result_exercise_7, show_results)`
+
+### Exercise 2.8
+```{r, include=show_results}
+result_exercise_8 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
+```
+
+93 % quantile of `bill_length_mm` : `r hide_results(result_exercise_8, show_results)`
+
+### Exercise 2.9
+```{r, include=show_results}
+result_exercise_9 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
+```
+
+
+Absolute mean difference of `bill_depth_mm` between female and male: `r hide_results(result_exercise_9, show_results)`
+
+### Exercise 2.10
+```{r, include=show_results}
+result_exercise_10 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
+```
+
+
+95% confidence interval of slope of linear regression between `bill_depth_mm` and `sex`: `r hide_results(result_exercise_10, show_results)`
+
+### Exercise 2.11
+```{r, include=show_results}
+chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
+result_exercise_11 <- sum(chins == "Chinstrap")/length(chins)
+```
+
+Proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45: `r hide_results(result_exercise_11, show_results)`
+
+### Exercise 2.12
+```{r, include=show_results}
+result_exercise_12 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
+```
+
+
+Proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins: `r hide_results(result_exercise_12, show_results)`
+
