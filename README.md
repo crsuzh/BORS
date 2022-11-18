@@ -2,13 +2,13 @@
 
 ## Modifications and hints
 
- -[] using **bold** instead newthought chunck
- -[] define figure size using `{: height="50px"}` instead `{height=50px}`
- -[] define path of a figure, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
+- [ ] using **bold** instead newthought chunck
+- [ ] define figure size using `{: height="50px"}` instead `{height=50px}`
+- [ ] define path of a figure, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
  
 ## Errors
 
- -[] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to pdf or xlsx)
+- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to pdf or xlsx)
 
 --- 
 
