@@ -38,3 +38,10 @@ A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
 To cite this lesson, please consult with [CITATION](CITATION)
 
 [lesson-example]: https://carpentries.github.io/lesson-example
+
+## Notes by Lilly
+
+ - using **bold** instead newthought chunck
+ - define figure size using {: height="50px"} instead {height=50px} 
+ - define path of a figure, eg.:![]({{ page.root }}/fig/02-WHO.png){: height="50px"} must add `{{ page.root }}`
+ - *italics* instead &rArr; 

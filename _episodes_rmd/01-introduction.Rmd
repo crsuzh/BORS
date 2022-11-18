@@ -1,6 +1,17 @@
 ---
 source: Rmd
-title: "Open and reproducible science: general reasons and approaches"
+title: "Week 1 Open and reproducible science: general reasons and approaches"
+teaching: 0
+exercises: 0
+questions: 
+  - "tbd"
+  - "by eva"
+objectives: 
+  - "tbd"
+  - "by eva"
+keypoints:
+  - "tbd"
+  - "by eva"
 author: "Eva Furrer, Reto Gerber, Center for Reproducible Science"
 css: "my_style.css"
 ---
@@ -11,6 +22,8 @@ knitr_fig_path("05-")
 ```
 
 
+# 01-introduction
+
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
 
 
@@ -18,9 +31,12 @@ This lecture begins with  a general overview on Open Science, what does this ter
 
 We will play an Open Science game together.
 
-The input this week is live using this [slide deck]({{ page.root }}/docs/01/01-Introduction.pdf).
+The input this week is live using this [slide deck]({{ page.root }}/files/docs/01/01-Introduction.pdf).
 
 
+
+
+# 01-logistics
 
 ## Course logistics
 
@@ -42,22 +58,22 @@ This means that **each course week**:
 
 
 
-## Requirements for passing
-
-The points you can gain for each of the following 6 weeks are:
-
-8 points for the input quiz, in total 48 points in the input section.
-12 points for the homework, in total 72 points in the homework section.
-3 points for the in-class work, in total 18 points in the in-class section.
-
-The input section is weighted at 20%, the homework section and the in-class section at 40%.
-
-To obtain your final score you need calculate the percentage of points gained for each section, weigh it by the appropriate weight and sum over the three sections.
-
-For example: you gained in total 45 points from the quizzes, 60 points from the homework, 12 points for the in-class work. Then your final score is calculated as 45/48 * 0.2 + 60/72 * 0.4 + 12/18 * 0.4 = 0.7875.
-
-You need to achieve at least  a score of 70% in order for you to pass the module. You can monitor your progress on the Open edX platform. 
-
+>## Requirements for passing
+>
+>The points you can gain for each of the following 6 weeks are:
+>
+>8 points for the input quiz, in total 48 points in the input section.
+>12 points for the homework, in total 72 points in the homework section.
+>3 points for the in-class work, in total 18 points in the in-class section.
+>
+>The input section is weighted at 20%, the homework section and the in-class section at 40%.
+>
+>To obtain your final score you need calculate the percentage of points gained for each section, >weigh it by the appropriate weight and sum over the three sections.
+>
+>For example: you gained in total 45 points from the quizzes, 60 points from the homework, 12 points >for the in-class work. Then your final score is calculated as 45/48 * 0.2 + 60/72 * 0.4 + 12/18 * >0.4 = 0.7875.
+>
+>You need to achieve at least  a score of 70% in order for you to pass the module. You can monitor >your progress on the Open edX platform. 
+{:.prereq}
 
 
 ## Input
@@ -188,24 +204,26 @@ You need to create an account on the Open edX instance of the Faculty of Science
 
 
 
-## In-class tasks
+# 013in-classtask
 
->## Task 1
->We play the game "Open up your research"
+>## In-class tasks
+>
+>>## Task 1
+>>We play the game "Open up your research"
+>{: .checklist}
+>
+>
+>>## Task 2
+>>Write down your impressions from the game in about 200 words. What did you learn? 
+>>What was the most important point? Or any other relevant comments you have. 
+>>Create a pdf document with your comments.
+>{: .checklist}
+>
+>
+>>## Task 3
+>>We practice the Open edX submission system: **submit your pdf in the next step**. 
+>{: .checklist}
 {: .challenge}
-
-
->## Task 2
->Write down your impressions from the game in about 200 words. What did you learn? 
->What was the most important point? Or any other relevant comments you have. 
->Create a pdf document with your comments.
-{: .challenge}
-
-
->## Task 3
->We practice the Open edX submission system: **submit your pdf in the next step**. 
-{: .challenge}
-
 
 Your submission will be checked by staff.
 
