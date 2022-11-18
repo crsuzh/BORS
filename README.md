@@ -1,3 +1,11 @@
+## Notes by Lilly
+
+ - using **bold** instead newthought chunck
+ - define figure size using {: height="50px"} instead {height=50px} 
+ - define path of a figure, eg.:![]({{ page.root }}/fig/02-WHO.png){: height="50px"} must add `{{ page.root }}`
+ - *italics* instead &rArr; `&rArr;`
+
+
 # FIXME Lesson title
 
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://swc-slack-invite.herokuapp.com/)
@@ -39,9 +47,3 @@ To cite this lesson, please consult with [CITATION](CITATION)
 
 [lesson-example]: https://carpentries.github.io/lesson-example
 
-## Notes by Lilly
-
- - using **bold** instead newthought chunck
- - define figure size using {: height="50px"} instead {height=50px} 
- - define path of a figure, eg.:![]({{ page.root }}/fig/02-WHO.png){: height="50px"} must add `{{ page.root }}`
- - *italics* instead &rArr; 
