@@ -1,16 +1,17 @@
 # Notes 
 *by Lilly*
 
-## Modifications and hints
+### Modifications and hints
 
 - [ ] Adding filename before every session under episodes, which helps find the original Rmd easily. eg. `041-2-primer: 1. Primer on academic publishing` in [Episode 4](https://crsuzh.github.io/BORS/04-QualityCriteriaForGoodResearch/index.html)
 - [ ] using **bold** instead newthought chunck
 - [ ] define figure size using `{: height="50px"}` instead `{height=50px}`
 - [ ] define path of a figure or file, eg.: `![]({{ page.root }}/fig/02-WHO.png){: height="50px"}` must add `{{ page.root }}`
  
-## Errors
+### Errors & Questions
 
-- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to a .pdf, an .xlsx or a .R file)
+- [ ] 042homework: `[Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md)` doesn't work (it works when link to a `.pdf`, an `.xlsx` or a `.R` file)
+- [ ] Episode 6: There is no `061-3.Rmd` in Gitlab, is it right?
 
 --- 
 
