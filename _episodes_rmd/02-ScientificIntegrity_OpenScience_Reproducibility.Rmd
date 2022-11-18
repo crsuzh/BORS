@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Week 2 - Scientific Integrity, Open Science and Reproducibility"
+title: "Week 2 Scientific Integrity, Open Science and Reproducibility"
 teaching: 0
 exercises: 0
 questions: 
@@ -12,7 +12,6 @@ objectives:
 keypoints:
   - "tbd"
   - "by eva"
-author: "Eva Furrer, Center for Reproducible Science"
 ---
 
 ```{r, include=FALSE}
@@ -35,7 +34,7 @@ This week we provide (partial) answers to the questions
 
 
 
-# 021-2-Scientific Integrity
+# 021-2-Scientific Integrity: 1. What is Scientific Integrity?
 
 ## Scientific/research integrity at UZH
 
@@ -119,7 +118,7 @@ Many of these topics are part of what we learn in this and subsequent courses.
 
 - **Accountability** for the research from idea to publication, for its management and organisation, for training, supervision and mentoring, and for its wider impacts.
 
-  *same main principles as in the Swiss guidance document!*
+&rArr; same main principles as in the Swiss guidance document!
 
 
 ## Example regarding the publication of negative results.
@@ -142,7 +141,7 @@ J Hampton https://journals.sagepub.com/doi/10.1177/0141076815608562
 
 
 
-# 021-3-Open Science
+# 021-3-Open Science: 2. What is Open Science?
 
 ## UNESCO Recommendation on Open Science  
 
@@ -192,7 +191,7 @@ Picture available on the Open Science Framework https://osf.io/hktmf/.
 Registration of clinical trials, i.e. announcing that a trial will be conducted before any data are collected,  **has become a standard** since the late 1990. It is considered a scientific, ethical and moral responsibility for all trials because:
 
 - Informed decisions are difficult under **publication bias and selective reporting**  
-*Declaration of Helsinki: "Every clinical trial must be registered [...]”*
+&rArr; Declaration of Helsinki: "Every clinical trial must be registered [...]”
 - Describing clinical trials in progress simplifies identification of research gaps 
 - The early identification of potential problems contributes to **improvements in the quality **
 
@@ -268,6 +267,10 @@ https://en.unesco.org/covid19/communicationinformationresponse/opensolutions
 
 Open Research: Examples of good practice, and resources across disciplines https://osf.io/3r8hb/
 
+
+
+
+# 021-4-reproducibility: 3. What is Reproducibility?
 
 ## Reproducibility vs Replicability
 

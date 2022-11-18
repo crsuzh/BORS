@@ -14,8 +14,6 @@ objectives:
 keypoints:
   - "tbd"
   - "by eva"
-author: "Eva Furrer, Reto Gerber, Center for Reproducible Science"
-css: "my_style.css"
 ---
 
 
