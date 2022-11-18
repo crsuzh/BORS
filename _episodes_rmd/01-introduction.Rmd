@@ -4,7 +4,8 @@ title: "Week 1 Open and reproducible science: general reasons and approaches"
 teaching: 0
 exercises: 0
 questions: 
-  - "tbd"
+  - "here are questions"
+  - "questions, tbd"
   - "by eva"
 objectives: 
   - "tbd"

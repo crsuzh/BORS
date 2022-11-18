@@ -6,6 +6,7 @@ title: "Week 4 Quality criteria for good research"
 teaching: 0
 exercises: 0
 questions: 
+  - "here are questions"
   - "questions, tbd"
   - "by eva"
 objectives: 
@@ -616,5 +617,64 @@ Finally, select the item that was most difficult for you to decide (one item in 
 ## Upload
 
 You will upload the resulting **markdown file** in the next step (allowed file format is .md). Your submission will be peer reviewed. Staff will perform random checks on the peer review.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+
+
+# 043in-classtask
+
+We continue to discuss the quality of the preprints
+
+[Preprint 1]({{ page.root }}/files/docs/04/preprint1.pdf) and online https://www.researchsquare.com/article/rs-100956/v3
+
+[Preprint 2]({{ page.root }}/files/docs/04/preprint2.pdf) and online https://www.medrxiv.org/content/10.1101/2020.03.03.20028423v3
+
+And we will compare the actual peer reviewed publication of Preprint 2:
+[Preprint 2 pulished]({{ page.root }}/files/docs/04/preprint2Published.pdf) and online https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30287-5/fulltext
+
+&nbsp;
+
+## Task 1
+Discuss the results of the assessment in the plenum.
+
+&nbsp;
+
+## Task 2
+For Preprint 1: This is a clinical trial and hence it should be registered on clinicaltrials.gov. Do you find information on it?
+
+&nbsp;
+
+## Task 3
+For Preprint 2 exists a published version. Can you find any difference if you assessed this version with PRECHECK (not only in the yes/no but also in the content which leads to yes/no)?
+
+&nbsp;
+
+## Task 4
+Look at the medarxiv site for Preprint 2: what do you find on reporting guidelines? Which reporting guideline would be pertinent for this article? Do you find something on reporting guidelines in the published article? Do you find the policy of the journal regarding reporting guidelines?
+
+&nbsp;
+
+## Task 5 (optional if time allows)
+Find the journal policy on data sharing.
+
+
+&nbsp;
+
+## Upload
+For **submission** you will answer some questions on Open edX regarding Tasks 1-4 in the next step.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 &nbsp;

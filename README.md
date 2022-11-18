@@ -1,4 +1,5 @@
-# Notes *by Lilly*
+# Notes 
+*by Lilly*
 
 ## Modifications and hints
 
@@ -9,7 +10,7 @@
  
 ## Errors
 
-- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to a pdf or an xlsx)
+- [ ] 042homework: [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) **doesn't work** (it works when link to a .pdf, an .xlsx or a .R file)
 
 --- 
 

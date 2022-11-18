@@ -6,6 +6,7 @@ title: "Week 2 Scientific Integrity, Open Science and Reproducibility"
 teaching: 0
 exercises: 0
 questions: 
+  - "here are questions"
   - "tbd"
   - "by eva"
 objectives: 

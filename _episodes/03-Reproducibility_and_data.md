@@ -6,6 +6,7 @@ title: "Week 3 Reproducibility and Data"
 teaching: 0
 exercises: 0
 questions: 
+  - "here are questions"
   - "tbd"
   - "by eva"
 objectives: 
