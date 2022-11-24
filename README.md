@@ -14,6 +14,7 @@
 
 - [ ] 042homework: `[Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md)` doesn't work (it works when link to a `.pdf`, an `.xlsx` or a `.R` file)
 - [ ] Episode 6: There is no `061-3.Rmd` in Gitlab, is it right?
+- [ ] Episode 7: 071-3-plotexamples: 2. Plot examples
 
 
 ### Progress

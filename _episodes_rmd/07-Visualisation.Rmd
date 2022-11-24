@@ -1,0 +1,1577 @@
+---
+source: Rmd
+title: "Week 7 Visualization"
+teaching: 0
+exercises: 0
+questions: 
+  - "here are questions"
+  - "questions, tbd"
+  - "by eva"
+objectives: 
+  - "tbd"
+  - "by eva"
+keypoints:
+  - "tbd"
+  - "by eva"
+---
+
+```{r, include=FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("05-")
+```
+
+# 071-1-introduction
+
+![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
+
+&nbsp;
+
+This week we learn about
+
+0. Good practice for visualizations - Overview
+1. Be simple, clear and to the point
+2. Show the data
+3. Be honest about the axes
+4. Use colors sensibly
+5. Decision tree
+6. ggplot2
+
+# 071-2-overview
+
+Data visualization is omnipresent in science. Visualizations range from presenting raw data to illustrating analysis results or modeling outcomes. The way visualizations are constructed should, as any other part of the analysis, be reproducible and adhering to the basic principles of good scientific practice. You will practice reproducible data analysis skills while learning about best practice for graphs.
+
+
+## Good practice for visualizations
+  
+In the following sections we will have a look at different visualizations and things to be aware of when using them with the goal of transmitting information truthfully. The most important principles of good practice for visualizations are
+
+1. Be simple, clear and to the point
+2. Show the data
+3. Be honest about the axes
+4. Use colors sensibly
+
+We provide code in base `R` and `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this https://bookdown.org/rdpeng/exdata/
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+# 071-3-besimple: 1. Be simple, clear and to the point
+
+```{r}
+library(tidyverse)
+library(colorblindr)
+mintheme <- function(){
+    theme(legend.position = "none", 
+        panel.grid = element_blank(), 
+        axis.text = element_blank(),
+        panel.background = element_blank(),
+        axis.line = element_line(),
+        axis.ticks = element_blank()) 
+}
+medtheme <- function(){
+    theme(legend.position = "none", 
+        panel.grid = element_blank(), 
+        panel.background = element_blank(),
+        axis.line = element_line(),
+        ) 
+}
+
+knitr::opts_chunk$set(echo = TRUE)
+show_results <- FALSE
+hide_results <- function(input, show=TRUE){
+  if(show){
+    return(input)
+  } else{
+    return("")
+  }
+}
+```
+
+## Encoding data using visual cues
+
+
+![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg)
+
+
+As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such a bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph on the right shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
+<!-- https://paldhous.github.io/ucb/2016/dataviz/week2.html -->
+
+The linked picture is based on [*Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods*](https://www.jstor.org/stable/2288400) by William S. Cleveland and Robert McGill.
+
+Therefore, when creating a visualization you should consider the best type of visual cue that represents the data best with the goal of transmitting the intended message. For good perception of a message it is clearly better to provide simple visualizations. We discuss some specific points in more detail below.
+
+&nbsp;
+
+
+
+## 3D
+
+Providing simple and easily perceptible visualizations implies that you should avoid 3-dimensional graphical representations in most circumstances. Consider the following visualization:
+
+
+![](https://editor.analyticsvidhya.com/uploads/75170Featured%20Image.JPG)
+
+As you can see (or not see!) some data is hidden behind the different bars. Furthermore it is rather difficult (and misleading) to compare the height from different depths. Another point not related to 3D in this graph are the missing axis labels and the missing legend for the colors. 
+
+
+## Avoid occlusion
+
+As a general principle we can conclude from the 3D example that you should always avoid occlusion of some parts of the visualization. An example can be found in the following plot showing multiple densities in the same panel. The different densities where colored according to group but only the density in the front is fully visible.
+
+```{r}
+set.seed(1234)
+df <- data.frame(x=sample(1:10,1000, replace = TRUE),name=rep(letters[1:5],200))
+df$x[df$name == "a" & df$x < 9] <-sample(1:6,sum(df$name == "a" & df$x < 9), replace = TRUE) 
+df$x[df$name == "b"] <- rep(1:10, 20)
+ggplot(df) +
+  geom_density(aes(x,color=name, fill=name)) +
+  mintheme()
+```
+
+An alternative is to plot lines which allows us to see all groups completely.  
+
+```{r}
+ggplot(df) +
+  geom_density(aes(x,color=name)) +
+  mintheme()
+```
+
+## Pie charts
+
+Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
+
+```{r, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+set.seed(123)
+x1 <- table(factor(c(rbinom(100,2,0.5),rep(0:2,100))))
+x2 <- table(factor(c(rbinom(100,2,0.4),rep(0:2,100))))
+x3 <- table(factor(c(rbinom(100,2,0.3),rep(0:2,100))))
+
+df <- data.frame(x=c(x1,x2,x3), time = factor(rep(1:3,each=3)),var=c(names(x1),names(x2),names(x3)))
+
+ggplot(df) +
+  geom_bar(aes(x=time,y=x, fill=var),position="dodge", stat="identity", width=1) +
+  mintheme()
+
+ggplot(df) +
+  geom_bar(aes(x=time,y=x, fill=var),stat="identity", width=1) +
+  mintheme()
+```
+
+
+```{r, fig.show="hold", out.width="33%", fig.height=6, fig.width=6}
+for (i in 1:3) {
+  print(ggplot(df %>% dplyr::filter(time==i)) +
+    geom_bar(aes(x=time,y=x, fill=var),stat="identity", width=1) +
+    coord_polar("y", start=0) +
+    mintheme() +
+    theme(text = element_blank()))
+}
+```
+
+Another difficult to interpret quasi-pie chart which shows how difficult it is to see and quantify differences in a pie chart:  
+![](https://rigorousthemescom-ebizon.netdna-ssl.com/blog/wp-content/uploads/2021/02/screely-1612362324209.png){: height="300px"}
+
+
+## Arrangement of plots
+
+The arrangement of multiple plots and panels can also contribute to increasing the clarity of a visualization. Have a look at the following plot.  
+
+```{r}
+set.seed(123)
+df <- data.frame(var2=c(rnorm(50),rnorm(50,3),rnorm(50,6)), var1=c(rnorm(150)), sample=rep(1:3, each=50))
+plotls1 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_point(aes(var2,var1)) + facet_wrap(~sample) +
+    mintheme())
+plotls2 <- purrr::map(3:1, ~ ggplot(df[df$sample==.x,]) +  geom_boxplot(aes(var1)) + facet_wrap(~sample) +
+    mintheme() + labs(y=""))
+ggpubr::ggarrange(nrow=2, ncol=1,
+  ggpubr::ggarrange(plotlist = plotls1, nrow = 1, ncol=3),
+  ggpubr::ggarrange(plotlist = plotls2, nrow = 1, ncol=3)
+)
+```
+
+Two inconsistencies are present. First of all the order of the sample of the top row and the bottom row is not the same. Secondly in the top row `var1` is on the y-axis while in the bottom row it is on the x-axis. Staying consistent and in general have an arrangement that makes sense helps to have a clear representation that transmits the desired information efficiently. A better alternative for the above plot is:  
+
+```{r}
+plotls1 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_point(aes(var1,var2)) + facet_wrap(~sample) +
+    mintheme())
+plotls2 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_boxplot(aes(var1)) + facet_wrap(~sample) +
+    mintheme() + labs(y=""))
+ggpubr::ggarrange(nrow=2, ncol=1,
+  ggpubr::ggarrange(plotlist = plotls1, nrow = 1, ncol=3),
+  ggpubr::ggarrange(plotlist = plotls2, nrow = 1, ncol=3)
+)
+```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# 071-3-plotexamples: 2. Plot examples
+
+# Exercise
+
+Let's have a look at the following master piece:
+![](https://statmodeling.stat.columbia.edu/wp-content/uploads/2008/06/graph.jpg)
+/static/3d_plot_exercise.jpg  
+
+Answer the following questions in context to the above plot:
+
+Is the 3D representation sensible?
+Yes
+No (x)
+
+Are the legend labels sensible?
+Yes
+No(x)
+
+Are the axis labels sensible?
+Yes
+No(x)
+
+Is it sensible to have X-axis tick values on multiple levels?
+Yes
+No(x)
+
+Are the Y-axis tick values reasonable?
+Yes
+No(x)
+
+Is the Y-axis range reasonable?
+Yes
+No(x)
+
+Are the values in the plot easily readable?
+Yes
+No(x)
+
+Is the title suitable?
+Yes
+No(x)
+
+Is the used color palette color-blind friendly?
+Yes
+No(x)
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+
+# 071-4-showdata: 2. Show the data
+
+## Boxplots
+
+```{r}
+set.seed(123)
+x1 <- rnorm(40,2)
+xnorm <- c(x1,-x1)
+x2 <- c(runif(15, 0, 3.1), runif(5,3.1,4))
+xunif <- c(x2,-x2)
+x3 <- c(rep(0,4),rep(2.05,13),rep(-2.05,13),rep(3.8,5),rep(-3.8,5))
+df <- data.frame(x1=xnorm,
+                 x2=xunif,
+                 x3=x3)
+df_long <- df %>% 
+  pivot_longer(cols = everything(), 
+               names_to="dataset", 
+               values_to="y")
+```
+
+Boxplots are used to give a rough overview of the distribution of a data set based on a few summary characteristics (quantiles). Consider the following three boxplots each representing a different dataset. The boxplots look identical even tough the underlying distributions may not be.  
+
+```{r histo_only}
+ggplot(df_long) +
+  geom_boxplot(aes(y=y,x=dataset))+
+  medtheme()
+```
+
+The code for the above plot:
+```{r, eval=FALSE, echo=TRUE}
+ggplot(df_long) +
+  geom_boxplot(aes(y=y,x=dataset))
+```
+
+Violin plots are an alternative to boxplots. They are based on an estimation of the underlying probability density, i.e. they use more information inherent in the data set. Have a look at the following three violin plots of the same datasets as above. Again, two of the violin plots look similar but the underlying data may not be identical.  
+
+```{r}
+ggplot(df_long) +
+  geom_violin(aes(y=y,x=dataset))+
+  medtheme()
+```
+
+Let's finally have a look at the actual data. As you can see the samples x1 and x3 are in fact very distinct, or more precisely, x3 seems to have only 5 possible values.  
+
+```{r}
+ggplot(df_long) +
+  geom_point(aes(y=y,x=dataset)) +
+  medtheme()
+```
+
+So why did the boxplot not show the distributional differences? Since boxplots only show
+certain quantiles (usually the quartiles, i.e., 25%, 50% and 75%, plus "outliers") plots of different datasets having the same or similar quantiles appear identical. The quartiles of the three data sets are  
+
+```{r}
+df_long %>% 
+  dplyr::group_by(dataset) %>% 
+  dplyr::summarise(q25 = quantile(y, probs=0.25),
+                q50 = quantile(y, probs=0.5),
+                q75 = quantile(y, probs=0.75)) %>% 
+  knitr::kable()
+```
+
+Violin plots show a mirrored estimation of the underlying density using a smoothing technique. Loosely speaking smoothing means that starting from a histogram a smooth version of the underlying probability distribution is created. The degree of smoothing, ranging in this case from histogram to straight line, determines the actual appearence of the plot. For the violin plot the degree of smoothing is chosen automatically. Already histograms with 5 bins for the data x1 and x3 would be very similar and hence the smoothed versions thereof as well.
+
+Caution is furthermore advised if the datasets that are compared are of very different size, because often more data gives you a higher confidence in the observed distribution. It is therefore advised to initially always have a look at the actual data and not just the summaries (like boxplots and violin plots) to detect anomalies.
+
+Another option is the use of `geom_jitter` (or `geom_sina` from the `ggforce` package) in combination with violin plots:  
+
+```{r}
+set.seed(123)
+ggplot(df_long) +
+  geom_violin(aes(y=y,x=dataset)) +
+  geom_jitter(aes(y=y,x=dataset),width=0.3) +
+  medtheme()
+```
+
+The code for the above plot:
+```{r, eval=FALSE, echo=TRUE}
+ggplot(df_long) +
+  geom_violin(aes(y=y,x=dataset)) +
+  geom_jitter(aes(y=y,x=dataset),width=0.3)
+```
+
+The advantage is that individual points as well as the distribution are shown.
+
+
+Boxplots together with `geom_jitter` are another possibility.  
+
+```{r}
+set.seed(123)
+ggplot(df_long) +
+  geom_boxplot(aes(y=y,x=dataset)) +
+  geom_jitter(aes(y=y,x=dataset),width=0.3) +
+  medtheme()
+
+```
+
+Another possibility is to only show the jittered data:
+
+```{r}
+set.seed(123)
+ggplot(df_long) +
+  geom_jitter(aes(y=y,x=dataset),width=0.3) +
+  medtheme()
+```
+
+
+
+## Bar plots
+
+The same as discussed before for boxplots also holds for barplots. If you have continuous data and see the following barplots you might conclude that the data sets are the same:
+
+```{r}
+df_long <- df_long %>% 
+  dplyr::group_by(dataset) %>% 
+  dplyr::mutate(y_t =y-min(y),
+                y_mean=mean(y_t),
+                y_sd=sd(y_t),
+                y_sd_min=y_mean-y_sd,
+                y_sd_max=y_mean+y_sd)
+ggplot() +
+  geom_col(aes(y=y_mean,x=dataset),data = unique(df_long[,c("dataset","y_mean")])) +
+  geom_errorbar(aes(x=dataset,ymin=y_sd_min,ymax=y_sd_max),data = unique(df_long[,c("dataset","y_sd_min","y_sd_max")]),width=0.2)+
+  labs(y="y") +
+  medtheme()
+```
+
+But if you also show the individual points you can see clear differences:
+
+```{r}
+set.seed(123)
+df_long <- df_long %>% 
+  dplyr::group_by(dataset) %>% 
+  dplyr::mutate(y_t =y-min(y),
+                y_mean=mean(y_t),
+                y_sd=sd(y_t),
+                y_sd_min=y_mean-y_sd,
+                y_sd_max=y_mean+y_sd)
+ggplot() +
+  geom_col(aes(y=y_mean,x=dataset),data = unique(df_long[,c("dataset","y_mean")])) +
+  geom_errorbar(aes(x=dataset,ymin=y_sd_min,ymax=y_sd_max),data = unique(df_long[,c("dataset","y_sd_min","y_sd_max")]),width=0.2)+
+  geom_jitter(aes(y=y_t,x=dataset), data=df_long, width = 0.3)+
+  labs(y="y") +
+  medtheme()
+
+```
+
+Important to keep in mind when using barplots with error bars is to state what the
+error bars mean. Do they correspond to the standard deviation, the standard error or a confidence interval?
+There is no clear answer to which one to use and, if possible, other types of visualizations should be used.
+
+<!-- [NEED TO INCLUDE something on this](https://twitter.com/T_Weissgerber/status/1040576802979233793/photo/1) -->
+<!-- Included one example. -->
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+# 071-5-honestaxis: 3. Be honest about the axes
+
+
+The axes of plots determine how much information you provide and where you put the focus. You could cut axes, blow certain parts of an axis up through transformation or hide information on certain scales if you do not transform. You can expose or hide information by choosing the aspect ratio between the x and y axis. You can provide clear and precise information through meaningful labeling of axes and axis tick marks or you can obscure the same information by deliberately choosing uninformative tick locations, for example. These issues are illustrated through example in the following
+
+## Cutting axes
+
+```{r}
+set.seed(123)
+df <- data.frame(x=factor(c(rbinom(10,2,0.5),rep(0:2,500))))
+```
+
+Let's consider the following two barplots. The first has a shortened axis range and shows clear differences between the datasets. The second plot on the other hand shows the enire axis starting from zero and the differences disappear. 
+
+```{r, warning=FALSE, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+ggplot(df) +
+  geom_histogram(aes(x), stat="count") +
+  coord_cartesian(ylim=c(500,max(table(df$x)))) +
+  medtheme()
+
+ggplot(df) +
+  geom_histogram(aes(x), stat="count")+
+  medtheme()
+```
+
+Here is a flashy, concrete example of cutting an axis, which makes differences appear much hugher than they are in reality:
+
+![](https://i.redd.it/xsndbzpq1qg11.jpg)
+
+The other way around is also possible. Choosing to show the entire axis starting from zero can mask differences that do matter. For instance the following graph gives "1000% proof for stable temperature and the climate change being a HOAX", simply by showing an axis from zero degree Kelvin and thus making differences seem negligably small:
+
+![](https://miro.medium.com/max/1400/1*Sn1QgIBvtZLiqoZzr9a9Yg.png)
+
+## Axis transformation
+
+```{r}
+set.seed(123)
+x1 <- runif(100,2,4)
+df <- data.frame(x=x1, y=rnorm(100,exp(x1)+10,exp(x1)/3))
+df <- data.frame(x=x1, y=rnorm(100,exp(x1+10),10))
+```
+
+In some cases you might have data that is on completely different scales, meaning that there are differences to be seen at different orders of magnitudes. In these 
+cases it can often to be helpful to do an axis-transformation. For instance consider the 
+following untransformed plot:
+
+```{r}
+x1 <- c(runif(100,0.8,1.2),runif(100,8,12),runif(100,80,120),runif(100,800,1200),runif(100,8000,12000))
+df <- data.frame(x=x1, y=rnorm(100,0,rep(c(1,10,100,1000,10000),each=100)))
+ggplot(df) +
+  geom_point(aes(x,y))+
+  medtheme()
+```
+
+There seems to be some structure but especially for the low values it is not clear 
+what is going on. If instead you do a `log10` transformation of the x-axis things get
+much clearer. Axis transformations are also something to consider if you have for example
+non linear scales. But beware, transformations can also be used to showcase differences that do not really matter in practice.
+
+```{r}
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  scale_x_continuous(trans="log10")+
+  medtheme()
+```
+
+## Aspect ratio
+
+```{r}
+set.seed(123)
+df <- data.frame(x=rnorm(100),
+                 y=rnorm(100))
+```
+
+The aspect ratio is another important parameter that can be manipulated to overstress certain patterns. For example, have a look at the following two plots. The first as a ratio of one, meaning the scale of the x and y axis are the same. The second plot has an aspect ration of 1/4 meaning the x axis is substantially longer.
+
+```{r, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  coord_fixed(ratio=1)+
+  medtheme()
+
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  coord_fixed(ratio=1/4)+
+  medtheme()
+  
+```
+
+Code for the above plot:
+```{r, eval=FALSE, echo=TRUE}
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  coord_fixed(ratio=1)
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  coord_fixed(ratio=1/4)
+```
+
+
+Visually the second plot implies that the variance of x is much higher than of y, which is not the case.  
+
+```{r, echo=TRUE}
+summarise(df, x = var(x), y = var(y))
+```
+
+Also consider the following real example:
+
+![](https://graphworkflow.files.wordpress.com/2019/09/types_life.png?w=1024)
+
+Where does the increase look the most dramatic?
+
+
+## Bin width of histograms
+
+The appearance of a histogram is determined by the bin width that is used to create it. If you
+have a very large binwidth (or a low total number of bins) you might see something like this
+and you would probably consider the distribution to be approximately uniformly distributed.
+
+```{r, fig.height=4, fig.width=6}
+set.seed(123)
+df <- data.frame(x=unlist(lapply(0:9, function(i) c(rep(0.501+i,sample(1:3,1)),rep(1+i,sample(17:20,1))))))
+ggplot(df) +
+  geom_histogram(aes(x), binwidth = 1)+
+  medtheme()
+```
+
+If on the other hand you decrease the binwidth (or increase the number of bins) you
+might see something like this:
+
+```{r, fig.height=4, fig.width=6}
+ggplot(df) +
+  geom_histogram(aes(x), binwidth = 0.5)+
+  medtheme()
+```
+
+Making it quite obvious that the distribution is most definitely not uniformly distributed (on this scale). Choosing the correct bin width is not easy and depends largely on the context.
+
+
+With `geom_rug` you can mark the position of individual observations:
+
+```{r, fig.height=4, fig.width=6}
+ggplot(df,aes(x)) +
+  geom_histogram(binwidth = 0.5) +
+  geom_rug()+
+  medtheme()
+```
+
+Code for the above plot:
+```{r, eval=FALSE, echo=TRUE}
+ggplot(df,aes(x)) +
+  geom_histogram(binwidth = 0.5) +
+  geom_rug()
+```
+
+
+## Axis scales in multiple plots
+
+If you provide plots in multiple panels, each using the same variables, you need to pay attention to the scale of each subplot. For example have a look at the following plot.   
+
+```{r}
+set.seed(123)
+df <- data.frame(y=c(rnorm(50),rnorm(50,3),rnorm(50,6)), x=c(rnorm(150)), sample=rep(1:3, each=50))
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  facet_wrap(~sample, scales = "free")+
+  medtheme()
+```
+
+At first glance the distribution of each of the three samples looks the same. But if you look closely you can see that the scales are not the same for each subplot. If you instead keep the scale the same across subplots you get a visualization with clear differences of the distributions between the different samples.
+
+```{r}
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  facet_wrap(~sample)+
+  medtheme()
+```
+
+Code for the above plot:
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(df) +
+  geom_point(aes(x,y)) +
+  facet_wrap(~sample)
+```
+
+
+Another example of using different scales:
+
+![](https://preview.redd.it/x5q5y0iz72d71.jpg?width=960&crop=smart&auto=webp&s=3e08e75429446099ebf4f462274be2b0e52aedf0)
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# 071-6-sensiblecolors: 4. Use colors sensibly
+
+## Color contrast
+
+Trying to encode more than 8 category with colors is usually not a good idea as distinction between colors can become very difficult:
+
+<!-- Some things from here (for example, not more than 8 categories, texas map in rainbow and made better) -->
+<!-- https://clauswilke.com/dataviz/color-pitfalls.html -->
+
+
+```{r}
+mtcars %>% 
+  rownames_to_column() %>% 
+  ggplot() +
+    geom_point(aes(mpg,disp, color=factor(rowname))) +
+    labs(color="") +
+    medtheme()
+```
+
+In such a case it can be a better idea to directly label the points:
+
+```{r}
+mtcars %>% 
+  rownames_to_column() %>% 
+  ggplot() +
+  geom_point(aes(mpg,disp,color=cyl)) +
+  ggrepel::geom_label_repel(aes(mpg,disp, label=rowname),
+                            size = 2.5,label.size = 0.1,
+                            label.padding = 0.1)+
+    medtheme()
+```
+
+
+Code for the above plot:
+
+```{r,eval=FALSE, echo=TRUE}
+mtcars %>% 
+  rownames_to_column() %>% 
+  ggplot() +
+  geom_point(aes(mpg,disp,color=cyl)) +
+  ggrepel::geom_label_repel(aes(mpg,disp, label=rowname),
+                            size = 2.5,label.size = 0.1,
+                            label.padding = 0.1)
+```
+
+
+
+See also: [Common pitfalls of color use](https://clauswilke.com/dataviz/color-pitfalls.html) in Fundamentals of Data Visualization.
+
+## Color vision deficiency
+
+About 1 of every 12 people is affected by some type of color vision deficiency[^1].
+This is important to keep in mind when choosing colors for visualizations. For example consider the following scatter plot using a Red-Yellow-Green color palette, knowing that Red-Green colorblindness is the most frequent type of color deficiency.
+
+[^1]: https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(mpg,disp, color=factor(carb))) +
+  scale_colour_brewer(palette="RdYlGn")+
+  labs(color="carb") +
+    medtheme()
+```
+
+To check how the plots appear for color deficient persons you can use the `cvd_grip` function from the `colorblindr` package (install instructions on the [Github colorblindr repo](https://github.com/clauswilke/colorblindr)).
+
+```{r, echo=TRUE}
+colorblindr::cvd_grid()+
+    medtheme()
+```
+
+Using a different color palette can help. For example the following:  
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(mpg,disp, color=factor(carb))) +
+  scale_color_OkabeIto()+
+    labs(color="carb") +
+    medtheme()
+```
+
+Code for the above plot:
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(mtcars) +
+  geom_point(aes(mpg,disp, color=factor(carb))) +
+  scale_color_OkabeIto()
+```
+
+
+Another option is the `dichromat` package which features multiple palettes for people with red-green colorblindness.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# 071-7-decisiontree: 5.  Decision tree
+
+## Decision tree for the choice of the best plot type
+
+
+Since the amount of possible visualizations can be quite overwhelming there exist guidelines to choose the optimal plot type that can be used as a starting point. For example the following decision tree:  
+
+![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_5.jpg)
+  
+But keep in mind that this is no rule and depending on the situation different options can be favorable. 
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+# 071-8-ggplot2: 6. ggplot2
+
+## A short introduction to `ggplot2`
+
+We additionally provide a quick introduction to the widely used package `ggplot2`. It is based on the idea of a grammar of graphics, in other words well defined instructions of how to create a plot.
+
+![](https://carpentries-incubator.github.io/open-science-with-r/img/rstudio-cheatsheet-ggplot.png)
+
+## Data example
+
+We will not go further into the theoretical details but instead jump right into the practical part. Before creating our first ggplot we load `ggplot2` and have a look at the `cars` dataset that we will use.
+
+```{r}
+library(ggplot2)
+head(mtcars)
+```
+
+## First plot
+
+Running the following command will initialize a ggplot object without yet showing anything since we don't tell it what to show.
+
+```{r}
+ggplot(mtcars)
+```
+
+To create a plot we have to specify what kind of plot - or geom - we want to use. In this case we want a scatter plot so we choose `geom_point`. For other possibilities check the `ggplot2` documentation (e.g. `?ggplot2`) or just do a Google search. Furthermore we have to specify which columns in our dataset we want to use for which axis. Or in other words assign columns of the data to the x and y aesthetic (`aes`). To check which aesthetic is available for which geom check the *Aesthetics* paragraph in the documentation in the respective geom (e.g. in `?geom_point`).
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp))
+```
+
+If we want to show `mpg` on the y-axis and `disp` on the x-axis:
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=disp, y=mpg))
+```
+If we want a boxplot plot we could do
+```{r}
+ggplot(mtcars) +
+  geom_boxplot(aes(x=mpg))
+```
+
+or:
+
+```{r}
+ggplot(mtcars) +
+  geom_boxplot(aes(y=mpg))
+```
+
+To color the plot according to another column in the data the `color` (or `colour`) aesthetic can be used.
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl)))
+```
+
+
+## Plot options
+
+Many options to change the appearance of plots are available For example change labels:
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl))) +
+  labs(x="X - Axis", title = "ggplot2", color="")
+```
+
+Or change the theme (for all options check out the help page from `theme`). Either using a predefined theme.
+
+```{r}
+# preconfigured
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl))) +
+  theme_bw()
+```
+
+Or creating your own. (Can you figure out what each of the arguments in `theme` do?)
+
+```{r}
+# change settings yourself
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl))) +
+  theme(panel.background = element_rect(fill = "yellow", color="red"), 
+        plot.background = element_rect(fill="blue"),
+        legend.background = element_rect(fill="red"), 
+        axis.title = element_text(colour = "white"),
+        axis.line = element_line(linetype = 7,colour = "black",size=3),
+        panel.grid = element_line(colour="grey",size = 1,linetype = 2),
+        axis.text = element_text(angle = 45,hjust=1,colour = "lightgrey",size = 14))
+```
+
+
+Changing the color palette used can be done by using either a custom palette (in this case generated using the `RColorBrewer` package)
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl))) +
+  scale_color_manual(values=RColorBrewer::brewer.pal(3, "Set2"))
+```
+
+or by directly using an existing scale (usually of the form `scale_color_NAME`). Further options will be given below.
+
+```{r}
+ggplot(mtcars) +
+  geom_point(aes(x=mpg, y=disp, color=factor(cyl))) +
+  scale_color_viridis_d()
+```
+
+## Exercise
+
+## 1
+
+How do you create a scatter plot with `ggplot2`?
+
+* `ggplot(df) + geom_point(aes(x,y))` (x)
+* `ggplot(df, aes(x,y)) + geom_point(aes(x,y))` (x)
+* `ggplot(df, aes(x,y)) + geom_point()` (x)
+* `ggplot(df) + geom_point()` 
+* `geom_point(df, aes(x,y))` 
+
+## 2
+
+Color by group?
+
+* `ggplot(df) + geom_point(aes(x,y, color=group))` (x)
+* `ggplot(df) + geom_point(aes(x,y, colour=group))` (x)
+* `ggplot(df, aes(color=group)) + geom_point(aes(x,y))` (x)
+* `ggplot(df, aes(colour=group)) + geom_point(aes(x,y))` (x)
+* `ggplot(df) + geom_point(aes(x,y)) + geom_col(aes(group))` 
+* `ggplot(df) + geom_point(aes(x,y)) + theme(group.color=aes(group))` 
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+# 072homework
+
+# Homework
+
+For this homework we will work with climate data published by the Bundesamt für Statistic BFS in which
+various climate related variables measured at different locations in Switzerland have been put together.
+The data has already been wrangled into a csv file that you can download from [here.](/static/climate_data.csv)
+
+The source data was downloaded from here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02) and here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03)
+
+
+
+## Upload
+
+
+
+You will upload a pdf file produced from R Markdown containing the answers the to the questions below in the next step (allowed file format is .pdf). Make sure the code to produce the answers is shown. Your submission will be peer reviewed. Staff will perform random checks on the peer review.
+
+
+
+&nbsp;
+
+## Task 1: data exploration
+
+
+
+In this first task read in the `climate_data.csv` file and do a short exploration of the dataset.
+
+```{r}
+climatedf_comp <- read.csv(here::here("files/docs/07/climate_data.csv"))
+```
+
+
+
+## 1.1 First look
+
+
+
+Show the top 3 rows of the dataset and additionally a short summary of the dataset (*Hint*: use `summary`). Describe what you observe in a few words.
+```{r, include=show_results}
+head(climatedf_comp, n=3)
+summary(climatedf_comp)
+```
+
+
+## 1.2 Which has been the hottest year?
+
+
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::group_by(Year) %>% 
+  dplyr::summarise(mean_temp=mean(Annual_temperature)) %>% 
+  dplyr::filter(mean_temp==max(mean_temp)) %>% 
+  dplyr::pull(Year)
+```
+
+
+
+## 1.3 Which has been the coldest year?
+
+
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::group_by(Year) %>% 
+  dplyr::summarise(mean_temp=mean(Annual_temperature)) %>% 
+  dplyr::filter(mean_temp==min(mean_temp)) %>% 
+  dplyr::pull(Year)
+```
+
+
+
+## Task 2: visualization
+
+
+## 2.1 Association of `Annual_temperature` and `Year`
+
+
+
+The goal is to visualize the association of `Annual_temperature` and `Year`.
+To increase the visibility we will only look at the locations `ZürichFluntern`, `Säntis`, `Samedan`, `LocarnoMonti`. 
+
+Choose a suitable visualization (maybe consider looking at the decision tree) and plot the respective graph.
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>%
+  ggplot() +
+  geom_line(aes(Year, Annual_temperature, color=Location)) +
+  labs(y="Annual temperature")
+```
+
+
+
+## 2.2 Add information on the altitude
+
+
+
+Based on the previous plot update / change your plot to also include the information about the altitude. Make sure that the location information is also provided.
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>%
+  ggplot() +
+  geom_line(aes(Year, Annual_temperature, color=Altitude,group=Location)) +
+  geom_label(aes(Year,Annual_temperature,label=Location),data = climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% 
+    dplyr::filter(Year==min(Year)+5),nudge_y = 1) +
+  labs(y="Annual temperature")
+```
+
+
+
+## 2.3 Normalization
+
+
+
+In the next step we want to normalize the Annual temperature by using the values of the years <1951 as a base. I.e. calculate the mean `Annual_temperature` for `Year`<1951 for each `Location` and subtract this value from `Annual_temperature`.  Present a visualization that allows to study the deviation from this annual mean by location. 
+
+
+```{r, include=show_results}
+climatedf_comp_translated <- climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% 
+  dplyr::group_by(Location) %>% 
+  dplyr::mutate(mean_temperature = mean(Annual_temperature[Year<1951]),
+                Annual_temperature = Annual_temperature-mean_temperature)
+
+ggplot(climatedf_comp_translated) +
+  geom_line(aes(Year, Annual_temperature, color=Altitude,group=Location)) +
+  # facet_wrap(~Location)+
+  # geom_label(aes(Year,Annual_temperature,label=Location),data = climatedf_comp_translated %>% 
+  # dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% 
+  #   dplyr::filter(Year==min(Year)+5),nudge_y = 1) +
+  labs(y="Annual temperature deviation from average up to 1951")
+```
+
+
+
+## 2.4 Associations between `Annual_Precipitation`, and `Sunshine_duration`
+
+
+
+The next goal is to explore associations between `Annual_Precipitation`, and `Sunshine_duration` for the locations `ZürichFluntern`,`Säntis`,`Samedan`,`LocarnoMonti`. Present at least two different types of plots.
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>%
+  ggplot() +
+  geom_point(aes(Annual_Precipitation, Sunshine_duration, color=Location))
+```
+
+
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti"))%>% 
+  # dplyr::group_by(Location) %>% 
+  # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration))  %>%
+  ggplot() +
+  geom_violin(aes(Location,Annual_Precipitation, color= Sunshine_duration)) +
+  ggforce::geom_sina(aes(Location,Annual_Precipitation, color= Sunshine_duration))
+```
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti"))%>% 
+  # dplyr::group_by(Location) %>% 
+  # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration))  %>%
+  ggplot() +
+  geom_boxplot(aes(Location,Sunshine_duration , color= Annual_Precipitation)) +
+  geom_jitter(aes(Location,Sunshine_duration, color= Annual_Precipitation))
+  # ggforce::geom_sina(aes(Location,Annual_Precipitation, color= Sunshine_duration))
+```
+
+
+
+
+
+<!-- ## Task 3: aggregated data -->
+
+<!-- In this task we will look at a situation where we only have aggregated data: The mean and standard deviation of `Annual_summer_days` for the years 1931-1960, 1961-1990 and 1991-2020. The following code creates this aggregated data that we will use: -->
+
+<!-- ```{r, include=show_results} -->
+<!-- library(magrittr) # for the pip `%>%`  -->
+<!-- cutv <- c(1930,1960,1990,2020) -->
+<!-- climatedf_comp_aggr <- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   dplyr::mutate(Year = cut(Year, cutv, right = TRUE), -->
+<!--                 Year = factor(Year, labels = c("1931-1960","1961-1990","1991-2020"))) %>%  -->
+<!--   dplyr::group_by(Year, Location) %>%  -->
+<!--   dplyr::summarise("mean_Annual_summer_days" = mean(na.omit(Annual_summer_days)), -->
+<!--                    "sd_Annual_summer_days" = sd(na.omit(Annual_summer_days)))  -->
+<!-- ``` -->
+
+
+<!-- ## 3.1  -->
+<!-- Find a good representation of showing the association between `Year` and `mean_Annual_summer_days` and create a plot. -->
+
+
+<!-- ```{r} -->
+<!-- climatedf_comp_aggr %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year, mean_Annual_summer_days, fill=Location), position = "dodge") + -->
+<!--   theme(axis.text.x = element_text(angle=45,hjust=1)) + -->
+<!--   labs(x="", y="Mean number of annual summer days") -->
+<!-- ``` -->
+
+
+<!-- ## 3.2 -->
+<!-- Adapt your previous plot by incorporating the given uncertainty (`sd_Annual_summer_days`). -->
+
+
+<!-- ```{r} -->
+<!-- climatedf_comp_aggr %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year, mean_Annual_summer_days, fill=Location), position = "dodge") + -->
+<!--   geom_errorbar(aes(x=Year, -->
+<!--                   y=mean_Annual_summer_days, -->
+<!--                   ymin=mean_Annual_summer_days-2*sd_Annual_summer_days,  -->
+<!--                   ymax=mean_Annual_summer_days+2*sd_Annual_summer_days, group=Location), position = "dodge") + -->
+<!--   theme(axis.text.x = element_text(angle=45,hjust=1)) + -->
+<!--   labs(x="", y="Mean number of annual summer days") -->
+<!-- ``` -->
+
+
+
+
+
+
+
+
+
+
+<!-- # 2 -->
+
+<!-- ```{r, include=show_results} -->
+<!-- plotvars <- colnames(climatedf_comp)[c(-1,-2,-4)] -->
+<!-- plotvar <- plotvars[3] -->
+<!-- colorvar <- plotvars[1] -->
+<!-- ``` -->
+
+<!-- In this exercise we will build a visualization step by step starting from the following plot: -->
+
+<!-- ```{r, include=show_results} -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year, Annual_temperature, color=Location)) + -->
+<!--   labs(y="Annual temperature") -->
+<!-- ``` -->
+
+<!-- ## 2.1 -->
+
+<!-- Add a trend line (loess fit) for each group. (Hint: use geom_smooth) -->
+
+<!-- ```{r, include=show_results} -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year, !!sym(plotvar), color=Location)) + -->
+<!--   geom_smooth(aes(Year, !!sym(plotvar),group=Location),method = "loess") + -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+<!-- ## 2.2 -->
+
+<!-- We can clearly see an upwards trend in each of the four locations. Next we want to see the relative temperature compared to the mean of the "Annual_temperature" for the years 1931-1950. For that, center "Annual_temperature" by subtracting the mean of the years 1931-1950. -->
+
+
+<!-- ```{r, include=show_results} -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::group_by(Location) %>%  -->
+<!--   dplyr::mutate(mean_temperature = mean(Annual_temperature[Year<1951]), -->
+<!--                 Annual_temperature = Annual_temperature-mean_temperature, -->
+<!--                 mean_sunshine = mean(Sunshine_duration[Year<1951]), -->
+<!--                 Sunshine_duration = Sunshine_duration-mean_sunshine) %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year, !!sym(plotvar), color=Location)) + -->
+<!--   # facet_wrap(~Location) + -->
+<!--   geom_smooth(aes(Year, !!sym(plotvar)),method = "loess") + -->
+<!--   # scale_color_viridis_d() + -->
+<!--   labs(y="Change in Annual temperatue", -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+
+<!-- ## 2.3 -->
+
+<!-- Now we want to make the plot a bit nicer looking, try to reproduce the following. Hint: have a look at `theme` and `scale_x_continuous`. -->
+
+<!-- ```{r, include=show_results} -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::group_by(Location) %>%  -->
+<!--   dplyr::mutate(mean_temperature = mean(Annual_temperature[Year<1951]), -->
+<!--                 Annual_temperature = Annual_temperature-mean_temperature, -->
+<!--                 mean_sunshine = mean(Sunshine_duration[Year<1951]), -->
+<!--                 Sunshine_duration = Sunshine_duration-mean_sunshine) %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year, !!sym(plotvar), color=Location)) + -->
+<!--   geom_smooth(aes(Year, !!sym(plotvar)),method = "loess") + -->
+<!--   scale_x_continuous(breaks = c(1930,1960,1990,2020)) + -->
+<!--   theme(axis.text.x = element_text(angle=45, hjust=0.5, vjust = 0.5),  -->
+<!--         panel.grid.minor = element_blank(), -->
+<!--         panel.spacing.x = unit(1, "lines"), -->
+<!--         panel.background = element_rect(fill="grey97"),  -->
+<!--         strip.background = element_rect(fill="grey93"),  -->
+<!--         strip.text = element_text(face="bold"), -->
+<!--         legend.position = c(0.9,0.16),legend.title = element_blank(), -->
+<!--           ) + -->
+<!--   labs(x="", y="Change in Annual temperature", color="") -->
+<!-- ``` -->
+
+
+
+<!-- # 3 -->
+
+<!-- In this exercise we will do a bar plot showing the mean number of Annual summer days faceted by location and summarized into 3 bins. Again we will develop the graph in multiple steps. -->
+<!-- We want to combine the values into 3 bins of equal size. In other words we will calculate the mean value for the years 1931-1960, 1961-1990 and 1991-2020. Meaning we want a data.frame of the following format: -->
+
+<!-- ```{r, include=show_results} -->
+<!-- cutv <- c(1930,1960,1990,2020) -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   dplyr::mutate(Year = cut(Year, cutv, right = TRUE), -->
+<!--                 Year = factor(Year, labels = c("1931-1960","1961-1990","1991-2020"))) %>%  -->
+<!--   dplyr::group_by(Year, Location) %>%  -->
+<!--   dplyr::summarise("mean_Annual_summer_days" = mean(na.omit(Annual_summer_days)), -->
+<!--                    "sd_Annual_summer_days" = sd(na.omit(Annual_summer_days)))  -->
+<!-- ``` -->
+
+
+<!-- ## 3.1 -->
+
+<!-- First exercise is to create the following barplot. (Hint use `facet_wrap(~Location)`) -->
+<!-- ```{r, include=show_results} -->
+<!-- plotvar <- plotvars[6] -->
+<!-- cutv <- c(1930,1960,1990,2020) -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   dplyr::mutate(Year = cut(Year, cutv, right = TRUE), -->
+<!--                 Year = factor(Year, labels = c("1931-1960","1961-1990","1991-2020"))) %>% #pull(Year) %>% unique -->
+<!--   dplyr::group_by(Year, Location) %>%  -->
+<!--   dplyr::summarise(!!sym(paste0("mean_",plotvar)) := mean(na.omit(!!sym(plotvar)))) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year, !!sym(paste0("mean_",plotvar)), fill=Year), position = "dodge") + -->
+<!--   facet_wrap(~Location) + -->
+<!--   theme(axis.text.x = element_text(angle=45,hjust=1)) + -->
+<!--   labs(x="", y="Mean number of annual summer days") -->
+<!-- ``` -->
+
+
+<!-- ## 3.2 -->
+
+<!-- Since we aggregate data, and have some missing values we also want to show the error bars (i.e. standard deviation). (Hint use `geom_errorbar` and calculate the errorbar, +- 1 standard deviation (sd)) -->
+<!-- ```{r, include=show_results} -->
+<!-- plotvar <- plotvars[6] -->
+<!-- cutv <- c(1930,1960,1990,2020) -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   dplyr::mutate(Year = cut(Year, cutv, right = TRUE), -->
+<!--                 Year = factor(Year, labels = c("1931-1960","1961-1990","1991-2020"))) %>% #pull(Year) %>% unique -->
+<!--   dplyr::group_by(Year, Location) %>%  -->
+<!--   dplyr::summarise(!!sym(paste0("mean_",plotvar)) := mean(na.omit(!!sym(plotvar))), -->
+<!--                    !!sym(paste0("sd_",plotvar)) := sd(na.omit(!!sym(plotvar)))) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year, !!sym(paste0("mean_",plotvar)), fill=Year), position = "dodge") + -->
+<!--   geom_errorbar(aes(x=Year, -->
+<!--                     y=!!sym(paste0("mean_",plotvar)), -->
+<!--                     ymin=!!sym(paste0("mean_",plotvar))-!!sym(paste0("sd_",plotvar)),  -->
+<!--                     ymax=!!sym(paste0("mean_",plotvar))+!!sym(paste0("sd_",plotvar))), width=.2) + -->
+<!--   facet_wrap(~Location) + -->
+<!--   theme(axis.text.x = element_text(angle=45,hjust=1)) + -->
+<!--   labs(x="", y="Mean number of annual summer days") -->
+<!-- ``` -->
+
+
+<!-- ## 3.4 -->
+
+<!-- To get another view of the same data we switch to sina plots instead of bar plots. -->
+<!-- ```{r, include=show_results} -->
+<!-- plotvar <- plotvars[6] -->
+<!-- cutv <- c(1930,1960,1990,2020) -->
+<!-- climatedf_comp %>%  -->
+<!--   dplyr::filter(Location %in% c("ZürichFluntern","Säntis","Samedan","LocarnoMonti")) %>% -->
+<!--   dplyr::mutate(Year = cut(Year, cutv, right = TRUE), -->
+<!--                 Year = factor(Year, labels = c("1931-1960","1961-1990","1991-2020"))) %>% #pull(Year) %>% unique -->
+<!--   # dplyr::group_by(Year, Location) %>%  -->
+<!--   # dplyr::summarise(!!sym(paste0("mean_",plotvar)) := mean(na.omit(!!sym(plotvar)))) %>%  -->
+<!--   ggplot(aes(Year, !!sym(plotvar), fill=Year)) + -->
+<!--   geom_violin(position = "dodge", draw_quantiles=0.5) + -->
+<!--   ggforce::geom_sina() + -->
+<!--   facet_wrap(~Location) + -->
+<!--   theme(axis.text.x = element_text(angle=45,hjust=1)) + -->
+<!--   labs(x="", y="Mean number of annual summer days") -->
+
+<!-- ``` -->
+
+
+
+<!-- # 4 -->
+
+<!-- In this exercise we will look at the Annual Precipitation with respect to time. -->
+
+<!-- ## 4.1  -->
+<!-- First we will create a stacked barplot of the Annual Precipitation for all measured years.  -->
+
+<!-- ```{r, include=show_results} -->
+<!-- colorvar <- "Location" -->
+<!-- climatedf_comp %>% -->
+<!--   dplyr::group_by(Year) %>%  -->
+<!--   # dplyr::mutate(Annual_Precipitation=Annual_Precipitation/sum(Annual_Precipitation)) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year,!!sym(plotvar), fill=!!sym(colorvar)))+ -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+<!-- ## 4.2 -->
+
+<!-- The same as 4.1 but normalized per year so that we get a sense of the change of proportions over time. -->
+
+<!-- ```{r, include=show_results} -->
+<!-- colorvar <- "Location" -->
+<!-- climatedf_comp %>% -->
+<!--   dplyr::group_by(Year) %>%  -->
+<!--   dplyr::mutate(Annual_Precipitation=Annual_Precipitation/sum(Annual_Precipitation)) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_col(aes(Year,!!sym(plotvar), fill=!!sym(colorvar)))+ -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+<!-- ## 4.3 -->
+
+<!-- Next we will create a line plot with x-axis year and y-axis Annual_Precipitation, colored by location. -->
+<!-- ```{r, include=show_results} -->
+<!-- colorvar <- "Location" -->
+<!-- climatedf_comp %>% -->
+<!--   dplyr::group_by(Year) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year,!!sym(plotvar), color=!!sym(colorvar)))+ -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+<!-- ## 4.4 -->
+
+<!-- Same as 4.3 but add a loess fit to get the trend per location.  -->
+
+<!-- ```{r, include=show_results} -->
+<!-- colorvar <- "Location" -->
+<!-- climatedf_comp %>% -->
+<!--   dplyr::group_by(Year) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year,!!sym(plotvar), color=!!sym(colorvar)), size=0.2) + -->
+<!--   geom_smooth(aes(Year,!!sym(plotvar),color=!!sym(colorvar)),method = "loess", alpha=0.1)+ -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+<!-- ## 4.5 -->
+
+<!-- Same as 4.4 but we transform the y-axis to a log10 to improve separation of the lines for little Annual_Precipitation. -->
+<!-- ```{r, include=show_results} -->
+<!-- colorvar <- "Location" -->
+<!-- climatedf_comp %>% -->
+<!--   dplyr::group_by(Year) %>%  -->
+<!--   ggplot() + -->
+<!--   geom_line(aes(Year,!!sym(plotvar), color=!!sym(colorvar)), size=0.2) + -->
+<!--   geom_smooth(aes(Year,!!sym(plotvar),color=!!sym(colorvar)),method = "loess", alpha=0.1) + -->
+<!--   scale_y_log10()+ -->
+<!--   labs(y=stringr::str_replace_all(plotvar,"_"," "), -->
+<!--        color=stringr::str_replace_all(colorvar,"_"," ")) -->
+<!-- ``` -->
+
+
+
+
+
+
+
+
+
+<!-- ```{r, eval=FALSE} -->
+<!-- climatedf_comp %>%  -->
+<!-- GGally::ggpairs(columns = c(1,3:12)) -->
+<!-- ``` -->
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+# In-class tasks
+
+```{r, include=show_results}
+# library(tidyverse)
+# climatedf_comp <- read.csv(here::here("climate_data.csv"))
+climatedf_comp <- read.csv(here::here("files/docs/07/climate_data.csv"))
+```
+
+
+We have already shortly had a look at facets which allow to easily arrange multiple plots. But so far we have only considered the case where each subplot shows the same variables, e.g `Sunshine_duration` vs. `Annual_frost_days`. What if instead you would like to use facets to plot multiple variables? For instance you would like to do a plot containing two subplots, the first `Annual_frost_days` vs. `Sunshine_duration` and the second `Annual_summer_days` vs. `Sunshine_duration`?
+
+There are basically two options:
+
+* Do both plots separately and then combine them
+* Do both plots simultaneously using facets
+
+We will in the following explore both options.
+
+
+&nbsp;
+
+## Combine plots
+
+There are many options available how to combine plots. Two useful packages are `cowplot` (for all graphics) and `ggpubr` (for ggplots). In this exercise we will use `ggpubr`.
+
+
+
+&nbsp;
+
+## Exercise 1
+
+Create two `ggplot2` scatterplots, `Annual_frost_days` vs. `Sunshine_duration` and `Annual_summer_days` vs. `Sunshine_duration`, color by location. Combine the two plots using `ggpubr::ggarrange` and make sure to have only one legend. Also make sure to have the same axis range in both plots.
+
+
+```{r, include=show_results}
+minmax <- c(min=min(na.omit(c(climatedf_comp$Annual_frost_days, 
+                              climatedf_comp$Annual_summer_days))),
+               max=max(na.omit(c(climatedf_comp$Annual_frost_days, 
+                                 climatedf_comp$Annual_summer_days))))
+pl1 <- climatedf_comp %>% 
+  ggplot() +
+  geom_point(aes(Annual_frost_days, Sunshine_duration, color=Location)) +
+  xlim(minmax)+
+  labs(x="Annual frost days",
+       y="Sunshine duration")
+
+pl2 <- climatedf_comp %>% 
+  ggplot() +
+  geom_point(aes(Annual_summer_days, Sunshine_duration, color=Location)) +
+  xlim(minmax)+
+  labs(x="Annual summer days",
+       y="Sunshine duration")
+
+ggpubr::ggarrange(pl1,pl2, common.legend = TRUE)
+```
+
+&nbsp;
+
+## Facets
+
+The second option is to use facets (e.g. `ggplot2::facet_wrap`). Since our data is
+currently not in the correct format we first have to bring it into shape. This can be done using
+`tidyr::pivot_longer` which transforms data from wide to long format. The wide format means we have multiple values per row while the long format means we only have a single value while the remaining 
+columns act as an identifier of the sample. You can learn more about `pivot`, long and wide formats by running `vignette("pivot",package = "tidyr")` in the console.   
+
+
+&nbsp;
+
+## Exercise 2
+
+Use `tidyr::pivot_longer` to bring the data into long format and plot `Annual_frost_days` vs. `Sunshine_duration` and `Annual_summer_days` vs. `Sunshine_duration` in the same plot using `ggplot2::facet_wrap`. 
+
+*Hint*: The columns to pivot into longer format are `Annual_frost_days` and `Annual_summer_days`.
+
+
+```{r, include=show_results}
+climatedf_comp %>% 
+  dplyr::select(Location, Year, Sunshine_duration, Annual_frost_days, Annual_summer_days) %>% 
+  dplyr::rename(`Annual frost days` = Annual_frost_days,
+                `Annual summer days` = Annual_summer_days) %>% 
+  tidyr::pivot_longer(cols=c("Annual frost days","Annual summer days")) %>% 
+  ggplot() +
+  geom_point(aes(value, Sunshine_duration, color=Location)) +
+  facet_wrap(~name) +
+  labs(x="Days", y= "Sunshine duration") 
+
+```
+
+&nbsp;
+
+
+## Optional: ggplot2 theme
+
+## Rotate axis text
+
+
+In some situations where labels on the x-axis are long they can overlap with the default setting:  
+```{r, eval=TRUE,echo=show_results}
+climatedf_comp %>% 
+  ggplot() +
+  geom_violin(aes(Location, Sunshine_duration, color=Location)) +
+  labs(y="Sunshine duration",x="")
+```
+
+
+
+A solution can be to rotate the labels:  
+
+```{r, eval=TRUE,echo=show_results}
+climatedf_comp %>% 
+  ggplot() +
+  geom_violin(aes(Location, Sunshine_duration, color=Location)) +
+   theme(axis.text.x = element_text(angle = 45,hjust=1))+
+  labs(y="Sunshine duration",x="")
+```
+
+
+
+Reproduce the above plot.  
+*Hint*: use the argument `axis.text.x` in the `theme` function and make sure to check the expected input class in `axis.text.x`.  
+
+
+&nbsp;
+
+
+<!-- ## Explore aesthetics -->
+
+
+<!-- ```{r, include=show_results} -->
+<!-- climatedf_comp %>%  -->
+<!--   ggplot() + -->
+<!--   geom_violin(aes(Location, Sunshine_duration,color=Location, fill=Location)) + -->
+<!--    theme(axis.text.x = element_text(angle = 45,hjust=1))+ -->
+<!--   labs(y="Sunshine duration",x="") -->
+<!-- ``` -->
+
+
+<!-- &nbsp; -->
+
+## Custom colors
+
+You can generate custom colors using `RColorBrewer::brewer.pal`. The generated colors can then be used in combination with `scale_color_manual(values=generated_colors)`.
+
+```{r, include=show_results}
+climatedf_comp_red <- climatedf_comp[climatedf_comp$Location %in% c("Luzern","ZürichFluntern","Lugano"),]
+colors_use <- RColorBrewer::brewer.pal(length(unique(climatedf_comp_red$Location)), "Set2")
+
+  
+
+climatedf_comp_red %>% 
+  ggplot() +
+  geom_violin(aes(Location, Sunshine_duration,color=Location, fill=Location)) +
+   scale_color_manual(values=colors_use) +
+  scale_fill_manual(values=colors_use)+
+  labs(y="Sunshine duration",x="")
+```
+
+&nbsp;
+
+## Upload
+
+**Upload a pdf containing answers to all tasks in the next step. Make sure the code to produce the answers is shown.** 
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+
+
+
+
+
+
