@@ -1,18 +1,15 @@
 ---
 source: Rmd
-title: "Week 1 Open and reproducible science: general reasons and approaches"
+title: "Welcome and introduction"
 teaching: 0
 exercises: 0
 questions: 
-  - "here are questions"
-  - "questions, tbd"
-  - "by eva"
+  - "What is Open Science"
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Play the game 'Open up your Research'"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "Open Science has many dimensions"
+  - "This course concentrates on XX"
 ---
 
 ```{r, include=FALSE}
@@ -20,59 +17,13 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-
-# 01-introduction
-
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
 
 
-This lecture begins with  a general overview on Open Science, what does this term mean and what aspects does it have?
-
-We will play an Open Science game together.
-
-The input this week is live using this [slide deck]({{ page.root }}/files/docs/01/01-Introduction.pdf).
+This lecture begins with  a general overview on Open Science, what does this term mean and what aspects does it have? For this you play the game "Open up your research"
 
 
 
-
-# 01-logistics
-
-## Course logistics
-
-- Flipped Learning Course
-- Flipped learning via the Open edX platform https://edu-exchange.uzh.ch/. 
-
-
-This means that **each course week**:
-
-- Learning content will be released as input on the platform. You watch the videos, read the texts etc.
-
-- Based on this input you answer to the quiz and get points for it. Input and quiz together will take about 90 minutes every week, starting week 2.
-
-- Based on what you learned from the input you work on a homework assignment and submit an answer. 
-
-- The answer will be assessed by peers most weeks. You will also assess answers by peers. You get points through this peer assessment process. Staff checks and may overrule any peer assessment. Homework and assessment will take about 2 hours every week, starting week 2.
-
-- One week after the release of input and homework you attend an in-class session in which you will further practice to use what you learned. Also in class, you will submit answers and get points if the answers fulfill some basic quality checks. In-class sessions are 90 minutes every week.
-
-
-
->## Requirements for passing
->
->The points you can gain for each of the following 6 weeks are:
->
->8 points for the input quiz, in total 48 points in the input section.
->12 points for the homework, in total 72 points in the homework section.
->3 points for the in-class work, in total 18 points in the in-class section.
->
->The input section is weighted at 20%, the homework section and the in-class section at 40%.
->
->To obtain your final score you need calculate the percentage of points gained for each section, >weigh it by the appropriate weight and sum over the three sections.
->
->For example: you gained in total 45 points from the quizzes, 60 points from the homework, 12 points >for the in-class work. Then your final score is calculated as 45/48 * 0.2 + 60/72 * 0.4 + 12/18 * >0.4 = 0.7875.
->
->You need to achieve at least  a score of 70% in order for you to pass the module. You can monitor >your progress on the Open edX platform. 
-{:.prereq}
 
 
 ## Input
@@ -82,128 +33,45 @@ The input material that is put at your disposition includes short videos/screenc
 The input always concludes with a quiz checking if you understood. You will be able to easily solve it after having watched and read the input.
 
 
+&nbsp;
 
-## Homework submission
+&nbsp;
 
-Submission of your work will be through Open edX platform. No exception to this requirement is possible.
-
-Peer assessment is part of the homework, if you do not complete the required number of peer reviews you will also not get the points for your own submission.
-
-Deadlines for submission and for peer assessment are summarized in the schedule below and indicated on the Open edX platform. In principle homework is due the day before class and peer assessment is due the day of class. Homework will be released at the same time as the input material (i.e. one week before class), peer assessment will open two days later. 
-
-Late submission and late assessment is not possible.
-
-
-
-## In-class submission
-
-At the end of each in-class session you will submit your work/a synthesis of your work. This submission will result in the in-class points if it is a reasonable attempt at answering the question.
-
-In-class sessions will be on campus whenever possible. 
-
-**You need to bring your laptop to the in-class sessions.**
-
-
-
-## Schedule
-
-The overall schedule of release dates and due dates of the course is:
-
-```{r, echo = FALSE, message=FALSE}
-library(dplyr)
-library(kableExtra)
-Week <- c(1,2,'','','',3,'','','',4,'','','',5,'','','',6,'','','',7,'','','')
-Topic <- c('Introduction and course logistics',
-           'Scientific Integrity, Open Science and Reproducibility','','','',
-           'Reproducibility and data','','','',
-           'Quality criteria for good research','','','',
-           'Tools for collaboration','','','',
-           'Reproducible notebooks for data analysis','','','',
-           'Visualization','','','')
-Lecture_date <- c('20.9.',
-                   '27.9.','','','',
-                   '04.10.','','','',
-                  '11.10.','','','',
-                  '18.10.','','','',
-                  '25.10.','','','',
-                   '01.11.','','','')
-Open_edX_release <- c('13.9., 1:00  ',
-                      '20.9., 1:00  ','','','',
-                       '27.9., 1:00 ','','','',
-                       '04.10., 1:00  ','','','',
-                      '11.10., 1:00  ','','','',
-                      '18.10., 1:00  ','','','',
-                      '25.10., 1:00  ','','','')
-Due_dates <- c('',
-               'Input assessment:','Homework:','Peer assessment:','In-class work:', 
-               'Input assessment:','Homework:','Peer assessment:','In-class work:', 
-               'Input assessment:','Homework:','Peer assessment:','In-class work:', 
-               'Input assessment:','Homework:','Peer assessment:','In-class work:', 
-               'Input assessment:','Homework:','Peer assessment:','In-class work:', 
-               'Input assessment:','Homework:','Peer assessment:','In-class work:')
-Time <-c('', 
-          '26.9., 12:00','26.9., 12:00','27.9., 12:00','27.9., 19:00', 
-           ' 3.10., 12:00',' 3.10., 12:00',' 4.10., 12:00',' 4.10., 19:00', 
-          '10.10., 12:00','10.10., 12:00','11.10., 12:00','11.10., 19:00', 
-          '17.10., 12:00','17.10., 12:00','18.10., 12:00','18.10., 19:00', 
-          '24.10., 12:00','24.10., 12:00','25.10., 12:00','25.10., 19:00', 
-           '31.10., 12:00','31.10., 12:00',' 1.11., 12:00',' 1.11., 19:00')
-
-df <- data.frame(Week, Topic, Lecture_date, Open_edX_release, Due_dates, Time)
-colnames(df) <- c(" ", "Topic", "Class date", "Release (input and homework)",
-                  "Item that is due", "Due time ")
-
-df %>%
-  kable("html", escape = F,align='clrrrr') %>%
-  kable_styling()%>%
-  column_spec(1, width = ".4cm")%>%
-  column_spec(2, width = "10cm")%>%
-  column_spec(3, width = "2.5cm")%>%
-  column_spec(4, width = "3.5cm")%>%
-  column_spec(5, width = "4cm")%>%
-  column_spec(6, width = "3cm")
-```
-
-
-
-## R
-
-**We assume that you have used R before and are familiar with the basic concepts, we will not be able to spend time to learn the basics of R.** 
-
-The basic concepts of R include, for example, knowing 
-
-- how to assign values to an object, 
-- how to manipulate and extract the entries of an object 
-- how to do simple calculations on objects such as percentages 
-- how to use functions such as t.test
-- how to create simple plots
-
-If you want to get this background knowledge before or during the first two weeks of the course there are many online resources that introduce you to the basics of R, for example the following course: [Introduction to R - R for Social Scientists](https://datacarpentry.org/r-socialsci/01-intro-to-r/index.html).
-
+>## R
+>
+>**We assume that you have used R before and are familiar with the basic concepts, we will not be able to spend time to learn the basics of R.** 
+>
+>The basic concepts of R include, for example, knowing 
+>
+>- how to assign values to an object, 
+>- how to manipulate and extract the entries of an object 
+>- how to do simple calculations on objects such as percentages 
+>- how to use functions such as t.test
+>- how to create simple plots
+>
+>If you want to get this background knowledge before or during the first two weeks of the course there are many online resources that introduce you to the basics of R, for example the following course: [Introduction to R - R for Social Scientists](https://datacarpentry.org/r-socialsci/01-intro-to-r/index.html).
+>
 If you want a comprehensive introduction or in general would like to know more about R, we suggest [R for data science](https://r4ds.had.co.nz/index.html).
+{: .checklist}
 
 
-
-## Install R and RStudio
-
+>## Install R and RStudio
+>
 Besides R we will use RStudio as an integrated development environment (IDE) to ease working with R. To download RStudio you can go to the [RStudio documentation](https://www.rstudio.com/products/rstudio/download/#download).
-
+>
 Necessary software to be installed on your personal laptop:
-
+>
 - R (version 4.0 or higher)
 - RStudio (version 1.2 or higher)
-
-**You need to bring your laptop to the in-class sessions.**
-
-
-
-## Registrations
-
-You need to create an account on the Open edX instance of the Faculty of Science https://elearn.mnf.uzh.ch using your UZH email address.
+>
+>**You need to bring your laptop to the in-class sessions.**
+{: .checklist}
 
 
+&nbsp;
 
-# 013in-classtask
+&nbsp;
+
 
 >## In-class tasks
 >
@@ -224,7 +92,6 @@ You need to create an account on the Open edX instance of the Faculty of Science
 >{: .checklist}
 {: .challenge}
 
-Your submission will be checked by staff.
 
 
 

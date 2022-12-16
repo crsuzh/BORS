@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Week 2 Scientific Integrity, Open Science and Reproducibility"
+title: "Scientific Integrity, Open Science and Reproducibility"
 teaching: 0
 exercises: 0
 questions: 
@@ -20,39 +20,44 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-# 021-1-Introduction
-
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
 
-This week we provide (partial) answers to the questions
 
-1. What is Scientific Integrity?
+>## This week we provide (partial) answers to the questions
+>
+>1. What is Scientific Integrity?
+>
+>2. What is Open Science?
+>
+>3. What is Reproducibility?
+{: .checklist}
 
-2. What is Open Science?
+&nbsp;
 
-3. What is Reproducibility?
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
+# 1. What is Scientific Integrity?
 
-# 021-2-Scientific Integrity: 1. What is Scientific Integrity?
-
-## Scientific/research integrity at UZH
-
+>## Scientific/research integrity at UZH
+>
 Often when the term "Scientific integrity" comes up one woul think about topics such as
-
+>
 - Misconduct/ fraud procedures  
 https://www.research.uzh.ch/de/procedures/integrity.html
-
+>
 - Ethical issues, especially regarding research on humans and on animals  
 https://www.uzh.ch/cmsssl/en/researchinnovation/ethics.html
-
+>
 - Conflicts of interest  
 https://www.uzh.ch/prof/apps/interessenbindungen/client/  
 Conflicts of interest can also be the subject of studies: https://doi.org/10.1186/s13643-020-01318-5
-
+>
 For each of these topics you have the UZH resources listed here. But they are not the main topic of this course, although ethics is most closely related.
-
+{: .checklist}
 
 
 >## Research integrity nationally and internationally
@@ -69,7 +74,7 @@ For each of these topics you have the UZH resources listed here. But they are no
 >https://allea.org/code-of-conduct/
 >
 >We will have a quick look at each of the documents.
-{: .challenge}
+{: .checklist}
 
 
 ## Code of conduct for scientific integrity
@@ -86,46 +91,49 @@ Look at one central quote of the document:
 
 
 
-## Towards a Research Integrity Culture at Universities (LERU)
-
+>## Towards a Research Integrity Culture at Universities (LERU)
+>
 In a summary chapter the guidance document states what Universities should do to empower sound research:
-
-
-- Improve the design and conduct of research:  
+>
+>
+**Improve the design and conduct of research:**  
   - statistics, **research design, methodology and analysis**
   - newest standards  
   - understanding limitations  
   - checklists to improve design  
-  
-- Improve the soundness of reporting.  
-  - **reporting guidelines **
+>
+>
+>**Improve the soundness of reporting**
+  - **reporting guidelines**
   - **pre-registration**
   - publish all components of experimental design.
   - **Value negative results and replication studies**
-
 Many of these topics are part of what we learn in this and subsequent courses.
+{: .checklist}
 
 
 
-## European Code of Conduct for Research Integrity 
 
+>## European Code of Conduct for Research Integrity 
+>
 **Good research practices** are based on fundamental principles of research integrity. 
-
+>
 - **Reliability** in ensuring the quality of research, reflected in the design, the methodology, the analysis and the use of resources.
-
+>
 - **Honesty** in developing, undertaking, reviewing, reporting and communicating research in a transparent, fair, full and unbiased way.
-
+>
 - **Respect** for colleagues, research participants, society, ecosystems, cultural heritage and the environment.
-
+>
 - **Accountability** for the research from idea to publication, for its management and organisation, for training, supervision and mentoring, and for its wider impacts.
-
+>
 &rArr; same main principles as in the Swiss guidance document!
+{: .checklist}
 
 
-## Example regarding the publication of negative results.
-
-## Therapeutic fashion and publication bias: the case of anti-arrhythmic drugs in heart attack
-
+>## Example regarding the publication of negative results.
+>
+**Therapeutic fashion and publication bias: the case of anti-arrhythmic drugs in heart attack**
+>
 - In the 1970s, it was found that the local anaesthetic drug lignocaine (lidocaine) suppressed arrhythmias after heart attacks  
 - That this **claim was wrong** was difficult to recognise from small clinical trials looking only at effects on arrhythmias, not outcomes that really matter, like deaths.  
 - Large clinical trials in the late 1980s showed that the drugs actually increased mortality.  
@@ -133,16 +141,21 @@ Many of these topics are part of what we learn in this and subsequent courses.
 - A cumulative meta-analysis of previous anti-arrhythmic trials would have helped **avoid tens of thousands of unnecessarily early deaths**, even more so if results like those of Hampton and co-authors would have been available.  
 - With the words ‘publication bias’ in the title, the trial results could finally be published in the early 1990s:  
 **Therapeutic fashion and publication bias: the case of anti-arrhythmic drugs in heart attack**
-
-
+>
 J Hampton https://journals.sagepub.com/doi/10.1177/0141076815608562
-
+>
 **Bottom line**: This is a very impressive example of the consequences of non-publication of "negative" results. The authors themselves are not to blame, they have maintained their integrity as researchers. The example shows that the publication of all results is indeed a principle of research integrity in the sense of the integrity of the research record as a whole.
+{: .callout}
 
+&nbsp;
 
+&nbsp;
 
+&nbsp;
 
-# 021-3-Open Science: 2. What is Open Science?
+&nbsp;
+
+# 2. What is Open Science?
 
 ## UNESCO Recommendation on Open Science  
 
@@ -165,10 +178,10 @@ Open Science in Psychology/Social Science initiatives summarize and explains the
 Picture available on the Open Science Framework https://osf.io/hktmf/. 
 
 
-## Open Science made easy
-
+>## Open Science made easy
+>
 **Seven steps towards transparent and reproducible research** along the usual steps of an empirical research project
-
+>
 1. **Create OSF account** (use easy infrastructure for collaboration) &rArr; week 5
 2. **Pregregister your own studies** &rArr; see below and homework
 3. Open Materials
@@ -176,8 +189,9 @@ Picture available on the Open Science Framework https://osf.io/hktmf/.
 5. **Reproducible Code**  &rArr; see next topic, homework and week 3, 6 and 7
 6. **Open Access (preprints)** &rArr; see week 4
 7. Do open research and talk about it
+{: .checklist}
 
-
+&nbsp;
 
 ## Other offers in Open Science training
 
@@ -187,23 +201,23 @@ Picture available on the Open Science Framework https://osf.io/hktmf/.
 
 
 
-## What is preregistration? See the example of clinical trials
-
+>## What is preregistration? See the example of clinical trials
+>
 Registration of clinical trials, i.e. announcing that a trial will be conducted before any data are collected,  **has become a standard** since the late 1990. It is considered a scientific, ethical and moral responsibility for all trials because:
-
+>
 - Informed decisions are difficult under **publication bias and selective reporting**  
 &rArr; Declaration of Helsinki: "Every clinical trial must be registered [...]”
 - Describing clinical trials in progress simplifies identification of research gaps 
 - The early identification of potential problems contributes to **improvements in the quality **
+{: .callout}
 
 
-
-## Preregistration explained in a cartoon: the Texas sharp shooter
-
+>## Preregistration explained in a cartoon: the Texas sharp shooter
+>
 ![]({{ page.root }}/fig/02-TexasSharpShooter.png)
-
+>
 [https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1)
-
+{: .testimonial}
 
 
 ## Registries (non-exhaustive list)
@@ -235,106 +249,125 @@ https://www.crd.york.ac.uk/prospero/
 
 
 
-## Examples
-
-
-## Registration shows an effect  
-
+>## Registration shows an effect  
+>
 All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
-
+>
 ![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
 R Kaplan and V Irvin https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382
-
+>
 **Bottom line**: Before 2000 one sees many positive effects, i.e. treatments that lower the relative risk of cardiovascular disease, but also null effects, in general the effects are larger. After registration of the primary outcome becomes mandatory, less outcome switching can occur and many more null effects are reported. The policy change helped to overcome this particular aspect of selective reporting.
+{: .callout}
 
+&nbsp;
 
-
-## Open Data/Science and COVID-19
-
+>## Open Data/Science and COVID-19
+>
 The European COVID-19 Data Platform  
 https://www.covid19dataportal.org/  
-
+>
 Coronavirus and Open Science: Our reads and Open use cases  
 https://sparceurope.org/coronaopensciencereadsandusecases/  
-
+>
 Johns Hopkins Coronavirus Resource Center  
 https://coronavirus.jhu.edu/  
-
+>
 Open access to facilitate research and information on COVID-19  
 https://en.unesco.org/covid19/communicationinformationresponse/opensolutions  
+{: .callout}
 
+&nbsp;
 
-**Find a use case in your discipline**  
-
+>## More examples in your discipline 
+>
 Open Research: Examples of good practice, and resources across disciplines https://osf.io/3r8hb/
+{: .callout}
 
 
+&nbsp;
 
+&nbsp;
 
-# 021-4-reproducibility: 3. What is Reproducibility?
+# 3. What is Reproducibility?
 
-## Reproducibility vs Replicability
-
-**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.
-
+>## Reproducibility vs Replicability
+>
+>**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.
+>
 This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
-
+>
 **Replicability** refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected.
-
 S Goodman et al. https://www.science.org/doi/10.1126/scitranslmed.aaf5027
+>
+{: .keypoints}
 
-
-## A miracle occurred
-
+>## A miracle occurred
+>
 "This is exactly how it seems when you try to figure out how authors got from a large and complex data set to a dense paper with lots of busy figures. Without access to the data and the analysis code, a miracle occurred. And there should be no miracles in science."
-
+>
 ![]({{ page.root }}/fig/02-ModelingCartoon.png)  
 http://2008.igem.org/wiki/images/7/71/Modeling_cartoon.gif
+{: .testimonial}
 
 
-
-## What does this mean for my daily work?
-**Five selfish reasons to work reproducibly**
-
+>## What does this mean for my daily work?
+>**Five selfish reasons to work reproducibly**
+>
 F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
-
-> _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
-
-
-## Example
-
-## How Bright Promise in Cancer Testing Fell Apart
-
+>> _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
+>
+>**How Bright Promise in Cancer Testing Fell Apart**
+>
 ![]({{ page.root }}/fig/02-ExampleCancerTesting.png){: height="400px"}
-
+>
 G  Kolata https://www.nytimes.com/2011/07/08/health/research/08genes.html
+>
+>> _“When Juliet Jacobs found out she had lung cancer, she was terrified, but realized that her hope lay in getting the best treatment medicine could offer. So she got a second opinion, then a third. In February of 2010, she ended up at Duke University, where she entered a research study whose promise seemed stunning._
+>
+>> _Doctors would assess her tumor cells, looking for gene patterns that would determine which drugs would best attack her particular cancer. She would not waste precious time with ineffective drugs or trial-and-error treatment. The Duke program — considered a breakthrough at the time — was the first fruit of the new genomics, a way of letting a cancer cell’s own genes reveal the cancer’s weaknesses._
+>
+>> _But the research at Duke turned out to be wrong. Its gene-based tests proved worthless, and the research behind them was discredited. Ms. Jacobs died a few months after treatment, and her husband and other patients’ relatives have retained lawyers.”_ 
+>
+>F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
+>
+>> _“Why did no one notice these issues before it was too late? Because the data and analysis were not transparent and required forensic bioinformatics to untangle ”_
+<
+>K Baggerly and K Coombes https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full
+>
+>> _“Poor documentation hid an off-by-one indexing error affecting all genes reported, the inclusion of genes from other sources, including other arrays (the outliers), and a sensitive/resistant label reversal.”_
+>
+>**Bottom line**: Data analyses that are done using reproducible code and that are documented well are easier to check, for the analysts themselves and for others. Such practices decrease the chances that errors as in this example are made and this outweighs the effort and time they cost.
+{: .callout}
 
-> _“When Juliet Jacobs found out she had lung cancer, she was terrified, but realized that her hope lay in getting the best treatment medicine could offer. So she got a second opinion, then a third. In February of 2010, she ended up at Duke University, where she entered a research study whose promise seemed stunning._
+&nbsp;
 
-> _Doctors would assess her tumor cells, looking for gene patterns that would determine which drugs would best attack her particular cancer. She would not waste precious time with ineffective drugs or trial-and-error treatment. The Duke program — considered a breakthrough at the time — was the first fruit of the new genomics, a way of letting a cancer cell’s own genes reveal the cancer’s weaknesses._
-
-> _But the research at Duke turned out to be wrong. Its gene-based tests proved worthless, and the research behind them was discredited. Ms. Jacobs died a few months after treatment, and her husband and other patients’ relatives have retained lawyers.”_ 
-
-
-F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
-
-
-> _“Why did no one notice these issues before it was too late? Because the data and analysis were not transparent and required forensic bioinformatics to untangle ”_
-
-
-K Baggerly and K Coombes https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full
-
-
-> _“Poor documentation hid an off-by-one indexing error affecting all genes reported, the inclusion of genes from other sources, including other arrays (the outliers), and a sensitive/resistant label reversal.”_
-
-
-
-**Bottom line**: Data analyses that are done using reproducible code and that are documented well are easier to check, for the analysts themselves and for others. Such practices decrease the chances that errors as in this example are made and this outweighs the effort and time they cost.
-
+&nbsp;
 
 
+>## Homework
+>
+Read the article "[A Waste of 1000 Research Papers]({{ page.root }}/files/docs/02/YongAtlantic2019.pdf)" by Ed Yong (The Atlantic, 27.5. 2019). You need to write a discussion of this article in at least 300 words with the topics explained below.
+>
+>>## Question 1
+Find situations in the article where publication bias, preregistration and data sharing could have aided to avoid such waste. Copy the corresponding lines from the article and name one or two reasons why you think that those concepts could have helped. 
+>{: .checklist}
+>
+>>## Question 2
+Use smart search terms to find the concepts such that you do not need to read the entire research article.
+>{: .checklist}
+>
+>>## Question 3
+Go to the research article of [Border et al.]({{ page.root }}/files/docs/02/Border2019.pdf) that is mentioned in Yong's article and find out which of the above concepts have been respected in this article. Justify with citations.
+>{: .checklist}
+>
+>>## Question 4
+Discuss your overall conclusion in a final paragraph. 
+>{: .discussion}
+{: .challenge}
 
-# 023in-classtask
+&nbsp;
+
+&nbsp;
 
 >## In-class tasks
 >
@@ -359,28 +392,9 @@ K Baggerly and K Coombes https://projecteuclid.org/journals/annals-of-applied-st
 {: .challenge}
 
 
+&nbsp;
 
-
-# 022homework
-
-Read the article "[A Waste of 1000 Research Papers]({{ page.root }}/files/docs/02/YongAtlantic2019.pdf)" by Ed Yong (The Atlantic, 27.5. 2019). You need to write a discussion of this article in at least 300 words with the topics explained below.
-
-- Find situations in the article where publication bias, preregistration and data sharing could have aided to avoid such waste. Copy the corresponding lines from the article and name one or two reasons why you think that those concepts could have helped. 
-
-
-Use smart search terms to find the concepts such that you do not need to read the entire research article.
-
-
-- Go to the research article of [Border et al.]({{ page.root }}/files/docs/02/Border2019.pdf) that is mentioned in Yong's article and find out which of the above concepts have been respected in this article. Justify with citations.
-
-- Discuss your overall conclusion in a final paragraph. 
-
-
-
-## Upload
-Prepare a pdf document that you will upload in the next step. Show your word count in the document. Your submission will be peer reviewed. Staff will perform random checks on the peer review.
-
-
+&nbsp;
 
 
 
