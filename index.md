@@ -3,7 +3,7 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-This is a carpentries lesson for bachelor and master students of all disciplines working at least in part empirically using the free software environment for statistical computing and graphics R [https://www.r-project.org/](https://www.r-project.org/). This course aims to provide students with the basic why, what and how of Open and Reproducible Science, it is divided in six topics which are each discussed within a single episode after the introduction:
+This is a carpentries lesson for bachelor and master students of all disciplines working at least in part empirically using the free software environment for statistical computing and graphics R [https://www.r-project.org/](https://www.r-project.org/). This course aims to provide students with the basic why, what and how of Open and Reproducible Science, it is divided in six topics which are each discussed within a single episode:
 
 1. Introduction to Open science and its relation to scientific integrity and reproducible research
 2. Practical guidelines on how to organize data and projects in view of reproducibility

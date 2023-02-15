@@ -1,19 +1,24 @@
 ---
 source: Rmd
 title: "Scientific Integrity, Open Science and Reproducibility"
-teaching: 0
-exercises: 0
+teaching: 60
+exercises: 90-120
 questions: 
   - "1. What is Scientific Integrity and where can I read about regulations?"
   - "2. What is Open Science and which aspects are important to me?"
   - "3. What is Reproducibility and why should I care about it?"
   - 
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Understand about the connections between Scientific integrity, Open Science and Reproducibility "
+  - "Name the requirements on designing, carrying out and reporting of research projects such that scientific integrity is respected"
+  - "Discrimate between so-called negative and positive results"
+  - "List all/many of the dimensions of Open Science"
+  - "Explain why and know where to preregister studies"
+  - "Apply these concepts when reading about research"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "Scientific Integrity, Open Science and Reproducibility are connected. "
+  - "All three themes are important for the trustworthiness of research results"
+  - "The tools that will be taught in this course help to increase trustworthiness"
 ---
 
 ```{r, include=FALSE}
@@ -38,12 +43,12 @@ Often when the term "Scientific integrity" comes up one would think about topics
 
 Conflicts of interest can also be the subject of studies: [https://doi.org/10.1186/s13643-020-01318-5](https://doi.org/10.1186/s13643-020-01318-5)
 
-For each of these topics we have the University of Zurich links here, most other universities will also have corresponding regulations in place. But these are not the main topic of this course, we will look at the aspects of research integrity below.
+For each of these topics we have the University of Zurich links here, most other universities will also have corresponding regulations in place. But these are not the main topic of this course, we will instead look at the aspects of research integrity discussed below.
 
 
 ## National and international guidance documents on research integrity
 
-Several guidance documents exist, see three examples here:
+Several guidance documents exist, see three European examples here:
 
 - Scientific Integrity at the Swiss Academies of Arts and Sciences  
 [https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/](https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/)
@@ -60,7 +65,6 @@ Several guidance documents exist, see three examples here:
 ## LERU: Towards a Research Integrity Culture at Universities
 
 In a summary chapter the guidance document states what Universities should do to empower sound research:
-
 
 **Improve the design and conduct of research:**  
   - statistics, **research design, methodology and analysis**
@@ -90,7 +94,7 @@ The EU code states that **Good research practices** are based on fundamental pri
 
 - **Accountability** for the research from idea to publication, for its management and organisation, for training, supervision and mentoring, and for its wider impacts.
 
-&rArr; You will find these same main principles in the Swiss guidance document! Adhereing to the principles of reliability, honesty and accountability requires, among other aspects, to work reproducibly and openly.
+&rArr; You will find these same main principles in the Swiss guidance document! Adhering to the principles of reliability, honesty and accountability requires, among other aspects, to work reproducibly and openly.
 
 
 ## The Swiss Code of conduct for scientific integrity
@@ -164,8 +168,9 @@ Find the behavior in Chapter 5 of the Code which this can be related to.
 >
 {: .solution}
 
+## Example
 
->## Publication of negative results.
+>## Publication of negative results
 >
 **Therapeutic fashion and publication bias: the case of anti-arrhythmic drugs in heart attack**
 >
@@ -182,11 +187,14 @@ J Hampton https://journals.sagepub.com/doi/10.1177/0141076815608562
 **Bottom line**: This is a very impressive example of the consequences of non-publication of "negative" results. The authors themselves are not to blame, they have maintained their integrity as researchers. The example shows that the publication of all results is indeed a principle of research integrity in the sense of the integrity of the research record as a whole.
 {: .testimonial}
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 # 2. What is Open Science?
 
 ## Let´s play the game "Open up your research"
-https://www.openscience.uzh.ch/de/moreopenscience/game.html
+[https://www.openscience.uzh.ch/de/moreopenscience/game.html]()
 
 > ## Dimensions of Open Science
 >  Which decisions did Emma need to take in the game?
@@ -204,7 +212,7 @@ https://www.openscience.uzh.ch/de/moreopenscience/game.html
 {: .solution}
 ## UNESCO Recommendation on Open Science  
 
-In 2021 UNESCO published their recommendations for Open Science. And from their point of view Open Science is a tool helping to create a sustainable future. In the quote stressed here we see the link of Open Science to scientific integrity and also reproducibility:
+In 2021 UNESCO published their recommendations for Open Science. From their point of view Open Science is a tool helping to create a sustainable future. In the quote stressed here we see the link of Open Science to scientific integrity and also reproducibility:
 
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
@@ -215,7 +223,7 @@ In 2021 UNESCO published their recommendations for Open Science. And from their 
 
 ## Definition by Open Science in Psychology/Social Science initiatives
 
-Open Science in Psychology/Social Science initiatives summarize and explains the practice of Open Science in seven steps:
+The Open Science in Psychology/Social Science initiatives summarize and explain the practice of Open Science in seven steps. Some of these steps were also part of Emma's decision process.
 
 ![]({{ page.root }}/fig/02-OSC_Flyer 15x15_Englisch.png){: height="400px"}
 
@@ -224,15 +232,15 @@ Open Science in Psychology/Social Science initiatives summarize and explains the
 Picture available on the Open Science Framework [https://osf.io/hktmf/](https://osf.io/hktmf/). 
 
 
-We will revisit some of these **seven steps towards transparent and reproducible research** in this course:
+We will revisit the following steps in this course:
 1. **Create OSF account** (use easy infrastructure for collaboration)
 2. **Pregregister your own studies** 
 4. **Open Data** 
 5. **Reproducible Code**  
 6. **Open Access (preprints)** 
 
-## What is preregistration? See the Texas sharp shooter cartoon
- Emma in the game and the seven steps above refer to preregistration. But what is preregistration? The Texas sharp shooter cartoon shows an unregistered experiment. The shooter first shoots and then draws the bull´s eyes around his shots. He did not preregister where he wanted to shoot before shooting. 
+## What is preregistration? 
+The Open up your research game and the seven steps above refer to preregistration. But what is preregistration? The Texas sharp shooter cartoon shows an unregistered experiment. The shooter first shoots and then draws the bull´s eyes around his shots. He did not preregister where he wanted to shoot before shooting. 
 
 ![]({{ page.root }}/fig/02-TexasSharpShooter.png)
 
@@ -241,49 +249,50 @@ We will revisit some of these **seven steps towards transparent and reproducible
 When a researcher preregisters a study, the design and precise goal of the study are declared openly in advance: the bull´s eye is drawn.
 
 >## Origins of preregistration: clinical trials
-> A clinical trial is an experiment involving human volunteers for example in the development of a new drug. Registration of clinical trials, i.e. announcing that a trial will be conducted and what its goals is before any data are collected,  **has become a standard** since the late 1990s. It is considered a scientific, ethical and moral responsibility for all trials because:
+> A clinical trial is an experiment involving human volunteers for example in the development of a new drug. Registration of clinical trials, i.e. announcing that a trial will be conducted and what its goal is before any data are collected,  **has become a standard** since the late 1990s. It is considered a scientific, ethical and moral responsibility for all trials because:
 >
-- Informed decisions are difficult under **publication bias and selective reporting**, i.e. the non-publication negative results and the focus on publication of positive results which might not reflect the original goals. Publication bias and selective reportingresult in a biased view of the situation.
+- Informed decisions are difficult under **publication bias and selective reporting**, i.e. the non-publication negative results and the focus on publication of positive results which might not reflect the original goals. Publication bias and selective reporting result in a biased view of the situation.
 - Describing clinical trials in progress simplifies identification of research gaps 
 - The early identification of potential problems contributes to **improvements in the quality **
 >
->&rArr; The Declaration of Helsinki requires since the late 1990s: "Every clinical trial must be registered [...]”
+>&rArr; [The Declaration of Helsinki](https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/) requires since the late 1990s: "Every clinical trial must be registered [...]”
 {: .callout}
 
 
 
 
 
-## Registries (non-exhaustive list)
-
-![]({{ page.root }}/fig/02-ClinicalTrials.png){: height="50px"}  
-US and international registry for clinical trials, first of its kind, established 1997: https://clinicaltrials.gov/
-
-![]({{ page.root }}/fig/02-OSF.png){: height="50px"}  
-General purpose registry, also a research management tool (not just for preregistration), embargo possible for up to 4 years:
-https://osf.io/ 
-
-
-![]({{ page.root }}/fig/02-AsPredicted.png){: height="50px"}  
-General purpose registry, protocols can be private forever, possibility to automatically delete an entry after 24 hours:   
-https://aspredicted.org/
-
-![]({{ page.root }}/fig/02-PreClinicalTrials.png){: height="50px"}  
-Comprehensive listing of preclinical animal study protocols  
-https://preclinicaltrials.eu/
-
-![]({{ page.root }}/fig/02-NIHR.png){: height="50px"}  
-PROSPERO International prospective register of systematic reviews  
-https://www.crd.york.ac.uk/prospero/
-
-
-
->## Registration shows an effect  
+>## Registries (non-exhaustive list)
+>Here is a list of registries, where (pre)registration can be done:
+- Clinicaltrials.gov: US and international registry for clinical trials, first of its kind, established 1997: https://clinicaltrials.gov/
+>![]({{ page.root }}/fig/02-ClinicalTrials.png){: height="50px"}  
 >
-All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
+>- OSF: General purpose registry, also a research management tool (not just for preregistration), embargo possible for up to 4 years:
+>https://osf.io/ 
+>![]({{ page.root }}/fig/02-OSF.png){: height="50px"}  
+>
+>- Aspredicted: General purpose registry, protocols can be private forever, possibility to automatically delete an entry after 24 hours:   
+>https://aspredicted.org/
+>![]({{ page.root }}/fig/02-AsPredicted.png){: height="50px"}  
+>
+>- Preclinicaltirals.ed: Comprehensive listing of preclinical animal study protocols  
+>https://preclinicaltrials.eu/
+>![]({{ page.root }}/fig/02-PreClinicalTrials.png){: height="50px"}  
+>
+>- PROSPERO International prospective register of systematic reviews  
+>https://www.crd.york.ac.uk/prospero/
+>![]({{ page.root }}/fig/02-NIHR.png){: height="50px"}  
+>
+{: .checklist}
+
+## Does registration show an effect? 
+>##  Does registration show an effect? 
+>
+All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their rported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
 >
 ![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
-R Kaplan and V Irvin https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382
+R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382]()
+>
 > What is the difference between what you observe before and after the year 2000 in this graphic?
 >
 {: .challenge}
@@ -293,31 +302,8 @@ R Kaplan and V Irvin https://journals.plos.org/plosone/article?id=10.1371/journa
 >
 {: .solution}
 
->## Open Data/Science and COVID-19
->
-The European COVID-19 Data Platform  
-https://www.covid19dataportal.org/  
->
-Coronavirus and Open Science: Our reads and Open use cases  
-https://sparceurope.org/coronaopensciencereadsandusecases/  
->
-Johns Hopkins Coronavirus Resource Center  
-https://coronavirus.jhu.edu/  
->
-Open access to facilitate research and information on COVID-19  
-https://en.unesco.org/covid19/communicationinformationresponse/opensolutions  
-{: .callout}
-
 &nbsp;
-
->## More examples in your discipline 
->
-Open Research: Examples of good practice, and resources across disciplines https://osf.io/3r8hb/
-{: .callout}
-
-
 &nbsp;
-
 &nbsp;
 
 # 3. What is Reproducibility?
@@ -325,34 +311,32 @@ Open Research: Examples of good practice, and resources across disciplines https
 >## Reproducibility vs Replicability
 >
 >**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.
->
-This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
+> This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
 >
 **Replicability** refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected.
-S Goodman et al. https://www.science.org/doi/10.1126/scitranslmed.aaf5027
 >
-{: .keypoints}
+S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027]()
+>
+{: .callout}
 
->## A miracle occurred
->
-"This is exactly how it seems when you try to figure out how authors got from a large and complex data set to a dense paper with lots of busy figures. Without access to the data and the analysis code, a miracle occurred. And there should be no miracles in science."
->
+## What is reproducibility?
+"This is exactly how it seems when you try to figure out how authors got from a large and complex data set to a dense paper with lots of busy figures. Without access to the data and the analysis code, a miracle occurred. And there should be no miracles in science." 
+
 ![]({{ page.root }}/fig/02-ModelingCartoon.png)  
-http://2008.igem.org/wiki/images/7/71/Modeling_cartoon.gif
-{: .testimonial}
+[http://2008.igem.org/wiki/images/7/71/Modeling_cartoon.gif](), 
 
+The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7](). In this paper the author asks what working reproducibly means for his daily work and comes up with "Five selfish reasons to work reproducibly", this is even the title of the paper.
 
->## What does this mean for my daily work?
->**Five selfish reasons to work reproducibly**
->
-F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
->> _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
->
->**How Bright Promise in Cancer Testing Fell Apart**
+> _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
+
+In this course we will learn about some of the tools Markowetz lists in his paper.
+
+## (Anti-)Example from the Markowetz paper
+>## How Bright Promise in Cancer Testing Fell Apart
 >
 ![]({{ page.root }}/fig/02-ExampleCancerTesting.png){: height="400px"}
 >
-G  Kolata https://www.nytimes.com/2011/07/08/health/research/08genes.html
+From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html]()
 >
 >> _“When Juliet Jacobs found out she had lung cancer, she was terrified, but realized that her hope lay in getting the best treatment medicine could offer. So she got a second opinion, then a third. In February of 2010, she ended up at Duke University, where she entered a research study whose promise seemed stunning._
 >
@@ -360,25 +344,23 @@ G  Kolata https://www.nytimes.com/2011/07/08/health/research/08genes.html
 >
 >> _But the research at Duke turned out to be wrong. Its gene-based tests proved worthless, and the research behind them was discredited. Ms. Jacobs died a few months after treatment, and her husband and other patients’ relatives have retained lawyers.”_ 
 >
->F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
+> Markowetz wonders in his paper why no one noticed these issues before it was too late. And he comes to the conclusion that the reason was that the data and analysis were not transparent and required forensic bioinformatics to untangle 
 >
->> _“Why did no one notice these issues before it was too late? Because the data and analysis were not transparent and required forensic bioinformatics to untangle ”_
-<
->K Baggerly and K Coombes https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full
+>Those forensic bioinformatics were provided by K Baggerly and K Coombes [https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full]():
 >
 >> _“Poor documentation hid an off-by-one indexing error affecting all genes reported, the inclusion of genes from other sources, including other arrays (the outliers), and a sensitive/resistant label reversal.”_
 >
 >**Bottom line**: Data analyses that are done using reproducible code and that are documented well are easier to check, for the analysts themselves and for others. Such practices decrease the chances that errors as in this example are made and this outweighs the effort and time they cost.
-{: .callout}
+{: .testimonial}
 
 &nbsp;
-
 &nbsp;
 
 
->## Homework
+## Episode challenge
+>## A Waste of 1000 Research Papers
 >
-Read the article "[A Waste of 1000 Research Papers]({{ page.root }}/files/docs/02/YongAtlantic2019.pdf)" by Ed Yong (The Atlantic, 27.5. 2019). You need to write a discussion of this article in at least 300 words with the topics explained below.
+Read the article "[A Waste of 1000 Research Papers](https://www.theatlantic.com/science/archive/2019/05/waste-1000-studies/589684/)" by Ed Yong (The Atlantic, 27.5. 2019). 
 >
 >>## Question 1
 Find situations in the article where publication bias, preregistration and data sharing could have aided to avoid such waste. Copy the corresponding lines from the article and name one or two reasons why you think that those concepts could have helped. 
@@ -389,44 +371,19 @@ Use smart search terms to find the concepts such that you do not need to read th
 >{: .checklist}
 >
 >>## Question 3
-Go to the research article of [Border et al.]({{ page.root }}/files/docs/02/Border2019.pdf) that is mentioned in Yong's article and find out which of the above concepts have been respected in this article. Justify with citations.
+Go to the research article of [Border et al.](https://doi.org/10.1176/appi.ajp.2018.18070881) that is mentioned in Yong's article and find out which of the above concepts have been respected in this article. Justify with citations.
 >{: .checklist}
 >
 >>## Question 4
-Discuss your overall conclusion in a final paragraph. 
->{: .discussion}
-{: .challenge}
-
-&nbsp;
-
-&nbsp;
-
->## In-class tasks
->
->>## Task 1
->>We will discuss the homework submissions.
->{: .checklist}
->
->
->>## Task 2
->>We will play the Dilemma game with the dilemmas selected in this [slide deck]({{ page.root }}/files/docs/02/023-DilemmaGame.pdf), choosing our prefered answers on Klicker.
->{: .checklist}
->
->
->>## Task 3
->>Pick one dilemma and discuss your choice of answer with your neighbor. 
->{: .checklist}
->
->
->>## Task 4
->>Write down your dilemma and discuss your choice of answer in about 150 words, provide a word count >>and **submit as a pdf in the next step**.  Your submission will be checked by staff.
+What are your overall conclusions? 
 >{: .checklist}
 {: .challenge}
 
 
-&nbsp;
-
-&nbsp;
-
+> ## Solution
+> 
+> TBA
+>
+{: .solution}
 
 
