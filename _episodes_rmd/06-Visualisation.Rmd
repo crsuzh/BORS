@@ -226,44 +226,275 @@ Let's have a look at the following master piece:
 
 Answer the following questions in context to the above plot:
 
-Is the 3D representation sensible?
-Yes
-No (x)
+> ## 1 
+> Is the 3D representation sensible?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
 
-Are the legend labels sensible?
-Yes
-No(x)
 
-Are the axis labels sensible?
-Yes
-No(x)
+> ## 2 
+> Are the legend labels sensible?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
 
-Is it sensible to have X-axis tick values on multiple levels?
-Yes
-No(x)
 
-Are the Y-axis tick values reasonable?
-Yes
-No(x)
+> ## 3 
+> Are the axis labels sensible?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
 
-Is the Y-axis range reasonable?
-Yes
-No(x)
+> ## 4 
+> Is it sensible to have X-axis tick values on multiple levels?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
 
-Are the values in the plot easily readable?
-Yes
-No(x)
+> ## 5 
+> Are the Y-axis tick values reasonable?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
 
-Is the title suitable?
-Yes
-No(x)
 
-Is the used color palette color-blind friendly?
-Yes
-No(x)
+> ## 6 
+> Is the Y-axis range reasonable?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
+
+
+> ## 7
+> Are the values in the plot easily readable?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
+
+
+> ## 8
+> Is the title suitable?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
+
+
+> ## 9
+> Is the used color palette color-blind friendly?  
+> - Yes  
+> - No  
+>
+>> ## Solution
+>> 
+>> F Yes  
+>> T No  
+>>
+>{: .solution}
+{: .challenge}
+
+
 
 
 &nbsp;
+
+
+# Quiz on Plot examples
+
+> ## Quiz 7.1 
+> What aspect of the "Be simple, clear and to the point" input has been violated?  
+> - 3D  
+> - occlusion  
+> - use of pie charts  
+> - arrangement of multiple plots  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T 3D  
+> T occlusion  
+> F use of pie charts  
+> F arrangement of multiple plots  
+>
+{: .solution}
+
+
+> ## Quiz 7.2 
+> Is the data shown appropriately by the plot through  
+> - the height of bars?  
+> - the values on bars?  
+> - additional values in white font?  
+> - the tick marks indicating to which value each bar belongs?
+> - the raw data?
+>
+{: .challenge}
+
+> ## Solution
+> 
+> - the height of bars?  
+> - the values on bars?  
+> - additional values in white font?  
+> - the tick marks indicating to which value each bar belongs?
+> - the raw data?
+>
+{: .solution}
+
+
+> ## Quiz 7.3 
+> What could be the reason that the Y-axis is shown starting at the value 55?  
+> - the value 55 could be the smallest possible value in the context  
+> - the differences between the bars are more pronounced than if the Y-axis starts at zero.  
+> - the values below 55 need to be hidden  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T the value 55 could be the smallest possible value in the context  
+> T the differences between the bars are more pronounced than if the Y-axis starts at zero.  
+> T the values below 55 need to be hidden  
+>
+{: .solution}
+
+
+> ## Quiz 7.4 
+> When you think about the information regarding the axes, please tick which one of the following items is present in the plot  
+> - Sensible X-axis tick label display  
+> - Sensible X-axis label  
+> - Sensible Y-axis tick values  
+> - Sensible Y axis label  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> - Sensible X-axis tick label display  
+> - Sensible X-axis label  
+> - Sensible Y-axis tick values  
+> - Sensible Y axis label  
+>
+{: .solution}
+
+
+> ## Quiz 7.5 
+> Does the displayed grid help to determine the height of the color sections of the bars?  
+> - Yes  
+> - No  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F Yes  
+> T No
+>
+{: .solution}
+
+
+> ## Quiz 7.6 
+> Is the used color palette color-blind friendly?  
+> - Yes  
+> - No  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F Yes  
+> T No
+>
+{: .solution}
+
+> ## Quiz 7.7 
+> Which of the following additional information items does the plot feature?  
+> - Informative title  
+> - Informative legend labels  
+> - Provenance of data  
+> - Context of data  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> - Informative title  
+> - Informative legend labels  
+> - Provenance of data  
+> - Context of data  
+>
+{: .solution}
+
+
+> ## Quiz 7.8 
+> Does the course team think this is a good plot?  
+> - Yes  
+> - No  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F Yes  
+> T No
+>
+{: .solution}
+
 
 &nbsp;
 

@@ -167,7 +167,20 @@ F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-
 - self-contained and transportable analyses using, e.g. docker http://www.docker.com/  
 {: .checklist}
 
-&nbsp;
+
+## Quiz on background
+
+> ## Quiz 3.1
+>
+> The current episode of this course is concerned with the following factor that contributes to irreproducible research
+>
+{: .challenge}
+
+> ## Solution
+> 
+> methods, code unavailable
+>
+{: .solution}
 
 
 &nbsp;
@@ -176,7 +189,7 @@ F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-
 &nbsp;
 
 
-
+&nbsp;
 
 # 2. Organization and software
 
@@ -276,14 +289,33 @@ These rules were summarized from https://style.tidyverse.org, https://google.git
 - Manuscripts: first experience in dynamic reporting  
 {: .checklist}
 
-&nbsp;
+
+## Quiz on organization and software
+
+> ## Quiz 3.2
+> Which directories would you use for cleaned data files of .csv format?
+> - results  
+> - data  
+> - doc  
+> - results/cleaneddata  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T results  
+> F data  
+> F doc  
+> T results/cleaneddata  
+>
+{: .solution}
+
 
 &nbsp;
 
 &nbsp;
 
-
-
+&nbsp;
 
 # 3. Data in spreadsheets
 
@@ -390,6 +422,112 @@ https://xkcd.com/1179/
 >
 https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg
 {: .testimonial}
+
+
+## Quiz on data in spreadsheets
+
+> ## Quiz 3.3
+>
+> What are good names for the variable containing of average height per age class?
+> - averageheightperageclass
+> - av_height_agecls
+> - height/class
+> - av_height
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F averageheightperageclass  
+> T av_height_agecls  
+> F height/class  
+> F av_height  
+>
+{: .solution}
+
+
+> ## Quiz 3.4
+>
+> Choose how to best initialize the variables that contain the BMI (body mass index) of 17 subjects at three different time points.
+> - bmi1 <- numeric(17); bmi2 <- numeric(17); bmi3 <- numeric(17)
+> - bmi <- matrix(0, nrow=17, ncol=3)
+> - bmi <- NULL; ind <- c(0,0,0); for (i in 1:17) bmi <- rbind(bmi, ind)
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F bmi1 <- numeric(17); bmi2 <- numeric(17); bmi3 <- numeric(17)  
+> T bmi <- matrix(0, nrow=17, ncol=3)  
+> F bmi <- NULL; ind <- c(0,0,0); for (i in 1:17) bmi <- rbind(bmi, ind)  
+>
+{: .solution}
+
+
+> ## Quiz 3.5
+>
+> Enter the date of the in-class session of this topic as an 8-digit integer:
+>
+{: .challenge}
+
+> ## Solution
+> 
+> 20230307
+>
+{: .solution}
+
+
+> ## Quiz 3.6
+>
+> Enter the date of the introduction session of this module in ISO 8601 coding:
+>
+{: .challenge}
+
+> ## Solution
+> 
+> 2023-02-21
+>
+{: .solution}
+
+
+> ## Quiz 3.7
+>
+> Choose all acceptable codes for missing values.
+> - 99999
+> - -99999
+> - NA
+> - 'empty cell'
+> - non detectable
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F 99999  
+> F -99999  
+> T NA  
+> T 'empty cell'  
+> F non detectable  
+>
+{: .solution}
+
+
+> ## Quiz 3.8
+>
+> The preferred way of indenting code is
+> - a tab
+> - none
+> - two spaces
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F a tab  
+> F none  
+> T two spaces  
+>
+{: .solution}
 
 &nbsp;
 

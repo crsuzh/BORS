@@ -185,6 +185,43 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 
 ![]({{ page.root }}/fig/04-PeerReviewPublication.png)
 
+## Quiz on primer on academic publishing
+
+> ## Quiz 4.3
+> Which statements are correct for the practice of peer review in academic publishing?  
+> - peer review contributes to keep the quality of publications to high standard  
+> - peer reviewers are financially rewarded for their contribution  
+> - peer review may take a long time and its outcome does not always depend on the quality of a publication  
+> - peer reviewers are always objective experts not pursuing their personal interest  
+> - one publication is always peer reviewed by exactly one expert  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T peer review contributes to keep the quality of publications to high standard  
+> F peer reviewers are financially rewarded for their contribution  
+> T peer review may take a long time and its outcome does not always depend on the quality of a publication  
+> F peer reviewers are always objective experts not pursuing their personal interest  
+> F one publication is always peer reviewed by exactly one expert  
+>
+{: .solution}
+
+
+> ## Quiz 4.4
+> The publication system is unfair since authors from prestigious institutions or authors with already a lot of publication are privileged, for them it is easier to publish since editors and reviewers decide in their favor more often. Such a type of effect is not unique to academic publishing but occurs in different aspects of society. 
+>
+> A common name for this effect is:
+>
+{: .challenge}
+
+> ## Solution
+> 
+> Matthew effect  
+>
+{: .solution}
+
+
 &nbsp;
 
 &nbsp;
@@ -246,6 +283,89 @@ The 1997 version of the requirements is provided as [pdf]({{ page.root }}/files/
 
 There is a long list of journals that state that they follow these requirements
 http://www.icmje.org/journals-following-the-icmje-recommendations/
+
+
+## Quiz on IMRAD
+
+> ## Quiz 4.1
+> Hippocrates is credited as the discoverer of the scientific method. But he did not clearly state its cornerstone.
+> The cornerstone of the scientific method is the:
+>
+{: .challenge}
+
+> ## Solution
+> 
+> reproducibility of results 
+>
+{: .solution}
+
+
+> ## Quiz 4.5
+> The introduction section in an article following the IMRAD structure should contain?  
+> - a short overview over the data and main conclusions of the article  
+> - the purpose/objective of the presented research  
+> - a complete and detailed background of the wider research area  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F a short overview over the data and main conclusions of the article  
+> T the purpose/objective of the presented research  
+> F a complete and detailed background of the wider research area  
+>
+{: .solution}
+
+
+> ## Quiz 4.6
+> The methods section in an article following the IMRAD structure should contain  
+> - a descriptive analysis of the collected data such that appropriate methods can be chosen for the analysis  
+> - enough information such that a reader would in theory be able to reproduce the results  
+> - only information that was available before data collection  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F a descriptive analysis of the collected data such that appropriate methods can be chosen for the analysis  
+> T enough information such that a reader would in theory be able to reproduce the results  
+> T only information that was available before data collection  
+>
+{: .solution}
+
+
+> ## Quiz 4.7
+> The statistical methods subsection of the methods section in an article following the IMRAD structure should contain  
+> - detailed information software and packages  
+> - only contain p-values an no effect sizes or estimates of the precision  
+> - distinguish pre-specified parts of the analysis from parts that have been done in an explorative way after looking at the collected data  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T detailed information software and packages  
+> F only contain p-values an no effect sizes or estimates of the precision  
+> T distinguish pre-specified parts of the analysis from parts that have been done in an explorative way after looking at the collected data  
+>
+{: .solution}
+
+
+> ## Quiz 4.8
+> The discussion section in an article following the IMRAD structure should contain  
+> - limitations of the study  
+> - those conclusions in view of the goals of the study that are supported by the results  
+> - a detailed summary of all results  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T limitations of the study  
+> T those conclusions in view of the goals of the study that are supported by the results  
+> F a detailed summary of all results  
+>
+{: .solution}
 
 
 &nbsp;
@@ -402,6 +522,25 @@ M Appelbaum et al. https://doi.apa.org/fulltext/2018-00750-002.html
 >
 courtesy of M. Schussel of  the Equator Network: https://www.equator-network.org/wp-content/uploads/2018/01/Lightning-workshop-reporting-statistics-4-July-2018.pdf
 {: .callout}
+
+
+## Quiz on reporting guidelines 
+
+> ## Quiz 4.2
+> Reporting guidelines are  
+> - only used in biomedicine  
+> - based on a wide consensus of experts  
+> - mainly useful for the reader  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F only used in biomedicine  
+> T based on a wide consensus of experts  
+> F mainly useful for the reader  
+>
+{: .solution}
 
 
 &nbsp;

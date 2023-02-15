@@ -130,6 +130,29 @@ Your script won't work anymore and you have to manually adjust the file path. Th
 **Easily work on different projects at once** 
 Another advantage of R Projects is the possibility to quickly switch to another project without mixing up scripts and data between projects. Without using R Projects you probably have to close the files you have open, change the working directory to the new location, open the files you will be using and restart the R session. With R Projects this is all done automatically.
 
+
+## Quiz on R Projects 
+
+> ## Quiz 6.1
+> Suppose your current working directory is ~/project and you want to specify the relative path to the file ~/project/data/data.csv . What are possible specifications?
+> - data.csv  
+> - project/data.csv  
+> - project/data/data.csv  
+> - data/data.csv  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F data.csv  
+> F project/data.csv  
+> F project/data/data.csv  
+> T data/data.csv  
+>
+{: .solution}
+
+
+
 &nbsp;
 
 &nbsp;
@@ -229,6 +252,143 @@ For more options see the cheat sheet in R studio: `Help` > `Cheat Sheets` > `R M
 
 The behavior of the chunks can be changed by setting chunk options. This is done in the opening of the chunk, e.g. 
 ` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it).  
+
+&nbsp;
+
+## Quiz on R Markdown 
+
+> ## Quiz 6.2
+> Which of the following statements about literate programming are true?  
+> - Literate programming combines code and text.  
+> - Literate programming makes your code run more efficient.  
+> - Literate programming makes your analysis easier to understand.  
+> - Code should only be shown if necessary.  
+> - Plots should not be included.  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T Literate programming combines code and text.  
+> F Literate programming makes your code run more efficient.  
+> T Literate programming makes your analysis easier to understand.  
+> F Code should only be shown if necessary.  
+> F Plots should not be included.  
+>
+{: .solution}
+
+
+> ## Quiz 6.3
+> How do you specify the author in an R Markdown document?  
+> - author: "name"  
+> - Author: "name"  
+> - Author = "name"  
+> - Author: 'name'  
+> - author: name  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> T author: "name"  
+> F Author: "name"  
+> F Author = "name"  
+> F Author: 'name'  
+> T author: name  
+>
+{: .solution}
+
+
+> ## Quiz 6.4
+> How do you set the date?  
+> - Date: 01/01/2021  
+> - Date = 01/01/2021  
+> - datum: 01/01/2021  
+> - date: 01/01/2021  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F Date: 01/01/2021  
+> F Date = 01/01/2021  
+> F datum: 01/01/2021  
+> T date: 01/01/2021  
+>
+{: .solution}
+
+
+> ## Quiz 6.5
+> How do you prevent code from evaluation in a chunk?  
+> - evaluate=FALSE  
+> - eval=FALSE  
+> - noeval=TRUE  
+> - hinder=TRUE  
+> - hind=TRUE  
+> - interpret=FALSE  
+> - inpr=FALSE  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F evaluate=FALSE  
+> T eval=FALSE  
+> F noeval=TRUE  
+> F hinder=TRUE  
+> F hind=TRUE  
+> F interpret=FALSE  
+> F inpr=FALSE  
+>
+{: .solution}
+
+
+> ## Quiz 6.6
+> How do you adjust the figure height?  
+> - figure_height=100  
+> - figureheight=100  
+> - heightfigure=100  
+> - fig_height=100  
+> - fig.height=100  
+> - height.fig=100  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F figure_height=100  
+> F figureheight=100  
+> F heightfigure=100  
+> F fig_height=100  
+> T fig.height=100  
+> F height.fig=100  
+>
+{: .solution}
+
+
+> ## Quiz 6.7
+> The percentage of children who survived the Titanic accident was (Note: round to one decimal digit) 
+>
+{: .challenge}
+
+> ## Solution
+> 
+> 52.3 
+>
+{: .solution}
+
+
+> ## Quiz 6.8
+> The percentage of female survivors was ___ times higher as the percentage of male survivors. (Note: round to two decimal digits) 
+>
+{: .challenge}
+
+> ## Solution
+> 
+> 3.45 
+>
+{: .solution}
+
 
 &nbsp;
 
