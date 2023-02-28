@@ -4,15 +4,17 @@ title: "Reproducibility and Data"
 teaching: 0
 exercises: 0
 questions: 
-  - "here are questions"
-  - "tbd"
-  - "by eva"
+  - "Is there a reproducibility crisis?"
+  - "How do I organize projects and software code to favor reproducibility?"
+  - "How do I handle data in spreadsheets to favor reproducibility?"
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Practice new habits in file and folder organization which favours reprodcibiity"
+  - "Some practical tips for the use of Rstudio (optional)"
+  - "Some practical tips for the use of Rstudio (optional)"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "Well organized projects are easier to reproduce"
+  - "Consistency is the most important principle for coding analyses and for preparing data"
+  - "Transparency increases reliability and trust and also helps my future self"
 ---
 
 ```{r, include=FALSE}
@@ -20,197 +22,119 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-
-![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
-
->## This week we learn some background and a few simple habits favoring reproducibility
->
-1. Background on the reproducibility crisis  
->
-2. How to organize projects and software code to favor reproducibility
->
-3. How to handle data in spreadsheets to favor reproducibility
->
-4. Some practical tips for the use of Rstudio (optional)
-{: .checklist}
+# Is there a reproducibility crisis?
 
 &nbsp;
-
-&nbsp;
-
-# 1. Background
 
 >## Recall: Reproducibility vs Replicability
 >
-**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.
->
-This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
+**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator. This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
 >
 **Replicability** refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected.
 >
-S Goodman https://www.science.org/doi/10.1126/scitranslmed.aaf5027
-{: .keypoints}
-
-&nbsp;
+S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027]()
+{: .callout}
 
 ## Retracted Nature paper
+See this example of a paper published in a prestigious outlet, the journal Nature, that had issues with replication:
+
+
 ![]({{ page.root }}/fig/03-01retraction.png)  
+W Huang et al. [https://www.nature.com/articles/s41586-018-0311-z](). The paper contains an important finding on how a special type of RNA can affect T-cells, which could imply therapeutic effects and lead to new drugs for autoimmune diseases. 
 
-
-W Huang et al. https://www.nature.com/articles/s41586-018-0311-z
-
-
-
+But some of the co-authors were unable to replicate the published results and hence initiated a retraction. The retraction note states:  
 “In follow-up experiments to this article, we have been **unable to replicate** key aspects of the original results.”
 
+For more information, see the [commentary on Retraction Watch.](http://retractionwatch.com/2018/07/09/researchers-pull-nature-paper-over-first-authors-objections/)  
 
-- important finding on how a special type of RNA can affect T-cells  
-- potential therapeutic effects and new drugs for autoimmune diseases  
-- authors retracted the paper in 2018  
+>## Selfish reason number 5: reproducibility helps to build your reputation  
+> _“Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher. Should there ever be a problem with one of your papers, you will be in a very good position to defend yourself and to show that you reported everything in good faith.”_
+>
+F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7]()
+{: .testimonial}
 
-For more information, see [commentary on Retraction Watch.](http://retractionwatch.com/2018/07/09/researchers-pull-nature-paper-over-first-authors-objections/)  
 
-&nbsp;
+
 
 ## Issues with reproducibility/replication affect many fields 
+Retraction due to error or non-feasibility of replication are probably pretty rare? But attempts at replication of results becomes more frequent. For example, in some fields there have been concerted efforts of aiming to replicate larger sets of studies allowing to assess reliability of results on a wider scale.
 
-Biomedicine  
-![]({{ page.root }}/fig/03-RetractionBiomedicine.png)  
+### Biomedicine  
+F Prinz et al. attempted "To substantiate our incidental observations that published reports are frequently not reproducible with quantitative data, we performed an analysis of our early (target identification and validation) in-house projects in our strategic research fields of oncology, women's health and cardiovascular diseases that were performed over the past 4 years." From 67 papers only 22 were fully or partially confirmed, see [https://www.nature.com/articles/nrd3439-c1](). 
 
-- Drug target validation in oncology, women’s health, and cardiovascular diseases  
-- Only 22 of 67 papers were fully or partially confirmed  
-F Prinz et al.https://www.nature.com/articles/nrd3439-c1 
+![]({{ page.root }}/fig/03-RetractionBiomedicine.png){: height="100px"}  
+### Psychology  
+The Open Science Collaboration in Psychology "conducted replications of 100 experimental and correlational studies published in three psychology journals using high-powered designs and original materials when available." in an attempt to "Estimating the reproducibility of psychological science". Only 39 of 100 replication studies were significant and the mean effect size was about 50% compared to the original studies, see [https://www.science.org/doi/10.1126/science.aac4716](). 
 
-&nbsp;
+![]({{ page.root }}/fig/03-RetractionPsychology.png){: height="100px"} 
 
-Psychology  
-![]({{ page.root }}/fig/03-RetractionPsychology.png)  
+### Economics  
+C Camerer et al. replicated "18 studies published in the American Economic Review and the Quarterly Journal of Economics between 2011 and 2014. All of these replications followed predefined analysis plans that were made publicly available beforehand, and they all have a statistical power of at least 90% to detect the original effect size at the 5% significance level." They found significant effects in 11 of 18 studies with a mean effect size of about  66% compared to the original studies, see [https://www.science.org/doi/10.1126/science.aaf0918]().
 
-- Only 39 of 100 replication studies were significant  
-- Mean effect size 50% as in original studies  
-Open Science Collaboration https://www.science.org/doi/10.1126/science.aac4716 
+![]({{ page.root }}/fig/03-RetractionEconomics.png){: height="100px"}   
 
-&nbsp;
+### Social Sciences
+Again C Camerer et al. "replicate 21 systematically selected experimental studies in the social sciences published in Nature and Science between 2010 and 2015." They found significant effects in 13 of 21 studies with mean effect size about 50% compared to the  original studies, see [https://www.nature.com/articles/s41562-018-0399-z]().
 
-Economics  
-![]({{ page.root }}/fig/03-RetractionEconomics.png)  
-
-- Significant effect in 11 of 18 studies  
-- Mean effect size 66% as in original studies  
-C Camerer et al. https://www.science.org/doi/10.1126/science.aaf0918
-
-&nbsp;
-
-Social Sciences  
-![]({{ page.root }}/fig/03-RetractionSocialSciences.png)  
-
-- Significant effect in 13 of 21 studies  
-- Mean effect size 50% as in original studies  
-C Camerer et al. https://www.nature.com/articles/s41562-018-0399-z
-
-&nbsp;
-
-## Is there a reproducibility crisis?  
-![]({{ page.root }}/fig/03-ReproCrisis01.png){: height="150px"} ![]({{ page.root }}/fig/03-ReproCrisis02.png){: height="150px"}  
-M. Baker https://www.nature.com/articles/533452
+![]({{ page.root }}/fig/03-RetractionSocialSciences.png){: height="100px"}   
 
 
-&nbsp;
+## 1,500 scientists lift the lid on reproducibility
+In 2016 M Baker designed a survey meant to shed "light on the ‘crisis’ rocking research." Here we discuss some of the results of the survey, for a complete report see [https://www.nature.com/articles/533452a](). The two graphs from the publication show that a large proportion of researchers beliefs that there are issues with reproducibility but that, again in the opinion of researchers, the extent of the problem differs between disciplines. Specifically, researchers from the "hard" science such as chemistry and physics, more frequently believe that the published work in their field is reproducible than for example in the "softer" sciences biology and medicine.
+
+![]({{ page.root }}/fig/03-ReproCrisis01.png){: height="200px"} ![]({{ page.root }}/fig/03-ReproCrisis02.png){: height="150px"}  
+
 
 ## Factors contributing to irreproducible research  
+Baker also tried to evaluate which factors could contribute to this perceived reproducibility issue. Most researchers (more thn 95%) believe that selective reporting and pressure to publish always/often or sometimes contribute to irreproducibility. Still about 90% believe that low statistical power of poor analysis, not enough replication in the original lan and insufficient mentoring/oversight always/often or sometimes contribute. Around 80% agree with unavailability of methods/code, poor experimental design, unavailability of raw data and unsufficient peer review as contributing factors at least sometimes. Fraud plays a more minor role in the opinion of researchers.
 
 ![]({{ page.root }}/fig/03-ReproCrisis04.png)  
-&nbsp;
-
-## What does working reproducibly mean for my daily work?  
-> _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
-
-**Five selfish reasons to work reproducibly**  
-
-F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7
-&nbsp;
-
->## Reason number 1: reproducibility helps to avoid disaster  
->> _“This experience showed me two things. First of all, a project is more than a beautiful result. You need to **record in detail how you got there**. And second, starting to work reproducibly early on will **save you time later**. We wasted years of our and our collaborators’ time by not being able to reproduce our own results. All of this could have been avoided by keeping better track of how the data and analyses evolved over time.”_
-{: .keypoints}
 
 &nbsp;
 
->## Reason number 2: reproducibility makes it easier to write papers  
->> _“Transparency in your analysis makes writing papers much easier. For example, in a dynamic document (Box 1) all **results automatically update when the data are changed**. You can be confident your numbers, figures and tables are up-to-date. Additionally, transparent analyses are more engaging, more eyes can look over them and it is much easier to spot mistakes.”_
-{: .keypoints}
-
-&nbsp;
-
->## Reason number 3: reproducibility helps reviewers see it your way  
->> _“One of the reviewers proposed a slight change to some analyses, and because he had **access to the complete analysis**, he could directly try out his ideas on our data and see how the results changed.”_
-{: .keypoints}
-
-&nbsp;
-
->## Reason number 4: reproducibility enables continuity of your work  
+>## Selfish reason number 4: reproducibility enables continuity of your work  
 >> _“I did this analysis 6 months ago. Of course I can’t remember all the details after such a long time.”_
-{: .keypoints}
-
-&nbsp;
-
->## Reason number 5: reproducibility helps to build your reputation  
-> _“Generally, making your analyses available in this way will help you to build a reputation for being an honest and careful researcher. Should there ever be a problem with one of your papers, you will be in a very good position to defend yourself and to show that you reported everything in good faith.”_
-{: .keypoints}
-
-&nbsp;
-
->## Tools of the trade
->> _“At the lowest level, working reproducibly just means avoiding beginners’ mistakes. Keep your project organized, name your files and directories in some informative way, store your data and code at a single backed-up location. Don’t spread your data over different servers, laptops and hard drives.”_  
 >
-- scripting analyses, for example, in R and dynamic reporting using knitR http://yihui.name/knitr/  
-- version control analysis development with, e.g. git https://git-scm.com/  
-- self-contained and transportable analyses using, e.g. docker http://www.docker.com/  
-{: .checklist}
+F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7]()
+{: .testimonial}
 
 
-## Quiz on background
 
-> ## Quiz 3.1
+## Quiz on crisis narrative
+
+> ## Factors contributing to irreproducibility
 >
-> The current episode of this course is concerned with the following factor that contributes to irreproducible research
+> Peaking at the content below, with which of the above factors that contributes to irreproducible research is the current episode of this course is concerned?
 >
 {: .challenge}
 
 > ## Solution
 > 
-> methods, code unavailable
+> Methods, code unavailable
 >
 {: .solution}
 
 
-&nbsp;
-
-
-&nbsp;
-
-
-&nbsp;
-
 # 2. Organization and software
 
-
->## Project organization  
->Separation of  
+>## Selfish reason number 1: reproducibility helps to avoid disaster  
+>> _“This experience showed me two things. First of all, a project is more than a beautiful result. You need to **record in detail how you got there**. And second, starting to work reproducibly early on will **save you time later**. We wasted years of our and our collaborators’ time by not being able to reproduce our own results. All of this could have been avoided by keeping better track of how the data and analyses evolved over time.”_
 >
+F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7]()
+{: .testimonial}
+
+
+## Project organization  
+The main principles of data analytic project organization is the separation of  
+
 - **data**  
 - **method**  
-- **output**
->
->
->Preservation of  
+- **output**  
+and the preservation of the  
 - **computational environment**  
-{: .checklist}
-
-&nbsp;
 
 >## Project organization  
->
+> To achieve these principles make sure that you follow a procedure similar to:
 1. Put each project in its own directory named after the project.
 2. Put text associated documents in the `doc` directory.
 3. Put raw data and metadata in a `data` directory and files generated during cleanup and analysis in a `results` directory.
@@ -218,32 +142,31 @@ F Markowetz https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-
 5. Put external scripts or compiled programs in the `bin` directory.
 6. Name all files to reflect their content or function.
 >
-**Good enough practices in scientific computing**
->
-G Wilson et al. https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510  
+From **Good enough practices in scientific computing** by G Wilson et al. [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510]()  
 {: .checklist}
 
 &nbsp;
 
-## Projects as research compedia
+In **Packaging Data Analytical Work Reproducibly Using R (and Friends)**  B Marwick et al. [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986]() suggest a slightly different but conceptually similar approach. They propose to organize projects as so-called "research compendia", for example like:
 
 ![]({{ page.root }}/fig/03-Project02.png)
 
-Examples of project organizations
 ![]({{ page.root }}/fig/03-Project01.png)  
 
-**Packaging Data Analytical Work Reproducibly Using R (and Friends)**  
-
-B Marwick et al. https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986
  
 
-&nbsp;
 
->## Software  
-Use the following principles that make software/code/programs  
+
+>## Selfish reason number 3: reproducibility helps reviewers see it your way  
+>> _“One of the reviewers proposed a slight change to some analyses, and because he had **access to the complete analysis**, he could directly try out his ideas on our data and see how the results changed.”_
 >
-> - easier to understand and use 
-> - by others and your future self  
+F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7]()
+{: .testimonial}
+
+## Software/code
+Writing code for a data analysis instead of using a GUI based tool makes an analysis to some degree reproducible (given the availability of the data and the analogous functioning of the computing environment). But code can also be a very detailed documentation of the employed methods, at least if it is written in a way such that it is understandable.
+>## Code understandability  
+Use the following principles that make code easier to understand and use by others and your future self  
 >
 >   1. Place a brief explanatory comment at the start of every program.  
 >   2. Decompose programs into functions.  
@@ -257,43 +180,39 @@ Use the following principles that make software/code/programs
 >
 >
 &rArr; Your main goal with these principles is for your code to be **readable, reusable, testable**  
+>
+From G Wilson et al. [https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510]() 
 {: .checklist}
 
-&nbsp;
+On top of these high level recommendations writing and reading code is easier if one adheres to some styling rules. Over the years I have assembled my ten most important rules for code styling in R, these were influenced by https://style.tidyverse.org, https://google.github.io/styleguide/Rguide.html,  https://cfss.uchicago.edu/notes/style-guide/ and by lot of experience in reading code by others and my past self.
 
->## Code styling 
-![]({{ page.root }}/fig/03-Meme.png)  
-{: .testimonial}
-
->## Over the years I have assembled ten rules for code styling in R (in my personal order of importance):
+>## Rules for code styling (in R)
 >
 1. Code styling is about readability not about correctness. The most important factor for readability is **consistency** which also increases writing efficiency. 
 2. Use **white space** for readability, spaces around operators (e.g. +), after commas and before %>%, line breaks before each command and after each %>%.
 3. Control the **length of your code lines** to be about 80 characters. Short statements, even loops etc, can be a single line.
 4. **Indent** your code consistently, the preferred way of indentation are two spaces.
 5. Use concise and informative variable names, do not use spaces, link by underscore or use CamelCase. Avoid names, that are already used, e.g., `mean`, `c`. 
-6. **Comment** your code such that its structure is visible and findable (code folding in RStudio). Indicate decisions and reasons for those.
-7. Do not use the equal sign for assignment, <- is the appropriate operator for this. Avoid right-hand assignment, ->, since it deteriorates readability.
+6. **Comment** your code such that its structure is visible and findable (use code folding in RStudio).
+7. Do not use the equal sign for assignment in R, <- is the appropriate operator for this. Avoid right-hand assignment, ->, since it deteriorates readability.
 8. Curly braces are a crucial programming tool in R. The opening { should be the last character on the line, the closing } the first (and last) on the line.
 9. File naming is part of good programming style. Do not use spaces or non-standard characters, use consistent and informative names.
 10. Do use the assistance provided by RStudio: command/control + i and shift + command/ctrl + A.
 >
-These rules were summarized from https://style.tidyverse.org, https://google.github.io/styleguide/Rguide.html, https://cfss.uchicago.edu/notes/style-guide/ and from lot of experience in reading code by others and my past self
 {: .checklist}
 
-&nbsp;
 
->## More tools to follow during the semester  
->
-- Data management: data in spreadsheets  
-- Collaboration: OSF, switchdrive, git  
-- Manuscripts: first experience in dynamic reporting  
-{: .checklist}
+>## Never change a running horse?
+![]({{ page.root }}/fig/03-Meme.png)  
+{: .testimonial}
+
+https://www.reddit.com/r/ProgrammerHumor/comments/ebh05i/i_remade_this_one_think_its_funnier_this_way/
+
 
 
 ## Quiz on organization and software
 
-> ## Quiz 3.2
+> ## Directories
 > Which directories would you use for cleaned data files of .csv format?
 > - results  
 > - data  
@@ -312,27 +231,26 @@ These rules were summarized from https://style.tidyverse.org, https://google.git
 {: .solution}
 
 
-&nbsp;
 
-&nbsp;
-
-&nbsp;
 
 # 3. Data in spreadsheets
 
+>## Selfish reason number 2: reproducibility makes it easier to write papers  
+>> _“Transparency in your analysis makes writing papers much easier. For example, in a dynamic document (Box 1) all **results automatically update when the data are changed**. You can be confident your numbers, figures and tables are up-to-date. Additionally, transparent analyses are more engaging, more eyes can look over them and it is much easier to spot mistakes.”_
+>
+F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7]()
+{: .testimonial}
+
 &nbsp;
 
->## Data organization in spreadsheets
->
-> _“By following this advice, researchers will create spreadsheets that are **less error-prone, easier for computers to process**, and **easier to share** with collaborators and the public. Spreadsheets that adhere to our recommendations will work well with the tidy tools and reproducible methods described elsewhere in this collection and will **form the basis of a robust and reproducible analytic workflow**.”_  
->
-K Broman and K Woo https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989  
->
-&nbsp;
->
 ![]({{ page.root }}/fig/03-Meme02.png)  
-https://xkcd.com/2180/  
-{: .testimonial}
+[https://xkcd.com/2180/]()  
+
+Data in spreadsheets is preferably organized in way that favors reproducibility. We will summarize the recommendations of the article by K Broman and K Woo [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989]() into five checklists below. Broman and Woo promise that:  
+
+“By following this advice, researchers will create spreadsheets that are **less error-prone, easier for computers to process**, and **easier to share** with collaborators and the public. Spreadsheets that adhere to our recommendations will work well with the tidy tools and reproducible methods described elsewhere in this collection and will **form the basis of a robust and reproducible analytic workflow**.”  
+
+
 
 &nbsp;
 
@@ -348,6 +266,7 @@ https://xkcd.com/2180/
 7. Use a consistent format for all dates.
 8. Use consistent phrases in your notes.
 9. Be careful about extra spaces within cells.
+10. Use a consistent missing value coding: empty cell/NA/~~99999~~ 
 {: .checklist}
 
 &nbsp;
@@ -364,10 +283,6 @@ https://xkcd.com/2180/
 &nbsp;
 
 >## Be careful with dates  
-![]({{ page.root }}/fig/03-Meme03.png)
-https://xkcd.com/1179/
-{: .testimonial}
->
 - Use the ISO 8601 global standard  
 - Convention for dates in Excel is different on Windows and Mac computers  
 - Dates have an internal numerical representation  
@@ -375,19 +290,21 @@ https://xkcd.com/1179/
 - Consider separate year, month, day columns  
 {: .checklist}
 
-&nbsp;
+![]({{ page.root }}/fig/03-Meme03.png)
+[https://xkcd.com/1179/]()
 
-&nbsp;
 
- 
->## Other tips  
+>## Make your data truly readable and rectangular 
+- Put one information of the same form per cell  
+- Do not add remarks in cells which should contain numerical values, e.g. >10000  
+- Include one variable per column, one row per subject: a rectangle of data 
+- Use the first and only the first row for variable names  
+- Do not calculate means, standard deviations etc in the last row  
+- Do not color, highlight or merge cells  
+- Use data validation at data entry  
+- Be careful with commas since they may be decimal separators  
+- Consider write protecting a file at the end of data collection  
 >
-- Consistent missing value coding: empty cell/NA/~~99999~~  
-- One information of the same form per cell  
-- No remarks in cells, e.g. >10000  
-- Rectangle: one variable per column, one row per subject  
-- First and only the first row for variable names  
-- No means, standard deviations etc in the last row  
 {: .checklist}
 
 &nbsp;
@@ -408,28 +325,18 @@ https://xkcd.com/1179/
 
 &nbsp;
 
- 
->## Good practice  
->
-- Do not color, highlight or merge cells  
-- Do not calculate means, standard deviations or similar in raw data files  
-- Consider write protecting a file at the end of data collection  
-- Use data validation at data entry  
-- Be careful with commas since they may be decimal separators  
->
->&nbsp;
->
+Unfortunately, things can go wrong nevertheless:
+
 ![]({{ page.root }}/fig/03-Meme04.png)  
->
-https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg
-{: .testimonial}
+[https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg]()
+
 
 
 ## Quiz on data in spreadsheets
 
-> ## Quiz 3.3
+> ## Variable names
 >
-> What are good names for the variable containing of average height per age class?
+> What are good names for the variable containing average height per age class?
 > - averageheightperageclass
 > - av_height_agecls
 > - height/class
@@ -447,7 +354,7 @@ https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-da
 {: .solution}
 
 
-> ## Quiz 3.4
+> ## Ruthlessness
 >
 > Choose how to best initialize the variables that contain the BMI (body mass index) of 17 subjects at three different time points.
 > - bmi1 <- numeric(17); bmi2 <- numeric(17); bmi3 <- numeric(17)
@@ -465,33 +372,33 @@ https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-da
 {: .solution}
 
 
-> ## Quiz 3.5
+> ## Special care for dates
 >
-> Enter the date of the in-class session of this topic as an 8-digit integer:
->
-{: .challenge}
-
-> ## Solution
-> 
-> 20230307
->
-{: .solution}
-
-
-> ## Quiz 3.6
->
-> Enter the date of the introduction session of this module in ISO 8601 coding:
+> This episode was created on February 28, 2023. Enter this date as an 8-digit integer:
 >
 {: .challenge}
 
 > ## Solution
 > 
-> 2023-02-21
+> 20230228
 >
 {: .solution}
 
 
-> ## Quiz 3.7
+> ## Once more dates
+>
+> This episode was created on February 28, 2023. Enter this date in ISO 8601 coding:
+>
+{: .challenge}
+
+> ## Solution
+> 
+> 2023-02-28
+>
+{: .solution}
+
+
+> ## Missing values
 >
 > Choose all acceptable codes for missing values.
 > - 99999
@@ -513,7 +420,7 @@ https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-da
 {: .solution}
 
 
-> ## Quiz 3.8
+> ## Code styling
 >
 > The preferred way of indenting code is
 > - a tab
@@ -530,11 +437,9 @@ https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-da
 >
 {: .solution}
 
-&nbsp;
 
-&nbsp;
-
-
+# Episode challenge
+----->>> change the example to a fake one!!!
 ## Description of the data set
 
 Antibiotic susceptibility testing (AST) methods aim to quantify the susceptibility of certain species of bacteria to show resistance to certain antibiotics. AST methods are therefore applied to drug-species combinations. The AST method under study here is based on bacterial cultures, more specifically on measuring the diameter of areas without bacterial growth (zones of inhibition) around paper discs containing the antibiotic on agar culture dishes that have been evenly inoculated with bacteria. In other words, the larger the diameter the better the effect of the antibiotic. And, if the diameter is smaller than a specified target value the specific bacterial strain can be considered resistant to the antibiotic.
