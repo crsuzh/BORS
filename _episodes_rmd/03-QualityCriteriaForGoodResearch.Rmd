@@ -1,8 +1,8 @@
 ---
 source: Rmd
 title: "Quality criteria for good research"
-teaching: 0
-exercises: 0
+teaching: 60
+exercises: 90-120
 questions: 
   - "How does academic publishing work?"
   - "What is the IMRAD format?"
@@ -25,31 +25,27 @@ knitr_fig_path("05-")
 
 # 1. Primer on academic publishing
 
-&nbsp;
+## Why publish? 
 
->## Why  
->
->Results of research are published in the literature such that  
->
+Results of research are published in the literature such that  
+
 - findings get disseminated  
 - other researchers can assess “what is known”  
 - findings can get synthesized into overall evidence  
 - evidence can inform policy  
->
->
->
+
+but also such that
+
 - researchers can document their output  
 - researchers can be assessed for career advancement  
 - researchers can build a “reputation”  
-{: .checklist}
 
-&nbsp;
+&Rightarrow; Publication advances science and the career of scientists
 
+## Where to publish? 
 
->## Where  
->
-Academic journals may be  
->
+Most scientific publications are in academic journals or books. Journals may be  
+
 - discipline specific or across several disciplines  
 - run by learned societies or by commercial publishers  
 - open or closed access  
@@ -57,40 +53,31 @@ Academic journals may be
 - existing for over 100 years or only a short time  
 - exist in print/online or only online  
 - “predatory”  
->
-There may be more than 30’000 journals publishing 2’000’000 articles per year.  
-{: .checklist}
 
-&nbsp;
+There may be more than 30’000 journals publishing 2’000’000 articles per year.  
 
   
->## How  
->
+## How does the process of publication in journals work? 
+
 Authors have to follow several steps  
->
-1. Carry out a study, write a manuscript, select a journal  
+
+1. Carry out a study or another type of research project, write a manuscript, select a journal  
 2. Submit the manuscript to peer review at the journal  
-3. The article will be assigned an editor, undergoing formal checks  
-4. The editor decides if it is peer-reviewed or desk-rejected  
+3. The article will be assigned an editor and undergoes formal checks  
+4. The editor decides if it will be peer-reviewed or rejected  directly (desk-rejection) 
 5. The editor searches peer reviewers, usually at least two independent and anonymous experts  
 6. The manuscript is peer-reviewed resulting in review reports  
-7. The editor assesses the reports and makes a decision:  
->  
->
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Rejection &nbsp;  &nbsp; Revision &nbsp; &nbsp; Acceptance**
->
-&nbsp;
->
+7. The editor assesses the reports and makes a decision among:  
+  - Rejection: the article cannot be published at this journal 
+  - Revision: the article has to undergo changes, sometimes major, before publication
+  - Acceptance: the article can be published as it is, most often conditional on small cosmetic changes
+
+The below image from J Berg et al. [https://www.science.org/doi/abs/10.1126/science.aaf9133]() illustrates this process:
+
 ![]({{ page.root }}/fig/04-PeerReviewPublication-1.png)  
-J Berg et al. https://www.science.org/doi/abs/10.1126/science.aaf9133
-{: .checklist}
- 
-
-&nbsp;
-
 
 ## What is a doi and what is Crossref?
-
+Since the goal of scientific articles is to serve for the advancement of science they need to be findable and identifiable for future work. For that a necessary condition is that they have a unique identifier, which is nowadays of course a digital identifier
  
 > "_A digital object identifier (DOI) is a persistent identifier or handle used to identify objects uniquely, standardized by the International Organization for Standardization (ISO).An implementation of the Handle System, DOIs are in wide use mainly to identify academic, professional, and government information, such as journal articles, research reports, data sets, and official publications. DOIs have also been used, however, to identify other types of information resources, such as commercial videos._"
 
@@ -101,55 +88,45 @@ Since a doi is a unique identifier you can find any article by concatenating `ht
 Hence Crossref is the organisation which registers most doi for academic publications.
 
 
-&nbsp;
 
 >## Examples 
->
+> Two examples of journals that are are linked with the University of Zurich are:
 European Journal of Health Communication  
 https://ejhc.org/
 >
 Journal of Statistical Software  
 https://www.jstatsoft.org/index
-{: .callout}
+{: .testimonial}
 
 &nbsp;
 
->## Indexing of journals/publications
->
-Indexation of a journal is considered a reflection of its quality. Indexed journals may be of higher scientific quality as compared to non-indexed journals.
->
+## Indexing of journals/publications
+
+Indexation of a journal, i.e. the inclusion of its articles in a meta data base, is considered a reflection of the quality of the journal. Indexed journals may be of higher scientific quality as compared to non-indexed journals.
+
 - Pubmed/MEDLINE https://pubmed.ncbi.nlm.nih.gov/
 - Directory of Open Access Journals https://doaj.org/
 - Thomson Reuters Journal Citation Reports https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports
->
-In-house database: ZORA https://www.zora.uzh.ch/
-{: .checklist}
 
-&nbsp;
+Many universities also have in-house databases for the articles produced by their researchers: at the University of Zurich, for example, this is ZORA https://www.zora.uzh.ch/
 
->## Why peer review?
->
+## Why is peer review part of the publication process?
+
 - Peer review allows to check and improve research.
 - Peer review serves as scientific quality control.
 - Peer review provides a form of self regulation for science.
 - Peer review makes publication (more) trustworthy
-{: .checklist}
 
-&nbsp;
+## Issues with peer review
 
->## Issues with peer review
->
 - Anonymity of peer reviewers but not authors
 - Conflict of interest of peer reviewers: plagiarism, delays, favouritism, biases
 - Peer reviewers may not be competent enough
 - Peer reviewers are volunteers and almost not rewarded
 - The process is slow and unpredictable
 - Increasing numbers of publications make it more and more unfeasible 
->
-Before you review the first time [Open Reviewer Toolkit](https://content.prereview.org/open-reviewers-toolkit-is-now-openly-available/)
-{: .checklist}
 
-&nbsp;
+Before you review for the first time see [Open Reviewer Toolkit](https://content.prereview.org/open-reviewers-toolkit-is-now-openly-available/)
 
 >## Issues with the publication system
 >
@@ -157,13 +134,11 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 - Lacking equity (Matthew effect)
 - Expensive either in subscription fees or processing charges
 - Evaluation of researchers is publication based, incentivising fast but not rigorous research
-{: .checklist}
-
-&nbsp;
+{: .callout}
 
 
 ## Preprints
-
+Preprints are a relatively new form of publication which helps to overcome some of the issues with peer review and with the publication system. See the extension of the above graphic including preprints in the publication process:
 ![]({{ page.root }}/fig/04-PeerReviewPublication.png)
 
 ## Quiz on academic publishing
@@ -203,41 +178,39 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 {: .solution}
 
 
+> ## Preprints
+> Why do preprints help to overcome some of the issues with peer review and with the publication system?
+{: .challenge}
 
+> ## Solution
+> 
+> TBA
+>
+{: .solution}
 
 
 # 2. What is the IMRAD format?
 
 ## What is IMRAD?
 
-
+The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article. See the article of J Wu [https://link.springer.com/article/10.1007/s10980-011-9674-3]() for a quick overview illustration:
 ![]({{ page.root }}/fig/04-IMRAD.png){: height="300px"}
- J Wu https://link.springer.com/article/10.1007/s10980-011-9674-3
-
-The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article.
-
 
 R Day writes about the history of scientific publication in his article, "The Origins of the Scientific Paper: The IMRAD Format". He specifically mentions the scientific method and its cornerstone the principle of reproducibility of results. The IMRAD Format has been introduced in order to represent the steps of the scientific method.
 
 > _"Eventually, in 1972, the IMRAD format became  "standard" with the publication of the American National Standard for the preparation of scientific papers for written or oral presentation."_
 
-R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. Provided as [pdf]({{ page.root }}/files/docs/04/Day1989.pdf)
-
-&nbsp;
+R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. This article is not easily obtainable online, potentially your library can obtain it for you. If this is not possible, please contact the authors of this course.
 
 ## What is the Scientific Method?
-
+The Center for Reproducible Science at the University of Zurich uses a simplified graphical representation of the scientific method in its communications: 
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal.png){: height="200px"}
-The CRS uses a simplified graphical representation of the scientific method in its communications.
 
-
-"What is the Scientific Method?" is a philosophical question that we can not answer in full detail here and it may be one of the questions to which there is no single correct answer.
-
-From the Stanford Encyclopedia of Philosophy:
+"What is the Scientific Method?" is a philosophical question that we can not answer in full detail here and it may be one of the questions to which there is no single correct answer. From the Stanford Encyclopedia of Philosophy:
 
 > _"Often, ‘the scientific method’ is presented in textbooks and educational web pages as a fixed four or five step procedure starting from observations and description of a phenomenon and progressing over formulation of a hypothesis which explains the phenomenon, designing and conducting experiments to test the hypothesis, analyzing the results, and ending with drawing a conclusion."_
 
-https://plato.stanford.edu/entries/scientific-method/
+[https://plato.stanford.edu/entries/scientific-method/[()
 
 This view coincides with a common approach to empirical research, even if it may be an oversimplification and a strong generalization, we assume an underlying scientific process for this course that is close to such an approach.
 

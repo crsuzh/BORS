@@ -1,0 +1,1 @@
+This spreadsheet contains data from 482 patients, two columns with dates and 8 columns with counts of neutrophils and lymphocytes in the blood on a baseline date, on day 1, 2 and 3 of a certain therapy. Read in the data, check for errors and calculate the NLR (neutrophil vs lymphocyte ratio) for each of the days.

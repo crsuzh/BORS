@@ -1,8 +1,8 @@
 ---
 source: Rmd
 title: "Reproducibility and Data"
-teaching: 0
-exercises: 0
+teaching: 60
+exercises: 90-120
 questions: 
   - "Is there a reproducibility crisis?"
   - "How do I organize projects and software code to favor reproducibility?"
