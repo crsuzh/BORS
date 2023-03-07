@@ -1,18 +1,24 @@
 ---
 source: Rmd
-title: "Week 6 Reproducible notebooks for data analysis"
-teaching: 0
-exercises: 0
+title: "Reproducible notebooks for data analysis"
+teaching: 60
+exercises: 90-120
 questions: 
-  - "here are questions"
-  - "questions, tbd"
-  - "by eva"
+  - "Should I use a graphical user interface to analyse data or a code-based system?"
+  - "What is literate programming and what is R Markdown?"
+  - "How do I use R  Markdown"
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Understand the advantages of code-based data analysis"
+  - "Able to create and adapt an R Markdown script"
+  - "Adapt YAML header"
+  - "Use code chunks and choose the right chunk option"
+  - "Practice by answering simple questions"
+  - "Bonus: add a table to an R Markdown script"
+  - "Bonus: add a graphic to an R Markdown script"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "Code-based analysis is better for reproducibility."
+  - "Combining narrative and code-based results is even more profitable."
+  - "Code chunks in R Markdown provide an easy solution"
 ---
 
 
@@ -21,37 +27,10 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-# 061-1-introduction
+# 1. Reproducibility of analysis code
 
-![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
-
-&nbsp;
-
-
-This week we learn about
-
-1. Graphical user interface (GUI) vs Code
-
-2. R Projects
-
-3. R Markdown
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-# 061-2-GUIvsCode: 1. GUI vs Code
-
-&nbsp;
 
 ## Graphical user interface (GUI) vs. Code
-
 
 Statistical analysis software packages with graphical user interfaces such as SPSS (often) provide an easy solution to data analysis because
 
@@ -59,7 +38,7 @@ Statistical analysis software packages with graphical user interfaces such as SP
 - it is a convenient way of exploring the data is needed 
 - figures and the statistical analysis are done at the end of the exploration
 
-**But** it is often not clear anymore how exactly (and with which commands) those results were obtained. **Data analysis with GUI** not **reproducible**
+**But** it is often not clear anymore how exactly (and with which commands) those results were obtained. 
  
 An analysis that is not reproducible can be an issue since 
 
@@ -68,24 +47,15 @@ An analysis that is not reproducible can be an issue since
 - if you need to change some step in the middle of the analysis you have to restart from scratch
 - you can not provide a workflow that others (or yourself in the future) can follow easily to reproduce the results
 
- **Recording all steps is tedious**
- To make your analysis reproducible (by yourself or others) it would be necessary to write down all steps that were done which can be very tedious. Even if some kind of history of the executed commands is saved it might still be necessary to clean this up and keep only the relevant steps.  
+To make your analysis reproducible with a GUI program it would be necessary to write down all steps that were done which can be very tedious. Even if some kind of history of the executed commands is saved it might still be necessary to clean this up and keep only the relevant steps.  
  
- **Learning to code is a big investment**
- On the other hand doing a statistical analysis purely with code seems to be a lot of effort since all steps have to be written down explicitly and in case of unfamiliarity with the used programming language some initial investment to get familiar with a new environment and maybe also some basic concepts of programming need to be learned. However, while it seems like a big hurdle modern programming languages designed for statistical computing, such as R, are usually pretty straightforward to learn and use.   
+On the other hand doing a statistical analysis purely with code seems to be a lot of effort since all steps have to be written down explicitly and in case of unfamiliarity with the used programming language some initial investment to get familiar with a new environment and maybe also some basic concepts of programming need to be learned. However, while it seems like a big hurdle modern programming languages designed for statistical computing, such as R, are usually pretty straightforward to learn and use.   
  
-Furthermore text based analysis are **more flexible** since usually more combinations, functions and extensions are available. 
+Furthermore code based analysis are **more flexible** since usually more combinations, functions and extensions are available. In R, for example, thousands of packages are available. Besides, written analyses are easily **reproducible** as all commands that have been executed are written down and if complemented with comments and descriptions are also easily understandable for humans. 
 
-**Code based data analysis is more flexible** 
-In R, for example, thousands of packages are available. Besides, written analyses are easily **reproducible** as all commands that have been executed are written down and if complemented with comments and descriptions are also easily understandable for humans. 
-
-**Code based data analysis includes more details than narrative description** 
 Such a coded analysis script provides a complete account of what has been calculated, much more complete than any narrative text on used methods could ever be. 
 
-Another point not to underestimate are the many readily available analyses that can be copied and used as a starting point for your own analysis which greatly increases speed and reduces the amount of work. 
-
-**Many code based data analysis types openly available** 
-Related to that is the concept of reusing code if for instance you have similar parts in your analysis.  
+Another point not to underestimate are the many readily available analyses that can be copied and used as a starting point for your own analysis which greatly increases speed and reduces the amount of work. Related to that is the concept of reusing code if for instance you have similar parts in your analysis.  
 
 To summarize:
 
@@ -101,39 +71,23 @@ To summarize:
   - start from similar analyses
 
 
-&nbsp;
 
-&nbsp;
+## R Projects
 
-&nbsp;
+Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to easily implement the structures that we heard about in the Reproducibility and Data episode (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the projects functionality of Rstudio allows you to communicate easily between these directories.   
 
-&nbsp;
-
-
-
-
-# 061-4-RProject: 2. R Projects
-
-&nbsp;
-
-**R Projects allow easy implementation of a sensible directory structure** 
-Another very useful concept in Rstudio are R Projects. They allow to easily implement the structures that we heard about in week 3 (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the projects functionality of Rstudio allows you to communicate easily between these directories.   
-
-**Bundle code and data** 
 The main idea is that all files needed (scripts, data, ...) for an analysis are brought together to make your and your collaborators life easier. If you start a Project it automatically takes care of things like using the correct working directory and lets you quickly jump between different projects by remembering which files you had open and reopening them again.   
 
-**R Projects set working directory**
 Connected to the use of Project is the concept that you use relative file paths (e.g. for loading csv files). So instead of doing something like this: `read.csv("/home/user/Documents/Uni/Basics_of_Open_Science/Topic_5/data/example.csv")` you write `read.csv("data/example.csv")`. This is easier to write, more flexible and less prone to errors because as long as you keep your files in the project together it will work. Imagine for example you want to move your script (and data) to `"/home/user/backup/Uni/Basics_of_Open_Science/Topic_5/data/example.csv"`. 
-**R Projects make collaboration easier**  
-Your script won't work anymore and you have to manually adjust the file path. This gets even worse if multiple people work on the same analysis and every one has to change their scripts. 
 
-**Easily work on different projects at once** 
+R Projects hence make collaboration easier, your script won't work on a different computer and you have to manually adjust the file path. This gets even worse if multiple people work on the same analysis and every one has to change their scripts. 
+
 Another advantage of R Projects is the possibility to quickly switch to another project without mixing up scripts and data between projects. Without using R Projects you probably have to close the files you have open, change the working directory to the new location, open the files you will be using and restart the R session. With R Projects this is all done automatically.
 
 
 ## Quiz on R Projects 
 
-> ## Quiz 6.1
+> ## File path
 > Suppose your current working directory is ~/project and you want to specify the relative path to the file ~/project/data/data.csv . What are possible specifications?
 > - data.csv  
 > - project/data.csv  
@@ -153,27 +107,9 @@ Another advantage of R Projects is the possibility to quickly switch to another 
 
 
 
-&nbsp;
+# 2. Literate programming and R Markdown
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-# 061-5-RMarkdown: 3. R Markdown
-
-&nbsp;
-
-R Markdown is a realisation of the **literate programming** concept mixing narrative text with analysis code which is then rendered into formated text and analysis results (numbers, tables and graphics). 
-**Combine narrative and coded data analysis**
-The concept of literate programming goes back to Donald Knuth, see e.g. from the [open-science-with-r carpentries course](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html):
-
-
-
+R Markdown is a realisation of the **literate programming** concept mixing narrative text with analysis code which is then rendered into formatted text and analysis results (numbers, tables and graphics). The concept of literate programming goes back to Donald Knuth, see e.g. from the [open-science-with-r carpentries course](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html):
 
 > _
 More generally, the mixture of code, documentation (conclusion, comments) and 
@@ -181,7 +117,6 @@ figures in a notebook is part of the so-called “literate programming” paradi
 (Donald Knuth, 1984). Your code and logical steps should be understandable for 
 human beings. In particular these four tips are related to this paradigm:
 _
-
 >
 - _Do not write your program only for R but think also of code readers (that 
   includes you)._
@@ -192,24 +127,23 @@ _
   the data + code + text._
 
 
+## Parts of an R Markdown (.Rmd) file
 
-
-## Create new RMarkdown (.Rmd) file
+### Create a new Rmd
+**Execute the following steps on your computer while you read:** 
 
 Go to `File` > `New File` > `R Markdown`, enter `Title` and `Author`, select `html` as output, confirm.
 A new .Rmd file should open with a short tutorial. 
-**Execute these steps on your computer while you read** 
+
 To render, or `knit`, the file to `html` press `Knit`. The first time you run the script you will have to specify the name under which to save it. Afterwards the script is always saved before rendering. 
 
 An R Markdown file consists of multiple parts which we will discuss now.
 
-## YAML header 
+### YAML header 
 
 More information about the YAML header can be found in the [R Markdown cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf).
 
 Short summary from the [open-science-with-r carpentries course](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html):
-
-
 
 > _
 The header of your R Markdown document will allow you to personalize the related
@@ -217,7 +151,6 @@ report from your R Markdown document.
 The header follows the YAML syntax (“YAML Ain’t Markup Language”) which usually
 follows a key:value syntax.
 _
-
 
 For example, `title: "titlename"`, where `title` is the key and `"titlename"` is the value.
 
@@ -231,8 +164,7 @@ output: html_output
 ```
 
 
-## Code Chunks
-
+### Code Chunks
 
 The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax:
 To start a chunk write (backticks) 
@@ -242,22 +174,21 @@ To start a chunk write (backticks)
 `bash` although we will not need these here.  
 Within RStudio a new code chunk can be included by either clicking on `Insert a new code chunk` in the toolbar or using a keyboard shortcut (`Ctrl+Alt+I` on Windows and `Option+Command+I` on Mac).
 
-To run the code in an individual chunk click on the green arrow (`Run Current Chunk`) on the right side of the chunk. 
-**Each chunk can be run separately**
+Each chunk can be run separately. To run the code in an individual chunk click on the green arrow (`Run Current Chunk`) on the right side of the chunk. 
 Alternatively use the keyboard shortcut `Ctrl+Alt+T` (Windows) or `Option+Command+T` (Mac) to run the current chunk (i.e. where your cursor is located). This runs only the code in the specific chunk but does not render the entire file.
 
 For more options see the cheat sheet in R studio: `Help` > `Cheat Sheets` > `R Markdown Cheat Sheet` or the link above.
 
 
-
 The behavior of the chunks can be changed by setting chunk options. This is done in the opening of the chunk, e.g. 
-` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it).  
+` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it). For more options see the cheat sheet in R studio: `Help`>`Cheat Sheets`>`R Markdown Cheat Sheet` or see the [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html).
 
-&nbsp;
+*Note*: inline R code, i.e. code directly within the narrative text, can be run with ``` `r ` ``` , placing the code after `r `. This is for example usefull when you mention a sample size in the text and want it to update directly from the data set you read in.
 
-## Quiz on R Markdown 
 
-> ## Quiz 6.2
+## Quiz on Literate programming and R Markdown
+
+> ## Literate programming
 > Which of the following statements about literate programming are true?  
 > - Literate programming combines code and text.  
 > - Literate programming makes your code run more efficient.  
@@ -278,7 +209,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.3
+> ## YAML header: author
 > How do you specify the author in an R Markdown document?  
 > - author: "name"  
 > - Author: "name"  
@@ -299,7 +230,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.4
+> ## YAML header: date
 > How do you set the date?  
 > - Date: 01/01/2021  
 > - Date = 01/01/2021  
@@ -318,7 +249,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.5
+> ## Chunk options
 > How do you prevent code from evaluation in a chunk?  
 > - evaluate=FALSE  
 > - eval=FALSE  
@@ -343,7 +274,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.6
+> ## Chunk options: figure height
 > How do you adjust the figure height?  
 > - figure_height=100  
 > - figureheight=100  
@@ -366,7 +297,20 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.7
+> ## R Markdown Practice
+>Modify the template found [here]({{ page.root }}/files/docs/06/RMarkdown_exercise.Rmd) by performing the following steps:
+>
+>* add author and date to YAML header
+>* rename the first chunk to `print_chunk_nr_1`
+>* set the chunk options of chunk 2 to not show the code
+>* set the chunk options of chunk 3 to not evaluate the code but show it
+>* set the chunk options of chunk 4 to not show the warning
+>* complete the sentence at the end with appropriate information calculated in chunk 5
+After these steps answer the questions below.
+{: .challenge}
+
+
+> ## R Markdown practice 1
 > The percentage of children who survived the Titanic accident was (Note: round to one decimal digit) 
 >
 {: .challenge}
@@ -378,7 +322,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-> ## Quiz 6.8
+> ## R Markdown practice 2
 > The percentage of female survivors was ___ times higher as the percentage of male survivors. (Note: round to two decimal digits) 
 >
 {: .challenge}
@@ -390,100 +334,78 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 {: .solution}
 
 
-&nbsp;
 
-## Exercise
+# Episode challenge
 
-Modify the template found [here]({{ page.root }}/files/docs/06/061-5-RMarkdown_exercise_input.Rmd) by performing the following steps:
-
-* add author and date to YAML header
-* rename the first chunk to `print_chunk_nr_1`
-* set the chunk options of chunk 2 to not show the code
-* set the chunk options of chunk 3 to not evaluate the code but show it
-* set the chunk options of chunk 4 to not show the warning
-* complete the sentence at the end with appropriate information calculated in chunk 5
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
+The goal of this challenge is to create a fully reproducible analysis within an R Markdown script which is easy to understand and read. For that, describe what you do and do not forget nice formatting. For example try different Markdown syntax (Headers, ...), figure captions (*Hint*: check the chunk options for this), a meaningful YAML header, etc.
 
 
+>## Analysis of the Palmer penguins data
+Create a new R Markdown document and write the code for each of the below questions in a separate paragraph/chunk and describe the result in a complete sentence directly in the R Markdown document. We will use the `penguins` dataset from the package `palmerpenguins`, available as the data set `penguins` after installing the package `palmerpenguins`. To get an overview of the data load the `penguins` dataset and with the following questions: 
+>>## Question 1
+Find the the source of the `penguins` dataset together with the url to the data repository. *Hint*: run `?penguins`
+>{: .checklist}
+>>## Question 2
+Create a Markdown table describing the `penguins` data: for each **numeric** column in the dataset create a row in the table which should consist of the following columns: `Column_Name`, `Mean`, `Variance`  
+>>*Hint*: Checkout the function `knitr::kable` and the chunk option `results='asis'`.
+>{: .checklist}
+>>## Question 3
+How many rows does the `penguins` dataset have? 
+>{: .checklist}
+>>## Question 4
+What is the first year of records in the data set? 
+>{: .checklist}
+>>## Question 5
+What is the total number of Adelie penguins? 
+>{: .checklist}
+>>## Question 6
+What is the total number of missing values (`NA`)?
+>{: .checklist}
+>>## Question 7
+What is the total number of rows with **no** missing values?
+>{: .checklist}
+>>## Question 8
+On which islands were the Gentoo penguins found?
+>{: .checklist}
+>>## Question 9
+What is the proportion of Adelie penguins on Dream island (compared to all penguins on Dream island)?
+>{: .checklist}
+>>## Question 10
+What is the 93% quantile of the bill lengths in mm?
+>{: .checklist}
+>>## Question 11
+What is the absolute mean difference of  bill depth  in mm between female and male penguins?
+>{: .checklist}
+>>## Question 12
+What is the 95% confidence interval of the slope of the linear regression with intercept of bill depth regressed on sex? Result will be a vector of two elements, e.g. `c('lower_limit', 'upper_limit')`.
+>{: .checklist}
+>>## Question 13
+What is the proportion of Chinstrap penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45 compared to all penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45?
+>{: .checklist}
+>>## Question 14
+What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins?
+>{: .checklist}
+{: .challenge}
 
 
-# 062homework
-
-&nbsp;
-
-```{r, include=FALSE}
-show_results <- FALSE
-hide_results <- function(input, show=TRUE){
-  if(show){
-    return(input)
-  } else{
-    return("")
-  }
-}
-```
-
-```{r, echo =FALSE}
+## Solution 1
+```{r}
 library(palmerpenguins)
+
 ```
+Can I put ?penguins in the chunk?
 
-## Goal
+The source is:
+Adélie penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f
 
-The goal of the homework is to create a fully reproducible analysis within an R Markdown script which is easy to understand and read. For that, describe what you do and do not forget nice formatting. For example try different Markdown syntax (Headers, ...), figure captions (*Hint*: check the chunk options for this), a meaningful YAML header, ...
+Gentoo penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689
 
+Chinstrap penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. doi: 10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
 
-&nbsp;
+Originally published in: Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. doi:10.1371/journal.pone.0090081
 
-## Submission
-
-Once you have answered the questions below in "Part 2 - Data analysis" within your R Markdown script you need to upload it to http://imlspenticton.uzh.ch:3841 . Once it fulfills the formal requirements (i.e. has an appropriate YAML header), you can run a check on it to see if you find the correct answers. You may perform this check in total three times, the third time will be your final submission.
-
-Your YAML header needs to contain `author` information (e.g. `author: FirstName LastName`) and your email address in the `email` key (e.g. `email: my_email@uzh.ch`). **Note that you need to use your UZH email address since this is how we check who uploads.**
-
-Moreover you need to enter your submission for assessment on Open edX as well, such that we can transfer the points from the checked R Markdown script into the system.
-
-Please be sure to do **both: upload an Rmd file and indicate your submission on Open edX!**
-
-
-&nbsp;
-
-## Part 1 - Preparation
-
-We will use the `penguins` dataset from the package `palmerpenguins`. 
-
-*Hint*: the `penguins` dataset is available as the variable `penguins` (after installing the package `palmerpenguins`) 
-
-To get an overview of the data load the `penguins` dataset and do the following two steps. 
-
-
-&nbsp;
-
-### Step 1 
-
-Find the the source of the `penguins` dataset together with the url to the data repository
-
-
-*Hint*: run `?penguins`
-
-
-&nbsp;
-
-### Step 2
-
-Create a Markdown table describing the `penguins` data:
-
-- for each **numeric** column in the dataset create a row in the table which should consist of the following columns: `Column_Name`, `Mean`, `Variance`
-
-*Hint*: Checkout the function `knitr::kable` and the chunk option `results='asis'`.
-
-
-```{r, results='asis', include = show_results}
+## Solution 2
+```{r}
 numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
 df <- data.frame(Column_Name = names(numericcols)[numericcols],
            Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
@@ -493,183 +415,89 @@ df <- data.frame(Column_Name = names(numericcols)[numericcols],
 knitr::kable(df)
 ```
 
-
-&nbsp;
-
-
-## Part 2 - Data analysis
-
-Create a new R Markdown document. You will write the code for each of the below questions in a separate chunk and describe the result in a complete sentence directly in the RMarkdown document. Additionally, you will input the answers directly into OpenEdX. For the automatic checks to work when you upload your Rmd script to the online app a special variable naming scheme is required. For each of the following 11 exercises assign the value of the result to a variable with the name `result_exercise_{NUMBER}` replacing `NUMBER` with the number of the respective exercise. For example for exercise 1:
+## Solution 3
+```{r}
+result_exercise_3 <- dim(penguins)[1]
 ```
-result_exercise_1 <- 42
+The data set has `r result_exercise_3` rows.
+## Solution 4
+```{r}
+result_exercise_4 <- min(penguins$year)
 ```
-(assuming `42` is the correct answer here.)
-
-*Hint*: inline r code can be run with 
-``` `r ` ``` , placing the code after `r `.
-
-
-
-### Exercise 2.1
-(*Variable name for result: `result_exercise_1`*)
-```{r, include=show_results}
-result_exercise_1 <- dim(penguins)[1]
+The first year of records is `r result_exercise_4`.
+## Solution 5
+```{r}
+result_exercise_5 <- sum(penguins$species == "Adelie")
 ```
-
-How many rows does the `penguins` dataset have? `r hide_results(result_exercise_1, show_results)`
-
-
-### Exercise 2.2
-(*Variable name for result: `result_exercise_2`*)
-```{r, include=show_results}
-result_exercise_2 <- min(penguins$year)
+The total number of Adelie penguins is `r result_exercise_5`
+## Solution 6
+```{r}
+result_exercise_6 <- sum(is.na(penguins))
 ```
+The total number of missing values (NA's) is `r result_exercise_6`.
 
-What is the first year of records in the data set? `r hide_results(result_exercise_2, show_results)`
-
-### Exercise 2.3
-(*Variable name for result: `result_exercise_3`*)
-```{r, include=show_results}
-result_exercise_3 <- sum(penguins$species == "Adelie")
+## Solution 7
+```{r}
+result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
 ```
+The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
 
-What is the total number of Adelie penguins? `r hide_results(result_exercise_3, show_results)`
-
-### Exercise 2.4
-(*Variable name for result: `result_exercise_4`*)
-```{r, include=show_results}
-result_exercise_4 <- sum(is.na(penguins))
+## Solution 8
+```{r}
+result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
 ```
+The name of islands where the Gentoo penguins were found is `r result_exercise_8`.
 
-What is the total number of missing values (`NA`)?
-
-Total number of missing values (NA's): `r hide_results(result_exercise_4, show_results)`
-
-### Exercise 2.5
-(*Variable name for result: `result_exercise_5`*)
-```{r, include=show_results}
-result_exercise_5 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+## Solution 9
+```{r}
+result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
 ```
-
-What is the total number of rows with **no** missing values?
-
-Number of complete rows (rows with no missing values, i.e. NA's): `r hide_results(result_exercise_5, show_results)`
-
-### Exercise 2.6
-(*Variable name for result: `result_exercise_6`*)
-```{r, include=show_results}
-result_exercise_6 <- unique(penguins$island[penguins$species == "Gentoo"]);
+The proportion of Adelie penguins on Dream island is `r result_exercise_9`.
+## Solution 10
+```{r}
+result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
 ```
-
-On which islands were the Gentoo penguins found?
-
-Name of islands where the Gentoo penguins were found: `r hide_results(result_exercise_6, show_results)`
-
-### Exercise 2.7
-(*Variable name for result: `result_exercise_7`*)
-```{r, include=show_results}
-result_exercise_7 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
+The 93 % quantile of `bill_length_mm` is `r result_exercise_10`.
+## Solution 11
+```{r}
+result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
 ```
-
-What is the proportion of Adelie penguins on Dream island (compared to all penguins on Dream island)?
-
-Proportion of Adelie penguins on Dream island: `r hide_results(result_exercise_7, show_results)`
-
-### Exercise 2.8
-(*Variable name for result: `result_exercise_8`*)
-```{r, include=show_results}
-result_exercise_8 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
+The absolute mean difference of `bill_depth_mm` between female and male is `r result_exercise_11`.
+## Solution 12
+```{r}
+result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
 ```
-
-What is the 93% quantile of the bill lengths in mm?
-
-93 % quantile of `bill_length_mm` : `r hide_results(result_exercise_8, show_results)`
-
-### Exercise 2.9
-(*Variable name for result: `result_exercise_9`*)
-```{r, include=show_results}
-result_exercise_9 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
-```
-
-What is the absolute mean difference of  bill depth  in mm between female and male penguins?
-
-Absolute mean difference of `bill_depth_mm` between female and male: `r hide_results(result_exercise_9, show_results)`
-
-### Exercise 2.10
-(*Variable name for result: `result_exercise_10`*)
-```{r, include=show_results}
-result_exercise_10 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
-```
-
-What is the 95% confidence interval of the slope of the linear regression with intercept of bill depth regressed on sex? Result will be a vector of two elements, e.g. `c('lower_limit', 'upper_limit')`.
-
-95% confidence interval of slope of linear regression between `bill_depth_mm` and `sex`: `r hide_results(result_exercise_10, show_results)`
-
-### Exercise 2.11
-(*Variable name for result: `result_exercise_11`*)
-```{r, include=show_results}
+The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is `r result_exercise_12`
+## Solution 13
+```{r}
 chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
-result_exercise_11 <- sum(chins == "Chinstrap")/length(chins)
+result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
 ```
-
-What is the proportion of Chinstrap penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45 compared to all penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45?
-
-Proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45: `r hide_results(result_exercise_11, show_results)`
-
-### Exercise 2.12
-(*Variable name for result: `result_exercise_12`*)
-```{r, include=show_results}
-result_exercise_12 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
+The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is `r result_exercise_13`.
+## Solution 14
+```{r}
+result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
 ```
-
-What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins?
-
-Proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins: `r hide_results(result_exercise_12, show_results)`
+The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is `r result_exercise_14`.
 
 &nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-# 063in-classtask
-
-&nbsp;
+# Bonus challenge
 
 ```{r, echo = F}
 knitr::opts_chunk$set(out.extra = 'class="plot"')
 ```
 
-# In-class tasks
-
-In this exercise we will again look at the `penguins` dataset from the package `palmerpenguins`.  Of the 5 tasks given below 3 can be chosen to be completed while the remaining ones are optional.
-
-```{r, echo=FALSE}
-library(palmerpenguins)
-```
-
 ## R Markdown tables
 
-For the following exercise we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. 
-From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
+For the following challenge we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
 
 
->## .
->The goal of kableExtra is to help you build common complex tables and manipulate 
->table styles. It imports the pipe %>% symbol from magrittr and verbalize all the
->functions, so basically you can add “layers” to a kable output in a way that is 
->similar with ggplot2 and plotly.
-{: .callout}
+> _
+The goal of kableExtra is to help you build common complex tables and manipulate table styles. It imports the pipe %>% symbol from magrittr and verbalize all the functions, so basically you can add “layers” to a kable output in a way that is similar with ggplot2 and plotly._
 
-For users who are not very familiar with the pipe operator %>% in R, it is the R 
-version of the fluent interface. The ides is to pass the result along the chain 
-for a more literal coding experience. Basically when we say A %>% B, technically 
-it means sending the results of A to B as B’s first argument.
+
+For users who are not very familiar with the pipe operator %>% in R: it is the R version of the fluent interface. The idea is to pass the result along the chain for a more literal coding experience. Basically, when we say A %>% B, technically it means sending the results of A to B as B’s first argument.
 
 
 Simple tables can be generated as follows:
@@ -682,8 +510,6 @@ head(penguins) %>% # the dataset, '%>%' parses the output of this command as the
 
 For all options check the documentation or the [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html).
 
-
-&nbsp;
 
 ## Task 1 Create the following table:
 
@@ -707,19 +533,7 @@ df_sum %>%
 *Hint*: For multiple column names use `add_header_above`  
 *Hint*: Use the following code to get started:  
 
-```
-df_sum <- penguins %>%   
-  dplyr::select(-sex,-island,-flipper_length_mm,-body_mass_g) %>%   
-  dplyr::group_by(species,year) %>%   
-  dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)),3))) %>%   
-  tidyr::pivot_wider(names_from=c(year),values_from = c(bill_length_mm,bill_depth_mm))   
-```
-  
-
-
-&nbsp;
-
-## Task 2 Create the following table:
+## Task 2 Create the following table wich includes small graphs:
 
 ```{r, echo=FALSE}
 df_sum <- penguins %>% 
@@ -748,11 +562,7 @@ df_sum %>%
 
 *Hint*: Use `column_spec` for altering specific columns.
  
-## Plots
-
-In this part we will explore the `penguins` dataset using base R plotting functions.
-
-## Task 3 Scatter plot
+## Task 3 Create a scatter plot
 
 Create the following scatter plot of bill_depth_mm vs. body_mass_g and color by species using the function `plot`. Also add a legend.
 
@@ -762,7 +572,7 @@ legend(x="topright",legend=unique(penguins$species), col = seq_along(unique(peng
 ```
 
 
-## Task 4 Histogram
+## Task 4 Create a histogram
 
 Create the following histogram of flipper_length_mm for each island and color by island using `hist`. 
 
@@ -780,30 +590,14 @@ hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]], col=c
 ```
 
 
-## Task 5 Boxplot
+## Task 5 Create a boxplot
 
 Create the following boxplot of `bill_length_mm` per species using `boxplot`. Also add a legend.
 
 ```{r, echo=FALSE}
 colors_used <- c(Torgersen=rgb(0,1,0,0.4),Dream=rgb(0,0,1,0.4),Biscoe=rgb(1,0,0,0.4))
-boxplot(bill_length_mm~species,penguins,col=colors_used, ylab="bill length [mm]")
+boxplot(bill_length_mm~species,penguins,col=colors_used, ylab="Bill length [mm]",xlab = "Species")
 points(bill_length_mm~species,penguins, pch=19)#, col=colors_used[penguins$species])
 legend(x="topleft",legend=names(colors_used), col =colors_used, pch=19)
 ```
-
-&nbsp;
-
-## Upload
-
-**Upload a pdf containing answers to all 5 tasks in the next step. Make sure the code to produce the answers is shown.** 
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 

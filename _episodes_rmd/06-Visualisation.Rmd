@@ -1,18 +1,19 @@
 ---
 source: Rmd
-title: "Week 7 Visualization"
+title: "Visualization"
 teaching: 0
 exercises: 0
 questions: 
-  - "here are questions"
-  - "questions, tbd"
-  - "by eva"
+  - "How are all the learned principles up to now applied when visualizing data?"
+  - "How to create good graphs reproducibly?"
 objectives: 
   - "tbd"
   - "by eva"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "1. Be simple, clear and to the point"
+  - "2. Show the data"
+  - "3. Be honest about the axes"
+  - "4. Use colors sensibly"
 ---
 
 ```{r, include=FALSE}
@@ -20,23 +21,9 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-# 071-1-introduction
 
-![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
 
-&nbsp;
-
-This week we learn about
-
-0. Good practice for visualizations - Overview
-1. Be simple, clear and to the point
-2. Show the data
-3. Be honest about the axes
-4. Use colors sensibly
-5. Decision tree
-6. ggplot2
-
-# 071-2-overview
+# Data visualization
 
 Data visualization is omnipresent in science. Visualizations range from presenting raw data to illustrating analysis results or modeling outcomes. The way visualizations are constructed should, as any other part of the analysis, be reproducible and adhering to the basic principles of good scientific practice. You will practice reproducible data analysis skills while learning about best practice for graphs.
 
@@ -52,19 +39,14 @@ In the following sections we will have a look at different visualizations and th
 
 We provide code in base `R` and `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this https://bookdown.org/rdpeng/exdata/
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 
-# 071-3-besimple: 1. Be simple, clear and to the point
+
+# 1. Be simple, clear and to the point
 
 ```{r}
 library(tidyverse)
+# See https://github.com/clauswilke/colorblindr for installation instruction
 library(colorblindr)
 mintheme <- function(){
     theme(legend.position = "none", 
@@ -504,7 +486,7 @@ Answer the following questions in context to the above plot:
 
 
 
-# 071-4-showdata: 2. Show the data
+# 2. Show the data
 
 ## Boxplots
 
@@ -667,7 +649,7 @@ There is no clear answer to which one to use and, if possible, other types of vi
 &nbsp;
 
 
-# 071-5-honestaxis: 3. Be honest about the axes
+# 3. Be honest about the axes
 
 
 The axes of plots determine how much information you provide and where you put the focus. You could cut axes, blow certain parts of an axis up through transformation or hide information on certain scales if you do not transform. You can expose or hide information by choosing the aspect ratio between the x and y axis. You can provide clear and precise information through meaningful labeling of axes and axis tick marks or you can obscure the same information by deliberately choosing uninformative tick locations, for example. These issues are illustrated through example in the following
@@ -858,15 +840,8 @@ Another example of using different scales:
 
 ![](https://preview.redd.it/x5q5y0iz72d71.jpg?width=960&crop=smart&auto=webp&s=3e08e75429446099ebf4f462274be2b0e52aedf0)
 
-&nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-# 071-6-sensiblecolors: 4. Use colors sensibly
+# 4. Use colors sensibly
 
 ## Color contrast
 
@@ -958,36 +933,9 @@ ggplot(mtcars) +
 
 Another option is the `dichromat` package which features multiple palettes for people with red-green colorblindness.
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-# 071-7-decisiontree: 5.  Decision tree
-
-## Decision tree for the choice of the best plot type
 
 
-Since the amount of possible visualizations can be quite overwhelming there exist guidelines to choose the optimal plot type that can be used as a starting point. For example the following decision tree:  
-
-![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_5.jpg)
-  
-But keep in mind that this is no rule and depending on the situation different options can be favorable. 
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-# 071-8-ggplot2: 6. ggplot2
-
-## A short introduction to `ggplot2`
+# A short introduction to `ggplot2`
 
 We additionally provide a quick introduction to the widely used package `ggplot2`. It is based on the idea of a grammar of graphics, in other words well defined instructions of how to create a plot.
 
@@ -1127,11 +1075,9 @@ Color by group?
 &nbsp;
 
 
-# 072homework
+# Episode challenge
 
-# Homework
-
-For this homework we will work with climate data published by the Bundesamt für Statistic BFS in which
+For this challenge we will work with climate data published by the Bundesamt für Statistic BFS in which
 various climate related variables measured at different locations in Switzerland have been put together.
 The data has already been wrangled into a csv file that you can download from [here.](/static/climate_data.csv)
 
@@ -1139,15 +1085,7 @@ The source data was downloaded from here: [https://www.bfs.admin.ch/asset/de/je-
 
 
 
-## Upload
 
-
-
-You will upload a pdf file produced from R Markdown containing the answers the to the questions below in the next step (allowed file format is .pdf). Make sure the code to produce the answers is shown. Your submission will be peer reviewed. Staff will perform random checks on the peer review.
-
-
-
-&nbsp;
 
 ## Task 1: data exploration
 
@@ -1156,7 +1094,7 @@ You will upload a pdf file produced from R Markdown containing the answers the t
 In this first task read in the `climate_data.csv` file and do a short exploration of the dataset.
 
 ```{r}
-climatedf_comp <- read.csv(here::here("files/docs/07/climate_data.csv"))
+climatedf_comp <- read.csv(here::here("../files/docs/07/climate_data.csv"))
 ```
 
 
@@ -1627,12 +1565,12 @@ climatedf_comp %>%
 &nbsp;
 
 
-# In-class tasks
+# Bonus challenge
 
 ```{r, include=show_results}
 # library(tidyverse)
 # climatedf_comp <- read.csv(here::here("climate_data.csv"))
-climatedf_comp <- read.csv(here::here("files/docs/07/climate_data.csv"))
+climatedf_comp <- read.csv(here::here("../files/docs/07/climate_data.csv"))
 ```
 
 
@@ -1783,26 +1721,5 @@ climatedf_comp_red %>%
   scale_fill_manual(values=colors_use)+
   labs(y="Sunshine duration",x="")
 ```
-
-&nbsp;
-
-## Upload
-
-**Upload a pdf containing answers to all tasks in the next step. Make sure the code to produce the answers is shown.** 
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-
-
 
 
