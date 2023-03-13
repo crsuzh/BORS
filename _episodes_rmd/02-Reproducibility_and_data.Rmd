@@ -439,85 +439,34 @@ Unfortunately, things can go wrong nevertheless:
 
 
 # Episode challenge
------>>> change the example to a fake one!!!
-## Description of the data set
 
-Antibiotic susceptibility testing (AST) methods aim to quantify the susceptibility of certain species of bacteria to show resistance to certain antibiotics. AST methods are therefore applied to drug-species combinations. The AST method under study here is based on bacterial cultures, more specifically on measuring the diameter of areas without bacterial growth (zones of inhibition) around paper discs containing the antibiotic on agar culture dishes that have been evenly inoculated with bacteria. In other words, the larger the diameter the better the effect of the antibiotic. And, if the diameter is smaller than a specified target value the specific bacterial strain can be considered resistant to the antibiotic.
-
-For each of the drug-species combinations a target diameter value for a standard setup ("Reference") is available. This target value has to be met as closely as possible in a laboratory for the standard setup in order for tests that are carried out in the laboratory to be reliable. Target values are issued by the European Committee on Antimicrobial Susceptibility Testing and represent a broad scientific consensus. The retrieval date of the target value is also given.
-
-The data at disposition originate from tests at the Institute of Medical Microbiology of the University of Zurich. The institute tested several slightly different setups. Among others, different techniques for the preparation of the bacterial suspension (inoculum) were tested.
-The available data contain the numbers of occurring diameters from the testing of a set of antibiotics and four species of bacteria from reference strains. Data from two experimental setups are available, setup “Test” with fixed and setup “Reference” with varying inoculum preparation. 
-
-
->## Homework
+>## Improve a spreadsheet in Excel
 >
-Considering the input on data in spreadsheets improve the spreadsheet
+Considering the input on data in spreadsheets try to improve the spreadsheet
 >
-[DrugSpecies.xls]({{ page.root }}/files/docs/03/DrugSpecies.xlsx )
+[trainingdata.xls]({{ page.root }}/_episodes_rmd/data/trainingdata.xls)
 >
-A description what the data set contains is given below. For this homework, please make your changes directly in the xls file for this example (we will practice using `R` to do it in class). Be sure to keep the original file.
+This spreadsheet contains data from 482 patients, two columns with dates and 8 columns with counts of two different markers in the blood on a baseline date, on day 1, 2 and 3 of a certain therapy.
 >
 >>## Specifically you should check  
 >>
->> - plausibility of all observations (e.g. value in correct range)
->> - correct and consistent format of the entries, e.g. spelling or encoding errors 
+>> - the plausibility of all observations (e.g. value in correct range)
+>> - the correct and consistent format of the entries, e.g. spelling or encoding errors 
 >> - date formats 
->> - format of missing values
+>> - the format of missing values
 >> - variable names
->> - overall layout of the spreadsheet (header, merged cells, entries that are not observations etc.)
+>> - the overall layout of the spreadsheet (header, merged cells, entries that are not observations etc.)
 >{: .checklist}
->The code book will be checked in class, you do not need to work on this.
 {: .challenge}
 
-&nbsp;
-&nbsp;
 
 
-
-
-
-
->## In-classtask
+>## Improve a spreadsheet in R
 >
->>## Task 1
->>
->>We continue to work on the spreadsheet [DrugSpecies.xls]({{ page.root }}/files/docs/03/DrugSpecies.xlsx ). This time we will use `R` to correct the errors in the spreadsheet. Start by looking at the `R` script [DatainSpreadsheet.R]({{ page.root }}/files/docs/03/DatainSpreadsheet.R) which considers the first sheet of the Excel file
->>
-1. Save the script file and the corresponding data file in an appropriate folder structure.
-2. Adapt the paths for loading the data and writing the changed file accordingly.
-3. Correct all errors by running the code and try to understand, comment appropriately.
-4. Make any changes in code style that you deem necessary.
-6. Save your changes in the same script file.
->{: .checklist}
->
->&nbsp;
->
->>## Task 2
->>
-Next we consider the code book. 
->>
-1. Read in the data again, this time by selecting the second sheet.
-2. Correct all issues with the code book by running the code and try to understand, comment appropriately.
-3. Save your changes in the same script file.
->{: .checklist}
->
->&nbsp;
->
->>## Task 3 (if time permits)
->>
-We continue to prepare these data for analysis (even though we will not carry out the analysis). Ammend the script `DatainSpreadsheet.R` in order to
->>
-1. Transform all variables into correct variable types, where this has not been done already.
-2. The data contained in the file are counts of diameters, how would you transform these counts into actual observations of diameters?
-3. Save the code with which you do this in the same script file.
->{: .checklist}
->
->&nbsp;
->
+>We continue to work on the spreadsheet [trainingdata.xls]({{ page.root }}/_episodes_rmd/data/trainingdata.xls). This time we use `R` to correct the same errors in the spreadsheet. Why do you think is it better to use R for this process?
 {: .challenge}
 
-&nbsp;
-&nbsp;
-
-
+> ## Solution
+> 
+TBA
+{: .solution}

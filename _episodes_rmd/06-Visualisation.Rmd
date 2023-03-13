@@ -10,15 +10,16 @@ objectives:
   - "tbd"
   - "by eva"
 keypoints:
-  - "1. Be simple, clear and to the point"
-  - "2. Show the data"
-  - "3. Be honest about the axes"
-  - "4. Use colors sensibly"
+  - "Be simple, clear and to the point"
+  - "Show the data"
+  - "Be honest about the axes"
+  - "Use colors sensibly"
 ---
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("05-")
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
@@ -37,7 +38,7 @@ In the following sections we will have a look at different visualizations and th
 3. Be honest about the axes
 4. Use colors sensibly
 
-We provide code in base `R` and `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this https://bookdown.org/rdpeng/exdata/
+We provide code in base `R` and `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this [https://bookdown.org/rdpeng/exdata/]()
 
 
 
@@ -64,7 +65,7 @@ medtheme <- function(){
         ) 
 }
 
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 show_results <- FALSE
 hide_results <- function(input, show=TRUE){
   if(show){
@@ -77,19 +78,14 @@ hide_results <- function(input, show=TRUE){
 
 ## Encoding data using visual cues
 
-
-![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg)
-
-
 As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such a bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph on the right shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
 <!-- https://paldhous.github.io/ucb/2016/dataviz/week2.html -->
+
+![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg)
 
 The linked picture is based on [*Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods*](https://www.jstor.org/stable/2288400) by William S. Cleveland and Robert McGill.
 
 Therefore, when creating a visualization you should consider the best type of visual cue that represents the data best with the goal of transmitting the intended message. For good perception of a message it is clearly better to provide simple visualizations. We discuss some specific points in more detail below.
-
-&nbsp;
-
 
 
 ## 3D
@@ -97,7 +93,7 @@ Therefore, when creating a visualization you should consider the best type of vi
 Providing simple and easily perceptible visualizations implies that you should avoid 3-dimensional graphical representations in most circumstances. Consider the following visualization:
 
 
-![](https://editor.analyticsvidhya.com/uploads/75170Featured%20Image.JPG)
+![](https://editor.analyticsvidhya.com/uploads/75170Featured%20Image.JPG){: height="300px"}
 
 As you can see (or not see!) some data is hidden behind the different bars. Furthermore it is rather difficult (and misleading) to compare the height from different depths. Another point not related to 3D in this graph are the missing axis labels and the missing legend for the colors. 
 
@@ -106,7 +102,7 @@ As you can see (or not see!) some data is hidden behind the different bars. Furt
 
 As a general principle we can conclude from the 3D example that you should always avoid occlusion of some parts of the visualization. An example can be found in the following plot showing multiple densities in the same panel. The different densities where colored according to group but only the density in the front is fully visible.
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(1234)
 df <- data.frame(x=sample(1:10,1000, replace = TRUE),name=rep(letters[1:5],200))
 df$x[df$name == "a" & df$x < 9] <-sample(1:6,sum(df$name == "a" & df$x < 9), replace = TRUE) 
@@ -118,7 +114,7 @@ ggplot(df) +
 
 An alternative is to plot lines which allows us to see all groups completely.  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 ggplot(df) +
   geom_density(aes(x,color=name)) +
   mintheme()
@@ -128,7 +124,7 @@ ggplot(df) +
 
 Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
 
-```{r, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+```{r, fig.show="hold", out.width="50%", fig.height=4, fig.width=4}
 set.seed(123)
 x1 <- table(factor(c(rbinom(100,2,0.5),rep(0:2,100))))
 x2 <- table(factor(c(rbinom(100,2,0.4),rep(0:2,100))))
@@ -146,7 +142,7 @@ ggplot(df) +
 ```
 
 
-```{r, fig.show="hold", out.width="33%", fig.height=6, fig.width=6}
+```{r, fig.show="hold", out.width="33%", fig.height=4, fig.width=4}
 for (i in 1:3) {
   print(ggplot(df %>% dplyr::filter(time==i)) +
     geom_bar(aes(x=time,y=x, fill=var),stat="identity", width=1) +
@@ -164,7 +160,7 @@ Another difficult to interpret quasi-pie chart which shows how difficult it is t
 
 The arrangement of multiple plots and panels can also contribute to increasing the clarity of a visualization. Have a look at the following plot.  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(123)
 df <- data.frame(var2=c(rnorm(50),rnorm(50,3),rnorm(50,6)), var1=c(rnorm(150)), sample=rep(1:3, each=50))
 plotls1 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_point(aes(var2,var1)) + facet_wrap(~sample) +
@@ -179,7 +175,7 @@ ggpubr::ggarrange(nrow=2, ncol=1,
 
 Two inconsistencies are present. First of all the order of the sample of the top row and the bottom row is not the same. Secondly in the top row `var1` is on the y-axis while in the bottom row it is on the x-axis. Staying consistent and in general have an arrangement that makes sense helps to have a clear representation that transmits the desired information efficiently. A better alternative for the above plot is:  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 plotls1 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_point(aes(var1,var2)) + facet_wrap(~sample) +
     mintheme())
 plotls2 <- purrr::map(1:3, ~ ggplot(df[df$sample==.x,]) +  geom_boxplot(aes(var1)) + facet_wrap(~sample) +
@@ -190,155 +186,11 @@ ggpubr::ggarrange(nrow=2, ncol=1,
 )
 ```
 
-&nbsp;
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-# 071-3-plotexamples: 2. Plot examples
-
-# Exercise
+## Quiz
 
 Let's have a look at the following master piece:
 ![](https://statmodeling.stat.columbia.edu/wp-content/uploads/2008/06/graph.jpg)
-/static/3d_plot_exercise.jpg  
-
-Answer the following questions in context to the above plot:
-
-> ## 1 
-> Is the 3D representation sensible?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 2 
-> Are the legend labels sensible?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 3 
-> Are the axis labels sensible?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-> ## 4 
-> Is it sensible to have X-axis tick values on multiple levels?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-> ## 5 
-> Are the Y-axis tick values reasonable?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 6 
-> Is the Y-axis range reasonable?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 7
-> Are the values in the plot easily readable?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 8
-> Is the title suitable?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-> ## 9
-> Is the used color palette color-blind friendly?  
-> - Yes  
-> - No  
->
->> ## Solution
->> 
->> F Yes  
->> T No  
->>
->{: .solution}
-{: .challenge}
-
-
-
-
-&nbsp;
-
-
-# Quiz on Plot examples
-
 > ## Quiz 7.1 
 > What aspect of the "Be simple, clear and to the point" input has been violated?  
 > - 3D  
@@ -478,12 +330,6 @@ Answer the following questions in context to the above plot:
 {: .solution}
 
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 
 
 # 2. Show the data
@@ -508,7 +354,7 @@ df_long <- df %>%
 
 Boxplots are used to give a rough overview of the distribution of a data set based on a few summary characteristics (quantiles). Consider the following three boxplots each representing a different dataset. The boxplots look identical even tough the underlying distributions may not be.  
 
-```{r histo_only}
+```{r histo_only, fig.height=5, fig.width=5}
 ggplot(df_long) +
   geom_boxplot(aes(y=y,x=dataset))+
   medtheme()
@@ -522,7 +368,7 @@ ggplot(df_long) +
 
 Violin plots are an alternative to boxplots. They are based on an estimation of the underlying probability density, i.e. they use more information inherent in the data set. Have a look at the following three violin plots of the same datasets as above. Again, two of the violin plots look similar but the underlying data may not be identical.  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 ggplot(df_long) +
   geom_violin(aes(y=y,x=dataset))+
   medtheme()
@@ -530,7 +376,7 @@ ggplot(df_long) +
 
 Let's finally have a look at the actual data. As you can see the samples x1 and x3 are in fact very distinct, or more precisely, x3 seems to have only 5 possible values.  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 ggplot(df_long) +
   geom_point(aes(y=y,x=dataset)) +
   medtheme()
@@ -554,7 +400,7 @@ Caution is furthermore advised if the datasets that are compared are of very dif
 
 Another option is the use of `geom_jitter` (or `geom_sina` from the `ggforce` package) in combination with violin plots:  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(123)
 ggplot(df_long) +
   geom_violin(aes(y=y,x=dataset)) +
@@ -563,7 +409,7 @@ ggplot(df_long) +
 ```
 
 The code for the above plot:
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE, fig.height=5, fig.width=5}
 ggplot(df_long) +
   geom_violin(aes(y=y,x=dataset)) +
   geom_jitter(aes(y=y,x=dataset),width=0.3)
@@ -574,7 +420,7 @@ The advantage is that individual points as well as the distribution are shown.
 
 Boxplots together with `geom_jitter` are another possibility.  
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(123)
 ggplot(df_long) +
   geom_boxplot(aes(y=y,x=dataset)) +
@@ -585,7 +431,7 @@ ggplot(df_long) +
 
 Another possibility is to only show the jittered data:
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(123)
 ggplot(df_long) +
   geom_jitter(aes(y=y,x=dataset),width=0.3) +
@@ -598,7 +444,7 @@ ggplot(df_long) +
 
 The same as discussed before for boxplots also holds for barplots. If you have continuous data and see the following barplots you might conclude that the data sets are the same:
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 df_long <- df_long %>% 
   dplyr::group_by(dataset) %>% 
   dplyr::mutate(y_t =y-min(y),
@@ -615,7 +461,7 @@ ggplot() +
 
 But if you also show the individual points you can see clear differences:
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 set.seed(123)
 df_long <- df_long %>% 
   dplyr::group_by(dataset) %>% 
@@ -640,13 +486,6 @@ There is no clear answer to which one to use and, if possible, other types of vi
 <!-- [NEED TO INCLUDE something on this](https://twitter.com/T_Weissgerber/status/1040576802979233793/photo/1) -->
 <!-- Included one example. -->
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 
 # 3. Be honest about the axes
@@ -663,7 +502,7 @@ df <- data.frame(x=factor(c(rbinom(10,2,0.5),rep(0:2,500))))
 
 Let's consider the following two barplots. The first has a shortened axis range and shows clear differences between the datasets. The second plot on the other hand shows the enire axis starting from zero and the differences disappear. 
 
-```{r, warning=FALSE, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+```{r, warning=FALSE, fig.show="hold", out.width="50%", fig.height=5, fig.width=5}
 ggplot(df) +
   geom_histogram(aes(x), stat="count") +
   coord_cartesian(ylim=c(500,max(table(df$x)))) +
@@ -676,11 +515,11 @@ ggplot(df) +
 
 Here is a flashy, concrete example of cutting an axis, which makes differences appear much hugher than they are in reality:
 
-![](https://i.redd.it/xsndbzpq1qg11.jpg)
+![](https://i.redd.it/xsndbzpq1qg11.jpg){: height="300px"}
 
 The other way around is also possible. Choosing to show the entire axis starting from zero can mask differences that do matter. For instance the following graph gives "1000% proof for stable temperature and the climate change being a HOAX", simply by showing an axis from zero degree Kelvin and thus making differences seem negligably small:
 
-![](https://miro.medium.com/max/1400/1*Sn1QgIBvtZLiqoZzr9a9Yg.png)
+![](https://miro.medium.com/max/1400/1*Sn1QgIBvtZLiqoZzr9a9Yg.png){: height="300px"}
 
 ## Axis transformation
 
@@ -695,7 +534,7 @@ In some cases you might have data that is on completely different scales, meanin
 cases it can often to be helpful to do an axis-transformation. For instance consider the 
 following untransformed plot:
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 x1 <- c(runif(100,0.8,1.2),runif(100,8,12),runif(100,80,120),runif(100,800,1200),runif(100,8000,12000))
 df <- data.frame(x=x1, y=rnorm(100,0,rep(c(1,10,100,1000,10000),each=100)))
 ggplot(df) +
@@ -708,7 +547,7 @@ what is going on. If instead you do a `log10` transformation of the x-axis thing
 much clearer. Axis transformations are also something to consider if you have for example
 non linear scales. But beware, transformations can also be used to showcase differences that do not really matter in practice.
 
-```{r}
+```{r, fig.height=5, fig.width=5}
 ggplot(df) +
   geom_point(aes(x,y)) +
   scale_x_continuous(trans="log10")+
@@ -725,7 +564,7 @@ df <- data.frame(x=rnorm(100),
 
 The aspect ratio is another important parameter that can be manipulated to overstress certain patterns. For example, have a look at the following two plots. The first as a ratio of one, meaning the scale of the x and y axis are the same. The second plot has an aspect ration of 1/4 meaning the x axis is substantially longer.
 
-```{r, fig.show="hold", out.width="50%", fig.height=6, fig.width=6}
+```{r, fig.show="hold", out.width="50%", fig.height=5, fig.width=5}
 ggplot(df) +
   geom_point(aes(x,y)) +
   coord_fixed(ratio=1)+
@@ -739,7 +578,7 @@ ggplot(df) +
 ```
 
 Code for the above plot:
-```{r, eval=FALSE, echo=TRUE}
+```{r, eval=FALSE, echo=TRUE, fig.height=5, fig.width=5}
 ggplot(df) +
   geom_point(aes(x,y)) +
   coord_fixed(ratio=1)
@@ -838,7 +677,7 @@ ggplot(df) +
 
 Another example of using different scales:
 
-![](https://preview.redd.it/x5q5y0iz72d71.jpg?width=960&crop=smart&auto=webp&s=3e08e75429446099ebf4f462274be2b0e52aedf0)
+![](https://preview.redd.it/x5q5y0iz72d71.jpg?width=960&crop=smart&auto=webp&s=3e08e75429446099ebf4f462274be2b0e52aedf0){: height="300px"}
 
 
 # 4. Use colors sensibly
@@ -1084,12 +923,7 @@ The data has already been wrangled into a csv file that you can download from [h
 The source data was downloaded from here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02) and here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03)
 
 
-
-
-
 ## Task 1: data exploration
-
-
 
 In this first task read in the `climate_data.csv` file and do a short exploration of the dataset.
 
