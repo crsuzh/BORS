@@ -284,7 +284,7 @@ When a researcher preregisters a study, the design and precise goal of the study
 >
 {: .checklist}
 
-## Does registration show an effect? 
+## Quiz on registration 
 >##  Does registration show an effect? 
 >
 All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their rported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
@@ -356,10 +356,11 @@ From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html]
 &nbsp;
 
 
-## Episode challenge
+# Episode challenge
+
 >## A Waste of 1000 Research Papers
 >
-Read the article "[A Waste of 1000 Research Papers](https://www.theatlantic.com/science/archive/2019/05/waste-1000-studies/589684/)" by Ed Yong (The Atlantic, 27.5. 2019). 
+  Read the article "[A Waste of 1000 Research Papers](https://www.theatlantic.com/science/archive/2019/05/waste-1000-studies/589684/)" by Ed Yong (The Atlantic, 27.5. 2019). 
 >
 >>## Question 1
 Find situations in the article where publication bias, preregistration and data sharing could have aided to avoid such waste. Copy the corresponding lines from the article and name one or two reasons why you think that those concepts could have helped. 

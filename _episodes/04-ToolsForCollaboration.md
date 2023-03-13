@@ -3,61 +3,32 @@
 # Instead, please edit 04-ToolsForCollaboration.md in _episodes_rmd/
 source: Rmd
 title: "Tools for collaboration"
-teaching: 0
-exercises: 0
+teaching: 60
+exercises: 60
 questions: 
-  - "here are questions"
-  - "questions, tbd"
-  - "by eva"
+  - "Why is collaborative work especially important for Open and Reproducible Science?"
+  - "What are tools that faciliate collaborative work?"
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Learn about Open Science at CERN" 
+  - "Get to know OSF as one tool"
+  - "Learn about version control systems"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "Collaboration is fundamental for science, especially Open Science"
+  - "Learning to use tools for collaboration is effective and helps to avoid problems"
 ---
 
 
 
 
-![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
+# 1. Use case: Open Science at CERN
 
 
->## This week we learn about the importance of collaborative work for Open Science and Reproducibility and some simple tools for this type of work
->
-1. Open Science at CERN, without video
->
-2. The Open Science Framework as a collaborative tool
->
-3. SWITCHdrive and similar tools, without video
->
-4. What is Version control?
-{: .checklist}
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-
-# 1. Open Science at CERN
-
-&nbsp;
-
-## Open Science at CERN
-
-  
 The world wide web was invented at CERN and its leadership was visionary in making sure that the technology would be licensed under an open-source framework "with the explicit goal of preventing private companies from turning it into proprietary software"
 
 CERN and the particle physics community are trailblazers of the Open Science movement.
 
 We aim to look at CERN's approach to Open Science by reading three articles that appeared in the CERN Courier in 2019, see excerpts below and use the links to read the full articles.
 
-
-&nbsp;
- 
 ## Open science: A vision for collaborative, reproducible and reusable research
 
 
@@ -67,10 +38,7 @@ We aim to look at CERN's approach to Open Science by reading three articles that
 > _"True open science demands more than simply making data available: it needs to concern itself with providing information on how to repeat or verify an analysis performed over given datasets, producing results that can be reused by others for comparison, confirmation or simply for deeper understanding and inspiration. This requires runnable examples of how the research was performed, accompanied by software, documentation, runnable scripts, notebooks, workflows and compute environments. It is often too late to try to document research in such detail once it has been published."_
 
   
-S Dallmeier-Tiessen and T Simko https://cerncourier.com/a/open-science-a-vision-for-collaborative-reproducible-and-reusable-research/
-
-
-&nbsp;
+S Dallmeier-Tiessen and T Simko [https://cerncourier.com/a/open-science-a-vision-for-collaborative-reproducible-and-reusable-research/]()
 
 ## Inspired by software
 
@@ -81,10 +49,8 @@ S Dallmeier-Tiessen and T Simko https://cerncourier.com/a/open-science-a-vision-
 > _""The underlying ideal is open collaboration: peers freely, collectively and publicly build software solutions. A second ideal is recognition, in which credit for the contributions made by individuals and organisations worldwide is openly acknowledged. A third ideal concerns rights, specifically the so-called four freedoms granted to users: to use the software for any purpose; to study the source code to understand how it works; to share and redistribute the software; and to improve the software and share the improvements with the community. Users and developers therefore contribute to a virtuous circle in which software is continuously improved and shared towards a common good, minimising vendor lock-in for users."_
 
   
-G Tenaglia and T Smith https://cerncourier.com/a/inspired-by-software/
+G Tenaglia and T Smith [https://cerncourier.com/a/inspired-by-software/]()
 
-
-&nbsp;
 
 ## Preserving the legacy of particle physics
 
@@ -95,14 +61,11 @@ G Tenaglia and T Smith https://cerncourier.com/a/inspired-by-software/
 > _"CMS aims to release half of each year’s level-three data three years after data taking, and 100% of the data within a ten-year window. By guaranteeing that people outside CMS can use these data, says Lassila-Perini, the collaboration can ensure that the knowledge of how to analyse the data is not lost, while allowing people outside CMS to look for things the collaboration might not have time for. To allow external re-use of the data, CMS released appropriate metadata as well as analysis examples."_
 
   
-A Rao https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/
+A Rao [https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/](). 
 
-If you are interested here is some further reading (optional):
-
-X Chen et al. https://www.nature.com/articles/s41567-018-0342-2
+More information can be found in the article "Open is not enough" by X Chen et al. [https://www.nature.com/articles/s41567-018-0342-2]().
 
 
-&nbsp;
 
 >## Open Science is about collaboration
 >
@@ -111,13 +74,12 @@ X Chen et al. https://www.nature.com/articles/s41567-018-0342-2
 - Collaborative research entails specific practical issues that may affect reproducibility when different versions of files are worked on by several collaborators.
 >
 - Collaborative tools can be used to make research accessible to the public beyond publications, e.g. protocols, code, data.
-{: .checklist}
+{: .callout}
 
-This week we will learn about a few practical tools for collaboration.
 
 ## Quiz on open Science at CERN
 
-> ## Quiz 5.1
+> ## Reana
 > CERN's REANA can be used to 
 > - publish finished analysis results 
 > - submit parameterised computational workflows to run on remote compute clouds 
@@ -136,7 +98,7 @@ This week we will learn about a few practical tools for collaboration.
 {: .solution}
 
 
-> ## Quiz 5.2
+> ## Software
 > Having experienced first-hand its potential to connect physicists around the globe, in 1993 CERN released the web software into the: 
 >
 {: .challenge}
@@ -147,183 +109,7 @@ This week we will learn about a few practical tools for collaboration.
 >
 {: .solution}
 
-
-
-&nbsp;
-
-&nbsp;
-
-
-# 2. The Open Science Framework as a collaborative tool
-
-&nbsp;
-
-
->## Open Science Framework
->
-![]({{ page.root }}/fig/05-OSFresearch_lifecycle_original.png){: height="200px"}
->
-- Is developed by the Center for Open Science (COS), non-profit organisation in the USA with the mission  to increase the openness reproducibility and integrity of scientific research 
->
-- Main tool that they build and maintain is the Open Science framework, called OSF, which is a free and open-source tool.
->
-- The design principle of the tool is to make it easy to practice open and reproducible research practices at all of the many stages of the research lifecycle. >
-- Researchers are encouraged through the framework to start engaging with the idea of what  material to share systematically and early on. Sharing publicly but also with collaborators before the manuscript editing phase.
-{: .checklist}
-
-&nbsp;
-
-
->## Introduction to the OSF
->
-You will learn about the OSF through a video provided by COS. The video is long (although you may watch it a increased speed), make sure you learn about the following features of OSF:
->
-- Dashboard
-- Create a project
-- Give your project a structure
-- How to add contributors and their roles and permissions
-- Global unique identifiers 
-- Wiki and how to edit it
-- Adding files and moving them within a project
-- Version control that is embedded in OSF
-- OSF and doi
-{: .checklist}
-
-
-## Quiz on the Open Science Framework as a collaborative tool
-
-> ## Quiz 5.4
-> OSF distributes global unique identifiers 
-> - only at the project level  
-> - at the project, component and file level  
-> - each time you make changes to a project  
->
-{: .challenge}
-
-> ## Solution
-> 
-> F only at the project level  
-> T at the project, component and file level  
-> F each time you make changes to a project  
->
-{: .solution}
-
-
-> ## Quiz 5.5
-> Wikis on OSF can be written in a "what you see is what you get" way and using the syntax of: 
->
-{: .challenge}
-
-> ## Solution
-> 
-> Markdown 
->
-{: .solution}
-
-
-> ## Quiz 5.6
-> Binary file types such as Word files or pdfs are version controlled on OSF through 
-> - use of an online editor  
-> - adding version indicators to file names  
-> - recognition of file names in components  
->
-{: .challenge}
-
-> ## Solution
-> 
-> F use of an online editor  
-> F adding version indicators to file names  
-> T recognition of file names in components  
->
-{: .solution}
-
-
-&nbsp;
-
-&nbsp;
-
-
-# 3. SWITCHdrive and similar tools
-
-&nbsp;
-
-## SWITCHdrive
-
-![]({{ page.root }}/fig/05-switchdrive.png){: height="200px"}
-
-
->SWITCHdrive is a cloud service offered by SWITCH, the internet provider of Swiss universities, which allows you to  
->
-- synchronise files & folders across multiple devices  
-- easily share data with other users.  
-{: .checklist}
-
-SWITCHdrive offers a secure alternative to well known, commercial cloud storage services such as Dropbox, OneDrive or Google drive that is hosted on servers in Switzerland.
-
->## The advantages of SWITCHdrive over OSF are  
->
-- easy synchronization with several devices  
-- ability to edit office files directly in the cloud  
-- more lightweight (OSF can be very slow)  
-{: .checklist}
-
->## The disavantages are that SWITHCdrive is  
->
-- more complicated to give others access to documents 
-- documents/projects are not findable for a wider audience
-{: .checklist}
-
-See here for more information and instructions how to start using SWITCHdrive https://help.switch.ch/drive/faq/Basics/
-
-&nbsp;
-&nbsp;
-
->## Example
->
->As an example see a Powerpoint file in my personal switchdrive. You can either download it or open and edit it in the browser. You can share it with specific users or make it public.
->
-![]({{ page.root }}/fig/05-switchdriveexample1.png){: height="200px"}
->
->&nbsp;
->
->Here it is in the editor within the browser. You can see that it is fully editable.
->
-![]({{ page.root }}/fig/05-switchdriveexample2.png){: height="300px"}
->
->&nbsp;
->
->Here you see the same file in my local file system. The green check mark means that it is synchronized with the file on the cloud server. If you work offline on the file you may synchronize it later. Conflicts appear if you edit the same file at the same time as someoneelse who has access rights to it on the cloud server.
->
-![]({{ page.root }}/fig/05-switchdriveexample5.png){: height="200px"}
->
->&nbsp;
->
->You can access versions of this file through the file menu of the editor in the browser. These versions may help to resolve conflicts.
->
-![]({{ page.root }}/fig/05-switchdriveexample3.png){: height="300px"}
->
->&nbsp;
->
->Versions are automatically created and the user who created them is indicated.
->
->
-![]({{ page.root }}/fig/05-switchdriveexample4.png){: height="300px"}
-{: .callout}
-
-&nbsp;
-
-
->## Summary
->
-- SWITCHdrive and other cloud storage services allow collaborative work
-- They allow version control to a certain extent but conflicts may appear and need to be resolved manually
-- Their purpose is not totally similar to OSF, which also provides a "showcase" for projects
-{: .checklist}
-
-
-## Quiz on SWITCHdrive and similar tools
-
-> ## Quiz 5.3
+> ## Levels of open data at CERN
 > The four main LHC experiments have started to periodically release their data in an open manner, and these data can be classified into four levels. Check the correct level descriptions
 > - The first level consists of the numerical data underlying publications.  
 > - The second level concerns datasets in a simplified format that are suitable for “lightweight” analyses in educational or similar contexts  
@@ -341,37 +127,97 @@ See here for more information and instructions how to start using SWITCHdrive ht
 >
 {: .solution}
 
+# 2. Some tools for collaboration
 
-> ## Quiz 5.7
-> SWITCHdrive is a cloud storage service hosted on servers in: 
+
+>## Open Science Framework
+>
+![]({{ page.root }}/fig/05-OSFresearch_lifecycle_original.png){: height="200px"}
+>
+- The framework is developed by the Center for Open Science (COS), a non-profit organisation in the USA with the mission to increase the openness reproducibility and integrity of scientific research 
+>
+- The main tool that they build and maintain is the Open Science framework, called OSF, which is a free and open-source tool.
+>
+- The design principle of the tool is to make it easy to practice open and reproducible research practices at all of the many stages of the research lifecycle. 
+>
+- Researchers are encouraged through the framework to start engaging with the idea of whatmaterial to share systematically and early on. Sharing publicly but also with collaborators before the manuscript editing phase.
+{: .checklist}
+
+
+## Introduction to the OSF
+
+One of the best ways to learn about the OSF is through a video provided by COS. The video is long (although you may watch it a increased speed), make sure you learn about the following features of OSF:
+- Dashboard
+- Create a project
+- Give your project a structure
+- How to add contributors and their roles and permissions
+- Global unique identifiers 
+- Wiki and how to edit it
+- Adding files and moving them within a project
+- Version control that is embedded in OSF
+- OSF and doi
+
+You can find the video [here](https://youtu.be/dLEIhJESIQA).
+
+## Other tools: CRS primer
+Other tools for collaboration have been summarized in the Primer "[Digital collaboration](https://zenodo.org/record/7620743#.ZAs6NbSZPsM)" by the Center for Reproducible Science at the University of Zurich. The primer contains a few University of Zurich specific recommendations but is mostly applicable for anyone.
+
+
+## Quiz on the Open Science Framework as a collaborative tool
+
+> ## Global unique identifiers
+> OSF distributes global unique identifiers 
+> - only at the project level  
+> - at the project, component and file level  
+> - each time you make changes to a project  
 >
 {: .challenge}
 
 > ## Solution
 > 
-> Switzerland 
+> F only at the project level  
+> T at the project, component and file level  
+> F each time you make changes to a project  
+>
+{: .solution}
+
+
+> ## Wiki syntax
+> Wikis on OSF can be written in a "what you see is what you get" way and using the syntax of: 
+>
+{: .challenge}
+
+> ## Solution
+> 
+> Markdown 
+>
+{: .solution}
+
+
+> ## Version control in OSF
+> Binary file types such as Word files or pdfs are version controlled on OSF through 
+> - use of an online editor  
+> - adding version indicators to file names  
+> - recognition of file names in components  
+>
+{: .challenge}
+
+> ## Solution
+> 
+> F use of an online editor  
+> F adding version indicators to file names  
+> T recognition of file names in components  
 >
 {: .solution}
 
 
 
-&nbsp;
 
-&nbsp;
-
-
-
-
-
-# 4. What is version control?
-
-
-&nbsp;
+# 4. What is version control and what is Git?
+The purpose of Git is best explained with the below cartoon: it is a system that allows to avoid situations like in the cartoon. Such systems are called version control systems since they are designed to take care of versioning of files without changing (and lengthening) file names.
 >
 ![]({{ page.root }}/fig/05-phd101212s.png){: height="400px"}
 {: .testimonial}
-
-&nbsp;
 
 >## What is Git?
 >
@@ -385,76 +231,42 @@ See here for more information and instructions how to start using SWITCHdrive ht
   - Eclipse  https://www.eclipse.org/  
 {: .checklist}
 
-&nbsp;
+## Git has a reputation to be complicated
+Git is a tool that originated in software development and hence in order to use it a certain computer skill level is necessary. As a result it has a reputation to be complicated. Similar to code-based analysis there is indeed a certain learning curve in the beginning but with just a bit of practice the advantages outweigh the initial investment.
 
-## What is Git?
- 
-![]({{ page.root }}/fig/05-gitnaming.png){: height="400px"}
-
-Source: https://en.wikipedia.org/wiki/Git
-
-
-&nbsp;
-
->## Git has a reputation to be complicated
->
+>## Only nerds can use Git
 ![]({{ page.root }}/fig/05-git.png){: height="400px"}
 {: .testimonial}
 
-&nbsp;
-
 >## Why use it anyhow?
 >
-- Documented past
+- It provides a completely documented past
 - Collaborators have coordinated access to the same documents
-- Easy synchronization for local files (offline working)
-- Tools to resolve conflicts for text based files available
-- Avoid file names like `masterManuscript_v4_rf_0812_gh.doc`
+- It allows easy synchronization for local files (offline working)
+- Tools to resolve conflicts for text based files are available
+- and of course one can avoid file names like `masterManuscript_v4_rf_0812_gh.doc`
 - (further benefits on a code development level)
 {: .checklist}
 
-&nbsp;
 
->## More terminology
->
-- GitLab is a web-based  tool that provides a Git repository manager https://www.gitlab.com https://gitlab.uzh.ch/ https://git.math.uzh.ch   
-- GitHub is a provider of Internet hosting for software development and version control using Git: https://www.github.com
-- A repository is a collection of files, typically organized as a project, managed with a version control.
-{: .checklist}
+## More terminology
+- A Git repository is a collection of files, typically organized as a project, managed with a version control.
+- GitLab is a web-based tool that provides a Git repository manager, see e.g. the commercial https://www.gitlab.com. At the University of Zurich https://gitlab.uzh.ch/ and  https://git.math.uzh.ch  are available, maybe your institutions offers an instance as well?
+- GitHub is a commercial provider of Internet hosting for software development and version control using Git: https://www.github.com
+- The remote version of a repository can be "cloned" to the computers of all collaborators of the project.
 
-&nbsp;
 
 ## Git is a decentralized version control system (DVCS)
 
-&nbsp;
+Developers work directly with their own local repository on their computer, i.e. a folder on their computer: the workspace in the below graphic.
 
-&nbsp;
+By using the command "git add" they add files or folders to the index, which is similar to a registry in a library. This step is also called staging. Then they "git commit" their staged changes to the local repository on their computer creating a version that will be kept in the system. Only with the "git push" command do they upload the changes to the remote server.
 
-&nbsp;
+The next person working on the same repository will need to "git pull" the updated repository in order to access the changes.
 
-&nbsp;
+![]({{ page.root }}/fig/05-git-transport.png){: height="500px"}
 
-&nbsp;
-
-
-Developers work directly with their own local repository on their computer
-
-&nbsp;
-
-Changes are shared with the remote repositorys as a separate step
-
-&nbsp;
-
-The workspace is “visible” (i.e. the directory you work in), index and local repository not directly
-
-
-
-![]({{ page.root }}/fig/05-git-transport.png){: height="600px"}
-
-&nbsp;
-
-## Installation and login to UZH service
- 
+## Installation
 
 Check if you have git:
 - open Rstudio, go to the terminal tab and type git --version
@@ -462,14 +274,7 @@ Check if you have git:
 If you do not have it
 - go to https://git-scm.com/downloads
 
-Do you have a switch edu ID?
-- if not create one https://eduid.ch/web/registration (with UZH AAI)
-
-Log in to the UZH gitlab Webinterface
-- https://gitlab.uzh.ch/  
-
-
-&nbsp;
+When you are ready to run Git locally on your computer you can start using it together with a remote service (see above).
 
 >## Want to know more?
 >
@@ -482,112 +287,43 @@ Log in to the UZH gitlab Webinterface
 - Tutorial:  https://doi.org/10.1177/2515245918754826 
 >
 - Point-by-point instructions to connect with ssh https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
-{: .checklist}
+{: .callout}
 
 
-## Quiz on  what is version control
+## Quiz on Git
 
-
-> ## Quiz 5.8
-> The popular internet hosting service GitHub is a commercial service that provides: 
+> ## Advantages
+> Why is a version control system useful when working on analysis scripts, even if working alone.
+> - Git allows you to review the history of your project. 
+> - If something breaks due to a change, you can fix the problem by reverting to a working version before the change. 
+> - Git retains local copies of repositories, resulting in fast operations. 
+> - Git automatically scans for all changes and hence tracks everything.
 >
 {: .challenge}
 
 > ## Solution
 > 
-> version control 
+> T Git allows you to review the history of your project. 
+> T If something breaks due to a change, you can fix the problem by reverting to a working version before the change.
+> F Git retains local copies of repositories, resulting in fast operations.
+> F Git automatically scans for all changes and hence tracks everything.
 >
 {: .solution}
 
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
->## Homework
->
-You will start to work with OSF:
->
->>## Task 1 
->>Create an OSF account
->{: .checklist}
->
->>## Task 2 
->>Create a project for this course named `"<First name> <Last name>`´s course project"
->{: .checklist}
->
->>## Task 3
->>In your project create a wiki and copy paste the course description from the course catalog in it, such that it shows when one enters the project.
->{: .checklist}
->
->>## Task 4
->>Add Eva Furrer (eva.furrer@uzh.ch) as a collaborator in the project
->{: .checklist}
->
->>## Task 5
->> Write a short paragraph about your reasons for joining this course in Markdown and add it to the project on OSF as a Markdown file and as a pdf.
->{: .checklist}
->
-Make a screenshot that shows that you completed all of the steps above, i.e. showing your user name, that EF is a collaborator, that the wiki shows the course catalog entry and that there are two files in the project, one Markdown and one pdf file. **Make sure the URL of the project is visible as well.**
->
-During peer review you will request access to the projects of the students that you are peer reviewing, you will go and download their Markdown files, render them on your computer and add "Reviewed by `<First name> <Last name>`." and upload the new versions of Markdown and pdf file again.
->
-**Make sure to grant access to your projects to your peer reviewers!**
->
-{: .challenge}
-
-&nbsp;
-
-&nbsp;
-
-
-
-
+# Episode challenge
 >## In-classtask
->
+> First, we will add all participants to a common OSF project.
 >>## Task 1
->>First, we will add all participants to a common OSF project.
+>>We work on publicly available data from 13 weather stattions in Switzerland:
+[Sunshine duration, precipitation, temperature and fresh snow (1931 -- 2022)](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02)  and 
+[Ice days, frost days, summer days, heat days, tropical nights, precipitation days (1959 -- 2022)](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03).
+**We will collaboratively summarize the data** into (approximatively) 30 year averages (see below) per station for each of the 10 available characteristics. Create a corresponding csv file on OSF with 14 columns including a column identifying characteristic and time period and one column per station. Distribute the work of calculating averages and putting them into the common csv file in the group of participants.
+>>
+>> Note: use the approximatve 30 year periods 1931 -- 1958, 1959 -- 1988, 1989 -- 2022
 >{: .checklist}
 >
 >>## Task 2
->>We continue to work on the spreadsheet [DrugSpeciesClean.xlsx]({{ page.root }}/files/docs/05/DrugSpeciesClean.xlsx). **This time we will work collaboratively on the analysis of the data.** In order to practice collaborative work we do on purpose not use loops and functions to do the analysis.
->>Each of you will use the `R` script [CollaborativeDataAnalysis.R]({{ page.root }}/files/docs/05/CollaborativeDataAnalysis.R) to calculate and find some characteristics for one set of drug species combinations at a time.
->>Start by going through the script and understanding the steps. Where is the CSV on your computer that is saved by the script?
->>
->{: .checklist}
->
->>## Task 3
->>We determine in class who works on which drug species combinations. 
->>
-Apply the script to your combinations and create the corresponding csv file on your computer.
->>
-We will collect the updated information we gather in the common OSF project in different manners.
->{: .checklist}
->
->>## Task 4
->>
-Please answer in a few sentences the following questions on Open edX:
->>
-1. What are the main difficulties when collaboratively editing the same file(s)?
-2. What are the advantages in using text based files such as .R, .csv and .md files?
-3. Do you know a system which would make such collaborative file use easier?
+>> Add a Readme file to the project describing the content of the project, all participants agree on the wording and correct if necessary. Discuss the following questions 1. What are the main difficulties when collaboratively editing the same file(s)? 2. What are the advantages in using text based files such as .R, .csv and .md files? and add the group's thought in the Readme.
 >{: .checklist}
 {: .challenge}
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 

@@ -3,72 +3,51 @@
 # Instead, please edit 03-QualityCriteriaForGoodResearch.md in _episodes_rmd/
 source: Rmd
 title: "Quality criteria for good research"
-teaching: 0
-exercises: 0
+teaching: 90
+exercises: 90-120
 questions: 
-  - "here are questions"
-  - "questions, tbd"
-  - "by eva"
+  - "How does academic publishing work?"
+  - "What is the IMRAD format?"
+  - "What are reporting guidelines and why are they useful?"
+  - "How can we judge the quality and credibility of a preprint/ a publication"
 objectives: 
-  - "tbd"
-  - "by eva"
+  - "Understand how the academic publishing process works"
+  - "Know about IMRAD sections and detect content in articles efficiently"
+  - "Find an appropriate reporting guideline and know their advantages"
+  - "Review a prepring using a simple checklist"
 keypoints:
-  - "tbd"
-  - "by eva"
+  - "The structure of an article represents the steps of the scientific method"
+  - "The structure of an article helps in finding information and to get started with reproduction/replication"
+  - "There are some simple questions that can be asked when judging the quality of an article"
 ---
 
 
 
 
 
-![]({{ page.root }}/fig/Repro_Kreislauf_horizontal_halb.png)
-
-&nbsp;
-
->## This week we learn about
->
-1. Academic publishing
->
-2. Manuscript structure (IMRAD), without video
->
-3. Reporting guidelines
->
-4. Markdown (lightweight markup language for creating formatted text using a plain-text editor)
->
-5. Precheck checklist (simple and clear guidance to assess the quality and credibility of a scientific preprint), without video
-{: .checklist}
-
-
-&nbsp;
-&nbsp;
-
 # 1. Primer on academic publishing
 
-&nbsp;
+## Why publish? 
 
->## Why  
->
->Results of research are published in the literature such that  
->
+Results of research are published in the literature such that  
+
 - findings get disseminated  
 - other researchers can assess “what is known”  
 - findings can get synthesized into overall evidence  
 - evidence can inform policy  
->
->
->
+
+but also such that
+
 - researchers can document their output  
 - researchers can be assessed for career advancement  
 - researchers can build a “reputation”  
-{: .checklist}
 
-&nbsp;
+&rArr; Publication advances science and the career of scientists
 
+## Where to publish? 
 
->## Where  
->
-Academic journals may be  
->
+Most scientific publications are in academic journals or books. Journals may be  
+
 - discipline specific or across several disciplines  
 - run by learned societies or by commercial publishers  
 - open or closed access  
@@ -76,40 +55,31 @@ Academic journals may be
 - existing for over 100 years or only a short time  
 - exist in print/online or only online  
 - “predatory”  
->
-There may be more than 30’000 journals publishing 2’000’000 articles per year.  
-{: .checklist}
 
-&nbsp;
+There may be more than 30’000 journals publishing 2’000’000 articles per year.  
 
   
->## How  
->
+## How does the process of publication in journals work? 
+
 Authors have to follow several steps  
->
-1. Carry out a study, write a manuscript, select a journal  
+
+1. Carry out a study or another type of research project, write a manuscript, select a journal  
 2. Submit the manuscript to peer review at the journal  
-3. The article will be assigned an editor, undergoing formal checks  
-4. The editor decides if it is peer-reviewed or desk-rejected  
+3. The article will be assigned an editor and undergoes formal checks  
+4. The editor decides if it will be peer-reviewed or rejected  directly (desk-rejection) 
 5. The editor searches peer reviewers, usually at least two independent and anonymous experts  
 6. The manuscript is peer-reviewed resulting in review reports  
-7. The editor assesses the reports and makes a decision:  
->  
->
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **Rejection &nbsp;  &nbsp; Revision &nbsp; &nbsp; Acceptance**
->
-&nbsp;
->
+7. The editor assesses the reports and makes a decision among:  
+  - Rejection: the article cannot be published at this journal 
+  - Revision: the article has to undergo changes, sometimes major, before publication
+  - Acceptance: the article can be published as it is, most often conditional on small cosmetic changes
+
+The below image from J Berg et al. [https://www.science.org/doi/abs/10.1126/science.aaf9133]() illustrates this process:
+
 ![]({{ page.root }}/fig/04-PeerReviewPublication-1.png)  
-J Berg et al. https://www.science.org/doi/abs/10.1126/science.aaf9133
-{: .checklist}
- 
-
-&nbsp;
-
 
 ## What is a doi and what is Crossref?
-
+Since the goal of scientific articles is to serve for the advancement of science they need to be findable and identifiable for future work. For that a necessary condition is that they have a unique identifier, which is nowadays of course a digital identifier
  
 > "_A digital object identifier (DOI) is a persistent identifier or handle used to identify objects uniquely, standardized by the International Organization for Standardization (ISO).An implementation of the Handle System, DOIs are in wide use mainly to identify academic, professional, and government information, such as journal articles, research reports, data sets, and official publications. DOIs have also been used, however, to identify other types of information resources, such as commercial videos._"
 
@@ -120,41 +90,32 @@ Since a doi is a unique identifier you can find any article by concatenating `ht
 Hence Crossref is the organisation which registers most doi for academic publications.
 
 
-&nbsp;
 
 >## Examples 
->
+> Two examples of journals that are are linked with the University of Zurich are:
 European Journal of Health Communication  
 https://ejhc.org/
 >
 Journal of Statistical Software  
 https://www.jstatsoft.org/index
-{: .callout}
+{: .testimonial}
 
-&nbsp;
+## Indexing of journals/publications
 
->## Indexing of journals/publications
->
-Indexation of a journal is considered a reflection of its quality. Indexed journals may be of higher scientific quality as compared to non-indexed journals.
->
+Indexation of a journal, i.e. the inclusion of its articles in a meta data base, is considered a reflection of the quality of the journal. Indexed journals may be of higher scientific quality as compared to non-indexed journals.
+
 - Pubmed/MEDLINE https://pubmed.ncbi.nlm.nih.gov/
 - Directory of Open Access Journals https://doaj.org/
 - Thomson Reuters Journal Citation Reports https://clarivate.com/webofsciencegroup/solutions/journal-citation-reports
->
-In-house database: ZORA https://www.zora.uzh.ch/
-{: .checklist}
 
-&nbsp;
+Many universities also have in-house databases for the articles produced by their researchers: at the University of Zurich, for example, this is ZORA https://www.zora.uzh.ch/
 
->## Why peer review?
->
+## Why is peer review part of the publication process?
+
 - Peer review allows to check and improve research.
 - Peer review serves as scientific quality control.
 - Peer review provides a form of self regulation for science.
 - Peer review makes publication (more) trustworthy
-{: .checklist}
-
-&nbsp;
 
 >## Issues with peer review
 >
@@ -164,11 +125,9 @@ In-house database: ZORA https://www.zora.uzh.ch/
 - Peer reviewers are volunteers and almost not rewarded
 - The process is slow and unpredictable
 - Increasing numbers of publications make it more and more unfeasible 
->
-Before you review the first time [Open Reviewer Toolkit](https://content.prereview.org/open-reviewers-toolkit-is-now-openly-available/)
-{: .checklist}
+{: .callout}
 
-&nbsp;
+Before you review for the first time see [Open Reviewer Toolkit](https://content.prereview.org/open-reviewers-toolkit-is-now-openly-available/)
 
 >## Issues with the publication system
 >
@@ -176,18 +135,16 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 - Lacking equity (Matthew effect)
 - Expensive either in subscription fees or processing charges
 - Evaluation of researchers is publication based, incentivising fast but not rigorous research
-{: .checklist}
-
-&nbsp;
+{: .callout}
 
 
 ## Preprints
-
+Preprints are a relatively new form of publication which helps to overcome some of the issues with peer review and with the publication system. See the extension of the above graphic including preprints in the publication process:
 ![]({{ page.root }}/fig/04-PeerReviewPublication.png)
 
-## Quiz on primer on academic publishing
+## Quiz on academic publishing
 
-> ## Quiz 4.3
+> ## Peer review
 > Which statements are correct for the practice of peer review in academic publishing?  
 > - peer review contributes to keep the quality of publications to high standard  
 > - peer reviewers are financially rewarded for their contribution  
@@ -208,7 +165,7 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 {: .solution}
 
 
-> ## Quiz 4.4
+> ## Unfairness
 > The publication system is unfair since authors from prestigious institutions or authors with already a lot of publication are privileged, for them it is easier to publish since editors and reviewers decide in their favor more often. Such a type of effect is not unique to academic publishing but occurs in different aspects of society. 
 >
 > A common name for this effect is:
@@ -222,51 +179,42 @@ Before you review the first time [Open Reviewer Toolkit](https://content.prerevi
 {: .solution}
 
 
-&nbsp;
+> ## Preprints
+> Why do preprints help to overcome some of the issues with peer review and with the publication system?
+{: .challenge}
+
+> ## Solution
+> 
+> TBA
+>
+{: .solution}
 
 &nbsp;
 
-&nbsp;
-
-
-
-
-# 2. IMRAD
+# 2. What is the IMRAD format?
 
 ## What is IMRAD?
 
-
+The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article. See the article of J Wu [https://link.springer.com/article/10.1007/s10980-011-9674-3]() for a quick overview illustration:
 ![]({{ page.root }}/fig/04-IMRAD.png){: height="300px"}
- J Wu https://link.springer.com/article/10.1007/s10980-011-9674-3
 
-The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article.
-
-
-R Day writes about the history of scientific publication in his article, "The Origins of the Scientific Paper: The IMRAD Format". He specifically mentions the scientific method and its cornerstone the principle of reproducibility of results. The IMRAD Format has been introduced in order to represent the steps of the scientific method.
+R Day writes about the history of scientific publication in his article, "The Origins of the Scientific Paper: The IMRAD Format". He specifically mentions the **scientific method** and its cornerstone the **principle of reproducibility** of results. The IMRAD Format has been introduced in order to represent the steps of the scientific method.
 
 > _"Eventually, in 1972, the IMRAD format became  "standard" with the publication of the American National Standard for the preparation of scientific papers for written or oral presentation."_
 
-R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. Provided as [pdf]({{ page.root }}/files/docs/04/Day1989.pdf)
-
-&nbsp;
+R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. This article is not easily obtainable online, potentially your library can obtain it for you. If this is not possible, please contact the authors of this course.
 
 ## What is the Scientific Method?
-
+The Center for Reproducible Science at the University of Zurich uses a simplified graphical representation of the scientific method in its communications: 
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal.png){: height="200px"}
-The CRS uses a simplified graphical representation of the scientific method in its communications.
 
-
-"What is the Scientific Method?" is a philosophical question that we can not answer in full detail here and it may be one of the questions to which there is no single correct answer.
-
-From the Stanford Encyclopedia of Philosophy:
+"What is the Scientific Method?" is a philosophical question that we can not answer in full detail here and it may be one of the questions to which there is no single correct answer. We will use the Stanford Encyclopedia of Philosophy definition as a first approximation:
 
 > _"Often, ‘the scientific method’ is presented in textbooks and educational web pages as a fixed four or five step procedure starting from observations and description of a phenomenon and progressing over formulation of a hypothesis which explains the phenomenon, designing and conducting experiments to test the hypothesis, analyzing the results, and ending with drawing a conclusion."_
 
-https://plato.stanford.edu/entries/scientific-method/
+[https://plato.stanford.edu/entries/scientific-method/[()
 
 This view coincides with a common approach to empirical research, even if it may be an oversimplification and a strong generalization, we assume an underlying scientific process for this course that is close to such an approach.
-
-&nbsp;
 
 ## What should the IMRAD sections contain?
 
@@ -275,11 +223,11 @@ In 1997 the International Committee of Medical Journal Editors published "Unifor
 > _"The text of observational and experimental articles is usually (but not necessarily) divided into sections with the headings **Introduction, Methods, Results, and Discussion**. Long articles may need subheadings within some sections (especially the Results and Discussion sections) to clarify their content. Other types of articles, such as case reports, reviews, and editorials, are likely to need other formats. Authors should consult individual journals for further guidance."_
 
 The Uniform Requirements have been updated in December 2021 and the most current version can be found here:
-http://www.icmje.org/about-icmje/faqs/icmje-recommendations/
+http://www.icmje.org/about-icmje/faqs/icmje-recommendations/ The 1997 version of the requirements is avaliable here: [https://www.icmje.org/recommendations/archives/1997_urm.pdf](). 
 
-The document contains much more than advice on structuring a manuscript, e.g. authorship roles, peer review roles etc. Please read the chapter "3. Manuscript Sections" in order to get an overview of the expected content of the IMRAD sections.
 
-The 1997 version of the requirements is provided as [pdf]({{ page.root }}/files/docs/04/ICMJE1997.pdf).
+The document contains much more than advice on structuring a manuscript, e.g. authorship roles, peer review roles etc. **Please read the chapter/section "Manuscript Sections"  in one of the two versions in order to get an overview of the expected content of the IMRAD sections.**
+
 
 There is a long list of journals that state that they follow these requirements
 http://www.icmje.org/journals-following-the-icmje-recommendations/
@@ -287,7 +235,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 
 ## Quiz on IMRAD
 
-> ## Quiz 4.1
+> ## Cornerstone of the scientific method
 > Hippocrates is credited as the discoverer of the scientific method. But he did not clearly state its cornerstone.
 > The cornerstone of the scientific method is the:
 >
@@ -300,7 +248,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 {: .solution}
 
 
-> ## Quiz 4.5
+> ## Introduction section
 > The introduction section in an article following the IMRAD structure should contain?  
 > - a short overview over the data and main conclusions of the article  
 > - the purpose/objective of the presented research  
@@ -317,7 +265,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 {: .solution}
 
 
-> ## Quiz 4.6
+> ## Methods section
 > The methods section in an article following the IMRAD structure should contain  
 > - a descriptive analysis of the collected data such that appropriate methods can be chosen for the analysis  
 > - enough information such that a reader would in theory be able to reproduce the results  
@@ -334,7 +282,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 {: .solution}
 
 
-> ## Quiz 4.7
+> ## Statistical methods
 > The statistical methods subsection of the methods section in an article following the IMRAD structure should contain  
 > - detailed information software and packages  
 > - only contain p-values an no effect sizes or estimates of the precision  
@@ -351,7 +299,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 {: .solution}
 
 
-> ## Quiz 4.8
+> ## Discussion section
 > The discussion section in an article following the IMRAD structure should contain  
 > - limitations of the study  
 > - those conclusions in view of the goals of the study that are supported by the results  
@@ -367,71 +315,51 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 >
 {: .solution}
 
-
 &nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
 
 # 3. Reporting guidelines
 
 ## Goals of Reporting Guidelines
+The goals of Reporting Guidelines are summarized in I Simera and D Altman [https://onlinelibrary.wiley.com/doi/full/10.1111/ijcp.12168]():
 
 
 > _“Study reports should then provide enough details about the chosen research methodology to **allow readers to judge how well the study was designed and carried out, how reliable are the presented findings, and how relevant and generalizable the reported findings are** to the readers’ specific situation.”_
 
 > _“**Rigorous reporting** of the scientific details specific to your research study is of the **utmost importance**. Recently, the expansion in the development of systematic reviews and clinical guidelines has triggered more intensive scrutiny of the available medical research literature.”_
 
-I Simera and D Altman https://onlinelibrary.wiley.com/doi/full/10.1111/ijcp.12168
-
-
-&nbsp;
 
 ## Good Reporting is an Ethical Imperative
 
-
-**WMA Declaration of Helsinki – Ethical Principles for Medical Research Involving Human Subjects**
+The **WMA Declaration of Helsinki – Ethical Principles for Medical Research Involving Human Subjects** states:
 
 36.   Researchers, authors, sponsors, editors and publishers all have **ethical obligations with regard to the publication** and dissemination of the results of research. Researchers have a duty to make publicly available the results of their research on human subjects and are **accountable for the completeness and accuracy of their reports**. All parties should adhere to accepted guidelines for ethical reporting. **Negative and inconclusive as well as positive results must be published or otherwise made publicly available**. [...]
 
-https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/
-
-
-
-&nbsp;
+[https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/]()
 
 ## Good Reporting is Required By Many Journals
 
 
-**Reporting requirements**
+For example the **Reporting requirements** of the Nature Research journals aim to improve the transparency of reporting and reproducibility of published results across all areas of science. Before peer review, the corresponding author must complete an editorial policy checklist to ensure compliance with Nature Research editorial policies; where relevant, manuscripts sent for review must include **completed reporting summary documents**.
 
-Nature Research journals aim to improve the transparency of reporting and reproducibility of published results across all areas of science. Before peer review, the corresponding author must complete an editorial policy checklist to ensure compliance with Nature Research editorial policies; where relevant, manuscripts sent for review must include **completed reporting summary documents**.
-
-Nature portfolio Reporting Summary https://www.nature.com/documents/nr-reporting-summary-flat.pdf  
-Nature Reporting requirements and reproducibility editorials https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards#editorials
+Nature portfolio Reporting Summary [https://www.nature.com/documents/nr-reporting-summary-flat.pdf]()
+Nature Reporting requirements and reproducibility editorials [https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards#editorials]()
 
 
-&nbsp;
-
-## Examples
+## Database of Reporting Guidelines
 ![]({{ page.root }}/fig/04-Reporting1.png){: height="300px"}
 
 > _"The EQUATOR (Enhancing the QUAlity and Transparency Of health Research) Network is an international initiative that seeks to improve the reliability and value of published health research literature by promoting transparent and accurate reporting and wider use of robust reporting guidelines."_
 
 > _"It is the first coordinated attempt to tackle the problems of inadequate reporting systematically and on a global scale; it advances the work done by individual groups over the last 15 years."_
 
-http://www.equator-network.org/reporting-guidelines/
+[http://www.equator-network.org/reporting-guidelines/]()
 
-
+## The MDAR Framework
 ![]({{ page.root }}/fig/04-Reporting2.png){: height="200px"}
 
 > _"We were motivated to develop the MDAR Framework as part of our own and others’ attempts to improve reporting to drive research improvement and ultimately greater trust in science. Existing tools, such as the ARRIVE guidelines, guidance from FAIRSharing, and the EQUATOR Network, speak to important sub-elements of biomedical research. This new MDAR Framework aims to be  more general and less deep, and therefore complements these important specialist guidelines."_ 
 
-M McLeod et al. https://www.pnas.org/content/118/17/e2103238118
+M McLeod et al. [https://www.pnas.org/content/118/17/e2103238118]()
 
 &nbsp;
 
@@ -440,49 +368,55 @@ M McLeod et al. https://www.pnas.org/content/118/17/e2103238118
 
 ![]({{ page.root }}/fig/04-Reporting3.png){: height="200px"}
 
-M Michel et al. http://dmd.aspetjournals.org/content/dmd/48/1/64.full.pdf
+M Michel et al. [http://dmd.aspetjournals.org/content/dmd/48/1/64.full.pdf]()
 
 &nbsp;
 
 ![]({{ page.root }}/fig/04-Reporting4.png){: height="200px"}
 
-T Hartung et al. https://www.altex.org/index.php/altex/article/view/1229
+T Hartung et al.[https://www.altex.org/index.php/altex/article/view/1229]()
 
 &nbsp;
 
 ![]({{ page.root }}/fig/04-Reporting5.png){: height="200px"}
 
-S Cruz Rivera et al. https://www.nature.com/articles/s41591-020-1037-7.pdf
+S Cruz Rivera et al. [https://www.nature.com/articles/s41591-020-1037-7.pdf]()
 
 &nbsp;
 
 ![]({{ page.root }}/fig/04-Reporting6.png){: height="200px"}
 
-M Appelbaum https://psycnet.apa.org/fulltext/2018-00750-002.html  
+M Appelbaum [https://psycnet.apa.org/fulltext/2018-00750-002.html]()  
 **&rArr; also available for qualitative and mixed methods**
 
 &nbsp;
 
 ![]({{ page.root }}/fig/04-Reporting7.png){: height="200px"}
 
-R Poldrack et al. https://www.sciencedirect.com/science/article/pii/S1053811907011020?via%3Dihub
+R Poldrack et al. [https://www.sciencedirect.com/science/article/pii/S1053811907011020?via%3Dihub]()
 
 &nbsp;
 
 ![]({{ page.root }}/fig/04-Reporting8.png){: height="200px"}
 
-L Riek https://dl.acm.org/doi/pdf/10.5898/JHRI.1.1.Riek
+L Riek [https://dl.acm.org/doi/pdf/10.5898/JHRI.1.1.Riek]()
 
 
 &nbsp;
 
-## Look into JARS
-
+>## Look into JARS
+> TBA questions on
 Journal Article Reporting Standards for Quantitative Research in Psychology: The APA Publications and Communications Board Task Force Report (JARS)  
 M Appelbaum et al. https://doi.apa.org/fulltext/2018-00750-002.html
+>
+{: .challenge}
 
+> ## Solution
+> 
+> TBA
+>
+{: .solution}
 
-&nbsp;
 
 >## Who benefits? Researchers
 >
@@ -526,7 +460,7 @@ courtesy of M. Schussel of  the Equator Network: https://www.equator-network.org
 
 ## Quiz on reporting guidelines 
 
-> ## Quiz 4.2
+> ## Reporting guidelines
 > Reporting guidelines are  
 > - only used in biomedicine  
 > - based on a wide consensus of experts  
@@ -542,94 +476,58 @@ courtesy of M. Schussel of  the Equator Network: https://www.equator-network.org
 >
 {: .solution}
 
-
 &nbsp;
 
-
-&nbsp;
-
-
-&nbsp;
-
-
-
-
-# 4. Markdown
+# 5. Precheck
 
 ## What is Markdown and why do we learn about it?
 
 
-![]({{ page.root }}/fig/04-markdown.png){: height="150px"}
+![]({{ page.root }}/fig/04-markdown.png){: height="50px"}
 
 
 Markdown is a lightweight markup language for creating formatted text using a plain-text editor. The goal is an easy to write and and easy to read format, even as raw code. It is traditionally used for so-called readme files in software development and extensively as a tool to produce html code for websites. There are several flavors of the language that are used in different places but the basics are the same almost anywhere.
 
 Since a file containing Markdown text only contains plain text and no binary information, it is a lightweight format. Moreover, changes in Markdown files are particularly easy to track.
 
-We introduce Markdown here because it will be used in the following weeks of this course and we start to practice it this week. In the corresponding video you will see how you can easily create a Markdown file using Rstudio.
-
 For a reference sheet of the syntax, please see here: https://www.markdownguide.org/cheat-sheet/
 
+We introduce Markdown here because it will be used in the following episodes of this course and we start to practice it while learning about and using the PRECHECK checklist.
 
+> ## Markdown
+> TBA
+{: .challenge}
 
-&nbsp;
+> ## Solution
+> TBA
+{: .solution}
 
+## Introduction to PRECHECK
+As we have already seen preprints are manuscripts describing scientific studies that have not been peer-reviewed, that is, checked for quality by an unbiased group of scientists in the same field. Preprints are typically posted online on preprint servers (e.g. BioRxiv, MedRxiv, PsyRxiv) instead of scientific journals. Anyone can access and read preprints freely, but because they are not verified by the scientific community, they can be of lower quality, risking the spread of misinformation. When the COVID-19 pandemic started, a lack of understanding of preprints has led to low-quality research gaining popularity and even infiltrating public policy. Inspired by such events, [PRECHECK](https://www.precheck.site/) was created: a checklist to help assess the quality of preprints in psychology and medicine, and decide their credibility. This checklist was created with scientifically literate non-specialists in mind, such as students of medicine and psychology, and science journalists.
 
-&nbsp;
-
-
-&nbsp;
-
-
-
-
-# 5. Precheck
-
-## Introduction
-
-Preprints are manuscripts describing scientific studies that have not been peer-reviewed, that is, checked for quality by an unbiased group of scientists in the same field. Preprints are typically posted online on preprint servers (e.g. BioRxiv, MedRxiv, PsyRxiv) instead of scientific journals. Anyone can access and read preprints freely, but because they are not verified by the scientific community, they can be of lower quality, risking the spread of misinformation. When the COVID-19 pandemic started, a lack of understanding of preprints has led to low-quality research gaining popularity and even infiltrating public policy. Inspired by such events, we have created [PRECHECK](https://www.precheck.site/): a checklist to help you assess the quality of preprints in psychology and medicine, and decide their credibility. This checklist was created with scientifically literate non-specialists in mind, such as students of medicine and psychology, and science journalists. 
-
-The checklist contains 4 items. Read them and the Why is this important? Section underneath each of them. Check if the preprint you are reading fulfills the item’s criteria - if yes, write down a yes for this item. Generally, the more ticks on the checklist your preprint gets, the higher its quality, but this is only a superficial level of assessment. For a thorough, discriminative analysis of a preprint, please also consult the related Let’s dig deeper sections underneath each item. When using the checklist, we recommend that you have both the preprint itself, and the webpage on the preprint server where the preprint was posted at hand. You can also check online whether the preprint has already been peer reviewed and published in a journal. 
+The checklist contains 4 items, see below or on the linked website. When using PRECHECK on a preprint read each item and the Why is this important? Section underneath each of them. Check if the preprint you are reading fulfills the item’s criteria - if yes, write down a yes for this item. Generally, the more "yes" on the checklist your preprint gets, the higher its quality, but this is only a superficial level of assessment. For a thorough, discriminative analysis of a preprint, please also consult the related Let’s dig deeper sections underneath most items. When using the checklist, we recommend that you have both the preprint itself, and the webpage on the preprint server where the preprint was posted at hand. You can also check online whether the preprint has already been peer reviewed and published in a journal.
 
 The checklist works best for studies with human subjects, using primary data (that the researchers collected themselves) or systematic reviews, meta-analyses and re-analyses of primary data. It is not ideally suited to simulation studies (where the data are computer-generated). In general, if the study sounds controversial, improbable, or too good to be true, we advise you to proceed with caution when reading the study and being especially critical.
 
-&nbsp;
-&nbsp;
 
 >## The PRECHECK checklist
 >
->**Title of preprint:** <complete>
->
->&nbsp;
->
->**Reviewer:** <name>
->
->&nbsp;
->
->> **1. Research question**
+>>**1. Research question**
 >>
 >>Is the research question/aim stated?
->>
->> **Yes/No**
 >>
 >>>## Why is this important?
 >>>
 A study cannot be done without a research question/aim. A clear and precise research question/aim is necessary for all later decisions on the design of the study. The research question/aim should ideally be part of the abstract and explained in more detail at the end of the introduction. 
 >>{: .solution}
 >>
->>**Notes:**
->>
->>&nbsp;
->>
->{: .objectives}
+>{: .prereq}
 >
 >&nbsp;
 >
 >>**2. Study type**
 >>
 >>Is the study type mentioned in the title, abstract, introduction, or methods?
->>
->>**Yes/No**
 >>
 >>>## Why is this important?
 >>>
@@ -657,40 +555,31 @@ If the study type is not explicitly stated, check whether you can identify the s
 - Does the study document one or multiple clinical cases? If yes, it is a case study.
 >>{: .solution}
 >>
->>**Notes:**
->>
->>&nbsp;
->>
->{: .objectives}
+>{: .prereq}
 >
 >&nbsp;
 >
->> **3. Transparency**
+>>**3. Transparency**
 >>
 >>> a. Is a protocol, study plan, or registration of the study at hand mentioned?
 >>>
->>> **Yes/No**
->>{: .testimonial}
+>>{: .prereq}
 >>
 >>> b. Is data sharing mentioned? Mentioning any reasons against sharing also counts as a ‘yes’. Mentioning only that data will be shared “upon request” counts as a ‘no’. 
 >>>
->>> **Yes/No**
->>{: .testimonial}
+>>{: .prereq}
 >>
 >>> c. Is materials sharing mentioned? Mentioning any reasons against sharing also counts as a ‘yes’. Mentioning only that materials will be shared “upon request” counts as a ‘no’.
 >>>
->>> **Yes/No**
->>{: .testimonial}
+>>{: .prereq}
 >>
 >>> d. Does the article contain an ethics approval statement (e.g., approval granted by institution, or no approval required)?
 >>>
->>> **Yes/No**
->>{: .testimonial}
+>>{: .prereq}
 >>
 >>> e. Have conflicts of interest been declared? Declaring that there were none also counts.
 >>>
->>> **Yes/No**
->>{: .testimonial}
+>>{: .prereq}
 >>
 >>>## Why is this important?
 >>>
@@ -719,19 +608,13 @@ Researchers have to **declare any conflicts of interest** that may have biased t
 By ‘access’, we mean whether you can look up and see the actual protocol, data, materials, and ethical approval. If you can, you can also look into whether it matches what is reported in the preprint.
 >>{: .solution}
 >>
->>**Notes:**
->>
->>&nbsp;
->>
->{: .objectives}
+>{: .prereq}
 >
 >&nbsp;
 >
->> **4. Limitations**
+>>**4. Limitations**
 >>
 >>Are the limitations of the study addressed in the discussion/conclusion section?
->>
->> **Yes/No**
 >>
 >>>## Why is this important?
 >>>
@@ -751,228 +634,47 @@ Check for potential biases yourself. Here are some examples of potential sources
 >>>4. Was there **blinding**? Blinding means that some or all people involved in the study did not know how participants were assigned to experimental conditions. For example, if participants in a study do not know whether they are being administered a drug or a sham medication, the researchers can control for the placebo effect (people feeling better even after fake medication because of their expectation to get better). However, blinding is not always possible and cannot be applied in observational studies or reanalyses of existing non-blinded data, for example. If your preprint is on an observational study, case study, or review, this item may not apply).
 >>{: .solution}
 >>
->>**Notes:**
+>{: .prereq}
+>
+{: .callout}
+
+# Episode challenge
+
+
+>## Use PRECHECK for two preprints
+>
+>>## Question 1
+Review the reporting quality of two preprints (see below) related to COVID-19 using the PRECHECK checklist. Fill out the answers to the checklist directly in the [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
+>>
+Answer at least all yes/no question for each preprint, please add an explanation for your choice of answer.
+>>
+**Note:** Use your knowledge of the IMRAD structure for smart searching in the articles, the idea is not that you read both articles in detail. Use a search strategy within the pdfs with appropriate terms. Do also look on the preprint servers, they do sometimes contain information that is not directly in the article (e.g. regarding data sharing).
 >>
 >>&nbsp;
 >>
->{: .objectives}
->
-{: .prereq}
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
-
-
-## The PRECHECK checklist
-
-**Title of preprint:** <complete>
-
-**Reviewer:** <name>
-
-**1. Research question**
-
-Is the research question/aim stated?
-
-> **Yes/No**
-
-*Why is this important?*
-
-A study cannot be done without a research question/aim. A clear and precise research question/aim is necessary for all later decisions on the design of the study. The research question/aim should ideally be part of the abstract and explained in more detail at the end of the introduction. 
-
-**Notes:**
-
-___
-
-**2. Study type**
-
-Is the study type mentioned in the title, abstract, introduction, or methods?
-
-> **Yes/No**
-
-*Why is this important?*
-
-For a study to be done well and to provide credible results, it has to be planned properly from the start, which includes deciding on the type of study that is best suited to address the research question/aim. There are various types of study (e.g., observational studies, randomised experiments, case studies, etc.), and knowing what type a study was can help to evaluate whether the study was good or not.
-
-*What is the study type?*
-Some common examples include:  
-
-- observational studies - studies where the experimental conditions are not manipulated by the researcher and the data are collected as they become available. For example, surveying a large group of people about their symptoms is observational. So is collecting nasal swabs from all patients in a ward, without having allocated them to different pre-designed treatment groups. Analysing data from registries or records is also observational. For more information on what to look for in a preprint on a study of this type, please consult the relevant reporting guidelines: [STROBE](https://www.equator-network.org/reporting-guidelines/strobe/).
-
-- randomised experiments - studies where participants are randomly allocated to different pre-designed experimental conditions (these include Randomised controlled trials [RCTs]). For example, to test the effectiveness of a drug, patients in a ward can be randomly allocated to a group that receives the drug in question, and a group that receives standard treatment, and then followed up for signs of improvement. For more information on what to look for in a preprint on a study of this type, please consult the relevant reporting guidelines: [CONSORT](https://www.equator-network.org/reporting-guidelines/consort/).
-
-- case studies - studies that report data from a single patient or a single group of patients. For more information on what to look for in a preprint on a study of this type, please consult the relevant reporting guidelines: [CARE](https://www.equator-network.org/reporting-guidelines/care/). 
-
-- systematic reviews and meta-analyses - summaries of the findings of already existing, independent studies. For more information on what to look for in a preprint on a study of this type, please consult the relevant reporting guidelines: [PRISMA](https://www.equator-network.org/reporting-guidelines/prisma/).
-
-*Let’s dig deeper*
-
-If the study type is not explicitly stated, check whether you can identify the study type after reading the paper. Use the question below for guidance:  
-- Does the study pool the results from multiple previous studies? If yes, it falls in the category systematic review/meta-analysis.  
-- Does the study compare two or more experimenter-generated conditions or interventions in a randomised manner? If yes, it is a randomised experiment.  
-- Does the study explore the relationship between characteristics that were not experimenter-generated? If yes, then it is an observational study  
-- Does the study document one or multiple clinical cases? If yes, it is a case study.
-
-
-**Notes:**
-
-___
-
-**3. Transparency** 
-
-a. Is a protocol, study plan, or registration of the study at hand mentioned?
-
-> **Yes/No**
-
-b. Is data sharing mentioned? Mentioning any reasons against sharing also counts as a ‘yes’. Mentioning only that data will be shared “upon request” counts as a ‘no’. 
-
-> **Yes/No**
-
-c. Is materials sharing mentioned? Mentioning any reasons against sharing also counts as a ‘yes’. Mentioning only that materials will be shared “upon request” counts as a ‘no’.
-
-> **Yes/No**
-
-d. Does the article contain an ethics approval statement (e.g., approval granted by institution, or no approval required)?
-
-> **Yes/No**
-
-e. Have conflicts of interest been declared? Declaring that there were none also counts.
-
-> **Yes/No**
-
-*Why is this important?*
-
-**Study protocols, plans, and registrations** serve to define a study’s research question, sample, and data collection method. They are usually written before the study is conducted, thus preventing researchers from changing their hypotheses based on their results, which adds credibility. Some study types, like RCT’s, must be registered. 
-
-**Sharing data and materials** is good scientific practice which allows people to review what was done in the study, and to try to reproduce the results. Materials refer to the tools used to conduct the study, such as code, chemicals, tests, surveys, statistical software, etc. Sometimes, authors may state that data will be “available upon request”, or during review, but that does not guarantee that they will actually share the data when asked, or after the preprint is published.
-
-Before studies are conducted, they must get **approval from an ethical review board**, which ensures that no harm will come to the study participants and that their rights will not be infringed. Studies that use previously collected data do not normally need ethical approval. Ethical approval statements are normally found in the methods section. 
-
-Researchers have to **declare any conflicts of interest** that may have biased the way they conducted their study. For example, the research was perhaps funded by a company that produces the treatment of interest, or the researcher has received payments from that company for consultancy work. If a conflict of interest has not been declared, or if a lack of conflict of interest was declared, but a researcher’s affiliation matches with an intervention used in the study (e.g., the company that produces the drug that is found to be the most effective), that could indicate a potential conflict of interest, and a possible bias in the results. A careful check of the affiliation of the researchers can help identify potential conflicts of interest or other inconsistencies. Conflicts of interests should be declared in a dedicated section along with the contributions of each author to the paper.
-
-
-*Let’s dig deeper*
-
-a. Can you access the protocol/study plan (e.g., via number or hyperlink)
-b. Can you access at least part of the data (e.g., via hyperlink, or on the preprint server). Not applicable in case of a valid reason for not sharing. 
-c. Can you access at least part of the materials (e.g., via hyperlink, or on the preprint server). Not applicable in case of a valid reason for not sharing. 
-d. Can the ethical approval be verified (e.g., by number). Not applicable if it is clear that no approval was needed.
-
-By ‘access’, we mean whether you can look up and see the actual protocol, data, materials, and ethical approval. If you can, you can also look into whether it matches what is reported in the preprint.
-
-
-**Notes:**
-
-___
-
-**4. Limitations**
-
-Are the limitations of the study addressed in the discussion/conclusion section?
-
-> **Yes/No**
-
-*Why is this important?*
-
-No research study is perfect, and it is important that researchers are transparent about the limitations of their own work. For example, many study designs cannot provide causal evidence, and some inadvertent biases in the design can skew results. Other studies are based on more or less plausible assumptions. Such issues should be discussed either in the Discussion, or even in a dedicated Limitations section.
-
-*Let’s dig deeper*
-
-Check for potential biases yourself. Here are some examples of potential sources of bias.
-
-1. Check the **study’s sample** (methods section). Do the participants represent the target population? Testing a drug only on white male British smokers over 50 is probably not going to yield useful results for everyone living in the UK, for example. How many participants were there? There is no one-size-fits-all number of participants that makes a study good, but in general, the more participants, the stronger the evidence.
-
-2. Was there a **control group or control condition** (e.g., placebo group or non-intervention condition)? If not, was there a reason? Having a control group helps to determine whether the treatment under investigation truly has an effect on an experimental group and reduces the possibility of making an erroneous conclusion. Not every study can have such controls though. Observational studies, for example, typically do not have a control group or condition, nor do case studies or reviews. If your preprint is on an observational study, case study, or review, this item may not apply.
-
-3. Was there **randomisation**? That is, was the allocation of participants or groups of participants to experimental conditions done in a random way? If not, was there a reason? Randomisation is an excellent way to ensure that differences between treatment groups are due to treatment and not confounded by other factors. For example, if different treatments are given to patients based on their disease severity, and not at random, then the results could be due to either treatment effects or disease severity effects, or an interaction - we cannot know. However, some studies, like observational studies, case studies, or reviews, do not require randomisation. If your preprint is on an observational study, case study, or review, this item may not apply.
-
-4. Was there **blinding**? Blinding means that some or all people involved in the study did not know how participants were assigned to experimental conditions. For example, if participants in a study do not know whether they are being administered a drug or a sham medication, the researchers can control for the placebo effect (people feeling better even after fake medication because of their expectation to get better). However, blinding is not always possible and cannot be applied in observational studies or reanalyses of existing non-blinded data, for example. If your preprint is on an observational study, case study, or review, this item may not apply).
-
-**Notes:**
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-
-
->## Homework
->
-You will review the reporting quality of two preprints (see below) related to COVID-19 using the PRECHECK checklist. Fill out the answers to the checklist directly in the [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
->
-Answer at least all yes/no question for each preprint, please add an explanation for your choice of answer.
->
-**Note:** Use your knowledge of the IMRAD structure for smart searching in the articles, the idea is not that you read both articles in detail. Use a search strategy within the pdfs with appropriate terms. Do also look on the preprint servers, they do sometimes contain information that is not directly in the article (e.g. regarding data sharing).
->
-Finally, select the item that was most difficult for you to decide (one item in total from the assessment of both preprints) and write a short section on why this was the case. 
->
->&nbsp;
->
 [Preprint 1]({{ page.root }}/files/docs/04/preprint1.pdf) and online https://www.researchsquare.com/article/rs-100956/v3
->
+>>
 [Preprint 2]({{ page.root }}/files/docs/04/preprint2.pdf) and online https://www.medrxiv.org/content/10.1101/2020.03.03.20028423v3
-{: .challenge}
-
-&nbsp;
-
-&nbsp;
-
-
->## In-classtask
->
-We continue to discuss the quality of the preprints
->
->[Preprint 1]({{ page.root }}/files/docs/04/preprint1.pdf) and online https://www.researchsquare.com/article/rs-100956/v3
->
-[Preprint 2]({{ page.root }}/files/docs/04/preprint2.pdf) and online https://www.medrxiv.org/content/10.1101/2020.03.03.20028423v3
->
-And we will compare the actual peer reviewed publication of Preprint 2:
-[Preprint 2 pulished]({{ page.root }}/files/docs/04/preprint2Published.pdf) and online https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30287-5/fulltext
->
->&nbsp;
->
->>## Task 1
->>Discuss the results of the assessment in the plenum.
->{: .discussion}
->
->&nbsp;
->
->>## Task 2
+>{: .checklist}
+>>## Question 2
 >>For Preprint 1: This is a clinical trial and hence it should be registered on clinicaltrials.gov. Do you find information on it?
 >{: .checklist}
 >
->&nbsp;
->
->>## Task 3
->>For Preprint 2 exists a published version. Can you find any difference if you assessed this version with PRECHECK (not only in the yes/no but also in the content which leads to yes/no)?
+>>## Question 3
+>>For Preprint 2 exists a published version at [https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30287-5/fulltext](). Can you find any difference if you assessed this version with PRECHECK (not only in the yes/no but also in the content which leads to yes/no)?
 >{: .checklist}
 >
->&nbsp;
->
->>## Task 4
->>Look at the medarxiv site for Preprint 2: what do you find on reporting guidelines? Which reporting guideline would be pertinent for this article? Do you find something on reporting guidelines in the published article? Do you find the policy of the journal regarding reporting guidelines?
+>>## Question 4
+>>Look at the MedRxiv site for Preprint 2: what do you find on reporting guidelines? Which reporting guideline would be pertinent for this article? Do you find something on reporting guidelines in the published article? Do you find the policy of the journal regarding reporting guidelines?
 >{: .checklist}
 >
->&nbsp;
->
->>## Task 5 (optional if time allows)
->>Find the journal policy on data sharing.
+>>## Question 5
+>>Find the journal policy on data sharing and comment on the development since the publication of the above article.
 >{: .checklist}
->
->&nbsp;
 {: .challenge}
 
-&nbsp;
-
-&nbsp;
+> ## Solution
+> 
+> TBA
+>
+{: .solution}
