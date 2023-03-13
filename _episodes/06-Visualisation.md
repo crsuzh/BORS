@@ -3,8 +3,8 @@
 # Instead, please edit 06-Visualisation.md in _episodes_rmd/
 source: Rmd
 title: "Visualization"
-teaching: 0
-exercises: 0
+teaching: 90
+exercises: 90-120
 questions: 
   - "How are all the learned principles up to now applied when visualizing data?"
   - "How to create good graphs reproducibly?"
