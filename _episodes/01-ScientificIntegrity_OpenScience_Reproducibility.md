@@ -136,11 +136,11 @@ For these questions, please read or search the Code until page 26.
 {: .challenge}
 
 > ## Solution
-> T appropriate study designs
-> F the most current methods
-> F simple analysis methods
-> T transparent reporting
-> T traceable materials and data
+> T appropriate study designs  
+> F the most current methods  
+> F simple analysis methods  
+> T transparent reporting  
+> T traceable materials and data  
 >
 {: .solution}
 
@@ -208,6 +208,7 @@ J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://jo
 > 6. Publish data and/or code?
 >
 {: .solution}
+
 ## UNESCO Recommendation on Open Science  
 
 In 2021 UNESCO published their recommendations for Open Science. From their point of view Open Science is a tool helping to create a sustainable future. In the quote stressed here we see the link of Open Science to scientific integrity and also reproducibility:
@@ -223,11 +224,7 @@ In 2021 UNESCO published their recommendations for Open Science. From their poin
 ## Definition by Open Science in Psychology/Social Science initiatives
 
 The Open Science in Psychology/Social Science initiatives summarize and explain the practice of Open Science in seven steps. Some of these steps were also part of Emma's decision process.
-
-![]({{ page.root }}/fig/02-OSC_Flyer 15x15_Englisch.png){: height="400px"}
-
-![]({{ page.root }}/fig/02-OSC_Flyer 15x15_Englisch-2.png){: height="400px"}
-
+<img src="../fig/rmd-05-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="150%" style="display: block; margin: auto;" />
 Picture available on the Open Science Framework [https://osf.io/hktmf/](https://osf.io/hktmf/). 
 
 

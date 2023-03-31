@@ -46,19 +46,25 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided at the
 
 
 ~~~
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+── Attaching core tidyverse packages ────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.1     ✔ readr     2.1.4
 ✔ forcats   1.0.0     ✔ stringr   1.5.0
 ✔ ggplot2   3.4.1     ✔ tibble    3.2.1
 ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-Lade nötiges Paket: colorspace
 ~~~
 {: .output}
+
+
+
+~~~
+Error in library(colorblindr): es gibt kein Paket namens 'colorblindr'
+~~~
+{: .error}
 
 ## Encoding data using visual cues
 
@@ -401,11 +407,20 @@ colorblindr::cvd_grid()+
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-43-1.png" alt="plot of chunk unnamed-chunk-43" width="612" style="display: block; margin: auto;" />
+
+
+~~~
+Error in loadNamespace(x): es gibt kein Paket namens 'colorblindr'
+~~~
+{: .error}
 
 Using a different color palette can help. For example the following:  
 
-<img src="../fig/rmd-05-unnamed-chunk-44-1.png" alt="plot of chunk unnamed-chunk-44" width="288" style="display: block; margin: auto;" />
+
+~~~
+Error in scale_color_OkabeIto(): konnte Funktion "scale_color_OkabeIto" nicht finden
+~~~
+{: .error}
 
 Code for the above plot:
 
@@ -630,8 +645,7 @@ Or creating your own. (Can you figure out what each of the arguments in `theme` 
 Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
 ℹ Please use the `linewidth` argument instead.
 This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
 ~~~
 {: .warning}
 
