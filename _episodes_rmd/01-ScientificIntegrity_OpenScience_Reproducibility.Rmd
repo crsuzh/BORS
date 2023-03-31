@@ -50,14 +50,14 @@ For each of these topics we have the University of Zurich links here, most other
 
 Several guidance documents exist, see three European examples here:
 
-- Scientific Integrity at the Swiss Academies of Arts and Sciences  
-[https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/](https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/)
-
 - Towards a Research Integrity Culture at Universities (LERU)  
 [https://www.leru.org/publications/towards-a-research-integrity-culture-at-universities-from-recommendations-to-implementation](https://www.leru.org/publications/towards-a-research-integrity-culture-at-universities-from-recommendations-to-implementation)
 
 - The European Code of Conduct for Research Integrity  
 [https://allea.org/code-of-conduct/](https://allea.org/code-of-conduct/)
+
+- Scientific Integrity at the Swiss Academies of Arts and Sciences  
+[https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/](https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/)
 
 &rArr; We will have a brief look at each of the documents and work on the Swiss document in more detail.
 
@@ -103,7 +103,6 @@ The same principles occur in the Swiss document, here with a direct pointer to r
 
 > _“Reliability, honesty, respect, and accountability are the basic principles of scientific integrity. They underpin the independence and credibility of science and its disciplines as well as the accountability and **reproducibility** of research findings and their acceptance by society. As a system operating according to specific rules, science has a responsibility to create the structures and an environment that foster scientific integrity.”_
 
-![]({{ page.root }}/fig/02-kodex.png){: height="200px"}
 
 
 ## Quiz on the Swiss Code of conduct for scientific integrity
@@ -182,7 +181,7 @@ Find the behavior in Chapter 5 of the Code which this can be related to.
 - With the words ‘publication bias’ in the title, the trial results could finally be published in the early 1990s:  
 **Therapeutic fashion and publication bias: the case of anti-arrhythmic drugs in heart attack**
 >
-J Hampton https://journals.sagepub.com/doi/10.1177/0141076815608562
+J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://journals.sagepub.com/doi/10.1177/0141076815608562)
 >
 **Bottom line**: This is a very impressive example of the consequences of non-publication of "negative" results. The authors themselves are not to blame, they have maintained their integrity as researchers. The example shows that the publication of all results is indeed a principle of research integrity in the sense of the integrity of the research record as a whole.
 {: .testimonial}
@@ -217,6 +216,7 @@ In 2021 UNESCO published their recommendations for Open Science. From their poin
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
 ![]({{ page.root }}/fig/02-UNESCO.png)
+(Image: UNESCO)
 
 (Optional) Read the full recommendation text at [https://en.unesco.org/science-sustainable-future/open-science/recommendation](https://en.unesco.org/science-sustainable-future/open-science/recommendation).
 
@@ -244,7 +244,7 @@ The Open up your research game and the seven steps above refer to preregistratio
 
 ![]({{ page.root }}/fig/02-TexasSharpShooter.png)
 
-[https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1)
+[Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1)
 
 When a researcher preregisters a study, the design and precise goal of the study are declared openly in advance: the bull´s eye is drawn.
 
@@ -265,23 +265,23 @@ When a researcher preregisters a study, the design and precise goal of the study
 >## Registries (non-exhaustive list)
 >Here is a list of registries, where (pre)registration can be done:
 - Clinicaltrials.gov: US and international registry for clinical trials, first of its kind, established 1997: https://clinicaltrials.gov/
->![]({{ page.root }}/fig/02-ClinicalTrials.png){: height="50px"}  
+>[![]({{ page.root }}/fig/02-ClinicalTrials.png){: height="50px"}](https://clinicaltrials.gov/)  
 >
 >- OSF: General purpose registry, also a research management tool (not just for preregistration), embargo possible for up to 4 years:
 >https://osf.io/ 
->![]({{ page.root }}/fig/02-OSF.png){: height="50px"}  
+>[![]({{ page.root }}/fig/02-OSF.png){: height="50px"}](https://osf.io/)
 >
 >- Aspredicted: General purpose registry, protocols can be private forever, possibility to automatically delete an entry after 24 hours:   
 >https://aspredicted.org/
->![]({{ page.root }}/fig/02-AsPredicted.png){: height="50px"}  
+>[![]({{ page.root }}/fig/02-AsPredicted.png){: height="50px"}](https://aspredicted.org/)  
 >
 >- Preclinicaltirals.ed: Comprehensive listing of preclinical animal study protocols  
 >https://preclinicaltrials.eu/
->![]({{ page.root }}/fig/02-PreClinicalTrials.png){: height="50px"}  
+>[![]({{ page.root }}/fig/02-PreClinicalTrials.png){: height="50px"}](https://preclinicaltrials.eu/)  
 >
 >- PROSPERO International prospective register of systematic reviews  
 >https://www.crd.york.ac.uk/prospero/
->![]({{ page.root }}/fig/02-NIHR.png){: height="50px"}  
+>[![]({{ page.root }}/fig/02-NIHR.png){: height="50px"}](https://www.crd.york.ac.uk/prospero/)  
 >
 {: .checklist}
 
@@ -291,7 +291,7 @@ When a researcher preregisters a study, the design and precise goal of the study
 All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their rported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
 >
 ![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
-R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382]()
+R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382)
 >
 > What is the difference between what you observe before and after the year 2000 in this graphic?
 >
@@ -315,17 +315,16 @@ R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journ
 >
 **Replicability** refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected.
 >
-S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027]()
+S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027](https://www.science.org/doi/10.1126/scitranslmed.aaf5027)
 >
 {: .callout}
 
 ## What is reproducibility?
-"This is exactly how it seems when you try to figure out how authors got from a large and complex data set to a dense paper with lots of busy figures. Without access to the data and the analysis code, a miracle occurred. And there should be no miracles in science." 
+"This is exactly how it seems when you try to figure out how authors got from a large and complex data set to a dense paper with lots of busy figures. Without access to the data and the analysis code, a miracle occurred. And there should be no miracles in science."
 
-![]({{ page.root }}/fig/02-ModelingCartoon.png)  
-[http://2008.igem.org/wiki/images/7/71/Modeling_cartoon.gif](), 
+See artwork by Sidney Harris at [http://www.sciencecartoonsplus.com/](http://www.sciencecartoonsplus.com/) for an illustration of the remark "I think you should be more explicit here in step two" when a miracle occurs.
 
-The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7](). In this paper the author asks what working reproducibly means for his daily work and comes up with "Five selfish reasons to work reproducibly", this is even the title of the paper.
+The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7). In this paper the author asks what working reproducibly means for his daily work and comes up with "Five selfish reasons to work reproducibly", this is even the title of the paper.
 
 > _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
 
@@ -334,9 +333,9 @@ In this course we will learn about some of the tools Markowetz lists in his pape
 ## (Anti-)Example from the Markowetz paper
 >## How Bright Promise in Cancer Testing Fell Apart
 >
-![]({{ page.root }}/fig/02-ExampleCancerTesting.png){: height="400px"}
+[![](https://static01.nyt.com/images/2011/07/08/us/JP-GENES/JP-GENES-jumbo.jpg?quality=75&auto=webp){: height="400px"}](https://www.nytimes.com/2011/07/08/health/research/08genes.html)
 >
-From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html]()
+From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html](https://www.nytimes.com/2011/07/08/health/research/08genes.html), picture by Michael Stravato for The New York Times.
 >
 >> _“When Juliet Jacobs found out she had lung cancer, she was terrified, but realized that her hope lay in getting the best treatment medicine could offer. So she got a second opinion, then a third. In February of 2010, she ended up at Duke University, where she entered a research study whose promise seemed stunning._
 >
@@ -346,7 +345,7 @@ From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html]
 >
 > Markowetz wonders in his paper why no one noticed these issues before it was too late. And he comes to the conclusion that the reason was that the data and analysis were not transparent and required forensic bioinformatics to untangle 
 >
->Those forensic bioinformatics were provided by K Baggerly and K Coombes [https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full]():
+>Those forensic bioinformatics were provided by K Baggerly and K Coombes [https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full):
 >
 >> _“Poor documentation hid an off-by-one indexing error affecting all genes reported, the inclusion of genes from other sources, including other arrays (the outliers), and a sensitive/resistant label reversal.”_
 >
