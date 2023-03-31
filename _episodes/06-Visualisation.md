@@ -46,13 +46,13 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided at the
 
 
 ~~~
-── Attaching core tidyverse packages ────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.1     ✔ readr     2.1.4
 ✔ forcats   1.0.0     ✔ stringr   1.5.0
 ✔ ggplot2   3.4.1     ✔ tibble    3.2.1
 ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
 ✔ purrr     1.0.1     
-── Conflicts ──────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
@@ -645,7 +645,8 @@ Or creating your own. (Can you figure out what each of the arguments in `theme` 
 Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
 ℹ Please use the `linewidth` argument instead.
 This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was generated.
+Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+generated.
 ~~~
 {: .warning}
 

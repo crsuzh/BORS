@@ -1,6 +1,6 @@
 ---
-title: "Week 04 Quality criteria for good research: Homework solutions"
-subtitle: "Open and reproducible science: general reasons and approaches"
+title: "Understanding Open and Reproducible Science"
+subtitle: "03 Quality criteria for good research: challenge solutions (Question 1)"
 output:
   pdf_document: default
   html_document: default

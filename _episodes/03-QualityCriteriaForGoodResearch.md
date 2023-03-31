@@ -675,7 +675,7 @@ Answer at least all yes/no question for each preprint, please add an explanation
 
 > ## Solution
 > 
-> - Question 1: TBA
+> - Question 1: [solutions.pdf]({{ page.root }}/files/docs/04/q1_solutions.pdf)
 > - Question 2: https://clinicaltrials.gov/ct2/show/NCT04668469 NCT04668469  
 >   First Posted : December 16, 2020  
 >   Last Update Posted : December 16, 2020  
@@ -688,6 +688,6 @@ Answer at least all yes/no question for each preprint, please add an explanation
 >   - Do you find something on reporting guidelines in the published article? NO 
 >   - Do you find the policy of the journal regarding reporting guidelines? It requires the use of reporting guidelines. See author instructions https://els-jbs-prod-cdn.jbs.elsevierhealth.com/pb/assets/raw/Lancet/ authors/tlid-info-for-authors.pdf
 > - Question 5: “From September 21, 2020, all submitted research Articles must contain a data sharing statement, to be included at the end of the manuscript.”  
->  
+>    
 >  
 {: .solution}
