@@ -387,134 +387,184 @@ What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller th
 {: .challenge}
 
 
-## Solution 1
-
-~~~
-library(palmerpenguins)
-~~~
-{: .language-r}
-Can I put ?penguins in the chunk?
-
+> ## Solution 1
+> 
+> ~~~
+> library(palmerpenguins)
+> ~~~
+> {: .language-r}
+> Can I put ?penguins in the chunk?
+> 
 The source is:
 Adélie penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f
-
+> 
 Gentoo penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689
-
+> 
 Chinstrap penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. doi: 10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
-
+> 
 Originally published in: Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. doi:10.1371/journal.pone.0090081
-
-## Solution 2
-
-~~~
-numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
-df <- data.frame(Column_Name = names(numericcols)[numericcols],
-           Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
-           Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
-           row.names = NULL
-)
-knitr::kable(df)
-~~~
-{: .language-r}
+> 
+{: .solution}
 
 
+> ## Solution 2
+> 
+> ~~~
+> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
+> df <- data.frame(Column_Name = names(numericcols)[numericcols],
+>            Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
+>            Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+>            row.names = NULL
+> )
+> knitr::kable(df)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> |Column_Name       |    Mean|  Variance|
+> |:-----------------|-------:|---------:|
+> |bill_length_mm    |   43.92| 2.981e+01|
+> |bill_depth_mm     |   17.15| 3.900e+00|
+> |flipper_length_mm |  200.90| 1.977e+02|
+> |body_mass_g       | 4202.00| 6.431e+05|
+> |year              | 2008.00| 6.678e-01|
+>
+{: .solution}
 
-|Column_Name       |    Mean|  Variance|
-|:-----------------|-------:|---------:|
-|bill_length_mm    |   43.92| 2.981e+01|
-|bill_depth_mm     |   17.15| 3.900e+00|
-|flipper_length_mm |  200.90| 1.977e+02|
-|body_mass_g       | 4202.00| 6.431e+05|
-|year              | 2008.00| 6.678e-01|
 
-## Solution 3
+> ## Solution 3
+> 
+> ~~~
+> result_exercise_3 <- dim(penguins)[1]
+> ~~~
+> {: .language-r}
+> The data set has 344 rows.
+> 
+{: .solution}
 
-~~~
-result_exercise_3 <- dim(penguins)[1]
-~~~
-{: .language-r}
-The data set has 344 rows.
-## Solution 4
 
-~~~
-result_exercise_4 <- min(penguins$year)
-~~~
-{: .language-r}
-The first year of records is 2007.
-## Solution 5
+> ## Solution 4
+> 
+> ~~~
+> result_exercise_4 <- min(penguins$year)
+> ~~~
+> {: .language-r}
+> The first year of records is 2007.
+>
+{: .solution}
 
-~~~
-result_exercise_5 <- sum(penguins$species == "Adelie")
-~~~
-{: .language-r}
-The total number of Adelie penguins is 152
-## Solution 6
 
-~~~
-result_exercise_6 <- sum(is.na(penguins))
-~~~
-{: .language-r}
-The total number of missing values (NA's) is 19.
+> ## Solution 5
+> 
+> ~~~
+> result_exercise_5 <- sum(penguins$species == "Adelie")
+> ~~~
+> {: .language-r}
+> The total number of Adelie penguins is 152
+>
+{: .solution}
 
-## Solution 7
 
-~~~
-result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
-~~~
-{: .language-r}
-The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
+> ## Solution 6
+> 
+> ~~~
+> result_exercise_6 <- sum(is.na(penguins))
+> ~~~
+> {: .language-r}
+> The total number of missing values (NA's) is 19.
+> 
+{: .solution}
 
-## Solution 8
 
-~~~
-result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
-~~~
-{: .language-r}
-The name of islands where the Gentoo penguins were found is Biscoe.
+> ## Solution 7
+> 
+> ~~~
+> result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+> ~~~
+> {: .language-r}
+> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
+> 
+{: .solution}
 
-## Solution 9
 
-~~~
-result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
-~~~
-{: .language-r}
-The proportion of Adelie penguins on Dream island is 0.4516129.
-## Solution 10
+> ## Solution 8
+> 
+> ~~~
+> result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
+> ~~~
+> {: .language-r}
+> The name of islands where the Gentoo penguins were found is Biscoe.
+> 
+{: .solution}
 
-~~~
-result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
-~~~
-{: .language-r}
-The 93 % quantile of `bill_length_mm` is 51.3.
-## Solution 11
 
-~~~
-result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
-~~~
-{: .language-r}
-The absolute mean difference of `bill_depth_mm` between female and male is 1.4656169.
-## Solution 12
+> ## Solution 9
+> 
+> ~~~
+> result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
+> ~~~
+> {: .language-r}
+> The proportion of Adelie penguins on Dream island is 0.4516129.
+> 
+{: .solution}
 
-~~~
-result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
-~~~
-{: .language-r}
-The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is 1.0710254, 1.8602083
-## Solution 13
 
-~~~
-chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
-result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
-~~~
-{: .language-r}
-The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is 0.9310345.
-## Solution 14
+> ## Solution 10
+> 
+> ~~~
+> result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
+> ~~~
+> {: .language-r}
+> The 93 % quantile of `bill_length_mm` is 51.3.
+> 
+{: .solution}
 
-~~~
-result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
-~~~
-{: .language-r}
-The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is 0.7941176.
+
+> ## Solution 11
+> 
+> ~~~
+> result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
+> ~~~
+> {: .language-r}
+> The absolute mean difference of `bill_depth_mm` between female and male is 1.4656169.
+> 
+{: .solution}
+
+
+> ## Solution 12
+> 
+> ~~~
+> result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
+> ~~~
+> {: .language-r}
+> The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is 1.0710254, 1.8602083
+> 
+{: .solution}
+
+
+> ## Solution 13
+> 
+> ~~~
+> chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
+> result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
+> ~~~
+> {: .language-r}
+> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is 0.9310345.
+>
+{: .solution}
+
+
+> ## Solution 14
+> 
+> ~~~
+> result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
+> ~~~
+> {: .language-r}
+> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is 0.7941176.
+> 
+{: .solution}
+
 
 &nbsp;
 
@@ -625,16 +675,6 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 
 
 ## Task 1 Create the following table:
-
-
-~~~
-Warning: There was 1 warning in `dplyr::summarise()`.
-ℹ In argument: `dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))`.
-Caused by warning:
-! Using `across()` without supplying `.cols` was deprecated in dplyr 1.1.0.
-ℹ Please supply `.cols` instead.
-~~~
-{: .warning}
 
 <table class=" lightable-classic table table-hover" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
  <thead>

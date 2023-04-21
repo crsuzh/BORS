@@ -388,97 +388,147 @@ What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller th
 {: .challenge}
 
 
-## Solution 1
-```{r}
-library(palmerpenguins)
-
-```
-Can I put ?penguins in the chunk?
-
+> ## Solution 1
+> ```{r}
+> library(palmerpenguins)
+>
+> ```
+> Can I put ?penguins in the chunk?
+> 
 The source is:
 Adélie penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f
-
+> 
 Gentoo penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689
-
+> 
 Chinstrap penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. doi: 10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
-
+> 
 Originally published in: Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. doi:10.1371/journal.pone.0090081
+> 
+{: .solution}
 
-## Solution 2
-```{r}
-numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
-df <- data.frame(Column_Name = names(numericcols)[numericcols],
-           Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
-           Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
-           row.names = NULL
-)
-knitr::kable(df)
-```
 
-## Solution 3
-```{r}
-result_exercise_3 <- dim(penguins)[1]
-```
-The data set has `r result_exercise_3` rows.
-## Solution 4
-```{r}
-result_exercise_4 <- min(penguins$year)
-```
-The first year of records is `r result_exercise_4`.
-## Solution 5
-```{r}
-result_exercise_5 <- sum(penguins$species == "Adelie")
-```
-The total number of Adelie penguins is `r result_exercise_5`
-## Solution 6
-```{r}
-result_exercise_6 <- sum(is.na(penguins))
-```
-The total number of missing values (NA's) is `r result_exercise_6`.
+> ## Solution 2
+> ```{r}
+> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
+> df <- data.frame(Column_Name = names(numericcols)[numericcols],
+>            Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
+>            Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+>            row.names = NULL
+> )
+> knitr::kable(df)
+> ```
+>
+{: .solution}
 
-## Solution 7
-```{r}
-result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
-```
-The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
 
-## Solution 8
-```{r}
-result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
-```
-The name of islands where the Gentoo penguins were found is `r result_exercise_8`.
+> ## Solution 3
+> ```{r}
+> result_exercise_3 <- dim(penguins)[1]
+> ```
+> The data set has `r result_exercise_3` rows.
+> 
+{: .solution}
 
-## Solution 9
-```{r}
-result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
-```
-The proportion of Adelie penguins on Dream island is `r result_exercise_9`.
-## Solution 10
-```{r}
-result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
-```
-The 93 % quantile of `bill_length_mm` is `r result_exercise_10`.
-## Solution 11
-```{r}
-result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
-```
-The absolute mean difference of `bill_depth_mm` between female and male is `r result_exercise_11`.
-## Solution 12
-```{r}
-result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
-```
-The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is `r result_exercise_12`
-## Solution 13
-```{r}
-chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
-result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
-```
-The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is `r result_exercise_13`.
-## Solution 14
-```{r}
-result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
-```
-The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is `r result_exercise_14`.
+
+> ## Solution 4
+> ```{r}
+> result_exercise_4 <- min(penguins$year)
+> ```
+> The first year of records is `r result_exercise_4`.
+>
+{: .solution}
+
+
+> ## Solution 5
+> ```{r}
+> result_exercise_5 <- sum(penguins$species == "Adelie")
+> ```
+> The total number of Adelie penguins is `r result_exercise_5`
+>
+{: .solution}
+
+
+> ## Solution 6
+> ```{r}
+> result_exercise_6 <- sum(is.na(penguins))
+> ```
+> The total number of missing values (NA's) is `r result_exercise_6`.
+> 
+{: .solution}
+
+
+> ## Solution 7
+> ```{r}
+> result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+> ```
+> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
+> 
+{: .solution}
+
+
+> ## Solution 8
+> ```{r}
+> result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
+> ```
+> The name of islands where the Gentoo penguins were found is `r result_exercise_8`.
+> 
+{: .solution}
+
+
+> ## Solution 9
+> ```{r}
+> result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
+> ```
+> The proportion of Adelie penguins on Dream island is `r result_exercise_9`.
+> 
+{: .solution}
+
+
+> ## Solution 10
+> ```{r}
+> result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
+> ```
+> The 93 % quantile of `bill_length_mm` is `r result_exercise_10`.
+> 
+{: .solution}
+
+
+> ## Solution 11
+> ```{r}
+> result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
+> ```
+> The absolute mean difference of `bill_depth_mm` between female and male is `r result_exercise_11`.
+> 
+{: .solution}
+
+
+> ## Solution 12
+> ```{r}
+> result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
+> ```
+> The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is `r result_exercise_12`
+> 
+{: .solution}
+
+
+> ## Solution 13
+> ```{r}
+> chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
+> result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
+> ```
+> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is `r result_exercise_13`.
+>
+{: .solution}
+
+
+> ## Solution 14
+> ```{r}
+> result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
+> ```
+> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is `r result_exercise_14`.
+> 
+{: .solution}
+
 
 &nbsp;
 
@@ -513,7 +563,7 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 
 ## Task 1 Create the following table:
 
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 df_sum <- penguins %>% 
   dplyr::select(-sex,-island,-flipper_length_mm,-body_mass_g) %>% 
   dplyr::group_by(species,year) %>% 
