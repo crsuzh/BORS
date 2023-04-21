@@ -676,7 +676,8 @@ Answer at least all yes/no question for each preprint, please add an explanation
 > ## Solution
 > 
 > - Question 1: [solutions.pdf]({{ page.root }}/files/docs/04/q1_solutions.pdf)
-> - Question 2: https://clinicaltrials.gov/ct2/show/NCT04668469 NCT04668469  
+> - Question 2:  
+>   https://clinicaltrials.gov/ct2/show/NCT04668469 NCT04668469  
 >   First Posted : December 16, 2020  
 >   Last Update Posted : December 16, 2020  
 >   “The study was carried out from 8th June to 15th September 2020.”  
