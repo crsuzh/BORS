@@ -204,7 +204,7 @@ R Day writes about the history of scientific publication in his article, "The Or
 
 R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. This article is not easily obtainable online, potentially your library can obtain it for you. If this is not possible, please contact the authors of this course.
 
-## What is the Scientific Method?
+## What is the scientific method?
 The Center for Reproducible Science at the University of Zurich uses a simplified graphical representation of the scientific method in its communications: 
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal.png){: height="200px"}
 
@@ -319,7 +319,7 @@ http://www.icmje.org/journals-following-the-icmje-recommendations/
 
 # 3. Reporting guidelines
 
-## Goals of Reporting Guidelines
+## Goals of reporting guidelines
 The goals of Reporting Guidelines are summarized in I Simera and D Altman [https://onlinelibrary.wiley.com/doi/full/10.1111/ijcp.12168]():
 
 
@@ -328,7 +328,7 @@ The goals of Reporting Guidelines are summarized in I Simera and D Altman [https
 > _“**Rigorous reporting** of the scientific details specific to your research study is of the **utmost importance**. Recently, the expansion in the development of systematic reviews and clinical guidelines has triggered more intensive scrutiny of the available medical research literature.”_
 
 
-## Good Reporting is an Ethical Imperative
+## Good reporting is an ethical imperative
 
 The **WMA Declaration of Helsinki – Ethical Principles for Medical Research Involving Human Subjects** states:
 
@@ -336,7 +336,7 @@ The **WMA Declaration of Helsinki – Ethical Principles for Medical Research In
 
 [https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/]()
 
-## Good Reporting is Required By Many Journals
+## Good reporting is required by many journals
 
 
 For example the **Reporting requirements** of the Nature Research journals aim to improve the transparency of reporting and reproducibility of published results across all areas of science. Before peer review, the corresponding author must complete an editorial policy checklist to ensure compliance with Nature Research editorial policies; where relevant, manuscripts sent for review must include **completed reporting summary documents**.
@@ -345,7 +345,7 @@ Nature portfolio Reporting Summary [https://www.nature.com/documents/nr-reportin
 Nature Reporting requirements and reproducibility editorials [https://www.nature.com/nature-portfolio/editorial-policies/reporting-standards#editorials]()
 
 
-## Database of Reporting Guidelines
+## Database of reporting guidelines
 ![]({{ page.root }}/fig/04-Reporting1.png){: height="300px"}
 
 > _"The EQUATOR (Enhancing the QUAlity and Transparency Of health Research) Network is an international initiative that seeks to improve the reliability and value of published health research literature by promoting transparent and accurate reporting and wider use of robust reporting guidelines."_
@@ -354,7 +354,7 @@ Nature Reporting requirements and reproducibility editorials [https://www.nature
 
 [http://www.equator-network.org/reporting-guidelines/]()
 
-## The MDAR Framework
+## The MDAR framework
 ![]({{ page.root }}/fig/04-Reporting2.png){: height="200px"}
 
 > _"We were motivated to develop the MDAR Framework as part of our own and others’ attempts to improve reporting to drive research improvement and ultimately greater trust in science. Existing tools, such as the ARRIVE guidelines, guidance from FAIRSharing, and the EQUATOR Network, speak to important sub-elements of biomedical research. This new MDAR Framework aims to be  more general and less deep, and therefore complements these important specialist guidelines."_ 
@@ -363,7 +363,7 @@ M McLeod et al. [https://www.pnas.org/content/118/17/e2103238118]()
 
 &nbsp;
 
-## Other Examples of Reporting Guidelines
+## Other examples of reporting guidelines
 
 
 ![]({{ page.root }}/fig/04-Reporting3.png){: height="200px"}
@@ -446,7 +446,7 @@ M Appelbaum et al. https://doi.apa.org/fulltext/2018-00750-002.html
 
 &nbsp;
 
->## Reporting of Methods: Example
+>## Reporting of methods: Example
 >
 “t-tests were used for comparisons of continuous variables and Fisher’s Exact test or Chi-squared test (where appropriate) were used for comparisons of binary variables”  
 >

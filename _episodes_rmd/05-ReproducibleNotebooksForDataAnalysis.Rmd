@@ -30,7 +30,7 @@ knitr_fig_path("05-")
 # 1. Reproducibility of analysis code
 
 
-## Graphical user interface (GUI) vs. Code
+## Graphical user interface (GUI) vs. code
 
 Statistical analysis software packages with graphical user interfaces such as SPSS (often) provide an easy solution to data analysis because
 
@@ -72,7 +72,7 @@ To summarize:
 
 
 
-## R Projects
+## R projects
 
 Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to easily implement the structures that we heard about in the Reproducibility and Data episode (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the projects functionality of Rstudio allows you to communicate easily between these directories.   
 
@@ -85,7 +85,7 @@ R Projects hence make collaboration easier, your script won't work on a differen
 Another advantage of R Projects is the possibility to quickly switch to another project without mixing up scripts and data between projects. Without using R Projects you probably have to close the files you have open, change the working directory to the new location, open the files you will be using and restart the R session. With R Projects this is all done automatically.
 
 
-## Quiz on R Projects 
+## Quiz on R projects 
 
 > ## File path
 > Suppose your current working directory is ~/project and you want to specify the relative path to the file ~/project/data/data.csv . What are possible specifications?
@@ -164,7 +164,7 @@ output: html_output
 ```
 
 
-### Code Chunks
+### Code chunks
 
 The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax:
 To start a chunk write (backticks) 
@@ -186,7 +186,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 *Note*: inline R code, i.e. code directly within the narrative text, can be run with ``` `r ` ``` , placing the code after `r `. This is for example usefull when you mention a sample size in the text and want it to update directly from the data set you read in.
 
 
-## Quiz on Literate programming and R Markdown
+## Quiz on literate programming and R Markdown
 
 > ## Literate programming
 > Which of the following statements about literate programming are true?  
@@ -340,194 +340,214 @@ After these steps answer the questions below.
 The goal of this challenge is to create a fully reproducible analysis within an R Markdown script which is easy to understand and read. For that, describe what you do and do not forget nice formatting. For example try different Markdown syntax (Headers, ...), figure captions (*Hint*: check the chunk options for this), a meaningful YAML header, etc.
 
 
->## Analysis of the Palmer penguins data
+>## Analysis of the palmer penguins data
 Create a new R Markdown document and write the code for each of the below questions in a separate paragraph/chunk and describe the result in a complete sentence directly in the R Markdown document. We will use the `penguins` dataset from the package `palmerpenguins`, available as the data set `penguins` after installing the package `palmerpenguins`. To get an overview of the data load the `penguins` dataset and with the following questions: 
+> 
+> &nbsp;
+> 
 >>## Question 1
 Find the the source of the `penguins` dataset together with the url to the data repository. *Hint*: run `?penguins`
 >{: .checklist}
+>
+>> ## Solution 1
+>> ```{r}
+>> library(palmerpenguins)
+>>
+>> ```
+>> Can I put ?penguins in the chunk?
+>> 
+The source is:
+Adélie penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f
+>> 
+Gentoo penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689
+>> 
+Chinstrap penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. doi: 10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
+>< 
+Originally published in: Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. doi:10.1371/journal.pone.0090081
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 2
 Create a Markdown table describing the `penguins` data: for each **numeric** column in the dataset create a row in the table which should consist of the following columns: `Column_Name`, `Mean`, `Variance`  
 >>*Hint*: Checkout the function `knitr::kable` and the chunk option `results='asis'`.
 >{: .checklist}
+>  
+>  
+>> ## Solution 2
+>> ```{r}
+>> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
+>> df <- data.frame(Column_Name = names(numericcols)[numericcols],
+>>                  Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
+>>                  Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+>>                  row.names = NULL
+>>                  )
+>> knitr::kable(df)
+>> ```
+>>
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 3
 How many rows does the `penguins` dataset have? 
 >{: .checklist}
+>
+>> ## Solution 3
+>> ```{r}
+>> result_question_3 <- dim(penguins)[1]
+>> ```
+>> The data set has `r result_question_3` rows.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 4
 What is the first year of records in the data set? 
 >{: .checklist}
+>
+>> ## Solution 4
+>> ```{r}
+>> result_question_4 <- min(penguins$year)
+>> ```
+>> The first year of records is `r result_question_4`.
+>>
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 5
 What is the total number of Adelie penguins? 
 >{: .checklist}
+>
+>> ## Solution 5
+>> ```{r}
+>> result_question_5 <- sum(penguins$species == "Adelie")
+>> ```
+>> The total number of Adelie penguins is `r result_question_5`
+>>
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 6
 What is the total number of missing values (`NA`)?
 >{: .checklist}
+>
+>> ## Solution 6
+>> ```{r}
+>> result_question_6 <- sum(is.na(penguins))
+>> ```
+>> The total number of missing values (NA's) is `r result_question_6`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 7
 What is the total number of rows with **no** missing values?
 >{: .checklist}
+>
+>> ## Solution 7
+>> ```{r}
+>> result_question_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+>> ```
+>> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_question_7`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 8
 On which islands were the Gentoo penguins found?
 >{: .checklist}
+>
+>> ## Solution 8
+>> ```{r}
+>> result_question_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
+>> ```
+>> The name of islands where the Gentoo penguins were found is `r result_question_8`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 9
 What is the proportion of Adelie penguins on Dream island (compared to all penguins on Dream island)?
 >{: .checklist}
+>
+>> ## Solution 9
+>> ```{r}
+>> result_question_9 <- sum(penguins$species == "Adelie" & 
+>>                            penguins$island == "Dream") / 
+>>                       sum(penguins$island == "Dream")
+>> ```
+>> 
+>> The proportion of Adelie penguins on Dream island is `r result_question_9`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 10
 What is the 93% quantile of the bill lengths in mm?
 >{: .checklist}
+>
+>> ## Solution 10
+>> ```{r}
+>> result_question_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
+>> ```
+>> The 93 % quantile of `bill_length_mm` is `r result_question_10`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 11
 What is the absolute mean difference of  bill depth  in mm between female and male penguins?
 >{: .checklist}
+>
+>> ## Solution 11
+>> ```{r}
+>> result_question_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
+>> ```
+>> The absolute mean difference of `bill_depth_mm` between female and male is `r result_question_11`.
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 12
 What is the 95% confidence interval of the slope of the linear regression with intercept of bill depth regressed on sex? Result will be a vector of two elements, e.g. `c('lower_limit', 'upper_limit')`.
 >{: .checklist}
+>  
+>> ## Solution 12
+>> ```{r}
+>> result_question_12 <- confint(lm(bill_depth_mm ~ sex, penguins), "sexmale" )
+>> ```
+>> The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is `r result_question_12`
+>> 
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 13
 What is the proportion of Chinstrap penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45 compared to all penguins with flipper length in mm smaller than 205 and bill length in mm larger than 45?
 >{: .checklist}
+>  
+>> ## Solution 13
+>> ```{r}
+>> chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & 
+>>                                     penguins$bill_length_mm > 45])
+>> result_question_13 <- sum(chins == "Chinstrap") / length(chins)
+>> ```
+>> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is `r result_question_13`.
+>>
+>{: .solution}
+> &nbsp;
+>  
 >>## Question 14
 What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins?
 >{: .checklist}
+>  
+>> ## Solution 14
+>> ```{r}
+>> result_question_14 <- sum(chins == "Chinstrap") / sum(penguins$species == "Chinstrap")
+>> ```
+>> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is `r result_question_14`.
+>> 
+>{: .solution}
 {: .challenge}
-
-
-> ## Solution 1
-> ```{r}
-> library(palmerpenguins)
->
-> ```
-> Can I put ?penguins in the chunk?
-> 
-The source is:
-Adélie penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f
-> 
-Gentoo penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. doi: 10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689
-> 
-Chinstrap penguins: Palmer Station Antarctica LTER and K. Gorman. 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. doi: 10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e
-> 
-Originally published in: Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081. doi:10.1371/journal.pone.0090081
-> 
-{: .solution}
-
-
-> ## Solution 2
-> ```{r}
-> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
-> df <- data.frame(Column_Name = names(numericcols)[numericcols],
->            Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
->            Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
->            row.names = NULL
-> )
-> knitr::kable(df)
-> ```
->
-{: .solution}
-
-
-> ## Solution 3
-> ```{r}
-> result_exercise_3 <- dim(penguins)[1]
-> ```
-> The data set has `r result_exercise_3` rows.
-> 
-{: .solution}
-
-
-> ## Solution 4
-> ```{r}
-> result_exercise_4 <- min(penguins$year)
-> ```
-> The first year of records is `r result_exercise_4`.
->
-{: .solution}
-
-
-> ## Solution 5
-> ```{r}
-> result_exercise_5 <- sum(penguins$species == "Adelie")
-> ```
-> The total number of Adelie penguins is `r result_exercise_5`
->
-{: .solution}
-
-
-> ## Solution 6
-> ```{r}
-> result_exercise_6 <- sum(is.na(penguins))
-> ```
-> The total number of missing values (NA's) is `r result_exercise_6`.
-> 
-{: .solution}
-
-
-> ## Solution 7
-> ```{r}
-> result_exercise_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
-> ```
-> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_exercise_7`.
-> 
-{: .solution}
-
-
-> ## Solution 8
-> ```{r}
-> result_exercise_8 <- unique(penguins$island[penguins$species == "Gentoo"]);
-> ```
-> The name of islands where the Gentoo penguins were found is `r result_exercise_8`.
-> 
-{: .solution}
-
-
-> ## Solution 9
-> ```{r}
-> result_exercise_9 <- sum(penguins$species == "Adelie" & penguins$island == "Dream") / sum(penguins$island == "Dream")
-> ```
-> The proportion of Adelie penguins on Dream island is `r result_exercise_9`.
-> 
-{: .solution}
-
-
-> ## Solution 10
-> ```{r}
-> result_exercise_10 <- quantile(na.omit(penguins$bill_length_mm), 0.93)
-> ```
-> The 93 % quantile of `bill_length_mm` is `r result_exercise_10`.
-> 
-{: .solution}
-
-
-> ## Solution 11
-> ```{r}
-> result_exercise_11 <- abs(coef(lm(bill_depth_mm ~ sex, penguins))[2])
-> ```
-> The absolute mean difference of `bill_depth_mm` between female and male is `r result_exercise_11`.
-> 
-{: .solution}
-
-
-> ## Solution 12
-> ```{r}
-> result_exercise_12 <- confint(lm(bill_depth_mm ~ sex, penguins),"sexmale" )
-> ```
-> The 95% confidence interval of the slope of the linear regression between `bill_depth_mm` and `sex` is `r result_exercise_12`
-> 
-{: .solution}
-
-
-> ## Solution 13
-> ```{r}
-> chins <- na.omit(penguins$species[penguins$flipper_length_mm < 205 & penguins$bill_length_mm > 45])
-> result_exercise_13 <- sum(chins == "Chinstrap")/length(chins)
-> ```
-> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 is `r result_exercise_13`.
->
-{: .solution}
-
-
-> ## Solution 14
-> ```{r}
-> result_exercise_14 <- sum(chins == "Chinstrap")/sum(penguins$species == "Chinstrap")
-> ```
-> The proportion of Chinstrap penguins with `flipper_length_mm` smaller than 205 and `bill_length_mm` larger than 45 compared to all Chinstrap penguins is `r result_exercise_14`.
-> 
-{: .solution}
 
 
 &nbsp;

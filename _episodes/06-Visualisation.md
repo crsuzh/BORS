@@ -42,31 +42,11 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided at the
 
 
 
-# 1. Be simple, clear and to the point
-
-
-~~~
-── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
-~~~
-{: .output}
+## 1. Be simple, clear and to the point
 
 
 
-~~~
-Error in library(colorblindr): es gibt kein Paket namens 'colorblindr'
-~~~
-{: .error}
-
-## Encoding data using visual cues
+### Encoding data using visual cues
 
 As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such a bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph on the right shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
 <!-- https://paldhous.github.io/ucb/2016/dataviz/week2.html -->
@@ -78,7 +58,7 @@ The linked picture is based on [*Graphical Perception: Theory, Experimentation, 
 Therefore, when creating a visualization you should consider the best type of visual cue that represents the data best with the goal of transmitting the intended message. For good perception of a message it is clearly better to provide simple visualizations. We discuss some specific points in more detail below.
 
 
-## 3D
+### 3D
 
 Providing simple and easily perceptible visualizations implies that you should avoid 3-dimensional graphical representations in most circumstances. Consider the following visualization:
 
@@ -88,7 +68,7 @@ Providing simple and easily perceptible visualizations implies that you should a
 As you can see (or not see!) some data is hidden behind the different bars. Furthermore it is rather difficult (and misleading) to compare the height from different depths. Another point not related to 3D in this graph are the missing axis labels and the missing legend for the colors. 
 
 
-## Avoid occlusion
+### Avoid occlusion
 
 As a general principle we can conclude from the 3D example that you should always avoid occlusion of some parts of the visualization. An example can be found in the following plot showing multiple densities in the same panel. The different densities where colored according to group but only the density in the front is fully visible.
 
@@ -98,7 +78,7 @@ An alternative is to plot lines which allows us to see all groups completely.
 
 <img src="../fig/rmd-05-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="360" style="display: block; margin: auto;" />
 
-## Pie charts
+### Pie charts
 
 Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
 
@@ -113,7 +93,7 @@ Another difficult to interpret quasi-pie chart which shows how difficult it is t
 ![]({{ page.root }}/fig/07-quasipie.png){: height="300px"}
 
 
-## Arrangement of plots
+### Arrangement of plots
 
 The arrangement of multiple plots and panels can also contribute to increasing the clarity of a visualization. Have a look at the following plot.  
 
@@ -127,9 +107,9 @@ Two inconsistencies are present. First of all the order of the sample of the top
 
 
 
-# 2. Show the data
+## 2. Show the data
 
-## Boxplots
+### Boxplots
 
 
 
@@ -141,7 +121,7 @@ The code for the above plot:
 
 ~~~
 ggplot(df_long) +
-  geom_boxplot(aes(y=y,x=dataset))
+  geom_boxplot(aes(y = y, x = dataset))
 ~~~
 {: .language-r}
 
@@ -175,8 +155,8 @@ The code for the above plot:
 
 ~~~
 ggplot(df_long) +
-  geom_violin(aes(y=y,x=dataset)) +
-  geom_jitter(aes(y=y,x=dataset),width=0.3)
+  geom_violin(aes(y = y, x = dataset)) +
+  geom_jitter(aes(y = y, x = dataset), width = 0.3)
 ~~~
 {: .language-r}
 
@@ -193,7 +173,7 @@ Another possibility is to only show the jittered data:
 
 
 
-## Bar plots
+### Bar plots
 
 The same as discussed before for boxplots also holds for barplots. If you have continuous data and see the following barplots you might conclude that the data sets are the same:
 
@@ -212,12 +192,12 @@ There is no clear answer to which one to use and, if possible, other types of vi
 
 
 
-# 3. Be honest about the axes
+## 3. Be honest about the axes
 
 
 The axes of plots determine how much information you provide and where you put the focus. You could cut axes, blow certain parts of an axis up through transformation or hide information on certain scales if you do not transform. You can expose or hide information by choosing the aspect ratio between the x and y axis. You can provide clear and precise information through meaningful labeling of axes and axis tick marks or you can obscure the same information by deliberately choosing uninformative tick locations, for example. These issues are illustrated through example in the following
 
-## Cutting axes
+### Cutting axes
 
 
 
@@ -235,7 +215,7 @@ The other way around is also possible. Choosing to show the entire axis starting
 
 ![](https://miro.medium.com/max/1400/1*Sn1QgIBvtZLiqoZzr9a9Yg.png){: height="300px"}
 
-## Axis transformation
+### Axis transformation
 
 
 
@@ -252,7 +232,7 @@ non linear scales. But beware, transformations can also be used to showcase diff
 
 <img src="../fig/rmd-05-unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26" width="360" style="display: block; margin: auto;" />
 
-## Aspect ratio
+### Aspect ratio
 
 
 
@@ -266,11 +246,11 @@ Code for the above plot:
 
 ~~~
 ggplot(df) +
-  geom_point(aes(x,y)) +
-  coord_fixed(ratio=1)
+  geom_point(aes(x, y)) +
+  coord_fixed(ratio = 1)
 ggplot(df) +
-  geom_point(aes(x,y)) +
-  coord_fixed(ratio=1/4)
+  geom_point(aes(x, y)) +
+  coord_fixed(ratio = 1 / 4)
 ~~~
 {: .language-r}
 
@@ -298,7 +278,7 @@ Also consider the following real example:
 Where does the increase look the most dramatic?
 
 
-## Bin width of histograms
+### Bin width of histograms
 
 The appearance of a histogram is determined by the bin width that is used to create it. If you
 have a very large binwidth (or a low total number of bins) you might see something like this
@@ -321,14 +301,14 @@ With `geom_rug` you can mark the position of individual observations:
 Code for the above plot:
 
 ~~~
-ggplot(df,aes(x)) +
+ggplot(df, aes(x)) +
   geom_histogram(binwidth = 0.5) +
   geom_rug()
 ~~~
 {: .language-r}
 
 
-## Axis scales in multiple plots
+### Axis scales in multiple plots
 
 If you provide plots in multiple panels, each using the same variables, you need to pay attention to the scale of each subplot. For example have a look at the following plot.   
 
@@ -343,8 +323,8 @@ Code for the above plot:
 
 ~~~
 ggplot(df) +
-  geom_point(aes(x,y)) +
-  facet_wrap(~sample)
+  geom_point(aes(x, y)) +
+  facet_wrap( ~ sample)
 ~~~
 {: .language-r}
 
@@ -354,9 +334,9 @@ Another example of using different scales:
 ![](https://preview.redd.it/x5q5y0iz72d71.jpg?width=960&crop=smart&auto=webp&s=3e08e75429446099ebf4f462274be2b0e52aedf0){: height="300px"}
 
 
-# 4. Use colors sensibly
+## 4. Use colors sensibly
 
-## Color contrast
+### Color contrast
 
 Trying to encode more than 8 category with colors is usually not a good idea as distinction between colors can become very difficult:
 
@@ -378,9 +358,9 @@ Code for the above plot:
 mtcars %>% 
   rownames_to_column() %>% 
   ggplot() +
-  geom_point(aes(mpg,disp,color=cyl)) +
-  ggrepel::geom_label_repel(aes(mpg,disp, label=rowname),
-                            size = 2.5,label.size = 0.1,
+  geom_point(aes(mpg, disp, color = cyl)) +
+  ggrepel::geom_label_repel(aes(mpg, disp, label = rowname),
+                            size = 2.5, label.size = 0.1,
                             label.padding = 0.1)
 ~~~
 {: .language-r}
@@ -389,7 +369,7 @@ mtcars %>%
 
 See also: [Common pitfalls of color use](https://clauswilke.com/dataviz/color-pitfalls.html) in Fundamentals of Data Visualization.
 
-## Color vision deficiency
+### Color vision deficiency
 
 About 1 of every 12 people is affected by some type of color vision deficiency[^1].
 This is important to keep in mind when choosing colors for visualizations. For example consider the following scatter plot using a Red-Yellow-Green color palette, knowing that Red-Green colorblindness is the most frequent type of color deficiency.
@@ -402,32 +382,23 @@ To check how the plots appear for color deficient persons you can use the `cvd_g
 
 
 ~~~
-colorblindr::cvd_grid()+
-    medtheme()
+colorblindr::cvd_grid() +
+  medtheme()
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in loadNamespace(x): es gibt kein Paket namens 'colorblindr'
-~~~
-{: .error}
+<img src="../fig/rmd-05-unnamed-chunk-43-1.png" alt="plot of chunk unnamed-chunk-43" width="612" style="display: block; margin: auto;" />
 
 Using a different color palette can help. For example the following:  
 
-
-~~~
-Error in scale_color_OkabeIto(): konnte Funktion "scale_color_OkabeIto" nicht finden
-~~~
-{: .error}
+<img src="../fig/rmd-05-unnamed-chunk-44-1.png" alt="plot of chunk unnamed-chunk-44" width="288" style="display: block; margin: auto;" />
 
 Code for the above plot:
 
 
 ~~~
 ggplot(mtcars) +
-  geom_point(aes(mpg,disp, color=factor(carb))) +
+  geom_point(aes(mpg, disp, color = factor(carb))) +
   scale_color_OkabeIto()
 ~~~
 {: .language-r}
@@ -435,7 +406,7 @@ ggplot(mtcars) +
 
 Another option is the `dichromat` package which features multiple palettes for people with red-green colorblindness.
 
-## Quiz
+### Quiz
 
 Let's have a look at the following master piece:
 ![](https://statmodeling.stat.columbia.edu/wp-content/uploads/2008/06/graph.jpg)
@@ -581,6 +552,12 @@ Let's have a look at the following master piece:
 
 
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 # A short introduction to `ggplot2`
 
 We additionally provide a quick introduction to the widely used package `ggplot2`. It is based on the idea of a grammar of graphics, in other words well defined instructions of how to create a plot.
@@ -607,23 +584,64 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 
 Running the following command will initialize a ggplot object without yet showing anything since we don't tell it what to show.
 
+
+~~~
+ggplot(mtcars)
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-47-1.png" alt="plot of chunk unnamed-chunk-47" width="288" style="display: block; margin: auto;" />
 
 To create a plot we have to specify what kind of plot - or geom - we want to use. In this case we want a scatter plot so we choose `geom_point`. For other possibilities check the `ggplot2` documentation (e.g. `?ggplot2`) or just do a Google search. Furthermore we have to specify which columns in our dataset we want to use for which axis. Or in other words assign columns of the data to the x and y aesthetic (`aes`). To check which aesthetic is available for which geom check the *Aesthetics* paragraph in the documentation in the respective geom (e.g. in `?geom_point`).
+
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp))
+~~~
+{: .language-r}
 
 <img src="../fig/rmd-05-unnamed-chunk-48-1.png" alt="plot of chunk unnamed-chunk-48" width="288" style="display: block; margin: auto;" />
 
 If we want to show `mpg` on the y-axis and `disp` on the x-axis:
 
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = disp, y = mpg))
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-49-1.png" alt="plot of chunk unnamed-chunk-49" width="288" style="display: block; margin: auto;" />
 If we want a boxplot plot we could do
+
+~~~
+ggplot(mtcars) +
+  geom_boxplot(aes(x = mpg))
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-50-1.png" alt="plot of chunk unnamed-chunk-50" width="288" style="display: block; margin: auto;" />
 
 or:
 
+
+~~~
+ggplot(mtcars) +
+  geom_boxplot(aes(y = mpg))
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-51-1.png" alt="plot of chunk unnamed-chunk-51" width="288" style="display: block; margin: auto;" />
 
 To color the plot according to another column in the data the `color` (or `colour`) aesthetic can be used.
+
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl)))
+~~~
+{: .language-r}
 
 <img src="../fig/rmd-05-unnamed-chunk-52-1.png" alt="plot of chunk unnamed-chunk-52" width="288" style="display: block; margin: auto;" />
 
@@ -632,9 +650,26 @@ To color the plot according to another column in the data the `color` (or `colou
 
 Many options to change the appearance of plots are available For example change labels:
 
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl))) +
+  labs(x = "X - Axis", title = "ggplot2", color = "")
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-53-1.png" alt="plot of chunk unnamed-chunk-53" width="288" style="display: block; margin: auto;" />
 
 Or change the theme (for all options check out the help page from `theme`). Either using a predefined theme.
+
+
+~~~
+# preconfigured
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl))) +
+  theme_bw()
+~~~
+{: .language-r}
 
 <img src="../fig/rmd-05-unnamed-chunk-54-1.png" alt="plot of chunk unnamed-chunk-54" width="288" style="display: block; margin: auto;" />
 
@@ -642,25 +677,55 @@ Or creating your own. (Can you figure out what each of the arguments in `theme` 
 
 
 ~~~
-Warning: The `size` argument of `element_line()` is deprecated as of ggplot2 3.4.0.
-ℹ Please use the `linewidth` argument instead.
-This warning is displayed once every 8 hours.
-Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-generated.
+# change settings yourself
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl))) +
+  theme(panel.background = element_rect(fill = "yellow", color = "red"), 
+        plot.background = element_rect(fill = "blue"),
+        legend.background = element_rect(fill = "red"), 
+        axis.title = element_text(colour = "white"),
+        axis.line = element_line(linetype = 7, colour = "black", linewidth = 3),
+        panel.grid = element_line(colour = "grey", linewidth = 1, linetype = 2),
+        axis.text = element_text(angle = 45, hjust = 1, colour = "lightgrey",
+                                 size = 14)
+        )
 ~~~
-{: .warning}
+{: .language-r}
 
 <img src="../fig/rmd-05-unnamed-chunk-55-1.png" alt="plot of chunk unnamed-chunk-55" width="288" style="display: block; margin: auto;" />
 
 
 Changing the color palette used can be done by using either a custom palette (in this case generated using the `RColorBrewer` package)
 
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl))) +
+  scale_color_manual(values = RColorBrewer::brewer.pal(3, "Set2"))
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-56-1.png" alt="plot of chunk unnamed-chunk-56" width="288" style="display: block; margin: auto;" />
 
 or by directly using an existing scale (usually of the form `scale_color_NAME`). Further options will be given below.
 
+
+~~~
+ggplot(mtcars) +
+  geom_point(aes(x = mpg, y = disp, color = factor(cyl))) +
+  scale_color_viridis_d()
+~~~
+{: .language-r}
+
 <img src="../fig/rmd-05-unnamed-chunk-57-1.png" alt="plot of chunk unnamed-chunk-57" width="288" style="display: block; margin: auto;" />
 
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 # Episode challenge
 
@@ -679,34 +744,134 @@ In this first task read in the `climate_data.csv` file and do a short exploratio
 
 
 
-## 1.1 First look
+### 1.1 First look
 
 
 
 Show the top 3 rows of the dataset and additionally a short summary of the dataset (*Hint*: use `summary`). Describe what you observe in a few words.
 
+>## Solution
+> 
+> ~~~
+> head(climatedf_comp, n = 3)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+>   Year       Location Sunshine_duration Altitude Annual_Precipitation
+> 1 1931 BaselBinningen          1594.317      316                816.0
+> 2 1931 BernZollikofen          1742.500      553               1137.6
+> 3 1931          Davos          1767.600     1594               1077.3
+>   Annual_temperature Annual_ice_days Annual_frost_days Annual_summer_days
+> 1                8.5              NA                NA                 NA
+> 2                7.2              NA                NA                 NA
+> 3                1.7              NA                NA                 NA
+>   Annual_heat_days Annual_tropic_days Annual_precipitation_days
+> 1               NA                 NA                        NA
+> 2               NA                 NA                        NA
+> 3               NA                 NA                        NA
+> ~~~
+> {: .output}
+> 
+> 
+> 
+> ~~~
+> summary(climatedf_comp)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+>       Year        Location         Sunshine_duration    Altitude     
+>  Min.   :1931   Length:1170        Min.   :1046      Min.   : 273.0  
+>  1st Qu.:1953   Class :character   1st Qu.:1557      1st Qu.: 411.0  
+>  Median :1976   Mode  :character   Median :1725      Median : 485.0  
+>  Mean   :1976                      Mean   :1759      Mean   : 805.9  
+>  3rd Qu.:1998                      3rd Qu.:1937      3rd Qu.: 776.0  
+>  Max.   :2020                      Max.   :2741      Max.   :2501.0  
+>                                    NA's   :129                       
+>  Annual_Precipitation Annual_temperature Annual_ice_days  Annual_frost_days
+>  Min.   : 338.9       Min.   :-3.300     Min.   :  0.00   Min.   :  1.00   
+>  1st Qu.: 829.9       1st Qu.: 6.925     1st Qu.:  5.00   1st Qu.: 60.25   
+>  Median :1050.5       Median : 9.000     Median : 17.00   Median : 87.00   
+>  Mean   :1212.9       Mean   : 7.755     Mean   : 33.05   Mean   :107.99   
+>  3rd Qu.:1411.8       3rd Qu.:10.400     3rd Qu.: 41.00   3rd Qu.:120.00   
+>  Max.   :3704.2       Max.   :13.900     Max.   :218.00   Max.   :289.00   
+>                                          NA's   :364      NA's   :364      
+>  Annual_summer_days Annual_heat_days Annual_tropic_days
+>  Min.   :  0.00     Min.   : 0.000   Min.   : 0.000    
+>  1st Qu.: 12.25     1st Qu.: 0.000   1st Qu.: 0.000    
+>  Median : 38.00     Median : 2.000   Median : 0.000    
+>  Mean   : 36.95     Mean   : 6.257   Mean   : 1.561    
+>  3rd Qu.: 56.00     3rd Qu.:10.000   3rd Qu.: 1.000    
+>  Max.   :125.00     Max.   :56.000   Max.   :40.000    
+>  NA's   :364        NA's   :364      NA's   :364       
+>  Annual_precipitation_days
+>  Min.   : 64.0            
+>  1st Qu.:100.0            
+>  Median :120.0            
+>  Mean   :119.8            
+>  3rd Qu.:136.0            
+>  Max.   :229.0            
+>  NA's   :365              
+> ~~~
+> {: .output}
+> 
+{: .solution}
+
+### 1.2 Which has been the hottest year?
+
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::group_by(Year) %>% 
+>   dplyr::summarise(mean_temp = mean(Annual_temperature)) %>% 
+>   dplyr::filter(mean_temp == max(mean_temp)) %>% 
+>   dplyr::pull(Year)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> [1] 2018
+> ~~~
+> {: .output}
+> 
+{: .solution}
 
 
-## 1.2 Which has been the hottest year?
+### 1.3 Which has been the coldest year?
 
-
-
-
-
-
-
-## 1.3 Which has been the coldest year?
-
-
-
-
-
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::group_by(Year) %>% 
+>   dplyr::summarise(mean_temp = mean(Annual_temperature)) %>% 
+>   dplyr::filter(mean_temp == min(mean_temp)) %>% 
+>   dplyr::pull(Year)
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> [1] 1956
+> ~~~
+> {: .output}
+> 
+{: .solution}
 
 
 ## Task 2: visualization
 
 
-## 2.1 Association of `Annual_temperature` and `Year`
+### 2.1 Association of `Annual_temperature` and `Year`
 
 
 
@@ -715,44 +880,200 @@ To increase the visibility we will only look at the locations `ZürichFluntern`,
 
 Choose a suitable visualization (maybe consider looking at the decision tree) and plot the respective graph.
 
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern", 
+>                                 "Säntis", 
+>                                 "Samedan", 
+>                                 "LocarnoMonti")) %>%
+>   ggplot() +
+>   geom_line(aes(Year, Annual_temperature, color = Location)) +
+>   labs(y = "Annual temperature")
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-62-1.png" alt="plot of chunk unnamed-chunk-62" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 
 
-
-
-## 2.2 Add information on the altitude
+### 2.2 Add information on the altitude
 
 
 
 Based on the previous plot update / change your plot to also include the information about the altitude. Make sure that the location information is also provided.
 
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern", 
+>                                 "Säntis", 
+>                                 "Samedan", 
+>                                 "LocarnoMonti")) %>%
+>   ggplot() +
+>   geom_line(aes(Year, Annual_temperature, color = Altitude, group = Location)) +
+>   geom_label(aes(Year, Annual_temperature, label = Location), 
+>              data = climatedf_comp %>% 
+>                dplyr::filter(Location %in% c("ZürichFluntern", 
+>                                              "Säntis", 
+>                                              "Samedan", 
+>                                              "LocarnoMonti")) %>% 
+>                dplyr::filter(Year==min(Year)+5),nudge_y = 1) +
+>   labs(y = "Annual temperature")
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-63-1.png" alt="plot of chunk unnamed-chunk-63" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 
 
-
-
-## 2.3 Normalization
+### 2.3 Normalization
 
 
 
 In the next step we want to normalize the Annual temperature by using the values of the years <1951 as a base. I.e. calculate the mean `Annual_temperature` for `Year`<1951 for each `Location` and subtract this value from `Annual_temperature`.  Present a visualization that allows to study the deviation from this annual mean by location. 
 
 
+>## Solution
+> 
+> ~~~
+> climatedf_comp_translated <- climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern", 
+>                                 "Säntis", 
+>                                 "Samedan", 
+>                                 "LocarnoMonti")) %>% 
+>   dplyr::group_by(Location) %>% 
+>   dplyr::mutate(mean_temperature = mean(Annual_temperature[Year < 1951]),
+>                 Annual_temperature = Annual_temperature - mean_temperature)
+> 
+> ggplot(climatedf_comp_translated) +
+>   geom_line(aes(Year, Annual_temperature, color = Altitude, group = Location)) +
+>   facet_wrap( ~ Location) +
+>   # geom_label(aes(Year, Annual_temperature, label = Location), 
+>   #            data = climatedf_comp_translated %>%
+>   #              dplyr::filter(Location %in% c("ZürichFluntern",
+>   #                                            "Säntis",
+>   #                                            "Samedan",
+>   #                                            "LocarnoMonti")) %>%
+>   #              dplyr::filter(Year == min(Year) + 5), nudge_y = 1) +
+>   labs(y = "Annual temperature deviation from average up to 1951")
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-64-1.png" alt="plot of chunk unnamed-chunk-64" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 
 
-
-
-## 2.4 Associations between `Annual_Precipitation`, and `Sunshine_duration`
+### 2.4 Associations between `Annual_Precipitation`, and `Sunshine_duration`
 
 
 
 The next goal is to explore associations between `Annual_Precipitation`, and `Sunshine_duration` for the locations `ZürichFluntern`,`Säntis`,`Samedan`,`LocarnoMonti`. Present at least two different types of plots.
 
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern",
+>                                 "Säntis",
+>                                 "Samedan",
+>                                 "LocarnoMonti")) %>%
+>   ggplot() +
+>   geom_point(aes(Annual_Precipitation, Sunshine_duration, color = Location))
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-65-1.png" alt="plot of chunk unnamed-chunk-65" width="612" style="display: block; margin: auto;" />
+> 
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern",
+>                                 "Säntis",
+>                                 "Samedan",
+>                                 "LocarnoMonti")) %>% 
+>   # dplyr::group_by(Location) %>% 
+>   # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration)) %>%
+>   ggplot() +
+>   geom_violin(aes(Location, Annual_Precipitation, color = Sunshine_duration)) +
+>   ggforce::geom_sina(aes(Location, Annual_Precipitation, color = Sunshine_duration))
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> Warning: The following aesthetics were dropped during statistical transformation: colour
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in
+>   the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+>   variable into a factor?
+> ~~~
+> {: .warning}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-66-1.png" alt="plot of chunk unnamed-chunk-66" width="612" style="display: block; margin: auto;" />
+> 
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::filter(Location %in% c("ZürichFluntern",
+>                                 "Säntis",
+>                                 "Samedan",
+>                                 "LocarnoMonti")) %>% 
+>   # dplyr::group_by(Location) %>% 
+>   # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration))  %>%
+>   ggplot() +
+>   geom_boxplot(aes(Location, Sunshine_duration, color = Annual_Precipitation)) +
+>   geom_jitter(aes(Location, Sunshine_duration, color = Annual_Precipitation))
+> ~~~
+> {: .language-r}
+> 
+> 
+> 
+> ~~~
+> Warning: Removed 54 rows containing non-finite values (`stat_boxplot()`).
+> ~~~
+> {: .warning}
+> 
+> 
+> 
+> ~~~
+> Warning: The following aesthetics were dropped during statistical transformation: colour
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in
+>   the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
+>   variable into a factor?
+> ~~~
+> {: .warning}
+> 
+> 
+> 
+> ~~~
+> Warning: Removed 54 rows containing missing values (`geom_point()`).
+> ~~~
+> {: .warning}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-67-1.png" alt="plot of chunk unnamed-chunk-67" width="612" style="display: block; margin: auto;" />
+> 
+> ~~~
+>   # ggforce::geom_sina(aes(Location, Annual_Precipitation, color = Sunshine_duration))
+> ~~~
+> {: .language-r}
+> 
+{: .solution}
 
 
 
+&nbsp;
 
+&nbsp;
 
-
-
+&nbsp;
 
 # Bonus challenge
 
@@ -779,12 +1100,38 @@ There are many options available how to combine plots. Two useful packages are `
 
 &nbsp;
 
-## Exercise 1
+### Exercise 1
 
 Create two `ggplot2` scatterplots, `Annual_frost_days` vs. `Sunshine_duration` and `Annual_summer_days` vs. `Sunshine_duration`, color by location. Combine the two plots using `ggpubr::ggarrange` and make sure to have only one legend. Also make sure to have the same axis range in both plots.
 
-
-
+>## Solution
+> 
+> ~~~
+> minmax <- c(min=min(na.omit(c(climatedf_comp$Annual_frost_days, 
+>                               climatedf_comp$Annual_summer_days))),
+>                max=max(na.omit(c(climatedf_comp$Annual_frost_days, 
+>                                  climatedf_comp$Annual_summer_days))))
+> pl1 <- climatedf_comp %>% 
+>   ggplot() +
+>   geom_point(aes(Annual_frost_days, Sunshine_duration, color = Location)) +
+>   xlim(minmax)+
+>   labs(x="Annual frost days",
+>        y="Sunshine duration")
+> 
+> pl2 <- climatedf_comp %>% 
+>   ggplot() +
+>   geom_point(aes(Annual_summer_days, Sunshine_duration, color = Location)) +
+>   xlim(minmax)+
+>   labs(x="Annual summer days",
+>        y="Sunshine duration")
+> 
+> ggpubr::ggarrange(pl1, pl2, common.legend = TRUE)
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-69-1.png" alt="plot of chunk unnamed-chunk-69" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 
 &nbsp;
 
@@ -798,54 +1145,90 @@ columns act as an identifier of the sample. You can learn more about `pivot`, lo
 
 &nbsp;
 
-## Exercise 2
+### Exercise 2
 
 Use `tidyr::pivot_longer` to bring the data into long format and plot `Annual_frost_days` vs. `Sunshine_duration` and `Annual_summer_days` vs. `Sunshine_duration` in the same plot using `ggplot2::facet_wrap`. 
 
 *Hint*: The columns to pivot into longer format are `Annual_frost_days` and `Annual_summer_days`.
 
 
-
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   dplyr::select(Location, Year, Sunshine_duration, 
+>                 Annual_frost_days, Annual_summer_days) %>% 
+>   dplyr::rename(`Annual frost days` = Annual_frost_days,
+>                 `Annual summer days` = Annual_summer_days) %>% 
+>   tidyr::pivot_longer(cols = c("Annual frost days", "Annual summer days")) %>% 
+>   ggplot() +
+>   geom_point(aes(value, Sunshine_duration, color = Location)) +
+>   facet_wrap( ~ name) +
+>   labs(x = "Days", y = "Sunshine duration") 
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-70-1.png" alt="plot of chunk unnamed-chunk-70" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 
 &nbsp;
 
 
 ## Optional: ggplot2 theme
 
-## Rotate axis text
+### Rotate axis text
 
 
 In some situations where labels on the x-axis are long they can overlap with the default setting:  
-
-~~~
-Warning: Removed 129 rows containing non-finite values (`stat_ydensity()`).
-~~~
-{: .warning}
-
 <img src="../fig/rmd-05-unnamed-chunk-71-1.png" alt="plot of chunk unnamed-chunk-71" width="612" style="display: block; margin: auto;" />
 
 
 
 A solution can be to rotate the labels:  
 
-
-~~~
-Warning: Removed 129 rows containing non-finite values (`stat_ydensity()`).
-~~~
-{: .warning}
-
 <img src="../fig/rmd-05-unnamed-chunk-72-1.png" alt="plot of chunk unnamed-chunk-72" width="612" style="display: block; margin: auto;" />
-
 
 
 Reproduce the above plot.  
 *Hint*: use the argument `axis.text.x` in the `theme` function and make sure to check the expected input class in `axis.text.x`.  
+
+>## Solution
+> 
+> ~~~
+> climatedf_comp %>% 
+>   ggplot() + 
+>   geom_violin(aes(Location, Sunshine_duration, color = Location)) + 
+>   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
+>   labs(y = "Sunshine duration", x = "")
+> ~~~
+> {: .language-r}
+> 
+{: .solution}
 
 
 ## Custom colors
 
 You can generate custom colors using `RColorBrewer::brewer.pal`. The generated colors can then be used in combination with `scale_color_manual(values=generated_colors)`.
 
-
-
+>## Solution
+> 
+> ~~~
+> climatedf_comp_red <- climatedf_comp[climatedf_comp$Location %in% 
+>                                        c("Luzern","ZürichFluntern","Lugano"), ]
+> colors_use <- RColorBrewer::brewer.pal(length(unique(climatedf_comp_red$Location)), 
+>                                        "Set2")
+> 
+> climatedf_comp_red %>% 
+>   ggplot() +
+>   geom_violin(aes(Location, Sunshine_duration, color = Location, fill = Location)) +
+>   scale_color_manual(values = colors_use) +
+>   scale_fill_manual(values = colors_use) +
+>   labs(y = "Sunshine duration", x = "")
+> ~~~
+> {: .language-r}
+> 
+> <img src="../fig/rmd-05-unnamed-chunk-74-1.png" alt="plot of chunk unnamed-chunk-74" width="612" style="display: block; margin: auto;" />
+> 
+{: .solution}
 

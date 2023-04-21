@@ -22,7 +22,7 @@ source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 ```
 
-# Is there a reproducibility crisis?
+# 1. Is there a reproducibility crisis?
 
 &nbsp;
 

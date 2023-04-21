@@ -27,7 +27,7 @@ knitr_fig_path("05-")
 ```
 
 
-# 1. What is Scientific Integrity?
+# 1. What is scientific integrity?
 ## Scientific/research integrity at UZH
 
 Often when the term "Scientific integrity" comes up one would think about topics such as
@@ -62,7 +62,7 @@ Several guidance documents exist, see three European examples here:
 &rArr; We will have a brief look at each of the documents and work on the Swiss document in more detail.
 
 
-## LERU: Towards a Research Integrity Culture at Universities
+## LERU: Towards a research integrity culture at Universities
 
 In a summary chapter the guidance document states what Universities should do to empower sound research:
 
@@ -82,7 +82,7 @@ In a summary chapter the guidance document states what Universities should do to
  &rArr; The points in bold are topics of this course and directly related to reproducibility as we will see below and later.
 
 
-## European Code of Conduct for Research Integrity 
+## European code of conduct for research integrity 
 
 The EU code states that **Good research practices** are based on fundamental principles of research integrity. 
 
@@ -97,7 +97,7 @@ The EU code states that **Good research practices** are based on fundamental pri
 &rArr; You will find these same main principles in the Swiss guidance document! Adhering to the principles of reliability, honesty and accountability requires, among other aspects, to work reproducibly and openly.
 
 
-## The Swiss Code of conduct for scientific integrity
+## The swiss code of conduct for scientific integrity
 
 The same principles occur in the Swiss document, here with a direct pointer to reproducibility:
 
@@ -105,7 +105,7 @@ The same principles occur in the Swiss document, here with a direct pointer to r
 
 
 
-## Quiz on the Swiss Code of conduct for scientific integrity
+## Quiz on the swiss code of conduct for scientific integrity
 
 For these questions, please read or search the Code until page 26.
 > ## Audience
@@ -210,7 +210,7 @@ J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://jo
 >
 {: .solution}
 
-## UNESCO Recommendation on Open Science  
+## UNESCO recommendation on Open Science  
 
 In 2021 UNESCO published their recommendations for Open Science. From their point of view Open Science is a tool helping to create a sustainable future. In the quote stressed here we see the link of Open Science to scientific integrity and also reproducibility:
 
@@ -310,7 +310,7 @@ R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journ
 &nbsp;
 &nbsp;
 
-# 3. What is Reproducibility?
+# 3. What is reproducibility?
 
 >## Reproducibility vs Replicability
 >
@@ -335,7 +335,7 @@ The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/
 In this course we will learn about some of the tools Markowetz lists in his paper.
 
 ## (Anti-)Example from the Markowetz paper
->## How Bright Promise in Cancer Testing Fell Apart
+>## How bright promise in cancer testing fell apart
 >
 [![](https://static01.nyt.com/images/2011/07/08/us/JP-GENES/JP-GENES-jumbo.jpg?quality=75&auto=webp){: height="400px"}](https://www.nytimes.com/2011/07/08/health/research/08genes.html)
 >
@@ -362,7 +362,7 @@ From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html]
 
 # Episode challenge
 
->## A Waste of 1000 Research Papers
+>## A waste of 1000 research papers
 >
   Read the article "[A Waste of 1000 Research Papers](https://www.theatlantic.com/science/archive/2019/05/waste-1000-studies/589684/)" by Ed Yong (The Atlantic, 27.5. 2019). 
 >

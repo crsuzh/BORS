@@ -20,7 +20,7 @@ keypoints:
 
 
 
-# 1. Use case: Open Science at CERN
+# 1. Use case: open science at CERN
 
 
 The world wide web was invented at CERN and its leadership was visionary in making sure that the technology would be licensed under an open-source framework "with the explicit goal of preventing private companies from turning it into proprietary software"
@@ -29,7 +29,7 @@ CERN and the particle physics community are trailblazers of the Open Science mov
 
 We aim to look at CERN's approach to Open Science by reading three articles that appeared in the CERN Courier in 2019, see excerpts below and use the links to read the full articles.
 
-## Open science: A vision for collaborative, reproducible and reusable research
+## Open science: a vision for collaborative, reproducible and reusable research
 
 
 ![]({{ page.root }}/fig/05-CCMarApr19_Openscience.png){: height="200px"}
@@ -77,7 +77,7 @@ More information can be found in the article "Open is not enough" by X Chen et a
 {: .callout}
 
 
-## Quiz on Open Science at CERN
+## Quiz on open science at CERN
 
 > ## Reana
 > CERN's REANA can be used to 
@@ -132,7 +132,7 @@ More information can be found in the article "Open is not enough" by X Chen et a
 # 2. Some tools for collaboration
 
 
->## Open Science Framework
+>## Open Science framework
 >
 ![]({{ page.root }}/fig/05-OSFresearch_lifecycle_original.png){: height="200px"}
 >
@@ -165,7 +165,7 @@ You can find the video [here](https://youtu.be/dLEIhJESIQA).
 Other tools for collaboration have been summarized in the Primer "[Digital collaboration](https://zenodo.org/record/7620743#.ZAs6NbSZPsM)" by the Center for Reproducible Science at the University of Zurich. The primer contains a few University of Zurich specific recommendations but is mostly applicable for anyone.
 
 
-## Quiz on the Open Science Framework as a collaborative tool
+## Quiz on the open science framework as a collaborative tool
 
 > ## Global unique identifiers
 > OSF distributes global unique identifiers 
