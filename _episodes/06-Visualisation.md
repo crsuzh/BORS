@@ -1008,15 +1008,9 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > 
 > 
 > ~~~
-> Warning: The following aesthetics were dropped during statistical transformation: colour
-> ℹ This can happen when ggplot fails to infer the correct grouping structure in
->   the data.
-> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
->   variable into a factor?
+> Error in loadNamespace(x): es gibt kein Paket namens 'ggforce'
 > ~~~
-> {: .warning}
-> 
-> <img src="../fig/rmd-05-unnamed-chunk-66-1.png" alt="plot of chunk unnamed-chunk-66" width="612" style="display: block; margin: auto;" />
+> {: .error}
 > 
 > 
 > ~~~

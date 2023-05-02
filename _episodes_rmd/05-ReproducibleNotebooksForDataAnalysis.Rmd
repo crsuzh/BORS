@@ -378,8 +378,8 @@ Create a Markdown table describing the `penguins` data: for each **numeric** col
 >> ```{r}
 >> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
 >> df <- data.frame(Column_Name = names(numericcols)[numericcols],
->>                  Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
->>                  Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+>>                  Mean = signif(apply((na.omit(penguins[numericcols])), 2, mean), 4),
+>>                  Variance = signif(apply((na.omit(penguins[numericcols])), 2, var), 4),
 >>                  row.names = NULL
 >>                  )
 >> knitr::kable(df)
@@ -446,7 +446,7 @@ What is the total number of rows with **no** missing values?
 >
 >> ## Solution 7
 >> ```{r}
->> result_question_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+>> result_question_7 <- sum(apply(penguins, 1, function(x) !any(is.na(x))))
 >> ```
 >> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_question_7`.
 >> 
@@ -586,22 +586,40 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 df_sum <- penguins %>% 
   dplyr::select(-sex,-island,-flipper_length_mm,-body_mass_g) %>% 
-  dplyr::group_by(species,year) %>% 
-  dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)),3))) %>% 
-  tidyr::pivot_wider(names_from=c(year),values_from = c(bill_length_mm,bill_depth_mm)) 
+  dplyr::group_by(species, year) %>% 
+  dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+  tidyr::pivot_wider(names_from=c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
 
 df_sum %>%
-  kbl(col.names = c("species",rep(c("2007","2008","2009"),2)))%>%
+  kbl(col.names = c("species", rep(c("2007","2008","2009"), 2)))%>%
   kable_classic() %>%
   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
   kable_styling(bootstrap_options = c("hover")) %>% 
-  column_spec (c(1,4),border_right = T) 
+  column_spec (c(1, 4), border_right = T) 
 
 ```
 
 *Hint*: checkout the different styling functions, e.g. `kable_classic`.  
 *Hint*: For multiple column names use `add_header_above`  
-*Hint*: Use the following code to get started:  
+*Hint*: Use the following code to get started.  
+
+>## Solution
+> ```{r, include=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+> df_sum <- penguins %>% 
+>   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
+>   dplyr::group_by(species, year) %>% 
+>   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+>   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
+> 
+> df_sum %>%
+>   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
+>   kable_classic() %>%
+>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
+>   kable_styling(bootstrap_options = c("hover")) %>% 
+>   column_spec (c(1, 4), border_right = T) 
+> 
+> ```
+{: .solution}
 
 ## Task 2 Create the following table wich includes small graphs:
 
@@ -609,7 +627,7 @@ df_sum %>%
 df_sum <- penguins %>% 
   dplyr::select(-island,-sex,-year,-body_mass_g,-flipper_length_mm) %>% 
   dplyr::group_by(species) %>% 
-  dplyr::summarise(dplyr::across(.cols=!contains("species"), .fns = function(x) signif(mean(na.omit(x)),3))) %>% 
+  dplyr::summarise(dplyr::across(.cols=!contains("species"), .fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
   dplyr::mutate(bill_length_boxplot="", bill_length_hist="",
                 bill_depth_boxplot="", bill_depth_hist="")
 
@@ -618,11 +636,11 @@ dfsum_list <- split(penguins$bill_length_mm, penguins$species)
 dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
 df_sum %>%
   dplyr::select(species, dplyr::starts_with("bill_length"), dplyr::starts_with("bill_depth")) %>% 
-  kbl(col.names = c("species",rep(c("mean","boxplot","histogram"),2))) %>%
+  kbl(col.names = c("species", rep(c("mean","boxplot","histogram"), 2))) %>%
   kable_paper() %>%
-  column_spec(1,border_right = TRUE) %>%
+  column_spec(1, border_right = TRUE) %>%
   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
-  column_spec(4, image = spec_hist(dfsum_list),border_right = T) %>%
+  column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
@@ -638,7 +656,7 @@ Create the following scatter plot of bill_depth_mm vs. body_mass_g and color by 
 
 ```{r, echo=FALSE}
 plot(bill_depth_mm ~ body_mass_g, penguins, col=penguins$species, pch=19)
-legend(x="topright",legend=unique(penguins$species), col = seq_along(unique(penguins$species)), pch=19)
+legend(x="topright", legend=unique(penguins$species), col = seq_along(unique(penguins$species)), pch=19)
 ```
 
 
@@ -650,13 +668,13 @@ Create the following histogram of flipper_length_mm for each island and color by
 *Hint*: checkout `rgb` for colors.
 
 ```{r, echo=FALSE}
-colors_used <- c(Torgersen=rgb(0,1,0,0.4),Dream=rgb(0,0,1,0.4),Biscoe=rgb(1,0,0,0.4))
-ylim_used <- c(0,0.07)
-breaks_used <- seq(170,235,5)
-par(mfrow=c(3,1),mar=c(4,4,2,0))
-hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[1]], col=colors_used[1],freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]",main = names(colors_used)[1])
-hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[2]], col=colors_used[2],freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]",main = names(colors_used)[2])
-hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]], col=colors_used[3],freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]",main = names(colors_used)[3])
+colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), Dream = rgb(0, 0, 1, 0.4), Biscoe = rgb(1, 0, 0, 0.4))
+ylim_used <- c(0, 0.07)
+breaks_used <- seq(170, 235, 5)
+par(mfrow = c(3, 1), mar = c(4, 4, 2, 0))
+hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[1]], col=colors_used[1], freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]", main = names(colors_used)[1])
+hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[2]], col=colors_used[2], freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]", main = names(colors_used)[2])
+hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]], col=colors_used[3], freq = FALSE, ylim = ylim_used, breaks = breaks_used, xlab = "Flipper length [mm]", main = names(colors_used)[3])
 ```
 
 
@@ -665,9 +683,9 @@ hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]], col=c
 Create the following boxplot of `bill_length_mm` per species using `boxplot`. Also add a legend.
 
 ```{r, echo=FALSE}
-colors_used <- c(Torgersen=rgb(0,1,0,0.4),Dream=rgb(0,0,1,0.4),Biscoe=rgb(1,0,0,0.4))
-boxplot(bill_length_mm~species,penguins,col=colors_used, ylab="Bill length [mm]",xlab = "Species")
-points(bill_length_mm~species,penguins, pch=19)#, col=colors_used[penguins$species])
-legend(x="topleft",legend=names(colors_used), col =colors_used, pch=19)
+colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), Dream = rgb(0, 0, 1, 0.4), Biscoe = rgb(1, 0, 0, 0.4))
+boxplot(bill_length_mm~species, penguins, col = colors_used, ylab = "Bill length [mm]", xlab = "Species")
+points(bill_length_mm~species, penguins, pch = 19)#, col=colors_used[penguins$species])
+legend(x = "topleft", legend = names(colors_used), col = colors_used, pch = 19)
 ```
 

@@ -379,8 +379,8 @@ Create a Markdown table describing the `penguins` data: for each **numeric** col
 >> ~~~
 >> numericcols <- sapply(colnames(penguins), function(x) is.numeric(penguins[[x]]))
 >> df <- data.frame(Column_Name = names(numericcols)[numericcols],
->>                  Mean = signif(apply((na.omit(penguins[numericcols])),2,mean),4),
->>                  Variance = signif(apply((na.omit(penguins[numericcols])),2,var),4),
+>>                  Mean = signif(apply((na.omit(penguins[numericcols])), 2, mean), 4),
+>>                  Variance = signif(apply((na.omit(penguins[numericcols])), 2, var), 4),
 >>                  row.names = NULL
 >>                  )
 >> knitr::kable(df)
@@ -467,7 +467,7 @@ What is the total number of rows with **no** missing values?
 >> ## Solution 7
 >> 
 >> ~~~
->> result_question_7 <- sum(apply(penguins,1, function(x) !any(is.na(x))))
+>> result_question_7 <- sum(apply(penguins, 1, function(x) !any(is.na(x))))
 >> ~~~
 >> {: .language-r}
 >> The number of complete rows (rows with no missing values, i.e. NA's) is `rresult_question_7`.
@@ -746,7 +746,26 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 
 *Hint*: checkout the different styling functions, e.g. `kable_classic`.  
 *Hint*: For multiple column names use `add_header_above`  
-*Hint*: Use the following code to get started:  
+*Hint*: Use the following code to get started.  
+
+>## Solution
+> 
+> ~~~
+> df_sum <- penguins %>% 
+>   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
+>   dplyr::group_by(species, year) %>% 
+>   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+>   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
+> 
+> df_sum %>%
+>   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
+>   kable_classic() %>%
+>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
+>   kable_styling(bootstrap_options = c("hover")) %>% 
+>   column_spec (c(1, 4), border_right = T) 
+> ~~~
+> {: .language-r}
+{: .solution}
 
 ## Task 2 Create the following table wich includes small graphs:
 
@@ -954,7 +973,7 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 
 Create the following scatter plot of bill_depth_mm vs. body_mass_g and color by species using the function `plot`. Also add a legend.
 
-<img src="../fig/rmd-05-unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21" width="612" class="plot" style="display: block; margin: auto;" />
 
 
 ## Task 4 Create a histogram
@@ -964,12 +983,12 @@ Create the following histogram of flipper_length_mm for each island and color by
 *Hint*: explore the argument `add`.  
 *Hint*: checkout `rgb` for colors.
 
-<img src="../fig/rmd-05-unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="612" class="plot" style="display: block; margin: auto;" />
 
 
 ## Task 5 Create a boxplot
 
 Create the following boxplot of `bill_length_mm` per species using `boxplot`. Also add a legend.
 
-<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23" width="612" class="plot" style="display: block; margin: auto;" />
 
