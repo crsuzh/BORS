@@ -968,12 +968,56 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 </table>
 
 *Hint*: Use `column_spec` for altering specific columns.
+
+>## Solution
+> 
+> ~~~
+> df_sum <- penguins %>% 
+>   dplyr::select(-island, -sex, -year, -body_mass_g, -flipper_length_mm) %>% 
+>   dplyr::group_by(species) %>% 
+>   dplyr::summarise(dplyr::across(.cols = !contains("species"),
+>                                  .fns = function(x) 
+>                                    signif(mean(na.omit(x)), 3))) %>% 
+>   dplyr::mutate(bill_length_boxplot = "", bill_length_hist = "",
+>                 bill_depth_boxplot = "", bill_depth_hist = "")
+> 
+> dfsum_list <- split(penguins$bill_length_mm, penguins$species)
+> dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
+> df_sum %>%
+>   dplyr::select(species, 
+>                 dplyr::starts_with("bill_length"), 
+>                 dplyr::starts_with("bill_depth")) %>% 
+>   kbl(col.names = c("species", rep(c("mean", "boxplot", "histogram"), 2))) %>%
+>   kable_paper() %>%
+>   column_spec(1, border_right = TRUE) %>%
+>   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
+>   column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
+>   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
+>   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
+>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
+>                    border_right = TRUE, border_left = TRUE)
+> ~~~
+> {: .language-r}
+{: .solution}
  
 ## Task 3 Create a scatter plot
 
 Create the following scatter plot of bill_depth_mm vs. body_mass_g and color by species using the function `plot`. Also add a legend.
 
-<img src="../fig/rmd-05-unnamed-chunk-21-1.png" alt="plot of chunk unnamed-chunk-21" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="612" class="plot" style="display: block; margin: auto;" />
+
+
+>## Solution
+> 
+> ~~~
+> plot(bill_depth_mm ~ body_mass_g, penguins, col = penguins$species, pch = 19)
+> legend(x = "topright", 
+>        legend = unique(penguins$species), 
+>        col = seq_along(unique(penguins$species)), 
+>        pch = 19)
+> ~~~
+> {: .language-r}
+{: .solution}
 
 
 ## Task 4 Create a histogram
@@ -983,12 +1027,46 @@ Create the following histogram of flipper_length_mm for each island and color by
 *Hint*: explore the argument `add`.  
 *Hint*: checkout `rgb` for colors.
 
-<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24" width="612" class="plot" style="display: block; margin: auto;" />
 
+>## Solution
+> 
+> ~~~
+> colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), 
+>                  Dream = rgb(0, 0, 1, 0.4), 
+>                  Biscoe = rgb(1, 0, 0, 0.4))
+> ylim_used <- c(0, 0.07)
+> breaks_used <- seq(170, 235, 5)
+> par(mfrow = c(3, 1), mar = c(4, 4, 2, 0))
+> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[1]], 
+>      col = colors_used[1], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
+>      xlab = "Flipper length [mm]", main = names(colors_used)[1])
+> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[2]],
+>      col = colors_used[2], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
+>      xlab = "Flipper length [mm]", main = names(colors_used)[2])
+> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]],
+>      col=colors_used[3], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
+>      xlab = "Flipper length [mm]", main = names(colors_used)[3])
+> ~~~
+> {: .language-r}
+{: .solution}
 
 ## Task 5 Create a boxplot
 
 Create the following boxplot of `bill_length_mm` per species using `boxplot`. Also add a legend.
 
-<img src="../fig/rmd-05-unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23" width="612" class="plot" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26" width="612" class="plot" style="display: block; margin: auto;" />
 
+>## Solution
+> 
+> ~~~
+> colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), 
+>                  Dream = rgb(0, 0, 1, 0.4), 
+>                  Biscoe = rgb(1, 0, 0, 0.4))
+> boxplot(bill_length_mm~species, penguins, col = colors_used, 
+>         ylab = "Bill length [mm]", xlab = "Species")
+> points(bill_length_mm~species, penguins, pch = 19)#, col=colors_used[penguins$species])
+> legend(x = "topleft", legend = names(colors_used), col = colors_used, pch = 19)
+> ~~~
+> {: .language-r}
+{: .solution}
