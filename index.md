@@ -12,6 +12,7 @@ This is a carpentries lesson for bachelor and master students of all disciplines
 5. Introduction to reproducible notebooks for data analysis
 6. Implementation of the principles of Open Science and reproducible research when visualizing data
 
+The course originates from a course given at the University of Zurich, Switzerland. Some of the provided links hence point to University of Zurich resources, which are then to be understood as an example for resources available at most universities.
 <!-- this is an html comment -->
 
 {% comment %} This is a comment in Liquid {% endcomment %}

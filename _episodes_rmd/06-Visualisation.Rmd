@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Visualization"
+title: "Good practice for visualizations in view of reproducibility"
 teaching: 90
 exercises: 90-120
 questions: 
@@ -39,12 +39,8 @@ In the following sections we will have a look at different visualizations and th
 3. Be honest about the axes
 4. Use colors sensibly
 
-We provide code in `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this [https://bookdown.org/rdpeng/exdata/]()
+We provide code in `ggplot`. A short introduction to `ggplot` is provided at the end, a good reference for both systems is this [https://bookdown.org/rdpeng/exdata/](https://bookdown.org/rdpeng/exdata/)
 
-
-
-
-## 1. Be simple, clear and to the point
 
 ```{r, echo = FALSE, include=FALSE}
 library(tidyverse)
@@ -76,6 +72,9 @@ hide_results <- function(input, show = TRUE){
   }
 }
 ```
+
+## 1. Be simple, clear and to the point
+
 
 ### Encoding data using visual cues
 

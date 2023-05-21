@@ -1,22 +1,22 @@
 ---
 source: Rmd
-title: "Scientific Integrity, Open Science and Reproducibility"
+title: "Scientific integrity, Open Science and reproducibility"
 teaching: 60
-exercises: 90-120
+exercises: 60-90
 questions: 
-  - "1. What is Scientific Integrity and where can I read about regulations?"
-  - "2. What is Open Science and which aspects are important to me?"
-  - "3. What is Reproducibility and why should I care about it?"
+  - "What is Scientific integrity and what is the link to Open Science and reproducibility?"
+  - "What is Open Science and which aspects are important to me?"
+  - "What is reproducibility and why should I care about it?"
   - 
 objectives: 
-  - "Understand about the connections between Scientific integrity, Open Science and Reproducibility "
+  - "Understand about the connections between Scientific integrity, Open Science and reproducibility "
   - "Name the requirements on designing, carrying out and reporting of research projects such that scientific integrity is respected"
   - "Discrimate between so-called negative and positive results"
   - "List all/many of the dimensions of Open Science"
   - "Explain why and know where to preregister studies"
   - "Apply these concepts when reading about research"
 keypoints:
-  - "Scientific Integrity, Open Science and Reproducibility are connected. "
+  - "Scientific integrity, Open Science and reproducibility are connected. "
   - "All three themes are important for the trustworthiness of research results"
   - "The tools that will be taught in this course help to increase trustworthiness"
 ---
@@ -27,8 +27,8 @@ knitr_fig_path("05-")
 ```
 
 
-# 1. What is scientific integrity?
-## Scientific/research integrity at UZH
+# 1. What is scientific integrity and what is the link to Open Science and reproducibility?
+## Scientific/research integrity at the University of Zurich
 
 Often when the term "Scientific integrity" comes up one would think about topics such as
 
@@ -41,9 +41,9 @@ Often when the term "Scientific integrity" comes up one would think about topics
 - Conflicts of interest  
 [https://www.uzh.ch/prof/apps/interessenbindungen/client/](https://www.uzh.ch/prof/apps/interessenbindungen/client/)  
 
-Conflicts of interest can also be the subject of studies: [https://doi.org/10.1186/s13643-020-01318-5](https://doi.org/10.1186/s13643-020-01318-5)
+Note that conflicts of interest can also be the subject of studies: [https://doi.org/10.1186/s13643-020-01318-5](https://doi.org/10.1186/s13643-020-01318-5)
 
-For each of these topics we have the University of Zurich links here, most other universities will also have corresponding regulations in place. But these are not the main topic of this course, we will instead look at the aspects of research integrity discussed below.
+For each of these topics we have the University of Zurich links here, most other universities will also have corresponding regulations in place. But these topics are not the main interest of this course, we will instead **focus at the aspects of research integrity discussed below**.
 
 
 ## National and international guidance documents on research integrity
@@ -97,17 +97,16 @@ The EU code states that **Good research practices** are based on fundamental pri
 &rArr; You will find these same main principles in the Swiss guidance document! Adhering to the principles of reliability, honesty and accountability requires, among other aspects, to work reproducibly and openly.
 
 
-## The swiss code of conduct for scientific integrity
+## The Swiss code of conduct for scientific integrity
 
 The same principles occur in the Swiss document, here with a direct pointer to reproducibility:
 
 > _“Reliability, honesty, respect, and accountability are the basic principles of scientific integrity. They underpin the independence and credibility of science and its disciplines as well as the accountability and **reproducibility** of research findings and their acceptance by society. As a system operating according to specific rules, science has a responsibility to create the structures and an environment that foster scientific integrity.”_
 
 
+## Quiz on the Swiss code of conduct for scientific integrity
 
-## Quiz on the swiss code of conduct for scientific integrity
-
-For these questions, please read or search the Code until page 26.
+For these questions, please read or search the [Code](https://akademien-schweiz.ch/en/uber-uns/kommissionen-und-arbeitsgruppen/wissenschaftliche-integritat/) until page 26.
 > ## Audience
 > At which of the following groups of people is the code of conduct aimed at?
 > - researchers at research performing institutions
@@ -167,6 +166,7 @@ Find the behavior in Chapter 5 of the Code which this can be related to.
 >
 {: .solution}
 
+
 ## Example
 
 >## Publication of negative results
@@ -187,11 +187,8 @@ J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://jo
 {: .testimonial}
 
 &nbsp;
-&nbsp;
-&nbsp;
 
 # 2. What is Open Science?
-
 ## Let´s play the game "Open up your research"
 [https://www.openscience.uzh.ch/de/moreopenscience/game.html]()
 
@@ -217,9 +214,9 @@ In 2021 UNESCO published their recommendations for Open Science. From their poin
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
 ![]({{ page.root }}/fig/02-UNESCO.png)
-(Image: UNESCO)
+Credit: [UNESCO Recommendation on Open Science](https://unesdoc.unesco.org/ark:/48223/pf0000379949.locale=en), CC-BY-SA.
 
-(Optional) Read the full recommendation text at [https://en.unesco.org/science-sustainable-future/open-science/recommendation](https://en.unesco.org/science-sustainable-future/open-science/recommendation).
+Optional: Read the full recommendation text at [https://en.unesco.org/science-sustainable-future/open-science/recommendation](https://en.unesco.org/science-sustainable-future/open-science/recommendation).
 
 
 ## Definition by Open Science in Psychology/Social Science initiatives
@@ -236,7 +233,7 @@ grid.arrange(img1, img2, ncol = 2)
 Picture available on the Open Science Framework [https://osf.io/hktmf/](https://osf.io/hktmf/). 
 
 
-We will revisit the following steps in this course:
+We will revisit the following steps in this lesson:
 1. **Create OSF account** (use easy infrastructure for collaboration)
 2. **Pregregister your own studies** 
 4. **Open Data** 
@@ -248,7 +245,7 @@ The Open up your research game and the seven steps above refer to preregistratio
 
 ![]({{ page.root }}/fig/02-TexasSharpShooter.png)
 
-[Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1)
+Credit: [Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1), CC-BY.
 
 When a researcher preregisters a study, the design and precise goal of the study are declared openly in advance: the bull´s eye is drawn.
 
@@ -292,10 +289,10 @@ When a researcher preregisters a study, the design and precise goal of the study
 ## Quiz on registration 
 >##  Does registration show an effect? 
 >
-All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their rported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
+All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their reported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
 >
 ![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
-R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382)
+Credit: R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382), CC-BY.
 >
 > What is the difference between what you observe before and after the year 2000 in this graphic?
 >
@@ -307,19 +304,17 @@ R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journ
 {: .solution}
 
 &nbsp;
-&nbsp;
-&nbsp;
 
 # 3. What is reproducibility?
 
->## Reproducibility vs Replicability
+>## Reproducibility vs replicability
 >
 >**Reproducibility** refers to the ability of a researcher to duplicate the results of a prior study using the same materials as were used by the original investigator.
 > This requires, at minimum, the sharing of data sets, relevant metadata, analytical code, and related software.
 >
 **Replicability** refers to the ability of a researcher to duplicate the results of a prior study if the same procedures are followed but new data are collected.
 >
-S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027](https://www.science.org/doi/10.1126/scitranslmed.aaf5027)
+See S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027](https://www.science.org/doi/10.1126/scitranslmed.aaf5027) for a finer grained discussion of the concepts.
 >
 {: .callout}
 
@@ -328,7 +323,7 @@ S Goodman et al. [https://www.science.org/doi/10.1126/scitranslmed.aaf5027](http
 
 See artwork by Sidney Harris at [http://www.sciencecartoonsplus.com/](http://www.sciencecartoonsplus.com/) for an illustration of the remark "I think you should be more explicit here in step two" when a miracle occurs.
 
-The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7). In this paper the author asks what working reproducibly means for his daily work and comes up with "Five selfish reasons to work reproducibly", this is even the title of the paper.
+The quote is from F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7). In this publication the author asks what working reproducibly means for his daily work and comes up with "Five selfish reasons to work reproducibly", this is even the title of the paper.
 
 > _“Working transparently and reproducibly has a lot to do with empathy: put yourself into the shoes of one of your collaboration partners and ask yourself, would that person be able to access my data and make sense of my analyses. Learning the tools of the trade will require commitment and a massive investment of your time and energy. A priori it is not clear why the benefits of working reproducibly outweigh its costs.”_
 
@@ -337,7 +332,7 @@ In this course we will learn about some of the tools Markowetz lists in his pape
 ## (Anti-)Example from the Markowetz paper
 >## How bright promise in cancer testing fell apart
 >
-[![](https://static01.nyt.com/images/2011/07/08/us/JP-GENES/JP-GENES-jumbo.jpg?quality=75&auto=webp){: height="400px"}](https://www.nytimes.com/2011/07/08/health/research/08genes.html)
+[![](https://static01.nyt.com/images/2011/07/08/us/JP-GENES/JP-GENES-jumbo.jpg?quality=75&auto=webp){: height="250px"}](https://www.nytimes.com/2011/07/08/health/research/08genes.html)
 >
 From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html](https://www.nytimes.com/2011/07/08/health/research/08genes.html), picture by Michael Stravato for The New York Times.
 >
@@ -386,7 +381,7 @@ What are your overall conclusions?
 
 > ## Solution
 > 
-> TBA
+> No solution provided here.
 >
 {: .solution}
 

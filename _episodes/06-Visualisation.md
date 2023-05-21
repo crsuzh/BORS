@@ -1009,10 +1009,8 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > 
 > ~~~
 > Warning: The following aesthetics were dropped during statistical transformation: colour
-> ℹ This can happen when ggplot fails to infer the correct grouping structure in
->   the data.
-> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
->   variable into a factor?
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a factor?
 > ~~~
 > {: .warning}
 > 
@@ -1044,10 +1042,8 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > 
 > ~~~
 > Warning: The following aesthetics were dropped during statistical transformation: colour
-> ℹ This can happen when ggplot fails to infer the correct grouping structure in
->   the data.
-> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
->   variable into a factor?
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a factor?
 > ~~~
 > {: .warning}
 > 

@@ -73,13 +73,13 @@ To summarize:
 
 ## R projects
 
-Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to easily implement the structures that we heard about in the Reproducibility and Data episode (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the projects functionality of Rstudio allows you to communicate easily between these directories.   
+Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to easily implement the structures that we heard about in the "First steps towards more reproducibility" episode (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the functionality of R projects in Rstudio allows you to communicate easily between these directories.   
 
 The main idea is that all files needed (scripts, data, ...) for an analysis are brought together to make your and your collaborators life easier. If you start a Project it automatically takes care of things like using the correct working directory and lets you quickly jump between different projects by remembering which files you had open and reopening them again.   
 
-Connected to the use of Project is the concept that you use relative file paths (e.g. for loading csv files). So instead of doing something like this: `read.csv("/home/user/Documents/Uni/Basics_of_Open_Science/Topic_5/data/example.csv")` you write `read.csv("data/example.csv")`. This is easier to write, more flexible and less prone to errors because as long as you keep your files in the project together it will work. Imagine for example you want to move your script (and data) to `"/home/user/backup/Uni/Basics_of_Open_Science/Topic_5/data/example.csv"`. 
+Connected to the use of Project is the concept that you use relative file paths (e.g. for loading csv files). So instead of doing something like this: `read.csv("/home/user/Documents/Uni/UnderstandingORS/Topic_5/data/example.csv")` you write `read.csv("data/example.csv")`. This is easier to write, more flexible and less prone to errors because as long as you keep your files in the project together it will work. Imagine for example you want to move your script (and data) to `"/home/user/backup/Uni/UnderstandingORS/Topic_5/data/example.csv"`. 
 
-R Projects hence make collaboration easier, your script won't work on a different computer and you have to manually adjust the file path. This gets even worse if multiple people work on the same analysis and every one has to change their scripts. 
+R Projects hence make collaboration easier, your script will work on a different computer and you do not have to manually adjust the file path. This gets even more important if multiple people work on the same analysis and every one has to change their scripts. 
 
 Another advantage of R Projects is the possibility to quickly switch to another project without mixing up scripts and data between projects. Without using R Projects you probably have to close the files you have open, change the working directory to the new location, open the files you will be using and restart the R session. With R Projects this is all done automatically.
 
@@ -131,7 +131,7 @@ _
 ### Create a new Rmd
 **Execute the following steps on your computer while you read:** 
 
-Go to `File` > `New File` > `R Markdown`, enter `Title` and `Author`, select `html` as output, confirm.
+In Rstudio go to `File` > `New File` > `R Markdown`, enter `Title` and `Author`, select `html` as output, confirm.
 A new .Rmd file should open with a short tutorial. 
 
 To render, or `knit`, the file to `html` press `Knit`. The first time you run the script you will have to specify the name under which to save it. Afterwards the script is always saved before rendering. 
@@ -165,10 +165,7 @@ output: html_output
 
 ### Code chunks
 
-The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax:
-To start a chunk write (backticks) 
-` ```{r} `, then place your R code and end the chunk with
-` ``` `. The `r` in 
+The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax. To start a chunk write (backticks) ` `````````{r} `, then place your R code and end the chunk with ` ````````` `. The `r` in 
 ` ```{r} ` indicates that the programming language used in this chunk is R. Other options include `python` or
 `bash` although we will not need these here.  
 Within RStudio a new code chunk can be included by either clicking on `Insert a new code chunk` in the toolbar or using a keyboard shortcut (`Ctrl+Alt+I` on Windows and `Option+Command+I` on Mac).
@@ -180,7 +177,7 @@ For more options see the cheat sheet in R studio: `Help` > `Cheat Sheets` > `R M
 
 
 The behavior of the chunks can be changed by setting chunk options. This is done in the opening of the chunk, e.g. 
-` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it). For more options see the cheat sheet in R studio: `Help`>`Cheat Sheets`>`R Markdown Cheat Sheet` or see the [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html).
+` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it). For more options see the R Markdown cheat sheet or the [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html).
 
 *Note*: inline R code, i.e. code directly within the narrative text, can be run with ``` `r ` ``` , placing the code after `r `. This is for example usefull when you mention a sample size in the text and want it to update directly from the data set you read in.
 
@@ -305,30 +302,15 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 >* set the chunk options of chunk 3 to not evaluate the code but show it
 >* set the chunk options of chunk 4 to not show the warning
 >* complete the sentence at the end with appropriate information calculated in chunk 5
-After these steps answer the questions below.
+After these steps answer the questions:
+> 1. The percentage of children who survived the Titanic accident was (Note: round to one decimal digit) 
+> 2. The percentage of female survivors was ___ times higher as the percentage of male survivors. (Note: round to two decimal digits) 
 {: .challenge}
 
-
-> ## R Markdown practice 1
-> The percentage of children who survived the Titanic accident was (Note: round to one decimal digit) 
->
-{: .challenge}
 
 > ## Solution
-> 
-> 52.3 
->
-{: .solution}
-
-
-> ## R Markdown practice 2
-> The percentage of female survivors was ___ times higher as the percentage of male survivors. (Note: round to two decimal digits) 
->
-{: .challenge}
-
-> ## Solution
-> 
-> 3.45 
+> 1. 52.3
+> 2. 3.45 
 >
 {: .solution}
 
@@ -340,7 +322,7 @@ The goal of this challenge is to create a fully reproducible analysis within an 
 
 
 >## Analysis of the palmer penguins data
-Create a new R Markdown document and write the code for each of the below questions in a separate paragraph/chunk and describe the result in a complete sentence directly in the R Markdown document. We will use the `penguins` dataset from the package `palmerpenguins`, available as the data set `penguins` after installing the package `palmerpenguins`. To get an overview of the data load the `penguins` dataset and with the following questions: 
+Create a new R Markdown document and write the code for each of the below questions in a separate paragraph/chunk and describe the result in a complete sentence directly in the R Markdown document. We will use the `penguins` dataset from the package `palmerpenguins`, available as the data set `penguins` after installing the package. To get an overview of the data load the `penguins` dataset and explore the following questions: 
 > 
 > &nbsp;
 > 
