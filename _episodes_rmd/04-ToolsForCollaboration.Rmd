@@ -34,7 +34,7 @@ We aim to look at CERN's approach to Open Science by reading three articles that
 
 
 ![]({{ page.root }}/fig/05-CCMarApr19_Openscience.png){: height="200px"}
-Credit: T.Simko
+Credit: T.Simko.
 
 > _"True open science demands more than simply making data available: it needs to concern itself with providing information on how to repeat or verify an analysis performed over given datasets, producing results that can be reused by others for comparison, confirmation or simply for deeper understanding and inspiration. This requires runnable examples of how the research was performed, accompanied by software, documentation, runnable scripts, notebooks, workflows and compute environments. It is often too late to try to document research in such detail once it has been published."_
 
@@ -45,7 +45,7 @@ S Dallmeier-Tiessen and T Simko [https://cerncourier.com/a/open-science-a-vision
 
 
 ![]({{ page.root }}/fig/05-CCMarApr19_Opensource.png){: height="200px"}
-Credit: S Kulkarni
+Credit: S Kulkarni.
 
 > _""The underlying ideal is open collaboration: peers freely, collectively and publicly build software solutions. A second ideal is recognition, in which credit for the contributions made by individuals and organisations worldwide is openly acknowledged. A third ideal concerns rights, specifically the so-called four freedoms granted to users: to use the software for any purpose; to study the source code to understand how it works; to share and redistribute the software; and to improve the software and share the improvements with the community. Users and developers therefore contribute to a virtuous circle in which software is continuously improved and shared towards a common good, minimising vendor lock-in for users."_
 
@@ -221,7 +221,7 @@ Other tools for collaboration have been summarized in the Primer "[Digital colla
 The purpose of Git is best explained with the below cartoon: it is a system that allows to avoid situations like in the cartoon. Such systems are called version control systems since they are designed to take care of versioning of files without changing (and lengthening) file names. The purpose here is not to teach you Git but to inform you detailed enough such that you can decide if or if not you need to learn Git. You will also learn a bit of terminology and get some links such that a start with Git should be easier.
 
 ![]({{ page.root }}/fig/05-phd101212s.png){: height="400px"}
-Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](https://www.phdcomics.com) 
+Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](https://www.phdcomics.com). 
 
 >## What is Git?
 >
@@ -260,16 +260,16 @@ Credit: Randall Munroe/xkcd at [https://xkcd.com/21597/](https://xkcd.com/1597/)
 - The remote version of a repository can be "cloned" to the computers of all collaborators of the project.
 
 
-## Git is a decentralized version control system (DVCS)
+## Git is a decentralized version control system 
 
-Developers work directly with their own local repository on their computer, i.e. a folder on their computer: the workspace in the below graphic.
+Developers work directly with their own local repository on their computer, i.e. a folder on their computer: the local workspace in the below graphic.
 
-By using the command "git add" they add files or folders to the index, which is similar to a registry in a library. This step is also called staging. Then they "git commit" their staged changes to the local repository on their computer creating a version that will be kept in the system. Only with the "git push" command do they upload the changes to the remote server.
+By using the command "git add" they add files or folders to the local index, which is similar to a registry in a library. This step is also called staging. Then they "git commit" their staged changes to the local repository on their computer creating a version that will be kept in the system. Only with the "git push" command do they upload the changes to the remote server.
 
 The next person working on the same repository will need to "git pull" the updated repository in order to access the changes.
 
-![]({{ page.root }}/fig/05-git-transport.png){: height="500px"}
-Credit: 
+![]({{ page.root }}/fig/05-git-process.png){: height="300px"}
+Image Credit: Illustration of the most important git commands by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994551](https://doi.org/10.5281/zenodo.7994551).
 
 ## Installation
 

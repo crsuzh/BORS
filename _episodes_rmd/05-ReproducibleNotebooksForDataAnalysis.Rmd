@@ -10,11 +10,10 @@ questions:
 objectives: 
   - "Understand the advantages of code-based data analysis"
   - "Able to create and adapt an R Markdown script"
-  - "Adapt YAML header"
-  - "Use code chunks and choose the right chunk option"
-  - "Practice by answering simple questions"
+  - "Adapt a YAML header"
+  - "Use code chunks and choose the right chunk options"
+  - "Practice R Markdown by answering simple questions"
   - "Bonus: add a table to an R Markdown script"
-  - "Bonus: add a graphic to an R Markdown script"
 keypoints:
   - "Code-based analysis is better for reproducibility."
   - "Combining narrative and code-based results is even more profitable."

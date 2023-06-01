@@ -89,13 +89,13 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 In 2016 M Baker designed a survey meant to shed "light on the ‘crisis’ rocking research." Here we discuss some of the results of the survey, for a complete report see [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a). The two graphs from the publication show that a large proportion of researchers believes that there are issues with reproducibility but that, again in the opinion of researchers, the extent of the problem differs between disciplines. Specifically, researchers from the "hard" sciences such as chemistry and physics, more frequently believe that the published work in their field is reproducible than for example in the "softer" sciences biology and medicine.
 
 ![]({{ page.root }}/fig/03-ReproCrisis01.png){: height="200px"} ![]({{ page.root }}/fig/03-ReproCrisis02.png){: height="150px"}  
-Credit:
+Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
 
 ## Factors contributing to irreproducible research  
 Baker also tried to evaluate which factors could contribute to this perceived reproducibility issue. Most researchers (more than 95%) believe that selective reporting and pressure to publish always/often or sometimes contribute to irreproducibility. Still about 90% believe that low statistical power or poor analysis, not enough replication in the original lab and insufficient mentoring/oversight always/often or sometimes contribute. Around 80% agree with unavailability of methods/code, poor experimental design, unavailability of raw data and unsufficient peer review as contributing factors at least sometimes. Fraud plays a more minor role in the opinion of researchers.
 
 ![]({{ page.root }}/fig/03-ReproCrisis04.png)  
-Credit:
+Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
 
 &nbsp;
 
@@ -170,15 +170,9 @@ From **Good enough practices in scientific computing** by G Wilson et al. [https
 
 In **Packaging Data Analytical Work Reproducibly Using R (and Friends)**  B Marwick et al. [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986) suggest a slightly different but conceptually similar approach. They propose to organize projects as so-called "research compendia", for example like:
 
-![]({{ page.root }}/fig/03-Project02.png)
+![]({{ page.root }}/fig/03-compendium.png)
 
-![]({{ page.root }}/fig/03-Project01.png)  
-
- 
-
-
-
-
+Image credit: Illustration of research compendia as suggested in B. Marwick et al. by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994355](https://doi.org/10.5281/zenodo.7994355).
 
 ## Software/code
 Writing code for a data analysis instead of using a GUI based tool makes an analysis to some degree reproducible (given the availability of the data and the analogous functioning of the computing environment). But code can also be a very detailed documentation of the employed methods, at least if it is written in a way such that it is understandable.
@@ -229,7 +223,7 @@ On top of these high level recommendations writing and reading code is easier if
 
 ![]({{ page.root }}/fig/03-Meme.png)  
 
-Credit: https://www.reddit.com/r/ProgrammerHumor/comments/ebh05i/i_remade_this_one_think_its_funnier_this_way/
+Image credit: https://www.reddit.com/r/ProgrammerHumor/comments/ebh05i/i_remade_this_one_think_its_funnier_this_way/
 
 ## Quiz on organization and software
 
@@ -282,7 +276,7 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 &nbsp;
 
 ![]({{ page.root }}/fig/03-Meme02.png)  
-Credit: Randall Munroe/xkcd at [https://xkcd.com/2180/](https://xkcd.com/2180/) licensed as CC BY-NC.
+Image credit: Randall Munroe/xkcd at [https://xkcd.com/2180/](https://xkcd.com/2180/) licensed as CC BY-NC.
 
 Humor aside, spreadsheets have advantages and disadvantages, that can threaten reproducibility. But they are easy to use and so widespread that we better learn how to use them properly. And indeed data in spreadsheets **can** be organized in way that favors reproducibility. We will summarize the recommendations of the article by K Broman and K Woo [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) into five checklists below. Broman and Woo promise that:  
 
@@ -329,7 +323,7 @@ Humor aside, spreadsheets have advantages and disadvantages, that can threaten r
 {: .checklist}
 
 ![]({{ page.root }}/fig/03-Meme03.png)
-Credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1179/) licensed as CC BY-NC.
+Image credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1179/) licensed as CC BY-NC.
 
 
 >## Make your data truly readable and rectangular checklist
@@ -366,7 +360,7 @@ Credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1179/) 
 Unfortunately, things can go wrong nevertheless:
 
 ![]({{ page.root }}/fig/03-Meme04.png)  
-Credit: [https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg]()
+Image credit: [https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg]()
 
 
 

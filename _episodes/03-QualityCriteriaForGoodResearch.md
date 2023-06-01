@@ -72,8 +72,8 @@ Authors have to follow several steps, which are in general:
 
 The below image illustrates this process:
 
-![]({{ page.root }}/fig/04-PeerReviewPublication-1.png)  
-Credit:
+![]({{ page.root }}/fig/04-pubprocesspeer.png)  
+Image Credit: (Part of) Illustration of the academic publication process by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
 
 ## What is a doi and what is Crossref?
 Since the goal of scientific articles is to contribute to the advancement of science they need to be findable and identifiable for future work. For that a necessary condition is that they have a unique identifier, which is nowadays of course a digital identifier.
@@ -131,10 +131,10 @@ Before you review for the first time see [Open Reviewer Toolkit](https://content
 Preprints are a relatively new form of publication which helps to overcome some of the issues with peer review and with the publication system. See the extension of the above graphic including preprints in the publication process:
 
 
-![]({{ page.root }}/fig/04-PeerReviewPublication.png)
-Credit:
+![]({{ page.root }}/fig/04-pubprocess.png)
+Image Credit: Illustration of the academic publication process by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
 
-J Berg et al. https://www.science.org/doi/abs/10.1126/science.aaf9133
+See also J Berg et al. for a comment on the introduction of preprints in Biology:  [https://www.science.org/doi/abs/10.1126/science.aaf9133](https://www.science.org/doi/abs/10.1126/science.aaf9133).
 
 ## Quiz on academic publishing
 
@@ -190,7 +190,7 @@ J Berg et al. https://www.science.org/doi/abs/10.1126/science.aaf9133
 ## What is IMRAD?
 The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article. See the article of J Wu [https://link.springer.com/article/10.1007/s10980-011-9674-3](https://link.springer.com/article/10.1007/s10980-011-9674-3) for a quick overview illustration:
 ![]({{ page.root }}/fig/04-IMRAD.png){: height="300px"}
-Credit:
+Image credit: Illustration of the IMRAD concept, by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994280](https://doi.org/10.5281/zenodo.7994280).
 
 R Day writes about the history of scientific publication in his article, "The Origins of the Scientific Paper: The IMRAD Format". He specifically mentions the **scientific method** and its cornerstone the **principle of reproducibility of results**. The IMRAD Format has been introduced in order to represent the steps of the scientific method.
 
@@ -201,7 +201,8 @@ R Day American Medical Writers Association, 1989, Vol 4, No 2., 16--18. This art
 ## What is the scientific method?
 The Center for Reproducible Science at the University of Zurich uses a simplified graphical representation of the scientific method in its communications: 
 ![]({{ page.root }}/fig/Repro_Kreislauf_horizontal.png){: height="200px"}
-Credit:
+Image credit: Illustrations of meta research and the research cycle by Luca Eusebio and Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994222](https://doi.org/10.5281/zenodo.7994222).
+
 
 "What is the Scientific Method?" is a philosophical question that we can not answer in full detail here and it may be one of the questions to which there is no single correct answer. We will use the Stanford Encyclopedia of Philosophy definition as a first approximation:
 

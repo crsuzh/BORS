@@ -4,7 +4,7 @@
 source: Rmd
 title: "Reproducible notebooks for data analysis"
 teaching: 60
-exercises: 90-120
+exercises: 120-150
 questions: 
   - "Should I use a graphical user interface to analyse data or a code-based system?"
   - "What is literate programming and what is R Markdown?"
@@ -12,11 +12,10 @@ questions:
 objectives: 
   - "Understand the advantages of code-based data analysis"
   - "Able to create and adapt an R Markdown script"
-  - "Adapt YAML header"
-  - "Use code chunks and choose the right chunk option"
-  - "Practice by answering simple questions"
+  - "Adapt a YAML header"
+  - "Use code chunks and choose the right chunk options"
+  - "Practice R Markdown by answering simple questions"
   - "Bonus: add a table to an R Markdown script"
-  - "Bonus: add a graphic to an R Markdown script"
 keypoints:
   - "Code-based analysis is better for reproducibility."
   - "Combining narrative and code-based results is even more profitable."
@@ -165,7 +164,7 @@ output: html_output
 
 ### Code chunks
 
-The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax. To start a chunk write (backticks) ` `````````{r} `, then place your R code and end the chunk with ` ````````` `. The `r` in 
+The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax. To start a chunk write (backticks) ` ````{r} `, then place your R code and end the chunk with ` ```` `. The `r` in 
 ` ```{r} ` indicates that the programming language used in this chunk is R. Other options include `python` or
 `bash` although we will not need these here.  
 Within RStudio a new code chunk can be included by either clicking on `Insert a new code chunk` in the toolbar or using a keyboard shortcut (`Ctrl+Alt+I` on Windows and `Option+Command+I` on Mac).
@@ -302,7 +301,8 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 >* set the chunk options of chunk 3 to not evaluate the code but show it
 >* set the chunk options of chunk 4 to not show the warning
 >* complete the sentence at the end with appropriate information calculated in chunk 5
-After these steps answer the questions:
+>
+>After these steps answer the questions:
 > 1. The percentage of children who survived the Titanic accident was (Note: round to one decimal digit) 
 > 2. The percentage of female survivors was ___ times higher as the percentage of male survivors. (Note: round to two decimal digits) 
 {: .challenge}
@@ -314,7 +314,7 @@ After these steps answer the questions:
 >
 {: .solution}
 
-
+&nbsp;
 
 # Episode challenge
 
@@ -982,73 +982,4 @@ For all options check the documentation or the [vignette](http://haozhu233.githu
 > {: .language-r}
 {: .solution}
  
-## Task 3 Create a scatter plot
 
-Create the following scatter plot of bill_depth_mm vs. body_mass_g and color by species using the function `plot`. Also add a legend.
-
-<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="612" class="plot" style="display: block; margin: auto;" />
-
-
->## Solution
-> 
-> ~~~
-> plot(bill_depth_mm ~ body_mass_g, penguins, col = penguins$species, pch = 19)
-> legend(x = "topright", 
->        legend = unique(penguins$species), 
->        col = seq_along(unique(penguins$species)), 
->        pch = 19)
-> ~~~
-> {: .language-r}
-{: .solution}
-
-
-## Task 4 Create a histogram
-
-Create the following histogram of flipper_length_mm for each island and color by island using `hist`. 
-
-*Hint*: explore the argument `add`.  
-*Hint*: checkout `rgb` for colors.
-
-<img src="../fig/rmd-05-unnamed-chunk-24-1.png" alt="plot of chunk unnamed-chunk-24" width="612" class="plot" style="display: block; margin: auto;" />
-
->## Solution
-> 
-> ~~~
-> colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), 
->                  Dream = rgb(0, 0, 1, 0.4), 
->                  Biscoe = rgb(1, 0, 0, 0.4))
-> ylim_used <- c(0, 0.07)
-> breaks_used <- seq(170, 235, 5)
-> par(mfrow = c(3, 1), mar = c(4, 4, 2, 0))
-> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[1]], 
->      col = colors_used[1], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
->      xlab = "Flipper length [mm]", main = names(colors_used)[1])
-> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[2]],
->      col = colors_used[2], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
->      xlab = "Flipper length [mm]", main = names(colors_used)[2])
-> hist(penguins$flipper_length_mm[penguins$island == names(colors_used)[3]],
->      col=colors_used[3], freq = FALSE, ylim = ylim_used, breaks = breaks_used, 
->      xlab = "Flipper length [mm]", main = names(colors_used)[3])
-> ~~~
-> {: .language-r}
-{: .solution}
-
-## Task 5 Create a boxplot
-
-Create the following boxplot of `bill_length_mm` per species using `boxplot`. Also add a legend.
-
-<img src="../fig/rmd-05-unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26" width="612" class="plot" style="display: block; margin: auto;" />
-
->## Solution
-> 
-> ~~~
-> colors_used <- c(Torgersen = rgb(0, 1, 0, 0.4), 
->                  Dream = rgb(0, 0, 1, 0.4), 
->                  Biscoe = rgb(1, 0, 0, 0.4))
-> boxplot(bill_length_mm~species, penguins, col = colors_used, 
->         ylab = "Bill length [mm]", xlab = "Species")
-> points(bill_length_mm~species, penguins, pch = 19)#, col=colors_used[penguins$species])
-> legend(x = "topleft", legend = names(colors_used), col = colors_used, pch = 19)
-> ~~~
-> {: .language-r}
-{: .solution}

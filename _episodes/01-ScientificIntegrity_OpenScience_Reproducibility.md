@@ -213,17 +213,18 @@ In 2021 UNESCO published their recommendations for Open Science. From their poin
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
 ![]({{ page.root }}/fig/02-UNESCO.png)
-Credit: [UNESCO Recommendation on Open Science](https://unesdoc.unesco.org/ark:/48223/pf0000379949.locale=en), CC-BY-SA.
+Image credit: [UNESCO Recommendation on Open Science](https://unesdoc.unesco.org/ark:/48223/pf0000379949.locale=en), CC-BY-SA.
 
 Optional: Read the full recommendation text at [https://en.unesco.org/science-sustainable-future/open-science/recommendation](https://en.unesco.org/science-sustainable-future/open-science/recommendation).
 
 
-## Definition by Open Science in Psychology/Social Science initiatives
+## Open Science made easy by the Open Science in Psychology/Social Science initiatives
 
-The Open Science in Psychology/Social Science initiatives summarize and explain the practice of Open Science in seven steps. Some of these steps were also part of Emma's decision process.
-<img src="../fig/rmd-05-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="150%" style="display: block; margin: auto;" />
-Picture available on the Open Science Framework [https://osf.io/hktmf/](https://osf.io/hktmf/). 
+The Open Science in Psychology/Social Science initiatives summarize and explain the practice of Open Science in seven steps: [https://osf.io/hktmf/](https://osf.io/hktmf/). Some of these steps were also part of Emma's decision process. Here we show an abbreviated version of the seven steps:
 
+![]({{ page.root }}/fig/02stepspicture.png)
+
+Image credit: Eva Furrer, unlicensed, abbreviated version of [https://osf.io/hktmf/](https://osf.io/hktmf/).
 
 We will revisit the following steps in this lesson:
 1. **Create OSF account** (use easy infrastructure for collaboration)
@@ -237,7 +238,7 @@ The Open up your research game and the seven steps above refer to preregistratio
 
 ![]({{ page.root }}/fig/02-TexasSharpShooter.png)
 
-Credit: [Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1), CC-BY.
+Image credit: [Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1), CC-BY.
 
 When a researcher preregisters a study, the design and precise goal of the study are declared openly in advance: the bull´s eye is drawn.
 
@@ -284,7 +285,7 @@ When a researcher preregisters a study, the design and precise goal of the study
 All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their reported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
 >
 ![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
-Credit: R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382), CC-BY.
+Image Credit: R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382), CC-BY.
 >
 > What is the difference between what you observe before and after the year 2000 in this graphic?
 >
