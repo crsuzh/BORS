@@ -326,7 +326,8 @@ In this course we will learn about some of the tools Markowetz lists in his pape
 ## (Anti-)Example from the Markowetz paper
 >## How bright promise in cancer testing fell apart
 >
-[![](https://static01.nyt.com/images/2011/07/08/us/JP-GENES/JP-GENES-jumbo.jpg?quality=75&auto=webp){: height="250px"}](https://www.nytimes.com/2011/07/08/health/research/08genes.html)
+![]({{ page.root }}/fig/01-baggerlycoombes.png){: height="400px"}
+Image Credit: adapted from the open access article by  K Baggerly and K Coombes [https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full).
 >
 From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html](https://www.nytimes.com/2011/07/08/health/research/08genes.html), picture by Michael Stravato for The New York Times.
 >

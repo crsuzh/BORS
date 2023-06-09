@@ -220,10 +220,6 @@ On top of these high level recommendations writing and reading code is easier if
 {: .checklist}
 
 
-![]({{ page.root }}/fig/03-Meme.png)  
-
-Image credit: https://www.reddit.com/r/ProgrammerHumor/comments/ebh05i/i_remade_this_one_think_its_funnier_this_way/
-
 ## Quiz on organization and software
 
 > ## Duplication
@@ -355,12 +351,6 @@ Image credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1
 {: .checklist}
 
 &nbsp;
-
-Unfortunately, things can go wrong nevertheless:
-
-![]({{ page.root }}/fig/03-Meme04.png)  
-Image credit: [https://starecat.com/content/wp-content/uploads/me-excel-switches-number-to-a-date-friends-joey-learning-french.jpg]()
-
 
 
 ## Quiz on data in spreadsheets
