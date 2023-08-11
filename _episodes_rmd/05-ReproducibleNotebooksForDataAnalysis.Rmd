@@ -661,7 +661,7 @@ df_sum %>%
 >   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
 >   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
 >                    border_right = TRUE, border_left = TRUE)
-```
+> ```
 {: .solution}
  
 
