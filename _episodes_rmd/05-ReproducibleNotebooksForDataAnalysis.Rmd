@@ -540,128 +540,137 @@ What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller th
 knitr::opts_chunk$set(out.extra = 'class="plot"')
 ```
 
-## R Markdown tables
-
-For the following challenge we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
-
-
-> _
-The goal of kableExtra is to help you build common complex tables and manipulate table styles. It imports the pipe %>% symbol from magrittr and verbalize all the functions, so basically you can add “layers” to a kable output in a way that is similar with ggplot2 and plotly._
-
-
-For users who are not very familiar with the pipe operator %>% in R: it is the R version of the fluent interface. The idea is to pass the result along the chain for a more literal coding experience. Basically, when we say A %>% B, technically it means sending the results of A to B as B’s first argument.
-
-
-Simple tables can be generated as follows:
-```{r}
-library(kableExtra)
-head(penguins) %>% # the dataset, '%>%' parses the output of this command as the input in the next command 
-  kbl() %>% # the kableExtra equivalent of knitr::kable, base table
-  kable_classic() # add theme to table
-```
-
-For all options check the documentation or the [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html).
-
-
-## Task 1 Create the following table:
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-df_sum <- penguins %>% 
-  dplyr::select(-sex,-island,-flipper_length_mm,-body_mass_g) %>% 
-  dplyr::group_by(species, year) %>% 
-  dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
-  tidyr::pivot_wider(names_from=c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
-
-df_sum %>%
-  kbl(col.names = c("species", rep(c("2007","2008","2009"), 2)))%>%
-  kable_classic() %>%
-  add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-  column_spec (c(1, 4), border_right = T) 
-
-```
-
-*Hint*: checkout the different styling functions, e.g. `kable_classic`.  
-*Hint*: For multiple column names use `add_header_above`  
-*Hint*: Use the following code to get started.  
-
->## Solution
-> ```{r, include=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
-> df_sum <- penguins %>% 
->   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
->   dplyr::group_by(species, year) %>% 
->   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
->   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
-> 
-> df_sum %>%
->   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
->   kable_classic() %>%
->   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
->   kable_styling(bootstrap_options = c("hover")) %>% 
->   column_spec (c(1, 4), border_right = T) 
-> 
-> ```
-{: .solution}
-
-## Task 2 Create the following table wich includes small graphs:
-
-```{r, echo=FALSE}
-df_sum <- penguins %>% 
-  dplyr::select(-island,-sex,-year,-body_mass_g,-flipper_length_mm) %>% 
-  dplyr::group_by(species) %>% 
-  dplyr::summarise(dplyr::across(.cols = !contains("species"),
-                                 .fns = function(x) 
-                                   signif(mean(na.omit(x)), 3))) %>% 
-  dplyr::mutate(bill_length_boxplot="", bill_length_hist="",
-                bill_depth_boxplot="", bill_depth_hist="")
-
-dfsum_list <- split(penguins$bill_length_mm, penguins$species)
-dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
-df_sum %>%
-  dplyr::select(species, 
-                dplyr::starts_with("bill_length"), 
-                dplyr::starts_with("bill_depth")) %>% 
-  kbl(col.names = c("species", rep(c("mean","boxplot","histogram"), 2))) %>%
-  kable_paper() %>%
-  column_spec(1, border_right = TRUE) %>%
-  column_spec(3, image = spec_boxplot(dfsum_list)) %>%
-  column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
-  column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
-  column_spec(7, image = spec_hist(dfsum_list2)) %>% 
-  add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
-                   border_right = TRUE, border_left = TRUE)
-
-```
-
-*Hint*: Use `column_spec` for altering specific columns.
-
->## Solution
-> ```{r, include=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
-> df_sum <- penguins %>% 
->   dplyr::select(-island, -sex, -year, -body_mass_g, -flipper_length_mm) %>% 
->   dplyr::group_by(species) %>% 
->   dplyr::summarise(dplyr::across(.cols = !contains("species"),
->                                  .fns = function(x) 
->                                    signif(mean(na.omit(x)), 3))) %>% 
->   dplyr::mutate(bill_length_boxplot = "", bill_length_hist = "",
->                 bill_depth_boxplot = "", bill_depth_hist = "")
-> 
-> dfsum_list <- split(penguins$bill_length_mm, penguins$species)
-> dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
-> df_sum %>%
->   dplyr::select(species, 
->                 dplyr::starts_with("bill_length"), 
->                 dplyr::starts_with("bill_depth")) %>% 
->   kbl(col.names = c("species", rep(c("mean", "boxplot", "histogram"), 2))) %>%
->   kable_paper() %>%
->   column_spec(1, border_right = TRUE) %>%
->   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
->   column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
->   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
->   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
->   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
->                    border_right = TRUE, border_left = TRUE)
-> ```
-{: .solution}
- 
+>## R Markdown tables
+>
+>For the following challenge we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
+>
+>
+>> _
+>>The goal of kableExtra is to help you build common complex tables and manipulate table styles. It imports the pipe `%>%` symbol from magrittr and verbalize all the functions, so basically you can add “layers” to a kable output in a way that is similar with ggplot2 and plotly._
+>
+>
+For users who are not very familiar with the pipe operator `%>%` in R: it is the R version of the fluent interface. The idea is to pass the result along the chain for a more literal coding experience. Basically, when we say A `%>%` B, technically it means sending the results of A to B as B’s first argument.
+>
+>
+>Simple tables can be generated as follows:
+>```{r}
+>library(kableExtra)
+>head(penguins) %>% # the dataset, '%>%' parses the output of this command as the input in the next >command 
+>  kbl() %>% # the kableExtra equivalent of knitr::kable, base table
+>  kable_classic() # add theme to table
+>```
+>
+>For all options check the documentation or the [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html).
+>
+>
+> &nbsp;
+>
+>
+>>## Task 1 Create the following table:
+>>
+>>```{r, echo=FALSE, message=FALSE, warning=FALSE}
+>>df_sum <- penguins %>% 
+>>  dplyr::select(-sex,-island,-flipper_length_mm,-body_mass_g) %>% 
+>>  dplyr::group_by(species, year) %>% 
+>>  dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+>>  tidyr::pivot_wider(names_from=c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
+>>
+>>df_sum %>%
+>>  kbl(col.names = c("species", rep(c("2007","2008","2009"), 2)))%>%
+>>  kable_classic() %>%
+>>  add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
+>>  kable_styling(bootstrap_options = c("hover")) %>% 
+>>  column_spec (c(1, 4), border_right = T) 
+>>
+>>```
+>>
+>>*Hint*: checkout the different styling functions, e.g. `kable_classic`.  
+>>*Hint*: For multiple column names use `add_header_above`  
+>>*Hint*: Use the following code to get started.  
+>{: .checklist}
+>
+>
+>>## Solution
+>> ```{r, include=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+>> df_sum <- penguins %>% 
+>>   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
+>>   dplyr::group_by(species, year) %>% 
+>>   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+>>   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
+>> 
+>> df_sum %>%
+>>   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
+>>   kable_classic() %>%
+>>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
+>>   kable_styling(bootstrap_options = c("hover")) %>% 
+>>   column_spec (c(1, 4), border_right = T) 
+>> 
+>> ```
+>{: .solution}
+>
+> &nbsp;
+>
+>>## Task 2 Create the following table wich includes small graphs:
+>>
+>>```{r, echo=FALSE}
+>>df_sum <- penguins %>% 
+>>  dplyr::select(-island,-sex,-year,-body_mass_g,-flipper_length_mm) %>% 
+>>  dplyr::group_by(species) %>% 
+>>  dplyr::summarise(dplyr::across(.cols = !contains("species"),
+>>                                 .fns = function(x) 
+>>                                   signif(mean(na.omit(x)), 3))) %>% 
+>>  dplyr::mutate(bill_length_boxplot="", bill_length_hist="",
+>>                bill_depth_boxplot="", bill_depth_hist="")
+>>
+>>dfsum_list <- split(penguins$bill_length_mm, penguins$species)
+>>dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
+>>df_sum %>%
+>>  dplyr::select(species, 
+>>                dplyr::starts_with("bill_length"), 
+>>                dplyr::starts_with("bill_depth")) %>% 
+>>  kbl(col.names = c("species", rep(c("mean","boxplot","histogram"), 2))) %>%
+>>  kable_paper() %>%
+>>  column_spec(1, border_right = TRUE) %>%
+>>  column_spec(3, image = spec_boxplot(dfsum_list)) %>%
+>>  column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
+>>  column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
+>>  column_spec(7, image = spec_hist(dfsum_list2)) %>% 
+>>  add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
+>>                   border_right = TRUE, border_left = TRUE)
+>>
+>>```
+>>
+>>*Hint*: Use `column_spec` for altering specific columns.
+>{: .checklist}
+>
+>
+>>## Solution
+>> ```{r, include=TRUE, echo=TRUE, warning=FALSE, results='hide', message=FALSE}
+>> df_sum <- penguins %>% 
+>>   dplyr::select(-island, -sex, -year, -body_mass_g, -flipper_length_mm) %>% 
+>>   dplyr::group_by(species) %>% 
+>>   dplyr::summarise(dplyr::across(.cols = !contains("species"),
+>>                                  .fns = function(x) 
+>>                                    signif(mean(na.omit(x)), 3))) %>% 
+>>   dplyr::mutate(bill_length_boxplot = "", bill_length_hist = "",
+>>                 bill_depth_boxplot = "", bill_depth_hist = "")
+>> 
+>> dfsum_list <- split(penguins$bill_length_mm, penguins$species)
+>> dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
+>> df_sum %>%
+>>   dplyr::select(species, 
+>>                 dplyr::starts_with("bill_length"), 
+>>                 dplyr::starts_with("bill_depth")) %>% 
+>>   kbl(col.names = c("species", rep(c("mean", "boxplot", "histogram"), 2))) %>%
+>>   kable_paper() %>%
+>>   column_spec(1, border_right = TRUE) %>%
+>>   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
+>>   column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
+>>   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
+>>   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
+>>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
+>>                    border_right = TRUE, border_left = TRUE)
+>> ```
+>{: .solution}
+{: .challenge}
 

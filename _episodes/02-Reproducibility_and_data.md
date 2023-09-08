@@ -39,7 +39,7 @@ See S Goodman et al.[https://www.science.org/doi/10.1126/scitranslmed.aaf5027](h
 See this example of a publication, W Huang et al. [https://www.nature.com/articles/s41586-018-0311-z](https://www.nature.com/articles/s41586-018-0311-z), published in the prestigious journal Nature, that had issues with replication:
 
 
-![]({{ page.root }}/fig/03-01retraction.png){: height="50px"}  
+![]({{ page.root }}/fig/02-01retraction.png){: height="100px"}  
 The publication contains an important finding on how a special type of RNA can affect T-cells, which could imply therapeutic effects and lead to new drugs for autoimmune diseases. But some of the co-authors were unable to replicate the published results and hence initiated a retraction. The retraction note states:  
 “In follow-up experiments to this article, we have been **unable to replicate** key aspects of the original results.”
 
@@ -62,21 +62,21 @@ Is retraction due to error or non-feasibility of replication rare? Attempts at r
 ### Biomedicine  
 F Prinz et al. attempted "To substantiate our incidental observations that published reports are frequently not reproducible with quantitative data, we performed an analysis of our early (target identification and validation) in-house projects in our strategic research fields of oncology, women's health and cardiovascular diseases that were performed over the past 4 years." From 67 studies only 22 were fully or partially confirmed, see [https://www.nature.com/articles/nrd3439-c1](https://www.nature.com/articles/nrd3439-c1). 
 
-![]({{ page.root }}/fig/03-RetractionBiomedicine.png){: height="100px"}  
+![]({{ page.root }}/fig/02-RetractionBiomedicine.png){: height="100px"}  
 ### Psychology  
 The Open Science Collaboration in Psychology "conducted replications of 100 experimental and correlational studies published in three psychology journals using high-powered designs and original materials when available." in an attempt to "Estimating the reproducibility of psychological science". Only 39 of 100 replication studies were significant and the mean effect size was about 50% compared to the original studies, see [https://www.science.org/doi/10.1126/science.aac4716](https://www.science.org/doi/10.1126/science.aac4716). 
 
-![]({{ page.root }}/fig/03-RetractionPsychology.png){: height="100px"} 
+![]({{ page.root }}/fig/02-RetractionPsychology.png){: height="100px"} 
 
 ### Economics  
 C Camerer et al. replicated "18 studies published in the American Economic Review and the Quarterly Journal of Economics between 2011 and 2014. All of these replications followed predefined analysis plans that were made publicly available beforehand, and they all have a statistical power of at least 90% to detect the original effect size at the 5% significance level." They found significant effects in 11 of 18 studies with a mean effect size of about  66% compared to the original studies, see [https://www.science.org/doi/10.1126/science.aaf0918](https://www.science.org/doi/10.1126/science.aaf0918).
 
-![]({{ page.root }}/fig/03-RetractionEconomics.png){: height="100px"}   
+![]({{ page.root }}/fig/02-RetractionEconomics.png){: height="100px"}   
 
 ### Social Sciences
 Again C Camerer et al. "replicate 21 systematically selected experimental studies in the social sciences published in Nature and Science between 2010 and 2015." They found significant effects in 13 of 21 studies with mean effect size about 50% compared to the  original studies, see [https://www.nature.com/articles/s41562-018-0399-z](https://www.nature.com/articles/s41562-018-0399-z).
 
-![]({{ page.root }}/fig/03-RetractionSocialSciences.png){: height="100px"}   
+![]({{ page.root }}/fig/02-RetractionSocialSciences.png){: height="100px"}   
 >## Selfish reason number 1: reproducibility helps to avoid disaster  
 >> _“This experience showed me two things. First of all, a project is more than a beautiful result. You need to **record in detail how you got there**. And second, starting to work reproducibly early on will **save you time later**. We wasted years of our and our collaborators’ time by not being able to reproduce our own results. All of this could have been avoided by keeping better track of how the data and analyses evolved over time.”_
 >
@@ -87,13 +87,15 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 ## 1,500 scientists lift the lid on reproducibility
 In 2016 M Baker designed a survey meant to shed "light on the ‘crisis’ rocking research." Here we discuss some of the results of the survey, for a complete report see [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a). The two graphs from the publication show that a large proportion of researchers believes that there are issues with reproducibility but that, again in the opinion of researchers, the extent of the problem differs between disciplines. Specifically, researchers from the "hard" sciences such as chemistry and physics, more frequently believe that the published work in their field is reproducible than for example in the "softer" sciences biology and medicine.
 
-![]({{ page.root }}/fig/03-ReproCrisis01.png){: height="200px"} ![]({{ page.root }}/fig/03-ReproCrisis02.png){: height="150px"}  
+![]({{ page.root }}/fig/02-ReproCrisis01.png){: height="500px"} 
+
+![]({{ page.root }}/fig/02-ReproCrisis02.png){: height="500px"}  
 Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
 
 ## Factors contributing to irreproducible research  
 Baker also tried to evaluate which factors could contribute to this perceived reproducibility issue. Most researchers (more than 95%) believe that selective reporting and pressure to publish always/often or sometimes contribute to irreproducibility. Still about 90% believe that low statistical power or poor analysis, not enough replication in the original lab and insufficient mentoring/oversight always/often or sometimes contribute. Around 80% agree with unavailability of methods/code, poor experimental design, unavailability of raw data and unsufficient peer review as contributing factors at least sometimes. Fraud plays a more minor role in the opinion of researchers.
 
-![]({{ page.root }}/fig/03-ReproCrisis04.png)  
+![]({{ page.root }}/fig/02-ReproCrisis04.png){: height="700px"}  
 Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
 
 &nbsp;
@@ -169,7 +171,7 @@ From **Good enough practices in scientific computing** by G Wilson et al. [https
 
 In **Packaging Data Analytical Work Reproducibly Using R (and Friends)**  B Marwick et al. [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375986) suggest a slightly different but conceptually similar approach. They propose to organize projects as so-called "research compendia", for example like:
 
-![]({{ page.root }}/fig/03-compendium.png)
+![]({{ page.root }}/fig/02-compendium.png)
 
 Image credit: Illustration of research compendia as suggested in B. Marwick et al. by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994355](https://doi.org/10.5281/zenodo.7994355).
 
@@ -270,7 +272,7 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 
 &nbsp;
 
-![]({{ page.root }}/fig/03-Meme02.png)  
+![]({{ page.root }}/fig/02-Meme02.png)  
 Image credit: Randall Munroe/xkcd at [https://xkcd.com/2180/](https://xkcd.com/2180/) licensed as CC BY-NC.
 
 Humor aside, spreadsheets have advantages and disadvantages, that can threaten reproducibility. But they are easy to use and so widespread that we better learn how to use them properly. And indeed data in spreadsheets **can** be organized in way that favors reproducibility. We will summarize the recommendations of the article by K Broman and K Woo [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) into five checklists below. Broman and Woo promise that:  
@@ -317,7 +319,7 @@ Humor aside, spreadsheets have advantages and disadvantages, that can threaten r
 - Consider separate year, month, day columns  
 {: .checklist}
 
-![]({{ page.root }}/fig/03-Meme03.png)
+![]({{ page.root }}/fig/02-Meme03.png)
 Image credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1179/) licensed as CC BY-NC.
 
 

@@ -72,7 +72,7 @@ Authors have to follow several steps, which are in general:
 
 The below image illustrates this process:
 
-![]({{ page.root }}/fig/04-pubprocesspeer.png)  
+![]({{ page.root }}/fig/03-pubprocesspeer.png)  
 Image Credit: (Part of) Illustration of the academic publication process by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
 
 ## What is a doi and what is Crossref?
@@ -131,7 +131,7 @@ Before you review for the first time see [Open Reviewer Toolkit](https://content
 Preprints are a relatively new form of publication which helps to overcome some of the issues with peer review and with the publication system. See the extension of the above graphic including preprints in the publication process:
 
 
-![]({{ page.root }}/fig/04-pubprocess.png)
+![]({{ page.root }}/fig/03-pubprocess.png)
 Image Credit: Illustration of the academic publication process by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
 
 See also J Berg et al. for a comment on the introduction of preprints in Biology:  [https://www.science.org/doi/abs/10.1126/science.aaf9133](https://www.science.org/doi/abs/10.1126/science.aaf9133).
@@ -189,7 +189,7 @@ See also J Berg et al. for a comment on the introduction of preprints in Biology
 
 ## What is IMRAD?
 The acronym IMRAD stands for “Introduction, Methods, Results and Discussion”. IMRAD is a widespread format in the biomedical, natural and social science research literature for reports on empirical studies. It is a convenience to readers because they can easily find the specific information they may be looking for in an article. See the article of J Wu [https://link.springer.com/article/10.1007/s10980-011-9674-3](https://link.springer.com/article/10.1007/s10980-011-9674-3) for a quick overview illustration:
-![]({{ page.root }}/fig/04-IMRAD.png){: height="300px"}
+![]({{ page.root }}/fig/03-IMRAD.png){: height="300px"}
 Image credit: Illustration of the IMRAD concept, by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994280](https://doi.org/10.5281/zenodo.7994280).
 
 R Day writes about the history of scientific publication in his article, "The Origins of the Scientific Paper: The IMRAD Format". He specifically mentions the **scientific method** and its cornerstone the **principle of reproducibility of results**. The IMRAD Format has been introduced in order to represent the steps of the scientific method.
@@ -342,7 +342,7 @@ Nature Reporting requirements and reproducibility editorials [https://www.nature
 
 
 ## Database of reporting guidelines
-![]({{ page.root }}/fig/04-Reporting1.png){: height="300px"}
+![]({{ page.root }}/fig/03-Reporting1.png){: height="300px"}
 
 > _"The EQUATOR (Enhancing the QUAlity and Transparency Of health Research) Network is an international initiative that seeks to improve the reliability and value of published health research literature by promoting transparent and accurate reporting and wider use of robust reporting guidelines."_
 
@@ -351,7 +351,7 @@ Nature Reporting requirements and reproducibility editorials [https://www.nature
 [http://www.equator-network.org/reporting-guidelines/](http://www.equator-network.org/reporting-guidelines/)
 
 ## The MDAR framework
-![]({{ page.root }}/fig/04-Reporting2.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting2.png){: height="150px"}
 
 > _"We were motivated to develop the MDAR Framework as part of our own and others’ attempts to improve reporting to drive research improvement and ultimately greater trust in science. Existing tools, such as the ARRIVE guidelines, guidance from FAIRSharing, and the EQUATOR Network, speak to important sub-elements of biomedical research. This new MDAR Framework aims to be  more general and less deep, and therefore complements these important specialist guidelines."_ 
 
@@ -361,38 +361,38 @@ M McLeod et al. [https://www.pnas.org/content/118/17/e2103238118](https://www.pn
 
 ## Other examples of reporting guidelines
 
-![]({{ page.root }}/fig/04-Reporting3.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting3.png){: height="150px"}
 
 M Michel et al. [http://dmd.aspetjournals.org/content/dmd/48/1/64.full.pdf](http://dmd.aspetjournals.org/content/dmd/48/1/64.full.pdf)
 
 &nbsp;
 
-![]({{ page.root }}/fig/04-Reporting4.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting4.png){: height="150px"}
 
 T Hartung et al.[https://www.altex.org/index.php/altex/article/view/1229](https://www.altex.org/index.php/altex/article/view/1229)
 
 &nbsp;
 
-![]({{ page.root }}/fig/04-Reporting5.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting5.png){: height="150px"}
 
 S Cruz Rivera et al. [https://www.nature.com/articles/s41591-020-1037-7.pdf](https://www.nature.com/articles/s41591-020-1037-7.pdf)
 
 &nbsp;
 
-![]({{ page.root }}/fig/04-Reporting6.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting6.png){: height="150px"}
 
 M Appelbaum [https://psycnet.apa.org/fulltext/2018-00750-002.html](https://psycnet.apa.org/fulltext/2018-00750-002.html)  
 **&rArr; also available for qualitative and mixed methods**
 
 &nbsp;
 
-![]({{ page.root }}/fig/04-Reporting7.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting7.png){: height="150px"}
 
 R Poldrack et al. [https://www.sciencedirect.com/science/article/pii/S1053811907011020?via%3Dihub](https://www.sciencedirect.com/science/article/pii/S1053811907011020?via%3Dihub)
 
 &nbsp;
 
-![]({{ page.root }}/fig/04-Reporting8.png){: height="150px"}
+![]({{ page.root }}/fig/03-Reporting8.png){: height="150px"}
 
 L Riek [https://dl.acm.org/doi/pdf/10.5898/JHRI.1.1.Riek](https://dl.acm.org/doi/pdf/10.5898/JHRI.1.1.Riek)
 
