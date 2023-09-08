@@ -509,7 +509,7 @@ The checklist works best for studies with human subjects, using primary data (th
 
 
 >## The PRECHECK checklist
-> Below you find the checklist together with Why is this important? and Let’s dig deeper Sections. It can also be directly accessed in the [Markdown PRECHECK checklist]({{ page.root }}/files/docs/04/PRECHECKchecklist.md) (without the Why is this important? Sections).
+> Below you find the checklist together with Why is this important? and Let’s dig deeper Sections. It can also be directly accessed in the [Markdown PRECHECK checklist]({{ page.root }}/files/docs/03/PRECHECKchecklist.md) (without the Why is this important? Sections).
 >>**1. Research question**
 >> 
 >>Is the research question/aim stated?
@@ -642,7 +642,7 @@ Check for potential biases yourself. Here are some examples of potential sources
 >## Use PRECHECK for two preprints
 >
 >>## Question 1
-Select two preprints in psychology and/or medicine. At least one of them should correspond to a preregistrqtion and one should have been published lateron. Review them using the checklist directly in the [Markdown file]({{ page.root }}/files/docs/04/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
+Select two preprints in psychology and/or medicine. At least one of them should correspond to a preregistrqtion and one should have been published lateron. Review them using the checklist directly in the [Markdown file]({{ page.root }}/files/docs/03/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
 >>
 Answer at least all yes/no question for each preprint, add an explanation for your choice of answer.
 >>

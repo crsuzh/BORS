@@ -294,7 +294,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 
 
 > ## R Markdown Practice
->Modify the template found [here]({{ page.root }}/files/docs/06/RMarkdown_exercise.Rmd) by performing the following steps:
+>Modify the template found [here]({{ page.root }}/files/docs/05/RMarkdown_exercise.Rmd) by performing the following steps:
 >
 >* add author and date to YAML header
 >* rename the first chunk to `print_chunk_nr_1`
@@ -310,6 +310,8 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 
 
 > ## Solution
+> [RMarkdown solution]({{ page.root }}/files/docs/05/solutionRMarkdown_exercise.Rmd)
+> 
 > 1. 52.3
 > 2. 3.45 
 >

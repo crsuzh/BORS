@@ -550,7 +550,7 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 For this challenge we will work with climate data published by the Bundesamt für Statistic BFS in which
 various climate related variables measured at different locations in Switzerland have been put together.
-The data has already been wrangled into a csv file that you can download from [here.](/static/climate_data.csv)
+The data has already been wrangled into a csv file that you can download from [here.]({{ page.root }}/files/docs/06/climate_data.csv)
 
 The source data was downloaded from here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02) and here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03)
 

@@ -1,0 +1,41 @@
+---
+title: "Solution of R Markdown exercise"
+author: "Author"
+date: "2023-06-30"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## 1
+
+```{r print_chunk_nr_1}
+print("This is the first chunk.")
+```
+
+## 2
+We are looking at some information from the dataset "Titanic" that is available within R. 
+```{r chunk2, echo=FALSE}
+print("This code is hidden.")
+table1 <- apply(Titanic, c(3, 4), sum)
+```
+Once you set the chunk options as requested the computations are hidden, but we can refer to the numbers within the text. For example, the percentage of children who survived the Titanic accident was `r round(100*table1[1,2]/sum(table1[1,]),1)`%.
+
+## 3
+
+```{r chunk3, eval=FALSE}
+print("This code is NOT evaluated")
+```
+
+## 4
+
+```{r chunk4, warning=FALSE}
+warning("Do NOT show this warning.")
+```
+
+## 5
+
+```{r chunk5}
+table2 <- apply(Titanic, c(2, 4), sum)
+```
+The percentage of female survivors was `r round((table2[2,2]/sum(table2[2,]))/(table2[1,2]/sum(table2[1,])), 2)` times higher as the percentage of male survivors (provide two decimals).

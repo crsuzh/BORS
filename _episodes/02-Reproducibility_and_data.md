@@ -468,7 +468,7 @@ Image credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1
 >
 Considering the input on data in spreadsheets try to improve the spreadsheet
 >
-[trainingdata.xlsx]({{ page.root }}/files/docs/03/trainingdata.xlsx)
+[trainingdata.xlsx]({{ page.root }}/files/docs/02/trainingdata.xlsx)
 >
 This spreadsheet contains data from 482 patients, two columns with dates and 8 columns with counts of two different markers in the blood on a baseline date, on day 1, 2 and 3 of a certain therapy.
 >
@@ -490,7 +490,7 @@ No solution provided here.
 
 >## Improve a spreadsheet in R
 >
->We continue to work on the spreadsheet [trainingdata.xlsx]({{ page.root }}/files/docs/03/trainingdata.xlsx). This time we use `R` to correct the same errors in the spreadsheet. Why do you think is it better to use R for this process?
+>We continue to work on the spreadsheet [trainingdata.xlsx]({{ page.root }}/files/docs/02/trainingdata.xlsx). This time we use `R` to correct the same errors in the spreadsheet. Why do you think is it better to use R for this process?
 {: .challenge}
 
 > ## Solution
