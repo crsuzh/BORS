@@ -3,8 +3,8 @@ title: "Solution of R Markdown exercise"
 author: "Author"
 date: "2023-06-30"
 output:
-  html_document: default
   pdf_document: default
+  html_document: default
 ---
 
 ## 1
