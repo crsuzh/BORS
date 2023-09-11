@@ -17,7 +17,7 @@ keypoints:
 
 ```{r, include=FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("05-")
+knitr_fig_path("04-")
 ```
 
 
@@ -33,7 +33,7 @@ We aim to look at CERN's approach to Open Science by reading three articles that
 ## Open science: a vision for collaborative, reproducible and reusable research
 
 
-![]({{ page.root }}/fig/05-CCMarApr19_Openscience.png){: height="200px"}
+![]({{ page.root }}/fig/04-CCMarApr19_Openscience.png){: height="200px"}
 Credit: T.Simko.
 
 > _"True open science demands more than simply making data available: it needs to concern itself with providing information on how to repeat or verify an analysis performed over given datasets, producing results that can be reused by others for comparison, confirmation or simply for deeper understanding and inspiration. This requires runnable examples of how the research was performed, accompanied by software, documentation, runnable scripts, notebooks, workflows and compute environments. It is often too late to try to document research in such detail once it has been published."_
@@ -44,7 +44,7 @@ S Dallmeier-Tiessen and T Simko [https://cerncourier.com/a/open-science-a-vision
 ## Inspired by software
 
 
-![]({{ page.root }}/fig/05-CCMarApr19_Opensource.png){: height="200px"}
+![]({{ page.root }}/fig/04-CCMarApr19_Opensource.png){: height="200px"}
 Credit: S Kulkarni.
 
 > _""The underlying ideal is open collaboration: peers freely, collectively and publicly build software solutions. A second ideal is recognition, in which credit for the contributions made by individuals and organisations worldwide is openly acknowledged. A third ideal concerns rights, specifically the so-called four freedoms granted to users: to use the software for any purpose; to study the source code to understand how it works; to share and redistribute the software; and to improve the software and share the improvements with the community. Users and developers therefore contribute to a virtuous circle in which software is continuously improved and shared towards a common good, minimising vendor lock-in for users."_
@@ -56,7 +56,7 @@ G Tenaglia and T Smith [https://cerncourier.com/a/inspired-by-software/](https:/
 ## Preserving the legacy of particle physics
 
 
-![]({{ page.root }}/fig/05-HiggsBoson.png){: height="200px"}
+![]({{ page.root }}/fig/04-HiggsBoson.png){: height="200px"}
 Credit: [https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/](https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/) with original CC-By in Phys. Lett. B 716 30. 
 
 > _"CMS aims to release half of each year’s level-three data three years after data taking, and 100% of the data within a ten-year window. By guaranteeing that people outside CMS can use these data, says Lassila-Perini, the collaboration can ensure that the knowledge of how to analyse the data is not lost, while allowing people outside CMS to look for things the collaboration might not have time for. To allow external re-use of the data, CMS released appropriate metadata as well as analysis examples."_
@@ -135,7 +135,7 @@ More information can be found in the article "Open is not enough" by X Chen et a
 
 >## Open Science framework
 >
-![]({{ page.root }}/fig/05-OSFresearch_lifecycle_original.png){: height="200px"}
+![]({{ page.root }}/fig/04-OSFresearch_lifecycle_original.png){: height="200px"}
 
 Credit: [https://thriv.virginia.edu/center-for-open-science-open-science-framework/](https://thriv.virginia.edu/center-for-open-science-open-science-framework/)
 >
@@ -220,7 +220,7 @@ Other tools for collaboration have been summarized in the Primer "[Digital colla
 # 3. What is version control and what is Git?
 The purpose of Git is best explained with the below cartoon: it is a system that allows to avoid situations like in the cartoon. Such systems are called version control systems since they are designed to take care of versioning of files without changing (and lengthening) file names. The purpose here is not to teach you Git but to inform you detailed enough such that you can decide if or if not you need to learn Git. You will also learn a bit of terminology and get some links such that a start with Git should be easier.
 
-![]({{ page.root }}/fig/05-phd101212s.png){: height="400px"}
+![]({{ page.root }}/fig/04-phd101212s.png){: height="400px"}
 Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](https://www.phdcomics.com). 
 
 >## What is Git?
@@ -238,7 +238,7 @@ Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](h
 ## Git has a reputation to be complicated
 Git is a tool that originated in software development and hence in order to use it a certain computer skill level is necessary. As a result it has a reputation to be complicated. Similar to code-based analysis there is indeed a certain learning curve in the beginning but with just a bit of practice the advantages outweigh the initial investment.
 
-![]({{ page.root }}/fig/05-git.png){: height="400px"}
+![]({{ page.root }}/fig/04-git.png){: height="400px"}
 
 Credit: Randall Munroe/xkcd at [https://xkcd.com/21597/](https://xkcd.com/1597/) licensed as CC BY-NC.
 
@@ -268,7 +268,7 @@ By using the command "git add" they add files or folders to the local index, whi
 
 The next person working on the same repository will need to "git pull" the updated repository in order to access the changes.
 
-![]({{ page.root }}/fig/05-git-process.png){: height="300px"}
+![]({{ page.root }}/fig/04-git-process.png){: height="300px"}
 Image Credit: Illustration of the most important git commands by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994551](https://doi.org/10.5281/zenodo.7994551).
 
 ## Installation

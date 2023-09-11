@@ -36,15 +36,17 @@ Data visualization is omnipresent in science. Visualizations range from presenti
   
 In the following sections we will have a look at different visualizations and things to be aware of when using them with the goal of transmitting information truthfully. The most important principles of good practice for visualizations are
 
-1. [Be simple, clear and to the point](#simple)
-2. Show the data
-3. Be honest about the axes
-4. Use colors sensibly
+<a href="#simple">1. Be simple, clear and to the point</a><br />
+<a href="#show_data">2. Show the data</a><br />
+<a href="#axes">3. Be honest about the axes</a><br />
+<a href="#colors">4. Use colors sensibly</a><br />
+
+
 
 We provide code in `ggplot`. A short introduction to `ggplot` is provided in this episode of the carpentries course: [R for Social Scientists](https://preview.carpentries.org/r-socialsci/05-ggplot2.html). A good reference for both systems, plots in base R and `ggplot` is the book by RD Peng: [Exploratory data analysis with R](https://bookdown.org/rdpeng/exdata/).
 
 
-## 1. Be simple, clear and to the point(#simple)
+<h2 id="simple">1. Be simple, clear and to the point</h2>
 
 ### Encoding data using visual cues
 
@@ -73,66 +75,38 @@ Image credit: [Josh Taylor](https://towardsdatascience.com/when-to-use-3d-in-dat
 
 As a general principle we can conclude from the 3D example that you should always avoid occlusion of some parts of the visualization. An example can be found in the following plot showing multiple densities in the same panel. The different densities where colored according to group but only the density in the front is fully visible.
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-3</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-3-1.png" width="216" style="display: block; margin: auto;" />
 
 An alternative is to plot lines which allows us to see all groups completely.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-4</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-4-1.png" width="216" style="display: block; margin: auto;" />
 
 ### Pie charts
 
 Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-5</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-5-1.png" width="216" style="display: block; margin: auto;" />
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-6</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-6-1.png" width="216" style="display: block; margin: auto;" />
 
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="180" />
-<p class="caption">plot of chunk unnamed-chunk-7</p>
-</div><div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-7-2.png" alt="plot of chunk unnamed-chunk-7" width="180" />
-<p class="caption">plot of chunk unnamed-chunk-7</p>
-</div><div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-7-3.png" alt="plot of chunk unnamed-chunk-7" width="180" />
-<p class="caption">plot of chunk unnamed-chunk-7</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-7-1.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-2.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-3.png" width="180" style="display: block; margin: auto;" />
 
 
 ### Arrangement of plots
 
 The arrangement of multiple plots and panels can also contribute to increasing the clarity of a visualization. Have a look at the following plot.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="432" />
-<p class="caption">plot of chunk unnamed-chunk-8</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-8-1.png" width="432" style="display: block; margin: auto;" />
 
 Two inconsistencies are present. First of all the order of the sample of the top row and the bottom row is not the same. Secondly in the top row `var1` is on the y-axis while in the bottom row it is on the x-axis. Staying consistent and in general have an arrangement that makes sense helps to have a clear representation that transmits the desired information efficiently. A better alternative for the above plot is:  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="432" />
-<p class="caption">plot of chunk unnamed-chunk-9</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-9-1.png" width="432" style="display: block; margin: auto;" />
 
 
 
 
-
-## 2. Show the data
+<h2 id="show_data">2. Show the data</h2>
 
 ### Boxplots
 
@@ -140,10 +114,7 @@ Two inconsistencies are present. First of all the order of the sample of the top
 
 Boxplots are used to give a rough overview of the distribution of a data set based on a few summary characteristics (quantiles). Consider the following three boxplots each representing a different dataset. The boxplots look identical even tough the underlying distributions may not be.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-histo_only-1.png" alt="plot of chunk histo_only" width="216" />
-<p class="caption">plot of chunk histo_only</p>
-</div>
+<img src="../fig/rmd-06-histo_only-1.png" width="216" style="display: block; margin: auto;" />
 
 The code for the above plot:
 
@@ -155,17 +126,11 @@ ggplot(df_long) +
 
 Violin plots are an alternative to boxplots. They are based on an estimation of the underlying probability density, i.e. they use more information inherent in the data set. Have a look at the following three violin plots of the same datasets as above. Again, two of the violin plots look similar but the underlying data may not be identical.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-12</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-12-1.png" width="216" style="display: block; margin: auto;" />
 
 Let's finally have a look at the actual data. As you can see the samples x1 and x3 are in fact very distinct, or more precisely, x3 seems to have only 5 possible values.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-13-1.png" alt="plot of chunk unnamed-chunk-13" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-13</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-13-1.png" width="216" style="display: block; margin: auto;" />
 
 So why did the boxplot not show the distributional differences? Since boxplots only show
 certain quantiles (usually the quartiles, i.e., 25%, 50% and 75%, plus "outliers") plots of different datasets having the same or similar quantiles appear identical. The quartiles of the three data sets are  
@@ -183,10 +148,7 @@ Caution is furthermore advised if the datasets that are compared are of very dif
 
 Another option is the use of `geom_jitter` (or `geom_sina` from the `ggforce` package) in combination with violin plots:  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-15-1.png" alt="plot of chunk unnamed-chunk-15" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-15</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-15-1.png" width="216" style="display: block; margin: auto;" />
 
 The code for the above plot:
 
@@ -202,17 +164,11 @@ The advantage is that individual points as well as the distribution are shown.
 
 Boxplots together with `geom_jitter` are another possibility.  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-17-1.png" alt="plot of chunk unnamed-chunk-17" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-17</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-17-1.png" width="216" style="display: block; margin: auto;" />
 
 Another possibility is to only show the jittered data:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-18-1.png" alt="plot of chunk unnamed-chunk-18" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-18</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-18-1.png" width="216" style="display: block; margin: auto;" />
 
 
 
@@ -220,24 +176,18 @@ Another possibility is to only show the jittered data:
 
 The same as discussed before for boxplots also holds for barplots. If you have continuous data and see the following barplots you might conclude that the data sets are the same:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-19-1.png" alt="plot of chunk unnamed-chunk-19" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-19</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-19-1.png" width="216" style="display: block; margin: auto;" />
 
 But if you also show the individual points you can see clear differences:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-20-1.png" alt="plot of chunk unnamed-chunk-20" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-20</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-20-1.png" width="216" style="display: block; margin: auto;" />
 
 Important to keep in mind when using barplots with error bars is to state what the
 error bars mean. Do they correspond to the standard deviation, the standard error or a confidence interval?
 There is no clear answer to which one to use and, if possible, other types of visualizations should be used.
 
 
-## 3. Be honest about the axes
+<h2 id="axes">3. Be honest about the axes</h2>
 
 
 The axes of plots determine how much information you provide and where you put the focus. You could cut axes, blow certain parts of an axis up through transformation or hide information on certain scales if you do not transform. You can expose or hide information by choosing the aspect ratio between the x and y axis. You can provide clear and precise information through meaningful labeling of axes and axis tick marks or you can obscure the same information by deliberately choosing uninformative tick locations, for example. These issues are illustrated through example in the following
@@ -248,15 +198,9 @@ The axes of plots determine how much information you provide and where you put t
 
 Let's consider the following two barplots. The first has a shortened axis range and shows clear differences between the datasets. The second plot on the other hand shows the enire axis starting from zero and the differences disappear. 
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-22-1.png" alt="plot of chunk unnamed-chunk-22" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-22</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-22-1.png" width="216" style="display: block; margin: auto;" />
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-23-1.png" alt="plot of chunk unnamed-chunk-23" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-23</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-23-1.png" width="216" style="display: block; margin: auto;" />
 
 See this concrete example of cutting an axis, which makes differences appear much huger than they are in reality:
 
@@ -271,20 +215,14 @@ In some cases you might have data that is on completely different scales, meanin
 cases it can often to be helpful to do an axis-transformation. For instance consider the 
 following untransformed plot:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-25-1.png" alt="plot of chunk unnamed-chunk-25" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-25</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-25-1.png" width="216" style="display: block; margin: auto;" />
 
 There seems to be some structure but especially for the low values it is not clear 
 what is going on. If instead you do a `log10` transformation of the x-axis things get
 much clearer. Axis transformations are also something to consider if you have for example
 non linear scales. But beware, transformations can also be used to showcase differences that do not really matter in practice.
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-26-1.png" alt="plot of chunk unnamed-chunk-26" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-26</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-26-1.png" width="216" style="display: block; margin: auto;" />
 
 ### Aspect ratio
 
@@ -292,15 +230,9 @@ non linear scales. But beware, transformations can also be used to showcase diff
 
 The aspect ratio is another important parameter that can be manipulated to overstress certain patterns. For example, have a look at the following two plots. The first as a ratio of one, meaning the scale of the x and y axis are the same. The second plot has an aspect ration of 1/4 meaning the x axis is substantially longer.
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-28-1.png" alt="plot of chunk unnamed-chunk-28" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-28</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-28-1.png" width="216" style="display: block; margin: auto;" />
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-29-1.png" alt="plot of chunk unnamed-chunk-29" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-29</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-29-1.png" width="216" style="display: block; margin: auto;" />
 
 Code for the above plot:
 
@@ -343,28 +275,19 @@ The appearance of a histogram is determined by the bin width that is used to cre
 have a very large binwidth (or a low total number of bins) you might see something like this
 and you would probably consider the distribution to be approximately uniformly distributed.
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-32-1.png" alt="plot of chunk unnamed-chunk-32" width="360" />
-<p class="caption">plot of chunk unnamed-chunk-32</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-32-1.png" width="360" style="display: block; margin: auto;" />
 
 If on the other hand you decrease the binwidth (or increase the number of bins) you
 might see something like this:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-33-1.png" alt="plot of chunk unnamed-chunk-33" width="360" />
-<p class="caption">plot of chunk unnamed-chunk-33</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-33-1.png" width="360" style="display: block; margin: auto;" />
 
 Making it quite obvious that the distribution is most definitely not uniformly distributed (on this scale). Choosing the correct bin width is not easy and depends largely on the context.
 
 
 With `geom_rug` you can mark the position of individual observations:
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-34-1.png" alt="plot of chunk unnamed-chunk-34" width="360" />
-<p class="caption">plot of chunk unnamed-chunk-34</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-34-1.png" width="360" style="display: block; margin: auto;" />
 
 Code for the above plot:
 
@@ -380,17 +303,11 @@ ggplot(df, aes(x)) +
 
 If you provide plots in multiple panels, each using the same variables, you need to pay attention to the scale of each subplot. For example have a look at the following plot.   
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-36-1.png" alt="plot of chunk unnamed-chunk-36" width="360" />
-<p class="caption">plot of chunk unnamed-chunk-36</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-36-1.png" width="360" style="display: block; margin: auto;" />
 
 At first glance the distribution of each of the three samples looks the same. But if you look closely you can see that the scales are not the same for each subplot. If you instead keep the scale the same across subplots you get a visualization with clear differences of the distributions between the different samples.
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-37-1.png" alt="plot of chunk unnamed-chunk-37" width="360" />
-<p class="caption">plot of chunk unnamed-chunk-37</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-37-1.png" width="360" style="display: block; margin: auto;" />
 
 Code for the above plot:
 
@@ -403,31 +320,19 @@ ggplot(df) +
 {: .language-r}
 
 
-## 4. Use colors sensibly
+<h2 id="colors">4. Use colors sensibly</h2>
+
 
 ### Color contrast
 
 Trying to encode more than 8 category with colors is usually not a good idea as distinction between colors can become very difficult:
 
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-39-1.png" alt="plot of chunk unnamed-chunk-39" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-39</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-39-1.png" width="216" style="display: block; margin: auto;" />
 
 In such a case it can be a better idea to directly label the points:
 
-
-~~~
-Warning: ggrepel: 2 unlabeled data points (too many overlaps). Consider
-increasing max.overlaps
-~~~
-{: .warning}
-
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-40-1.png" alt="plot of chunk unnamed-chunk-40" width="288" />
-<p class="caption">plot of chunk unnamed-chunk-40</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-40-1.png" width="288" style="display: block; margin: auto;" />
 
 
 Code for the above plot:
@@ -454,10 +359,7 @@ About 1 of every 12 people is affected by some type of color vision deficiency (
 This is important to keep in mind when choosing colors for visualizations. For example consider the following scatter plot using a Red-Yellow-Green color palette, knowing that Red-Green colorblindness is the most frequent type of color deficiency.
 
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-42-1.png" alt="plot of chunk unnamed-chunk-42" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-42</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-42-1.png" width="216" style="display: block; margin: auto;" />
 
 To check how the plots appear for color deficient persons you can use the `cvd_grip` function from the `colorblindr` package (install instructions on the [Github colorblindr repo](https://github.com/clauswilke/colorblindr)).
 
@@ -468,17 +370,11 @@ colorblindr::cvd_grid() +
 ~~~
 {: .language-r}
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-43-1.png" alt="plot of chunk unnamed-chunk-43" width="612" />
-<p class="caption">plot of chunk unnamed-chunk-43</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-43-1.png" width="612" style="display: block; margin: auto;" />
 
 Using a different color palette can help. For example the following:  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-44-1.png" alt="plot of chunk unnamed-chunk-44" width="216" />
-<p class="caption">plot of chunk unnamed-chunk-44</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-44-1.png" width="216" style="display: block; margin: auto;" />
 
 Code for the above plot:
 
@@ -654,7 +550,7 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 For this challenge we will work with climate data published by the Bundesamt für Statistic BFS in which
 various climate related variables measured at different locations in Switzerland have been put together.
-The data has already been wrangled into a csv file that you can download from [here.](/static/climate_data.csv)
+The data has already been wrangled into a csv file that you can download from [here.]({{ page.root }}/files/docs/06/climate_data.csv)
 
 The source data was downloaded from here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.02) and here: [https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03](https://www.bfs.admin.ch/asset/de/je-d-02.03.03.03)
 
@@ -817,10 +713,7 @@ Choose a suitable visualization (maybe consider looking at the decision tree) an
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-50-1.png" alt="plot of chunk unnamed-chunk-50" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-50</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-50-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 
@@ -852,10 +745,7 @@ Based on the previous plot update / change your plot to also include the informa
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-51-1.png" alt="plot of chunk unnamed-chunk-51" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-51</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-51-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 
@@ -893,10 +783,7 @@ In the next step we want to normalize the Annual temperature by using the values
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-52-1.png" alt="plot of chunk unnamed-chunk-52" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-52</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-52-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 
@@ -915,15 +802,13 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 >                                 "Säntis",
 >                                 "Samedan",
 >                                 "LocarnoMonti")) %>%
+>   tidyr::drop_na() %>%
 >   ggplot() +
 >   geom_point(aes(Annual_Precipitation, Sunshine_duration, color = Location))
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-53-1.png" alt="plot of chunk unnamed-chunk-53" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-53</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-53-1.png" width="612" style="display: block; margin: auto;" />
 > 
 > 
 > ~~~
@@ -934,6 +819,7 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 >                                 "LocarnoMonti")) %>% 
 >   # dplyr::group_by(Location) %>% 
 >   # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration)) %>%
+>   tidyr::drop_na() %>%
 >   ggplot() +
 >   geom_violin(aes(Location, Annual_Precipitation, color = Sunshine_duration)) +
 >   ggforce::geom_sina(aes(Location, Annual_Precipitation, color = Sunshine_duration))
@@ -951,10 +837,7 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > ~~~
 > {: .warning}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-54-1.png" alt="plot of chunk unnamed-chunk-54" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-54</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-54-1.png" width="612" style="display: block; margin: auto;" />
 > 
 > 
 > ~~~
@@ -965,18 +848,12 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 >                                 "LocarnoMonti")) %>% 
 >   # dplyr::group_by(Location) %>% 
 >   # dplyr::mutate(Sunshine_duration = scale(Sunshine_duration))  %>%
+>   tidyr::drop_na() %>%
 >   ggplot() +
 >   geom_boxplot(aes(Location, Sunshine_duration, color = Annual_Precipitation)) +
 >   geom_jitter(aes(Location, Sunshine_duration, color = Annual_Precipitation))
 > ~~~
 > {: .language-r}
-> 
-> 
-> 
-> ~~~
-> Warning: Removed 54 rows containing non-finite values (`stat_boxplot()`).
-> ~~~
-> {: .warning}
 > 
 > 
 > 
@@ -989,17 +866,7 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > ~~~
 > {: .warning}
 > 
-> 
-> 
-> ~~~
-> Warning: Removed 54 rows containing missing values (`geom_point()`).
-> ~~~
-> {: .warning}
-> 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-55-1.png" alt="plot of chunk unnamed-chunk-55" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-55</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-55-1.png" width="612" style="display: block; margin: auto;" />
 > 
 > ~~~
 >   # ggforce::geom_sina(aes(Location, Annual_Precipitation, color = Sunshine_duration))
@@ -1070,10 +937,7 @@ Create two `ggplot2` scatterplots, `Annual_frost_days` vs. `Sunshine_duration` a
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-57-1.png" alt="plot of chunk unnamed-chunk-57" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-57</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-57-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 
@@ -1112,10 +976,7 @@ Use `tidyr::pivot_longer` to bring the data into long format and plot `Annual_fr
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-58-1.png" alt="plot of chunk unnamed-chunk-58" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-58</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-58-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 
@@ -1128,19 +989,13 @@ Use `tidyr::pivot_longer` to bring the data into long format and plot `Annual_fr
 
 
 In some situations where labels on the x-axis are long they can overlap with the default setting:  
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-59-1.png" alt="plot of chunk unnamed-chunk-59" width="612" />
-<p class="caption">plot of chunk unnamed-chunk-59</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-59-1.png" width="612" style="display: block; margin: auto;" />
 
 
 
 A solution can be to rotate the labels:  
 
-<div class="figure" style="text-align: center">
-<img src="../fig/rmd-05-unnamed-chunk-60-1.png" alt="plot of chunk unnamed-chunk-60" width="612" />
-<p class="caption">plot of chunk unnamed-chunk-60</p>
-</div>
+<img src="../fig/rmd-06-unnamed-chunk-60-1.png" width="612" style="display: block; margin: auto;" />
 
 
 Reproduce the above plot.  
@@ -1181,10 +1036,7 @@ You can generate custom colors using `RColorBrewer::brewer.pal`. The generated c
 > ~~~
 > {: .language-r}
 > 
-> <div class="figure" style="text-align: center">
-> <img src="../fig/rmd-05-unnamed-chunk-62-1.png" alt="plot of chunk unnamed-chunk-62" width="612" />
-> <p class="caption">plot of chunk unnamed-chunk-62</p>
-> </div>
+> <img src="../fig/rmd-06-unnamed-chunk-62-1.png" width="612" style="display: block; margin: auto;" />
 > 
 {: .solution}
 

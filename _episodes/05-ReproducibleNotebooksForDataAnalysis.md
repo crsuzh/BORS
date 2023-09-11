@@ -293,7 +293,7 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 
 
 > ## R Markdown Practice
->Modify the template found [here]({{ page.root }}/files/docs/06/RMarkdown_exercise.Rmd) by performing the following steps:
+>Modify the template found [here]({{ page.root }}/files/docs/05/RMarkdown_exercise.Rmd) by performing the following steps:
 >
 >* add author and date to YAML header
 >* rename the first chunk to `print_chunk_nr_1`
@@ -309,6 +309,8 @@ The behavior of the chunks can be changed by setting chunk options. This is done
 
 
 > ## Solution
+> [RMarkdown solution]({{ page.root }}/files/docs/05/solutionRMarkdown_exercise.Rmd)
+> 
 > 1. 52.3
 > 2. 3.45 
 >
@@ -574,412 +576,421 @@ What is the proportion of Chinstrap penguins with `flipper_length_mm` smaller th
 
 
 
-## R Markdown tables
-
-For the following challenge we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
-
-
-> _
-The goal of kableExtra is to help you build common complex tables and manipulate table styles. It imports the pipe %>% symbol from magrittr and verbalize all the functions, so basically you can add “layers” to a kable output in a way that is similar with ggplot2 and plotly._
-
-
-For users who are not very familiar with the pipe operator %>% in R: it is the R version of the fluent interface. The idea is to pass the result along the chain for a more literal coding experience. Basically, when we say A %>% B, technically it means sending the results of A to B as B’s first argument.
-
-
-Simple tables can be generated as follows:
-
-~~~
-library(kableExtra)
-head(penguins) %>% # the dataset, '%>%' parses the output of this command as the input in the next command 
-  kbl() %>% # the kableExtra equivalent of knitr::kable, base table
-  kable_classic() # add theme to table
-~~~
-{: .language-r}
-
-<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
- <thead>
-  <tr>
-   <th style="text-align:left;"> species </th>
-   <th style="text-align:left;"> island </th>
-   <th style="text-align:right;"> bill_length_mm </th>
-   <th style="text-align:right;"> bill_depth_mm </th>
-   <th style="text-align:right;"> flipper_length_mm </th>
-   <th style="text-align:right;"> body_mass_g </th>
-   <th style="text-align:left;"> sex </th>
-   <th style="text-align:right;"> year </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> 39.1 </td>
-   <td style="text-align:right;"> 18.7 </td>
-   <td style="text-align:right;"> 181 </td>
-   <td style="text-align:right;"> 3750 </td>
-   <td style="text-align:left;"> male </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> 39.5 </td>
-   <td style="text-align:right;"> 17.4 </td>
-   <td style="text-align:right;"> 186 </td>
-   <td style="text-align:right;"> 3800 </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> 40.3 </td>
-   <td style="text-align:right;"> 18.0 </td>
-   <td style="text-align:right;"> 195 </td>
-   <td style="text-align:right;"> 3250 </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> 36.7 </td>
-   <td style="text-align:right;"> 19.3 </td>
-   <td style="text-align:right;"> 193 </td>
-   <td style="text-align:right;"> 3450 </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Adelie </td>
-   <td style="text-align:left;"> Torgersen </td>
-   <td style="text-align:right;"> 39.3 </td>
-   <td style="text-align:right;"> 20.6 </td>
-   <td style="text-align:right;"> 190 </td>
-   <td style="text-align:right;"> 3650 </td>
-   <td style="text-align:left;"> male </td>
-   <td style="text-align:right;"> 2007 </td>
-  </tr>
-</tbody>
-</table>
-
-For all options check the documentation or the [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html).
-
-
-## Task 1 Create the following table:
-
-<table class=" lightable-classic table table-hover" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
- <thead>
-<tr>
-<th style="empty-cells: hide;" colspan="1"></th>
-<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">bill length [mm]</div></th>
-<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">bill depth [mm]</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;"> species </th>
-   <th style="text-align:right;"> 2007 </th>
-   <th style="text-align:right;"> 2008 </th>
-   <th style="text-align:right;"> 2009 </th>
-   <th style="text-align:right;"> 2007 </th>
-   <th style="text-align:right;"> 2008 </th>
-   <th style="text-align:right;"> 2009 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Adelie </td>
-   <td style="text-align:right;"> 38.8 </td>
-   <td style="text-align:right;"> 38.6 </td>
-   <td style="text-align:right;border-right:1px solid;"> 39.0 </td>
-   <td style="text-align:right;"> 18.8 </td>
-   <td style="text-align:right;"> 18.2 </td>
-   <td style="text-align:right;"> 18.1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Chinstrap </td>
-   <td style="text-align:right;"> 48.7 </td>
-   <td style="text-align:right;"> 48.7 </td>
-   <td style="text-align:right;border-right:1px solid;"> 49.1 </td>
-   <td style="text-align:right;"> 18.5 </td>
-   <td style="text-align:right;"> 18.4 </td>
-   <td style="text-align:right;"> 18.3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Gentoo </td>
-   <td style="text-align:right;"> 47.0 </td>
-   <td style="text-align:right;"> 46.9 </td>
-   <td style="text-align:right;border-right:1px solid;"> 48.5 </td>
-   <td style="text-align:right;"> 14.7 </td>
-   <td style="text-align:right;"> 14.9 </td>
-   <td style="text-align:right;"> 15.3 </td>
-  </tr>
-</tbody>
-</table>
-
-*Hint*: checkout the different styling functions, e.g. `kable_classic`.  
-*Hint*: For multiple column names use `add_header_above`  
-*Hint*: Use the following code to get started.  
-
->## Solution
-> 
-> ~~~
-> df_sum <- penguins %>% 
->   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
->   dplyr::group_by(species, year) %>% 
->   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
->   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
-> 
-> df_sum %>%
->   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
->   kable_classic() %>%
->   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
->   kable_styling(bootstrap_options = c("hover")) %>% 
->   column_spec (c(1, 4), border_right = T) 
-> ~~~
-> {: .language-r}
-{: .solution}
-
-## Task 2 Create the following table wich includes small graphs:
-
-<table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
- <thead>
-<tr>
-<th style="empty-cells: hide;" colspan="1"></th>
-<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">bill length [mm]</div></th>
-<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">bill depth [mm]</div></th>
-</tr>
-  <tr>
-   <th style="text-align:left;"> species </th>
-   <th style="text-align:right;"> mean </th>
-   <th style="text-align:left;"> boxplot </th>
-   <th style="text-align:left;"> histogram </th>
-   <th style="text-align:right;"> mean </th>
-   <th style="text-align:left;"> boxplot </th>
-   <th style="text-align:left;"> histogram </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Adelie </td>
-   <td style="text-align:right;"> 38.8 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="9.29,8.22 9.29,3.78 15.76,3.78 15.76,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="12.61" y1="8.22" x2="12.61" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="1.78" y1="6.00" x2="9.29" y2="6.00" style="stroke-width: 0.75;"></line><line x1="24.24" y1="6.00" x2="15.76" y2="6.00" style="stroke-width: 0.75;"></line><line x1="1.78" y1="7.11" x2="1.78" y2="4.89" style="stroke-width: 0.75;"></line><line x1="24.24" y1="7.11" x2="24.24" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="9.29,8.22 9.29,3.78 15.76,3.78 15.76,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
-</td>
-   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="1.62" y="10.77" width="3.23" height="0.89" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="4.85" y="6.77" width="3.23" height="4.89" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="8.08" y="3.66" width="3.23" height="8.00" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="11.31" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="14.55" y="3.88" width="3.23" height="7.78" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="9.22" width="3.23" height="2.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="10.55" width="3.23" height="1.11" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-   <td style="text-align:right;"> 18.3 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="25.06,8.22 25.06,3.78 32.99,3.78 32.99,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="29.82" y1="8.22" x2="29.82" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="14.48" y1="6.00" x2="25.06" y2="6.00" style="stroke-width: 0.75;"></line><line x1="44.63" y1="6.00" x2="32.99" y2="6.00" style="stroke-width: 0.75;"></line><line x1="14.48" y1="7.11" x2="14.48" y2="4.89" style="stroke-width: 0.75;"></line><line x1="44.63" y1="7.11" x2="44.63" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="25.06,8.22 25.06,3.78 32.99,3.78 32.99,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon><circle cx="46.22" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
-</td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.48" y="10.76" width="2.65" height="0.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.12" y="10.15" width="2.65" height="1.51" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="7.44" width="2.65" height="4.22" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="5.93" width="2.65" height="5.73" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="25.06" y="5.03" width="2.65" height="6.63" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.70" y="4.42" width="2.65" height="7.24" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.35" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="32.99" y="7.14" width="2.65" height="4.52" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="35.64" y="9.55" width="2.65" height="2.11" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="38.29" y="10.15" width="2.65" height="1.51" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.93" y="10.76" width="2.65" height="0.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="43.58" y="9.85" width="2.65" height="1.81" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-  </tr>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Chinstrap </td>
-   <td style="text-align:right;"> 48.8 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="24.73,8.22 24.73,3.78 32.57,3.78 32.57,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="29.98" y1="8.22" x2="29.98" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.00" y1="6.00" x2="24.73" y2="6.00" style="stroke-width: 0.75;"></line><line x1="43.64" y1="6.00" x2="32.57" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.00" y1="7.11" x2="16.00" y2="4.89" style="stroke-width: 0.75;"></line><line x1="43.64" y1="7.11" x2="43.64" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="24.73,8.22 24.73,3.78 32.57,3.78 32.57,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
-</td>
-   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.55" y="11.30" width="3.23" height="0.37" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="9.83" width="3.23" height="1.84" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="8.36" width="3.23" height="3.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="24.24" y="7.26" width="3.23" height="4.41" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.47" y="7.62" width="3.23" height="4.04" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.71" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="33.94" y="10.19" width="3.23" height="1.47" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="37.17" y="10.93" width="3.23" height="0.73" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.40" y="11.30" width="3.23" height="0.37" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-   <td style="text-align:right;"> 18.4 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="25.06,8.22 25.06,3.78 35.11,3.78 35.11,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="30.08" y1="8.22" x2="30.08" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="19.24" y1="6.00" x2="25.06" y2="6.00" style="stroke-width: 0.75;"></line><line x1="42.52" y1="6.00" x2="35.11" y2="6.00" style="stroke-width: 0.75;"></line><line x1="19.24" y1="7.11" x2="19.24" y2="4.89" style="stroke-width: 0.75;"></line><line x1="42.52" y1="7.11" x2="42.52" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="25.06,8.22 25.06,3.78 35.11,3.78 35.11,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
-</td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="17.12" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="25.06" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.70" y="5.82" width="2.65" height="5.85" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.35" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="32.99" y="7.12" width="2.65" height="4.55" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="35.64" y="5.17" width="2.65" height="6.50" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="38.29" y="11.01" width="2.65" height="0.65" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.93" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-  </tr>
-  <tr>
-   <td style="text-align:left;border-right:1px solid;"> Gentoo </td>
-   <td style="text-align:right;"> 47.5 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="23.11,8.22 23.11,3.78 29.98,3.78 29.98,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="26.34" y1="8.22" x2="26.34" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.00" y1="6.00" x2="23.11" y2="6.00" style="stroke-width: 0.75;"></line><line x1="40.24" y1="6.00" x2="29.98" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.00" y1="7.11" x2="16.00" y2="4.89" style="stroke-width: 0.75;"></line><line x1="40.24" y1="7.11" x2="40.24" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="23.11,8.22 23.11,3.78 29.98,3.78 29.98,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon><circle cx="46.22" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
-</td>
-   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.55" y="10.85" width="3.23" height="0.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="8.12" width="3.23" height="3.54" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="5.12" width="3.23" height="6.54" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="24.24" y="3.49" width="3.23" height="8.17" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.47" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.71" y="7.85" width="3.23" height="3.81" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="33.94" y="10.57" width="3.23" height="1.09" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="37.17" y="10.85" width="3.23" height="0.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.40" y="11.66" width="3.23" height="0.00" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="43.64" y="11.39" width="3.23" height="0.27" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-   <td style="text-align:right;"> 15.0 </td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="7.60,8.22 7.60,3.78 15.53,3.78 15.53,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="11.83" y1="8.22" x2="11.83" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="1.78" y1="6.00" x2="7.60" y2="6.00" style="stroke-width: 0.75;"></line><line x1="24.00" y1="6.00" x2="15.53" y2="6.00" style="stroke-width: 0.75;"></line><line x1="1.78" y1="7.11" x2="1.78" y2="4.89" style="stroke-width: 0.75;"></line><line x1="24.00" y1="7.11" x2="24.00" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="7.60,8.22 7.60,3.78 15.53,3.78 15.53,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
-</td>
-   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
-    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
-      fill: none;
-      stroke: #000000;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-miterlimit: 10.00;
-    }
-    .svglite text {
-      white-space: pre;
-    }
-  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
-</g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="1.25" y="9.71" width="2.65" height="1.95" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="3.89" y="6.14" width="2.65" height="5.52" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="6.54" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="9.19" y="4.84" width="2.65" height="6.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="11.83" y="7.12" width="2.65" height="4.55" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="14.48" y="5.17" width="2.65" height="6.50" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.12" y="7.76" width="2.65" height="3.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="10.69" width="2.65" height="0.97" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
-</td>
-  </tr>
-</tbody>
-</table>
-
-*Hint*: Use `column_spec` for altering specific columns.
-
->## Solution
-> 
-> ~~~
-> df_sum <- penguins %>% 
->   dplyr::select(-island, -sex, -year, -body_mass_g, -flipper_length_mm) %>% 
->   dplyr::group_by(species) %>% 
->   dplyr::summarise(dplyr::across(.cols = !contains("species"),
->                                  .fns = function(x) 
->                                    signif(mean(na.omit(x)), 3))) %>% 
->   dplyr::mutate(bill_length_boxplot = "", bill_length_hist = "",
->                 bill_depth_boxplot = "", bill_depth_hist = "")
-> 
-> dfsum_list <- split(penguins$bill_length_mm, penguins$species)
-> dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
-> df_sum %>%
->   dplyr::select(species, 
->                 dplyr::starts_with("bill_length"), 
->                 dplyr::starts_with("bill_depth")) %>% 
->   kbl(col.names = c("species", rep(c("mean", "boxplot", "histogram"), 2))) %>%
->   kable_paper() %>%
->   column_spec(1, border_right = TRUE) %>%
->   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
->   column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
->   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
->   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
->   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
->                    border_right = TRUE, border_left = TRUE)
-> ~~~
-> {: .language-r}
-{: .solution}
- 
+>## R Markdown tables
+>
+>For the following challenge we will use the package `kableExtra` which extends the base capabilities of `knitr::kable` to create tables. From the package [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html):
+>
+>
+>> _
+>>The goal of kableExtra is to help you build common complex tables and manipulate table styles. It imports the pipe `%>%` symbol from magrittr and verbalize all the functions, so basically you can add “layers” to a kable output in a way that is similar with ggplot2 and plotly._
+>
+>
+For users who are not very familiar with the pipe operator `%>%` in R: it is the R version of the fluent interface. The idea is to pass the result along the chain for a more literal coding experience. Basically, when we say A `%>%` B, technically it means sending the results of A to B as B’s first argument.
+>
+>
+>Simple tables can be generated as follows:
+>
+>~~~
+>library(kableExtra)
+>head(penguins) %>% # the dataset, '%>%' parses the output of this command as the input in the next >command 
+>  kbl() %>% # the kableExtra equivalent of knitr::kable, base table
+>  kable_classic() # add theme to table
+>~~~
+>{: .language-r}
+>
+><table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto;'>
+> <thead>
+>  <tr>
+>   <th style="text-align:left;"> species </th>
+>   <th style="text-align:left;"> island </th>
+>   <th style="text-align:right;"> bill_length_mm </th>
+>   <th style="text-align:right;"> bill_depth_mm </th>
+>   <th style="text-align:right;"> flipper_length_mm </th>
+>   <th style="text-align:right;"> body_mass_g </th>
+>   <th style="text-align:left;"> sex </th>
+>   <th style="text-align:right;"> year </th>
+>  </tr>
+> </thead>
+><tbody>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> 39.1 </td>
+>   <td style="text-align:right;"> 18.7 </td>
+>   <td style="text-align:right;"> 181 </td>
+>   <td style="text-align:right;"> 3750 </td>
+>   <td style="text-align:left;"> male </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> 39.5 </td>
+>   <td style="text-align:right;"> 17.4 </td>
+>   <td style="text-align:right;"> 186 </td>
+>   <td style="text-align:right;"> 3800 </td>
+>   <td style="text-align:left;"> female </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> 40.3 </td>
+>   <td style="text-align:right;"> 18.0 </td>
+>   <td style="text-align:right;"> 195 </td>
+>   <td style="text-align:right;"> 3250 </td>
+>   <td style="text-align:left;"> female </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> NA </td>
+>   <td style="text-align:right;"> NA </td>
+>   <td style="text-align:right;"> NA </td>
+>   <td style="text-align:right;"> NA </td>
+>   <td style="text-align:left;"> NA </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> 36.7 </td>
+>   <td style="text-align:right;"> 19.3 </td>
+>   <td style="text-align:right;"> 193 </td>
+>   <td style="text-align:right;"> 3450 </td>
+>   <td style="text-align:left;"> female </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+>  <tr>
+>   <td style="text-align:left;"> Adelie </td>
+>   <td style="text-align:left;"> Torgersen </td>
+>   <td style="text-align:right;"> 39.3 </td>
+>   <td style="text-align:right;"> 20.6 </td>
+>   <td style="text-align:right;"> 190 </td>
+>   <td style="text-align:right;"> 3650 </td>
+>   <td style="text-align:left;"> male </td>
+>   <td style="text-align:right;"> 2007 </td>
+>  </tr>
+></tbody>
+></table>
+>
+>For all options check the documentation or the [vignette](http://haozhu233.github.io/kableExtra/awesome_table_in_html.html).
+>
+>
+> &nbsp;
+>
+>
+>>## Task 1 Create the following table:
+>>
+>><table class=" lightable-classic table table-hover" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; margin-left: auto; margin-right: auto; margin-left: auto; margin-right: auto;'>
+>> <thead>
+>><tr>
+>><th style="empty-cells: hide;" colspan="1"></th>
+>><th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">bill length [mm]</div></th>
+>><th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">bill depth [mm]</div></th>
+>></tr>
+>>  <tr>
+>>   <th style="text-align:left;"> species </th>
+>>   <th style="text-align:right;"> 2007 </th>
+>>   <th style="text-align:right;"> 2008 </th>
+>>   <th style="text-align:right;"> 2009 </th>
+>>   <th style="text-align:right;"> 2007 </th>
+>>   <th style="text-align:right;"> 2008 </th>
+>>   <th style="text-align:right;"> 2009 </th>
+>>  </tr>
+>> </thead>
+>><tbody>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Adelie </td>
+>>   <td style="text-align:right;"> 38.8 </td>
+>>   <td style="text-align:right;"> 38.6 </td>
+>>   <td style="text-align:right;border-right:1px solid;"> 39.0 </td>
+>>   <td style="text-align:right;"> 18.8 </td>
+>>   <td style="text-align:right;"> 18.2 </td>
+>>   <td style="text-align:right;"> 18.1 </td>
+>>  </tr>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Chinstrap </td>
+>>   <td style="text-align:right;"> 48.7 </td>
+>>   <td style="text-align:right;"> 48.7 </td>
+>>   <td style="text-align:right;border-right:1px solid;"> 49.1 </td>
+>>   <td style="text-align:right;"> 18.5 </td>
+>>   <td style="text-align:right;"> 18.4 </td>
+>>   <td style="text-align:right;"> 18.3 </td>
+>>  </tr>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Gentoo </td>
+>>   <td style="text-align:right;"> 47.0 </td>
+>>   <td style="text-align:right;"> 46.9 </td>
+>>   <td style="text-align:right;border-right:1px solid;"> 48.5 </td>
+>>   <td style="text-align:right;"> 14.7 </td>
+>>   <td style="text-align:right;"> 14.9 </td>
+>>   <td style="text-align:right;"> 15.3 </td>
+>>  </tr>
+>></tbody>
+>></table>
+>>
+>>*Hint*: checkout the different styling functions, e.g. `kable_classic`.  
+>>*Hint*: For multiple column names use `add_header_above`  
+>>*Hint*: Use the following code to get started.  
+>{: .checklist}
+>
+>
+>>## Solution
+>> 
+>> ~~~
+>> df_sum <- penguins %>% 
+>>   dplyr::select(-sex, -island, -flipper_length_mm, -body_mass_g) %>% 
+>>   dplyr::group_by(species, year) %>% 
+>>   dplyr::summarise(dplyr::across(.fns = function(x) signif(mean(na.omit(x)), 3))) %>% 
+>>   tidyr::pivot_wider(names_from = c(year), values_from = c(bill_length_mm, bill_depth_mm)) 
+>> 
+>> df_sum %>%
+>>   kbl(col.names = c("species", rep(c("2007", "2008", "2009"), 2)))%>%
+>>   kable_classic() %>%
+>>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3)) %>%
+>>   kable_styling(bootstrap_options = c("hover")) %>% 
+>>   column_spec (c(1, 4), border_right = T) 
+>> ~~~
+>> {: .language-r}
+>{: .solution}
+>
+> &nbsp;
+>
+>>## Task 2 Create the following table wich includes small graphs:
+>>
+>><table class=" lightable-paper" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;'>
+>> <thead>
+>><tr>
+>><th style="empty-cells: hide;" colspan="1"></th>
+>><th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">bill length [mm]</div></th>
+>><th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #00000020; padding-bottom: 5px; ">bill depth [mm]</div></th>
+>></tr>
+>>  <tr>
+>>   <th style="text-align:left;"> species </th>
+>>   <th style="text-align:right;"> mean </th>
+>>   <th style="text-align:left;"> boxplot </th>
+>>   <th style="text-align:left;"> histogram </th>
+>>   <th style="text-align:right;"> mean </th>
+>>   <th style="text-align:left;"> boxplot </th>
+>>   <th style="text-align:left;"> histogram </th>
+>>  </tr>
+>> </thead>
+>><tbody>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Adelie </td>
+>>   <td style="text-align:right;"> 38.8 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="9.29,8.22 9.29,3.78 15.76,3.78 15.76,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="12.61" y1="8.22" x2="12.61" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="1.78" y1="6.00" x2="9.29" y2="6.00" style="stroke-width: 0.75;"></line><line x1="24.24" y1="6.00" x2="15.76" y2="6.00" style="stroke-width: 0.75;"></line><line x1="1.78" y1="7.11" x2="1.78" y2="4.89" style="stroke-width: 0.75;"></line><line x1="24.24" y1="7.11" x2="24.24" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="9.29,8.22 9.29,3.78 15.76,3.78 15.76,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
+>></td>
+>>   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="1.62" y="10.77" width="3.23" height="0.89" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="4.85" y="6.77" width="3.23" height="4.89" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="8.08" y="3.66" width="3.23" height="8.00" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="11.31" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="14.55" y="3.88" width="3.23" height="7.78" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="9.22" width="3.23" height="2.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="10.55" width="3.23" height="1.11" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>   <td style="text-align:right;"> 18.3 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="25.06,8.22 25.06,3.78 32.99,3.78 32.99,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="29.82" y1="8.22" x2="29.82" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="14.48" y1="6.00" x2="25.06" y2="6.00" style="stroke-width: 0.75;"></line><line x1="44.63" y1="6.00" x2="32.99" y2="6.00" style="stroke-width: 0.75;"></line><line x1="14.48" y1="7.11" x2="14.48" y2="4.89" style="stroke-width: 0.75;"></line><line x1="44.63" y1="7.11" x2="44.63" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="25.06,8.22 25.06,3.78 32.99,3.78 32.99,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon><circle cx="46.22" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+>></td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.48" y="10.76" width="2.65" height="0.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.12" y="10.15" width="2.65" height="1.51" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="7.44" width="2.65" height="4.22" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="5.93" width="2.65" height="5.73" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="25.06" y="5.03" width="2.65" height="6.63" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.70" y="4.42" width="2.65" height="7.24" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.35" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="32.99" y="7.14" width="2.65" height="4.52" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="35.64" y="9.55" width="2.65" height="2.11" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="38.29" y="10.15" width="2.65" height="1.51" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.93" y="10.76" width="2.65" height="0.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="43.58" y="9.85" width="2.65" height="1.81" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>  </tr>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Chinstrap </td>
+>>   <td style="text-align:right;"> 48.8 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="24.73,8.22 24.73,3.78 32.57,3.78 32.57,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="29.98" y1="8.22" x2="29.98" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.00" y1="6.00" x2="24.73" y2="6.00" style="stroke-width: 0.75;"></line><line x1="43.64" y1="6.00" x2="32.57" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.00" y1="7.11" x2="16.00" y2="4.89" style="stroke-width: 0.75;"></line><line x1="43.64" y1="7.11" x2="43.64" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="24.73,8.22 24.73,3.78 32.57,3.78 32.57,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
+>></td>
+>>   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.55" y="11.30" width="3.23" height="0.37" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="9.83" width="3.23" height="1.84" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="8.36" width="3.23" height="3.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="24.24" y="7.26" width="3.23" height="4.41" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.47" y="7.62" width="3.23" height="4.04" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.71" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="33.94" y="10.19" width="3.23" height="1.47" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="37.17" y="10.93" width="3.23" height="0.73" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.40" y="11.30" width="3.23" height="0.37" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>   <td style="text-align:right;"> 18.4 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="25.06,8.22 25.06,3.78 35.11,3.78 35.11,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="30.08" y1="8.22" x2="30.08" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="19.24" y1="6.00" x2="25.06" y2="6.00" style="stroke-width: 0.75;"></line><line x1="42.52" y1="6.00" x2="35.11" y2="6.00" style="stroke-width: 0.75;"></line><line x1="19.24" y1="7.11" x2="19.24" y2="4.89" style="stroke-width: 0.75;"></line><line x1="42.52" y1="7.11" x2="42.52" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="25.06,8.22 25.06,3.78 35.11,3.78 35.11,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
+>></td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="17.12" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="25.06" y="6.47" width="2.65" height="5.20" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.70" y="5.82" width="2.65" height="5.85" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.35" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="32.99" y="7.12" width="2.65" height="4.55" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="35.64" y="5.17" width="2.65" height="6.50" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="38.29" y="11.01" width="2.65" height="0.65" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.93" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>  </tr>
+>>  <tr>
+>>   <td style="text-align:left;border-right:1px solid;"> Gentoo </td>
+>>   <td style="text-align:right;"> 47.5 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="23.11,8.22 23.11,3.78 29.98,3.78 29.98,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="26.34" y1="8.22" x2="26.34" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="16.00" y1="6.00" x2="23.11" y2="6.00" style="stroke-width: 0.75;"></line><line x1="40.24" y1="6.00" x2="29.98" y2="6.00" style="stroke-width: 0.75;"></line><line x1="16.00" y1="7.11" x2="16.00" y2="4.89" style="stroke-width: 0.75;"></line><line x1="40.24" y1="7.11" x2="40.24" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="23.11,8.22 23.11,3.78 29.98,3.78 29.98,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon><circle cx="46.22" cy="6.00" r="0.54" style="stroke-width: 0.75;"></circle></g></svg>
+>></td>
+>>   <td style="text-align:left;border-right:1px solid;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="14.55" y="10.85" width="3.23" height="0.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.78" y="8.12" width="3.23" height="3.54" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="21.01" y="5.12" width="3.23" height="6.54" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="24.24" y="3.49" width="3.23" height="8.17" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="27.47" y="3.22" width="3.23" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="30.71" y="7.85" width="3.23" height="3.81" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="33.94" y="10.57" width="3.23" height="1.09" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="37.17" y="10.85" width="3.23" height="0.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="40.40" y="11.66" width="3.23" height="0.00" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="43.64" y="11.39" width="3.23" height="0.27" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>   <td style="text-align:right;"> 15.0 </td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)"><polygon points="7.60,8.22 7.60,3.78 15.53,3.78 15.53,8.22 " style="stroke-width: 0.75; stroke: none; fill: #D3D3D3;"></polygon><line x1="11.83" y1="8.22" x2="11.83" y2="3.78" style="stroke-width: 0.75; stroke: #FF0000; stroke-linecap: butt;"></line><line x1="1.78" y1="6.00" x2="7.60" y2="6.00" style="stroke-width: 0.75;"></line><line x1="24.00" y1="6.00" x2="15.53" y2="6.00" style="stroke-width: 0.75;"></line><line x1="1.78" y1="7.11" x2="1.78" y2="4.89" style="stroke-width: 0.75;"></line><line x1="24.00" y1="7.11" x2="24.00" y2="4.89" style="stroke-width: 0.75;"></line><polygon points="7.60,8.22 7.60,3.78 15.53,3.78 15.53,8.22 " style="stroke-width: 0.75; stroke: none;"></polygon></g></svg>
+>></td>
+>>   <td style="text-align:left;">  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="48.00pt" height="12.00pt" viewbox="0 0 48.00 12.00"><defs><style type="text/css">
+>>    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+>>      fill: none;
+>>      stroke: #000000;
+>>      stroke-linecap: round;
+>>      stroke-linejoin: round;
+>>      stroke-miterlimit: 10.00;
+>>    }
+>>    .svglite text {
+>>      white-space: pre;
+>>    }
+>>  </style></defs><rect width="100%" height="100%" style="stroke: none; fill: none;"></rect><defs><clippath id="cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw"><rect x="0.00" y="0.00" width="48.00" height="12.00"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwwLjAwfDEyLjAw)">
+>></g><defs><clippath id="cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw"><rect x="0.00" y="2.88" width="48.00" height="9.12"></rect></clippath></defs><g clip-path="url(#cpMC4wMHw0OC4wMHwyLjg4fDEyLjAw)"><rect x="1.25" y="9.71" width="2.65" height="1.95" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="3.89" y="6.14" width="2.65" height="5.52" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="6.54" y="3.22" width="2.65" height="8.44" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="9.19" y="4.84" width="2.65" height="6.82" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="11.83" y="7.12" width="2.65" height="4.55" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="14.48" y="5.17" width="2.65" height="6.50" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="17.12" y="7.76" width="2.65" height="3.90" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="19.77" y="10.36" width="2.65" height="1.30" style="stroke-width: 0.38; fill: #D3D3D3;"></rect><rect x="22.41" y="10.69" width="2.65" height="0.97" style="stroke-width: 0.38; fill: #D3D3D3;"></rect></g></svg>
+>></td>
+>>  </tr>
+>></tbody>
+>></table>
+>>
+>>*Hint*: Use `column_spec` for altering specific columns.
+>{: .checklist}
+>
+>
+>>## Solution
+>> 
+>> ~~~
+>> df_sum <- penguins %>% 
+>>   dplyr::select(-island, -sex, -year, -body_mass_g, -flipper_length_mm) %>% 
+>>   dplyr::group_by(species) %>% 
+>>   dplyr::summarise(dplyr::across(.cols = !contains("species"),
+>>                                  .fns = function(x) 
+>>                                    signif(mean(na.omit(x)), 3))) %>% 
+>>   dplyr::mutate(bill_length_boxplot = "", bill_length_hist = "",
+>>                 bill_depth_boxplot = "", bill_depth_hist = "")
+>> 
+>> dfsum_list <- split(penguins$bill_length_mm, penguins$species)
+>> dfsum_list2 <- split(penguins$bill_depth_mm, penguins$species)
+>> df_sum %>%
+>>   dplyr::select(species, 
+>>                 dplyr::starts_with("bill_length"), 
+>>                 dplyr::starts_with("bill_depth")) %>% 
+>>   kbl(col.names = c("species", rep(c("mean", "boxplot", "histogram"), 2))) %>%
+>>   kable_paper() %>%
+>>   column_spec(1, border_right = TRUE) %>%
+>>   column_spec(3, image = spec_boxplot(dfsum_list)) %>%
+>>   column_spec(4, image = spec_hist(dfsum_list), border_right = T) %>%
+>>   column_spec(6, image = spec_boxplot(dfsum_list2)) %>% 
+>>   column_spec(7, image = spec_hist(dfsum_list2)) %>% 
+>>   add_header_above(c(" " = 1, "bill length [mm]" = 3, "bill depth [mm]" = 3),
+>>                    border_right = TRUE, border_left = TRUE)
+>> ~~~
+>> {: .language-r}
+>{: .solution}
+{: .challenge}
 

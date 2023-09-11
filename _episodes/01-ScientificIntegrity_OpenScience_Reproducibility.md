@@ -212,7 +212,7 @@ In 2021 UNESCO published their recommendations for Open Science. From their poin
 
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
-![]({{ page.root }}/fig/02-UNESCO.png)
+![]({{ page.root }}/fig/01-UNESCO.png)
 Image credit: [UNESCO Recommendation on Open Science](https://unesdoc.unesco.org/ark:/48223/pf0000379949.locale=en), CC-BY-SA.
 
 Optional: Read the full recommendation text at [https://en.unesco.org/science-sustainable-future/open-science/recommendation](https://en.unesco.org/science-sustainable-future/open-science/recommendation).
@@ -222,7 +222,7 @@ Optional: Read the full recommendation text at [https://en.unesco.org/science-su
 
 The Open Science in Psychology/Social Science initiatives summarize and explain the practice of Open Science in seven steps: [https://osf.io/hktmf/](https://osf.io/hktmf/). Some of these steps were also part of Emma's decision process. Here we show an abbreviated version of the seven steps:
 
-![]({{ page.root }}/fig/02stepspicture.png)
+![]({{ page.root }}/fig/01stepspicture.png)
 
 Image credit: Eva Furrer, unlicensed, abbreviated version of [https://osf.io/hktmf/](https://osf.io/hktmf/).
 
@@ -236,7 +236,7 @@ We will revisit the following steps in this lesson:
 ## What is preregistration? 
 The Open up your research game and the seven steps above refer to preregistration. But what is preregistration? The Texas sharp shooter cartoon shows an unregistered experiment. The shooter first shoots and then draws the bull´s eyes around his shots. He did not preregister where he wanted to shoot before shooting. 
 
-![]({{ page.root }}/fig/02-TexasSharpShooter.png)
+![]({{ page.root }}/fig/01-TexasSharpShooter.png)
 
 Image credit: [Illustration by Dirk-Jan Hoek](https://www.researchgate.net/publication/343145874_Threats_of_a_replication_crisis_in_empirical_computer_science/figures?lo=1), CC-BY.
 
@@ -259,23 +259,23 @@ When a researcher preregisters a study, the design and precise goal of the study
 >## Registries (non-exhaustive list)
 >Here is a list of registries, where (pre)registration can be done:
 - Clinicaltrials.gov: US and international registry for clinical trials, first of its kind, established 1997: https://clinicaltrials.gov/
->[![]({{ page.root }}/fig/02-ClinicalTrials.png){: height="50px"}](https://clinicaltrials.gov/)  
+>[![]({{ page.root }}/fig/01-ClinicalTrials.png){: height="50px"}](https://clinicaltrials.gov/)  
 >
 >- OSF: General purpose registry, also a research management tool (not just for preregistration), embargo possible for up to 4 years:
 >https://osf.io/ 
->[![]({{ page.root }}/fig/02-OSF.png){: height="50px"}](https://osf.io/)
+>[![]({{ page.root }}/fig/01-OSF.png){: height="50px"}](https://osf.io/)
 >
 >- Aspredicted: General purpose registry, protocols can be private forever, possibility to automatically delete an entry after 24 hours:   
 >https://aspredicted.org/
->[![]({{ page.root }}/fig/02-AsPredicted.png){: height="50px"}](https://aspredicted.org/)  
+>[![]({{ page.root }}/fig/01-AsPredicted.png){: height="50px"}](https://aspredicted.org/)  
 >
 >- Preclinicaltirals.ed: Comprehensive listing of preclinical animal study protocols  
 >https://preclinicaltrials.eu/
->[![]({{ page.root }}/fig/02-PreClinicalTrials.png){: height="50px"}](https://preclinicaltrials.eu/)  
+>[![]({{ page.root }}/fig/01-PreClinicalTrials.png){: height="50px"}](https://preclinicaltrials.eu/)  
 >
 >- PROSPERO International prospective register of systematic reviews  
 >https://www.crd.york.ac.uk/prospero/
->[![]({{ page.root }}/fig/02-NIHR.png){: height="50px"}](https://www.crd.york.ac.uk/prospero/)  
+>[![]({{ page.root }}/fig/01-NIHR.png){: height="50px"}](https://www.crd.york.ac.uk/prospero/)  
 >
 {: .checklist}
 
@@ -284,7 +284,7 @@ When a researcher preregisters a study, the design and precise goal of the study
 >
 All large National Heart Lung, and Blood Institute (NHLBI) supported randomized controlled trials between 1970 and 2012 evaluating drugs or dietary supplements for the treatment or prevention of cardiovascular disease are shown with their reported outcome measure in the graphic. Trials were included if direct costs were bigger than 500,000$/year, participants were adult humans, and the primary outcome was cardiovascular risk, disease or death. 
 >
-![]({{ page.root }}/fig/02-ExampleRegistration.png){: height="350px"}  
+![]({{ page.root }}/fig/01-ExampleRegistration.png){: height="350px"}  
 Image Credit: R Kaplan and V Irvin [https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0132382), CC-BY.
 >
 > What is the difference between what you observe before and after the year 2000 in this graphic?
