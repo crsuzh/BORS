@@ -83,7 +83,7 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided in thi
 
 As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such as bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph below shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
 
-![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg){: height="400px"}
+![](https://paldhous.github.io/NICAR/2016/img/infodes_2.jpg){: height="400px"}
 Image credit: [P Aldhous](https://paldhous.github.io/NICAR/2016/infodesign.html)
 
 The linked picture is based on [*Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods*](https://www.jstor.org/stable/2288400) by William S. Cleveland and Robert McGill.
@@ -663,9 +663,9 @@ Another option is the `dichromat` package ([CRAN link](https://cran.r-project.or
 
 Let's have a look at the graph, :
 ![](https://statmodeling.stat.columbia.edu/wp-content/uploads/2008/06/graph.jpg)
+Image credit: We discovered the graph here: 
+[https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/](https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/). The picture is not from a scientific study but originates from a blog: [http://www.shakesville.com/2007/09/rotundity-revealed.html](http://www.shakesville.com/2007/09/rotundity-revealed.html).
 
-https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/
-https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## 1 
 > What aspect of the "Be simple, clear and to the point" input has been violated?  
@@ -735,10 +735,10 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## Solution
 > 
-> - Sensible X-axis tick label display  
-> - Sensible X-axis label  
-> - Sensible Y-axis tick values  
-> - Sensible Y axis label  
+> F Sensible X-axis tick label display  
+> F Sensible X-axis label  
+> F Sensible Y-axis tick values  
+> F Sensible Y axis label  
 >
 {: .solution}
 
@@ -783,10 +783,10 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## Solution
 > 
-> - Informative title  
-> - Informative legend labels  
-> - Provenance of data  
-> - Context of data  
+> F Informative title  
+> F Informative legend labels  
+> F Provenance of data  
+> F Context of data  
 >
 {: .solution}
 
