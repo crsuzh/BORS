@@ -82,7 +82,7 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided in thi
 As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such as bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph below shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
 
 ![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg){: height="400px"}
-Image credit: [P Aldhous](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg)
+Image credit: [P Aldhous](https://paldhous.github.io/NICAR/2016/infodesign.html)
 
 The linked picture is based on [*Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods*](https://www.jstor.org/stable/2288400) by William S. Cleveland and Robert McGill.
 

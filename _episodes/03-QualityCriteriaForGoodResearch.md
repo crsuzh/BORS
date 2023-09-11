@@ -459,17 +459,63 @@ courtesy of [M. Schussel of  the Equator Network](https://www.equator-network.or
 >
 {: .solution}
 
->## Look into JARS
-> TBA questions on
-Journal Article Reporting Standards for Quantitative Research in Psychology: The APA Publications and Communications Board Task Force Report (JARS)  
-M Appelbaum et al. https://doi.apa.org/fulltext/2018-00750-002.html
+> ## JARS quiz 1
+> Look at the Journal Article Reporting Standards for Quantitative Research in Psychology: The APA Publications and Communications Board Task Force Report (JARS)  
+M Appelbaum et al. [https://doi.apa.org/fulltext/2018-00750-002.html](https://doi.apa.org/fulltext/2018-00750-002.html)
+>
+> The guideline suggests to to group all hypotheses, analyses, and conclusions into
+> - significant and non-significant
+> - primary, secondary, and exploratory
+> - novel, derived, and replication
 >
 {: .challenge}
 
 > ## Solution
 > 
-> TBA
+> F significant and non-significant  
+> T primary, secondary, and exploratory  
+> F novel, derived, and replication  
 >
+{: .solution}
+
+
+> ## JARS quiz 2
+> Look at the Journal Article Reporting Standards for Quantitative Research in Psychology: The APA Publications and Communications Board Task Force Report (JARS)  
+M Appelbaum et al. [https://doi.apa.org/fulltext/2018-00750-002.html](https://doi.apa.org/fulltext/2018-00750-002.html)
+>
+> For publications that report on new data collections regardless of research design the guideline includes information on:
+> - where to report on registration of the underlying study  
+> - where to report on the availabililty of data  
+> - where to report a manual of procedures allowing replication  
+> 
+{: .challenge}
+
+> ## Solution
+> 
+> T where to report on registration of the underlying study: mainly for clinical trials  
+> T where to report on the availabililty of data: specifically only for meta analysis  
+> T where to report a manual of procedures allowing replication: specifically for experimental studies 
+> 
+{: .solution}
+
+
+> ## JARS quiz 3
+> Look at the Journal Article Reporting Standards for Quantitative Research in Psychology: The APA Publications and Communications Board Task Force Report (JARS)  
+M Appelbaum et al.  [https://doi.apa.org/fulltext/2018-00750-002.html](https://doi.apa.org/fulltext/2018-00750-002.html)
+> 
+> In the data diagnostics and analytic strategy sections the guideline suggest that information on the following be reported
+> - in which case to exclude the data of participants from the study at the analysis stage  
+> - how to deal with missing data  
+> - which precise inferential statistics procedure to use  
+> 
+{: .challenge}
+
+> ## Solution
+> 
+> T in which case to exclude the data of participants from the study at the analysis stage  
+> T how to deal with missing data  
+> F which precise inferential statistics procedure to use: the guideline mentions a strategy, i.e. not a single procedure; it also suggests that this is to be specified for each type of hypothesis  
+> 
 {: .solution}
 
 &nbsp;
