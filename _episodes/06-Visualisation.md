@@ -84,14 +84,14 @@ An alternative is to plot lines which allows us to see all groups completely.
 
 ### Pie charts
 
-Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations of a change of the count of three factors over time. First a barplot, second a stacked barplot and lastly three pie charts. Where are differences most visible?   
+Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations of a change of the count of three factors over time. First a barplot, second a stacked barplot and lastly three pie charts (on top of each other). Where are differences most visible?   
 
 <img src="../fig/rmd-06-unnamed-chunk-5-1.png" width="216" style="display: block; margin: auto;" />
 
 <img src="../fig/rmd-06-unnamed-chunk-6-1.png" width="216" style="display: block; margin: auto;" />
 
 
-<img src="../fig/rmd-06-unnamed-chunk-7-1.png" width="180" style="display: block; margin: auto;" />
+<img src="../fig/rmd-06-unnamed-chunk-7-1.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-2.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-3.png" width="180" style="display: block; margin: auto;" />
 
 
 ### Arrangement of plots
