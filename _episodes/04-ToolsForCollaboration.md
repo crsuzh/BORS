@@ -33,7 +33,7 @@ We aim to look at CERN's approach to Open Science by reading three articles that
 
 
 ![]({{ page.root }}/fig/04-CCMarApr19_Openscience.png){: height="200px"}
-Credit: T.Simko.
+Image Credit: T.Simko.
 
 > _"True open science demands more than simply making data available: it needs to concern itself with providing information on how to repeat or verify an analysis performed over given datasets, producing results that can be reused by others for comparison, confirmation or simply for deeper understanding and inspiration. This requires runnable examples of how the research was performed, accompanied by software, documentation, runnable scripts, notebooks, workflows and compute environments. It is often too late to try to document research in such detail once it has been published."_
 
@@ -44,7 +44,7 @@ S Dallmeier-Tiessen and T Simko [https://cerncourier.com/a/open-science-a-vision
 
 
 ![]({{ page.root }}/fig/04-CCMarApr19_Opensource.png){: height="200px"}
-Credit: S Kulkarni.
+Image Credit: S Kulkarni.
 
 > _""The underlying ideal is open collaboration: peers freely, collectively and publicly build software solutions. A second ideal is recognition, in which credit for the contributions made by individuals and organisations worldwide is openly acknowledged. A third ideal concerns rights, specifically the so-called four freedoms granted to users: to use the software for any purpose; to study the source code to understand how it works; to share and redistribute the software; and to improve the software and share the improvements with the community. Users and developers therefore contribute to a virtuous circle in which software is continuously improved and shared towards a common good, minimising vendor lock-in for users."_
 
@@ -56,7 +56,7 @@ G Tenaglia and T Smith [https://cerncourier.com/a/inspired-by-software/](https:/
 
 
 ![]({{ page.root }}/fig/04-HiggsBoson.png){: height="200px"}
-Credit: [https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/](https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/) with original CC-By in Phys. Lett. B 716 30. 
+Image Credit: [https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/](https://cerncourier.com/a/preserving-the-legacy-of-particle-physics/) with original CC-By in Phys. Lett. B 716 30. 
 
 > _"CMS aims to release half of each year’s level-three data three years after data taking, and 100% of the data within a ten-year window. By guaranteeing that people outside CMS can use these data, says Lassila-Perini, the collaboration can ensure that the knowledge of how to analyse the data is not lost, while allowing people outside CMS to look for things the collaboration might not have time for. To allow external re-use of the data, CMS released appropriate metadata as well as analysis examples."_
 
@@ -136,7 +136,7 @@ More information can be found in the article "Open is not enough" by X Chen et a
 >
 ![]({{ page.root }}/fig/04-OSFresearch_lifecycle_original.png){: height="200px"}
 
-Credit: [https://thriv.virginia.edu/center-for-open-science-open-science-framework/](https://thriv.virginia.edu/center-for-open-science-open-science-framework/)
+Image Credit: [https://thriv.virginia.edu/center-for-open-science-open-science-framework/](https://thriv.virginia.edu/center-for-open-science-open-science-framework/)
 >
 - The framework is developed by the Center for Open Science (COS), a non-profit organisation in the USA with the mission to increase the openness reproducibility and integrity of scientific research 
 >
@@ -144,7 +144,7 @@ Credit: [https://thriv.virginia.edu/center-for-open-science-open-science-framewo
 >
 - The design principle of the tool is to make it easy to practice open and reproducible research practices at all of the many stages of the research lifecycle. 
 >
-- Researchers are encouraged through the framework to start engaging with the idea of whatmaterial to share systematically and early on. Sharing publicly but also with collaborators before the manuscript editing phase.
+- Researchers are encouraged through the framework to start engaging with the idea of what material to share systematically and early on. Sharing publicly but also with collaborators before the manuscript editing phase.
 {: .checklist}
 
 
@@ -220,7 +220,7 @@ Other tools for collaboration have been summarized in the Primer "[Digital colla
 The purpose of Git is best explained with the below cartoon: it is a system that allows to avoid situations like in the cartoon. Such systems are called version control systems since they are designed to take care of versioning of files without changing (and lengthening) file names. The purpose here is not to teach you Git but to inform you detailed enough such that you can decide if or if not you need to learn Git. You will also learn a bit of terminology and get some links such that a start with Git should be easier.
 
 ![]({{ page.root }}/fig/04-phd101212s.png){: height="400px"}
-Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](https://www.phdcomics.com). 
+Image Credit: "Piled Higher and Deeper" by Jorge Cham at [https://www.phdcomics.com](https://www.phdcomics.com). (permission requested)
 
 >## What is Git?
 >
@@ -239,7 +239,7 @@ Git is a tool that originated in software development and hence in order to use 
 
 ![]({{ page.root }}/fig/04-git.png){: height="400px"}
 
-Credit: Randall Munroe/xkcd at [https://xkcd.com/21597/](https://xkcd.com/1597/) licensed as CC BY-NC.
+Image Credit: Randall Munroe/xkcd at [https://xkcd.com/21597/](https://xkcd.com/1597/) licensed as CC BY-NC.
 
 >## Why use it anyhow?
 >
@@ -272,7 +272,7 @@ Image Credit: Illustration of the most important git commands by Eva Furrer, CC-
 
 ## Installation
 
-If you have it open Rstudio, go to the terminal tab and type git --version to check of you already have Git installed.
+Open Rstudio, go to the terminal tab and type `git --version` to check if you already have Git installed.
 
 If you do not have it go to [https://git-scm.com/downloads]() and choose the correct operating system for the download.
 

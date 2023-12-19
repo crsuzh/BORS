@@ -127,7 +127,7 @@ ggplot(df) +
 
 ### Pie charts
 
-Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
+Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations of a change of the count of three factors over time. First a barplot, second a stacked barplot and lastly three pie charts. Where are differences most visible?   
 
 ```{r, fig.height=3, fig.width=3, fig.cap=""}
 set.seed(123)
@@ -157,6 +157,7 @@ ggplot(df) +
 
 
 ```{r, fig.height=2.5, fig.width=2.5, fig.cap=""}
+ggpubr::ggarrange(for (i in 1:3) {
   print(ggplot(df %>% dplyr::filter(time == i)) +
     geom_bar(aes(x = time, y = x, fill = var), 
              stat = "identity", 
@@ -164,6 +165,7 @@ ggplot(df) +
     coord_polar("y", start = 0) +
     mintheme() +
     theme(text = element_blank()))
+}, common.legend = TRUE)
 ```
 
 

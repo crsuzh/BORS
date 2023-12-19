@@ -52,8 +52,8 @@ We provide code in `ggplot`. A short introduction to `ggplot` is provided in thi
 
 As a basic principle it is useful to consider the relationship of visual cues, i.e. the type of visual encoding of quantitative data such as bars or areas, and the accuracy of the understanding of a viewer of these visualizations. The graph below shows how accurately the visualizations are perceived for different types of representation. Lengths (in form of bars) represent the data most accurately while volumes are rather generic and are more difficult to be perceived accurately. 
 
-![](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg){: height="400px"}
-Image credit: [P Aldhous](https://paldhous.github.io/ucb/2016/dataviz/img/class2_2.jpg)
+![](https://paldhous.github.io/NICAR/2016/img/infodes_2.jpg){: height="400px"}
+Image credit: [P Aldhous](https://paldhous.github.io/NICAR/2016/infodesign.html)
 
 The linked picture is based on [*Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods*](https://www.jstor.org/stable/2288400) by William S. Cleveland and Robert McGill.
 
@@ -67,9 +67,10 @@ Providing simple and easily perceptible visualizations implies that you should a
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*RcvBb67qgCxqzYH7uSuUVw.png){: height="300px"}
 <!-- ![](https://editor.analyticsvidhya.com/uploads/75170Featured%20Image.JPG){: height="300px"} -->
 
+Image credit: [Josh Taylor](https://towardsdatascience.com/when-to-use-3d-in-data-visualisation-f3739e320da7)
+
 As you can see (or not see!) some data is hidden behind the different bars. Furthermore it is rather difficult (and misleading) to compare the height from different depths. 
 
-Image credit: [Josh Taylor](https://towardsdatascience.com/when-to-use-3d-in-data-visualisation-f3739e320da7)
 
 ### Avoid occlusion
 
@@ -83,14 +84,14 @@ An alternative is to plot lines which allows us to see all groups completely.
 
 ### Pie charts
 
-Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations. First a barplot, second a stacked barplot and lastly a pie chart. Where are differences most visible?   
+Pie charts can be considered an alternative to bar charts, although often not a good one since they use angles as visual cues. For instance look at the following three visualizations of a change of the count of three factors over time. First a barplot, second a stacked barplot and lastly three pie charts. Where are differences most visible?   
 
 <img src="../fig/rmd-06-unnamed-chunk-5-1.png" width="216" style="display: block; margin: auto;" />
 
 <img src="../fig/rmd-06-unnamed-chunk-6-1.png" width="216" style="display: block; margin: auto;" />
 
 
-<img src="../fig/rmd-06-unnamed-chunk-7-1.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-2.png" width="180" style="display: block; margin: auto;" /><img src="../fig/rmd-06-unnamed-chunk-7-3.png" width="180" style="display: block; margin: auto;" />
+<img src="../fig/rmd-06-unnamed-chunk-7-1.png" width="180" style="display: block; margin: auto;" />
 
 
 ### Arrangement of plots
@@ -136,11 +137,11 @@ So why did the boxplot not show the distributional differences? Since boxplots o
 certain quantiles (usually the quartiles, i.e., 25%, 50% and 75%, plus "outliers") plots of different datasets having the same or similar quantiles appear identical. The quartiles of the three data sets are  
 
 
-|dataset |       q25| q50|      q75|
-|:-------|---------:|---:|--------:|
-|x1      | -2.080552|   0| 2.080552|
-|x2      | -2.044706|   0| 2.044706|
-|x3      | -2.050000|   0| 2.050000|
+|dataset |  q25| q50| q75|
+|:-------|----:|---:|---:|
+|x1      | -2.1|   0| 2.1|
+|x2      | -2.0|   0| 2.0|
+|x3      | -2.0|   0| 2.0|
 
 Violin plots show a mirrored estimation of the underlying density using a smoothing technique. Loosely speaking smoothing means that starting from a histogram a smooth version of the underlying probability distribution is created. The degree of smoothing, ranging in this case from histogram to straight line, determines the actual appearence of the plot. For the violin plot the degree of smoothing is chosen automatically. Already histograms with 5 bins for the data x1 and x3 would be very similar and hence the smoothed versions thereof as well.
 
@@ -393,9 +394,9 @@ Another option is the `dichromat` package ([CRAN link](https://cran.r-project.or
 
 Let's have a look at the graph, :
 ![](https://statmodeling.stat.columbia.edu/wp-content/uploads/2008/06/graph.jpg)
+Image credit: We discovered the graph here: 
+[https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/](https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/). The picture is not from a scientific study but originates from a blog: [http://www.shakesville.com/2007/09/rotundity-revealed.html](http://www.shakesville.com/2007/09/rotundity-revealed.html).
 
-https://statmodeling.stat.columbia.edu/2008/06/06/new_candidate_f/
-https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## 1 
 > What aspect of the "Be simple, clear and to the point" input has been violated?  
@@ -465,10 +466,10 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## Solution
 > 
-> - Sensible X-axis tick label display  
-> - Sensible X-axis label  
-> - Sensible Y-axis tick values  
-> - Sensible Y axis label  
+> F Sensible X-axis tick label display  
+> F Sensible X-axis label  
+> F Sensible Y-axis tick values  
+> F Sensible Y axis label  
 >
 {: .solution}
 
@@ -513,10 +514,10 @@ https://www.datocms-assets.com/42764/1664971178-3d-powerpoint-chart.png
 
 > ## Solution
 > 
-> - Informative title  
-> - Informative legend labels  
-> - Provenance of data  
-> - Context of data  
+> F Informative title  
+> F Informative legend labels  
+> F Provenance of data  
+> F Context of data  
 >
 {: .solution}
 
@@ -830,10 +831,8 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > 
 > ~~~
 > Warning: The following aesthetics were dropped during statistical transformation: colour
-> ℹ This can happen when ggplot fails to infer the correct grouping structure in
->   the data.
-> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
->   variable into a factor?
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a factor?
 > ~~~
 > {: .warning}
 > 
@@ -859,10 +858,8 @@ The next goal is to explore associations between `Annual_Precipitation`, and `Su
 > 
 > ~~~
 > Warning: The following aesthetics were dropped during statistical transformation: colour
-> ℹ This can happen when ggplot fails to infer the correct grouping structure in
->   the data.
-> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical
->   variable into a factor?
+> ℹ This can happen when ggplot fails to infer the correct grouping structure in the data.
+> ℹ Did you forget to specify a `group` aesthetic or to convert a numerical variable into a factor?
 > ~~~
 > {: .warning}
 > 
