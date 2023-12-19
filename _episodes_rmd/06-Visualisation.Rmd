@@ -1,6 +1,6 @@
 ---
 source: Rmd
-title: "Reproducible and honest visiualizations"
+title: "Reproducible and honest visualizations"
 teaching: 90
 exercises: 90-120
 questions: 
