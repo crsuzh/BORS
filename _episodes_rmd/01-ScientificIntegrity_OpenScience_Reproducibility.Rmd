@@ -7,9 +7,8 @@ questions:
   - "What is Scientific integrity and what is the link to Open Science and reproducibility?"
   - "What is Open Science and which aspects are important to me?"
   - "What is reproducibility and why should I care about it?"
-  - 
 objectives: 
-  - "Understand about the connections between Scientific integrity, Open Science and reproducibility "
+  - "Understand the connections between scientific integrity, Open Science and reproducibility "
   - "Name the requirements on designing, carrying out and reporting of research projects such that scientific integrity is respected"
   - "Discrimate between so-called negative and positive results"
   - "List all/many of the dimensions of Open Science"
@@ -190,7 +189,7 @@ J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://jo
 
 # 2. What is Open Science?
 ## Let´s play the game "Open up your research"
-[https://www.openscience.uzh.ch/de/moreopenscience/game.html]()
+[https://www.openscience.uzh.ch/de/moreopenscience/game.html]([https://www.openscience.uzh.ch/de/moreopenscience/game.html)
 
 > ## Dimensions of Open Science
 >  Which decisions did Emma need to take in the game?
@@ -209,7 +208,7 @@ J Hampton [https://journals.sagepub.com/doi/10.1177/0141076815608562](https://jo
 
 ## UNESCO recommendation on Open Science  
 
-In 2021 UNESCO published their recommendations for Open Science. From their point of view Open Science is a tool helping to create a sustainable future. In the quote stressed here we see the link of Open Science to scientific integrity and also reproducibility:
+In 2021 UNESCO published their recommendations for Open Science. From their point of view Open Science is a tool helping to create a sustainable future. In the bold face part of the quote we see the link of Open Science to scientific integrity and also reproducibility:
 
 > _“Building on the essential principles of academic freedom, research integrity and scientific excellence, **open science sets a new paradigm that integrates into the scientific enterprise practices for reproducibility, transparency, sharing and collaboration** resulting from the increased opening of scientific contents, tools and processes.”_
 
@@ -248,7 +247,7 @@ When a researcher preregisters a study, the design and precise goal of the study
 >
 - Informed decisions are difficult under **publication bias and selective reporting**, i.e. the non-publication negative results and the focus on publication of positive results which might not reflect the original goals. Publication bias and selective reporting result in a biased view of the situation.
 - Describing clinical trials in progress simplifies identification of research gaps 
-- The early identification of potential problems contributes to **improvements in the quality **
+- The early identification of potential problems contributes to **improvements in the quality**
 >
 >&rArr; [The Declaration of Helsinki](https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/) requires since the late 1990s: "Every clinical trial must be registered [...]”
 {: .callout}
@@ -329,7 +328,7 @@ In this course we will learn about some of the tools Markowetz lists in his pape
 ![]({{ page.root }}/fig/01-baggerlycoombes.png){: height="400px"}
 Image Credit: adapted from the open access article by  K Baggerly and K Coombes [https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-3/issue-4/Deriving-chemosensitivity-from-cell-lines--Forensic-bioinformatics-and-reproducible/10.1214/09-AOAS291.full).
 >
-From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html](https://www.nytimes.com/2011/07/08/health/research/08genes.html), picture by Michael Stravato for The New York Times.
+From G  Kolata [https://www.nytimes.com/2011/07/08/health/research/08genes.html](https://www.nytimes.com/2011/07/08/health/research/08genes.html).
 >
 >> _“When Juliet Jacobs found out she had lung cancer, she was terrified, but realized that her hope lay in getting the best treatment medicine could offer. So she got a second opinion, then a third. In February of 2010, she ended up at Duke University, where she entered a research study whose promise seemed stunning._
 >

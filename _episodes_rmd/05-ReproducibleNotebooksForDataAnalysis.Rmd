@@ -34,54 +34,51 @@ knitr_fig_path("05-")
 Statistical analysis software packages with graphical user interfaces such as SPSS (often) provide an easy solution to data analysis because
 
 - one can get started with an analysis without much overhead in having to learn to code 
-- it is a convenient way of exploring the data is needed 
+- it is a convenient way of exploring the data  
 - figures and the statistical analysis are done at the end of the exploration
 
-**But** it is often not clear anymore how exactly (and with which commands) those results were obtained. 
+**But** it is often not clear anymore how exactly (and with which commands) those results were obtained and writing all steps down  can be very tedious. Even if some kind of history of the executed commands is saved it might still be necessary to clean this up and keep only the relevant steps.. 
  
-An analysis that is not reproducible can be an issue since 
+**An analysis that is not reproducible can be an issue since** 
 
-- it is easy to unintentionally introduce errors and 
+- it is easy to unintentionally introduce errors 
 - it is hard to get rid of errors 
 - if you need to change some step in the middle of the analysis you have to restart from scratch
 - you can not provide a workflow that others (or yourself in the future) can follow easily to reproduce the results
 
-To make your analysis reproducible with a GUI program it would be necessary to write down all steps that were done which can be very tedious. Even if some kind of history of the executed commands is saved it might still be necessary to clean this up and keep only the relevant steps.  
+
  
-On the other hand doing a statistical analysis purely with code seems to be a lot of effort since all steps have to be written down explicitly and in case of unfamiliarity with the used programming language some initial investment to get familiar with a new environment and maybe also some basic concepts of programming need to be learned. However, while it seems like a big hurdle modern programming languages designed for statistical computing, such as R, are usually pretty straightforward to learn and use.   
- 
-Furthermore code based analysis are **more flexible** since usually more combinations, functions and extensions are available. In R, for example, thousands of packages are available. Besides, written analyses are easily **reproducible** as all commands that have been executed are written down and if complemented with comments and descriptions are also easily understandable for humans. 
+On the other hand doing a statistical analysis purely with code is
+- a lot of effort since all steps have to be written down explicitly 
+- needs some initial time investment in case of unfamiliarity 
 
-Such a coded analysis script provides a complete account of what has been calculated, much more complete than any narrative text on used methods could ever be. 
+**However**, while it seems like a big hurdle modern programming languages designed for statistical computing, such as R, are usually pretty straightforward to learn and use, and they have a lot of advantages:  
 
-Another point not to underestimate are the many readily available analyses that can be copied and used as a starting point for your own analysis which greatly increases speed and reduces the amount of work. Related to that is the concept of reusing code if for instance you have similar parts in your analysis.  
-
-To summarize:
-
-* **Disadvantages**
-  - need to code
-  - writing instead of clicking
-* **Advantages**
-  - Flexible
-  - Extensible (packages)
+  - Flexible:  more combinations, functions and extensions are available
+  - Extensible (packages): in R, for example, thousands of packages are available.
   - Reproducible (easily rerun from scratch)
   - Mixing code and text increases readability 
-  - Complete account of analysis
-  - start from similar analyses
+  - Much more complete account of analysis than a methods section
+  - Start new projects from own or otherwise available code for similar analyses 
 
 
 
 ## R projects
 
-Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to easily implement the structures that we heard about in the "First steps towards more reproducibility" episode (Organisation and software). You start with a directory for each project, have your data, code results etc in subdirectories and the functionality of R projects in Rstudio allows you to communicate easily between these directories.   
+Another very useful concept that enhances R's usefulness via Rstudio are R Projects. They allow to 
 
-The main idea is that all files needed (scripts, data, ...) for an analysis are brought together to make your and your collaborators life easier. If you start a Project it automatically takes care of things like using the correct working directory and lets you quickly jump between different projects by remembering which files you had open and reopening them again.   
+- easily implement the folder structure that we heard about in the "First steps towards more reproducibility" episode (Organisation and software) 
 
-Connected to the use of Project is the concept that you use relative file paths (e.g. for loading csv files). So instead of doing something like this: `read.csv("/home/user/Documents/Uni/UnderstandingORS/Topic_5/data/example.csv")` you write `read.csv("data/example.csv")`. This is easier to write, more flexible and less prone to errors because as long as you keep your files in the project together it will work. Imagine for example you want to move your script (and data) to `"/home/user/backup/Uni/UnderstandingORS/Topic_5/data/example.csv"`. 
+- communicate between these directories because the correct working directory is set automatically  
 
-R Projects hence make collaboration easier, your script will work on a different computer and you do not have to manually adjust the file path. This gets even more important if multiple people work on the same analysis and every one has to change their scripts. 
+- simplify collaborations since everybody can put their projects at desired location in their folder tree  
 
-Another advantage of R Projects is the possibility to quickly switch to another project without mixing up scripts and data between projects. Without using R Projects you probably have to close the files you have open, change the working directory to the new location, open the files you will be using and restart the R session. With R Projects this is all done automatically.
+- quickly jump between different projects by remembering which files you had open and reopening them again   
+
+- have more than one project open without mingling assigned variables etc.
+
+Connected to the use of Project is the concept that you use **relative file paths** (e.g. for loading csv files). So instead of doing something like this: `read.csv("/home/user/Documents/Uni/UnderstandingORS/Topic_5/data/example.csv")` you write `read.csv("data/example.csv")`. This is easier to write, more flexible and less prone to errors because as long as you keep your files in the project together it will work. Imagine, for example, you want to move your script (and data) to `"/home/user/backup/Uni/UnderstandingORS/Topic_5/data/example.csv"`. 
+
 
 
 ## Quiz on R projects 
@@ -131,24 +128,25 @@ _
 ### Create a new Rmd
 **Execute the following steps on your computer while you read:** 
 
-In Rstudio go to `File` > `New File` > `R Markdown`, enter `Title` and `Author`, select `html` as output, confirm.
+In Rstudio 
+- go to `File` > `New File` > `R Markdown`   
+- enter `Title` and `Author`  
+- select `html` as output   
+- confirm  
+
 A new .Rmd file should open with a short tutorial. 
 
 To render, or `knit`, the file to `html` press `Knit`. The first time you run the script you will have to specify the name under which to save it. Afterwards the script is always saved before rendering. 
 
-An R Markdown file consists of multiple parts which we will discuss now.
 
 ### YAML header 
-
-More information about the YAML header can be found in the [R Markdown cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf).
-
-Short summary from the [open-science-with-r carpentries course](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html):
+The YAML header of an R Markdown files contains the meta data that influence the final document in different ways. See the short summary from the [open-science-with-r carpentries course](https://carpentries-incubator.github.io/open-science-with-r/02-Rstudio/index.html):
 
 > _
 The header of your R Markdown document will allow you to personalize the related
 report from your R Markdown document.
 The header follows the YAML syntax (“YAML Ain’t Markup Language”) which usually
-follows a key:value syntax.
+follows a `key:value` syntax.
 _
 
 For example, `title: "titlename"`, where `title` is the key and `"titlename"` is the value.
@@ -162,12 +160,16 @@ output: html_output
 ---
 ```
 
+More information about the YAML header can be found in the [R Markdown cheat sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rmarkdown.pdf).
+
 
 ### Code chunks
 
-The narrative text is written in Markdown. Code chunks contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. A code chunk is delimited from plain text using the following syntax. To start a chunk write (backticks) ` ````{r} `, then place your R code and end the chunk with ` ```` `. The `r` in 
-` ```{r} ` indicates that the programming language used in this chunk is R. Other options include `python` or
-`bash` although we will not need these here.  
+The narrative text of a report is written in the simple Markdown syntax. Code chunks are specific to R Markdown. They contain R code that is to be executed when rendering the chunk or the entire file, i.e. including the data analysis. 
+
+
+To start a chunk write (backticks) ` ````{r} `, then place your R code and end the chunk with ` ```` `. The `r` in ` ```{r} ` indicates that the programming language used in this chunk is R. Other options include `python` or `bash` although we will not need these here. 
+
 Within RStudio a new code chunk can be included by either clicking on `Insert a new code chunk` in the toolbar or using a keyboard shortcut (`Ctrl+Alt+I` on Windows and `Option+Command+I` on Mac).
 
 Each chunk can be run separately. To run the code in an individual chunk click on the green arrow (`Run Current Chunk`) on the right side of the chunk. 
@@ -176,10 +178,11 @@ Alternatively use the keyboard shortcut `Ctrl+Alt+T` (Windows) or `Option+Comman
 For more options see the cheat sheet in R studio: `Help` > `Cheat Sheets` > `R Markdown Cheat Sheet` or the link above.
 
 
-The behavior of the chunks can be changed by setting chunk options. This is done in the opening of the chunk, e.g. 
+The behavior of code chunks can be changed by setting **chunk options**. This is done in the opening of the chunk, e.g. 
 ` ```{r, echo=FALSE}`, which hides the code of this chunk (while still evaluating it). For more options see the R Markdown cheat sheet or the [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/chunk-options.html).
 
-*Note*: inline R code, i.e. code directly within the narrative text, can be run with ``` `r ` ``` , placing the code after `r `. This is for example usefull when you mention a sample size in the text and want it to update directly from the data set you read in.
+&nbsp; 
+*Note*: **inline R code**, i.e. code directly within the narrative text, can be run with ``` `r ` ``` , placing the code after `r `. This is for example useful when you mention a sample size in the text and want it to update directly from the data set you read in.
 
 
 ## Quiz on literate programming and R Markdown

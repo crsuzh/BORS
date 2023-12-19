@@ -74,10 +74,10 @@ Authors have to follow several steps, which are in general:
 The below image illustrates this process:
 
 ![]({{ page.root }}/fig/03-pubprocesspeer.png)  
-Image Credit: (Part of) Illustration of the academic publication process by Eva Furrer, CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
+Image Credit: (Part of) Illustration of the academic publication process by the Center for Reproducible Science (E. Furrer), CC-BY, [https://doi.org/10.5281/zenodo.7994313](https://doi.org/10.5281/zenodo.7994313).
 
 ## What is a doi and what is Crossref?
-Since the goal of scientific articles is to contribute to the advancement of science they need to be findable and identifiable for future work. For that a necessary condition is that they have a unique identifier, which is nowadays of course a digital identifier.
+Since the goal of scientific articles is to contribute to the advancement of science they need to be findable and identifiable for future work. For that a necessary condition is that they have a unique identifier, which is nowadays, of course, a digital identifier.
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Digital_object_identifier):
  
@@ -87,7 +87,7 @@ Since a DOI is a unique identifier you can find any article by concatenating `ht
 
 > _"Crossref (formerly styled CrossRef) is an official digital object identifier (DOI) Registration Agency of the International DOI Foundation. It is run by the Publishers International Linking Association Inc. (PILA) and was launched in early 2000 as a cooperative effort among publishers to enable persistent cross-publisher citation linking in online academic journals."_
 
-Hence Crossref is the organisation which registers most doi for academic publications. (Source [Wikipedia](https://en.wikipedia.org/wiki/Crossref)
+Hence Crossref is the organisation which registers most doi for academic publications. (Source [Wikipedia](https://en.wikipedia.org/wiki/Crossref))
 
 
 ## Indexing of journals/publications
@@ -331,7 +331,7 @@ The goals of Reporting Guidelines are summarized in I Simera and D Altman [https
 ## Good reporting is an ethical imperative
 The **WMA Declaration of Helsinki – Ethical Principles for Medical Research Involving Human Subjects** states:
 
-36.   Researchers, authors, sponsors, editors and publishers all have **ethical obligations with regard to the publication** and dissemination of the results of research. Researchers have a duty to make publicly available the results of their research on human subjects and are **accountable for the completeness and accuracy of their reports**. All parties should adhere to accepted guidelines for ethical reporting. **Negative and inconclusive as well as positive results must be published or otherwise made publicly available**. [...]
+"Researchers, authors, sponsors, editors and publishers all have **ethical obligations with regard to the publication** and dissemination of the results of research. Researchers have a duty to make publicly available the results of their research on human subjects and are **accountable for the completeness and accuracy of their reports**. All parties should adhere to accepted guidelines for ethical reporting. **Negative and inconclusive as well as positive results must be published or otherwise made publicly available**. [...]"
 
 [https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/](https://www.wma.net/policies-post/wma-declaration-of-helsinki-ethical-principles-for-medical-research-involving-human-subjects/)
 
@@ -688,7 +688,7 @@ Check for potential biases yourself. Here are some examples of potential sources
 >## Use PRECHECK for two preprints
 >
 >>## Question 1
-Select two preprints in psychology and/or medicine. At least one of them should correspond to a preregistrqtion and one should have been published lateron. Review them using the checklist directly in the [Markdown file]({{ page.root }}/files/docs/03/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
+Select two preprints in psychology and/or medicine that include human subjects. At least one of them should correspond to a preregistration. Review them using the checklist directly in the [Markdown file]({{ page.root }}/files/data/PRECHECKchecklist.md). **Create one Markdown file for the assessment of both preprints by copy pasting**. Add clear sections for each preprint using Markdown syntax.
 >>
 Answer at least all yes/no question for each preprint, add an explanation for your choice of answer.
 >>

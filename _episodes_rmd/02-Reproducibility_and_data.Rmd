@@ -86,18 +86,18 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 
 
 ## 1,500 scientists lift the lid on reproducibility
-In 2016 M Baker designed a survey meant to shed "light on the ‘crisis’ rocking research." Here we discuss some of the results of the survey, for a complete report see [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a). The two graphs from the publication show that a large proportion of researchers believes that there are issues with reproducibility but that, again in the opinion of researchers, the extent of the problem differs between disciplines. Specifically, researchers from the "hard" sciences such as chemistry and physics, more frequently believe that the published work in their field is reproducible than for example in the "softer" sciences biology and medicine.
+In 2016 M Baker designed a survey meant to shed "light on the ‘crisis’ rocking research." Here we discuss some of the results of the survey, for a complete report see [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a). The two graphs reproduced from raw data of the publication show that a large proportion of researchers believes that there are issues with reproducibility but that, again in the opinion of researchers, the extent of the problem differs between disciplines. Specifically, researchers from the "hard" sciences such as chemistry and physics, more frequently believe that the published work in their field is reproducible than for example in the "softer" sciences biology and medicine.
 
 ![]({{ page.root }}/fig/02-ReproCrisis01.png){: height="500px"} 
 
 ![]({{ page.root }}/fig/02-ReproCrisis02.png){: height="500px"}  
-Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
+Image credit: Figures are reproduced from [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a) with the data available on [Figshare](https://figshare.com/articles/dataset/Nature_Reproducibility_survey/3394951/1)
 
 ## Factors contributing to irreproducible research  
 Baker also tried to evaluate which factors could contribute to this perceived reproducibility issue. Most researchers (more than 95%) believe that selective reporting and pressure to publish always/often or sometimes contribute to irreproducibility. Still about 90% believe that low statistical power or poor analysis, not enough replication in the original lab and insufficient mentoring/oversight always/often or sometimes contribute. Around 80% agree with unavailability of methods/code, poor experimental design, unavailability of raw data and unsufficient peer review as contributing factors at least sometimes. Fraud plays a more minor role in the opinion of researchers.
 
 ![]({{ page.root }}/fig/02-ReproCrisis04.png){: height="700px"}  
-Image credit: IMAGE WILL BE REPRODUCED FROM THE OPENLY AVAILABLE DATA
+Image credit: Figures are reproduced from [https://www.nature.com/articles/533452a](https://www.nature.com/articles/533452a) with the data available on [Figshare](https://figshare.com/articles/dataset/Nature_Reproducibility_survey/3394951/1)
 
 &nbsp;
 
@@ -213,7 +213,7 @@ On top of these high level recommendations writing and reading code is easier if
 2. Use **white space** for readability, spaces around operators (e.g. +), after commas and before %>%, line breaks before each command and after each %>%.
 3. Control the **length of your code lines** to be about 80 characters. Short statements, even loops etc, can be a single line.
 4. **Indent** your code consistently, the preferred way of indentation are two spaces.
-5. Use concise and informative **variable names*, do not use spaces, link by underscore or use CamelCase. Avoid names, that are already used, e.g., `mean`, `c`. 
+5. Use concise and informative **variable names**, do not use spaces, link by underscore or use CamelCase. Avoid names, that are already used, e.g., `mean`, `c`. 
 6. **Comment** your code such that its structure is visible and findable (use code folding in RStudio).
 7. Do not use the equal sign for **assignment** in R, <- is the appropriate operator for this. Avoid right-hand assignment, ->, since it deteriorates readability.
 8. **Curly braces** are a crucial programming tool in R. The opening { should be the last character on the line, the closing } the first (and last) on the line.
@@ -238,7 +238,7 @@ On top of these high level recommendations writing and reading code is easier if
 > 
 > T Copy-pasting code for several cases of the same type of calculation  
 > T Several lines of code that are repeated at different locations in a larger script  
-> F The duplication of statistical results with two approaches 
+> F The duplication of statistical results with two approaches  
 > F The same type of graph used for several cases  
 >
 {: .solution}
@@ -276,7 +276,7 @@ F Markowetz [https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015
 ![]({{ page.root }}/fig/02-Meme02.png)  
 Image credit: Randall Munroe/xkcd at [https://xkcd.com/2180/](https://xkcd.com/2180/) licensed as CC BY-NC.
 
-Humor aside, spreadsheets have advantages and disadvantages, that can threaten reproducibility. But they are easy to use and so widespread that we better learn how to use them properly. And indeed data in spreadsheets **can** be organized in way that favors reproducibility. We will summarize the recommendations of the article by K Broman and K Woo [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) into five checklists below. Broman and Woo promise that:  
+Humor aside, spreadsheets have advantages and disadvantages, that can threaten reproducibility. But they are easy to use and so widespread that we better learn how to use them properly. And indeed data in spreadsheets **can** be organized in a way that favors reproducibility. We will summarize the recommendations of the article by K Broman and K Woo [https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989) into five checklists below. Broman and Woo promise that:  
 
 “By following this advice, researchers will create spreadsheets that are **less error-prone, easier for computers to process**, and **easier to share** with collaborators and the public. Spreadsheets that adhere to our recommendations will work well with the tidy tools and reproducible methods described elsewhere in this collection and will **form the basis of a robust and reproducible analytic workflow**.”  
 
@@ -296,10 +296,11 @@ Humor aside, spreadsheets have advantages and disadvantages, that can threaten r
 7. Use a consistent format for all dates.
 8. Use consistent phrases in your notes.
 9. Be careful about extra spaces within cells.
-10. Use a consistent missing value coding: empty cell/NA/~~99999~~ 
 {: .checklist}
 
-&nbsp;
+
+![]({{ page.root }}/fig/02-consistency.jpg){: height="350px"}  
+Image credit: Image credit: copyright 2023, [William F. Hertha](https://hertha.ca/blog/20230412on-consistency/) under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 
 >## Choose good names for files and variables checklist
 >
@@ -308,6 +309,9 @@ Humor aside, spreadsheets have advantages and disadvantages, that can threaten r
 - No special characters (&,*,%,ü,ä,ö,...)  
 - Use a unique, short but meaningful name  
 - Variable names have to start with a letter  
+- File names: include zero-padded version number, e.g. V013  
+- File names: include consistent date, e.g. YYYYMMDD  
+
 {: .checklist}
 
 &nbsp;
@@ -330,7 +334,7 @@ Image credit: Randall Munroe/xkcd at [https://xkcd.com/1179/](https://xkcd.com/1
 - Include one variable per column, one row per subject: a rectangle of data 
 - Use the first and only the first row for variable names  
 - Do not calculate means, standard deviations etc in the last row  
-- Do not color, highlight or merge cells  
+- Do not color, highlight or merge cells to codify information  
 - Use data validation at data entry  
 - Be careful with commas since they may be decimal separators  
 - Consider write protecting a file at the end of data collection  
